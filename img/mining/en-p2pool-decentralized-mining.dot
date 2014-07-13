@@ -1,0 +1,45 @@
+digraph {
+
+size=6.25;
+rankdir=LR
+//splines = ortho;
+ranksep = 0.1;
+nodesep = 0.2;
+
+edge [ penwidth = 1.75, fontname="Sans" ]
+node [ penwidth = 1.75, shape = "box", fontname="Sans" ]
+graph [ penwidth = 1.75, fontname="Sans" ]
+
+p2pnetwork [ label = "Decentralized\nBitcoin\nNetwork\n(Block Chain)" ]
+
+
+bitcoind [ label = "Local\nFull Node"];
+poolnetwork [ label = "Decentralized\nP2Pool\nNetwork\n(Share chain)" ]
+
+subgraph cluster_p2pool {
+    pool0 [ style = "invis", height = 0 ];
+    p2pool_label [ label = "Local\nP2Pool\nSoftware", shape = "none" ];
+    pool1 [ style = "invis", height = 0 ];
+}
+
+software [ label = "Mining\nSoftware" ]
+//p2pnetwork0 -> pool0 [ label = "Transactions→" ];
+//pool0 -> p2pnetwork0 [ label = "←Blocks" ];
+
+
+
+
+p2pnetwork -> bitcoind [ label = "", constraint = 1 ];
+bitcoind -> p2pnetwork [ label = " ", constraint = 1 ];
+bitcoind -> pool0 [ constraint = 1, label = "Transactions→" ];
+pool0 -> bitcoind [ constraint = false, label = "←Blocks" ];
+
+p2pool_label -> software [ label = "GetBlock Or\nStratum→", constraint = 1 ];
+software -> p2pool_label [ label = "←Shares", constraint = false ];
+
+
+poolnetwork -> pool1 [ label = "               Other Miners' Shares→", labelfloat = 1, constraint = 1, minlen = 2 ];
+pool1 -> poolnetwork [ label = "←Your Shares", constraint = false ];
+
+label = " \nPeer-To-Peer Creating Your Own Blocks (P2Pool Decentralized Mining)"
+}
