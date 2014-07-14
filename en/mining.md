@@ -39,13 +39,15 @@ title: "Bitcoin Mining"
 
 This guide helps you find answers to the following questions:
 
-* [How does mining work?][]
+* [How does mining work?][section how it works]
 
-* [What tools and techniques do miners use?][]
+* [What tools and techniques do miners use?][section tools and
+techniques]
 
-* [What income and expenses can miners expect?][]
+* [What income and expenses can miners expect?][section income and
+expenses]
 
-* [Why should miners choose to be honest?][]
+* [Why should miners choose to be honest?][section choose to be honest]
 
 But, before you start reading, we urge you to review the following
 warnings:
@@ -57,7 +59,7 @@ equipment than you can afford to lose.
 
 ![Warning icon](/img/icon_warning.svg)
 **Scam Warning:** many scams surround Bitcoin mining. Several common
-scams are [described in this guide][], but you should also remain on guard
+scams are [described in this guide][section scams], but you should also remain on guard
 against new or uncommon scams.
 
 
@@ -102,15 +104,15 @@ can be very hard to change.
 
 Some of the problems Bitcoin solves are:
 
-* **[Online Exchange][section above]:** How can people transfer wealth over the Internet? Bitcoin invents a
+* **[Online Exchange][section how it works]:** How can people transfer wealth over the Internet? Bitcoin invents a
   new type of property (bitcoins) and lets people transfer control
   over certain amounts of bitcoins using signed promises.
 
-* **[Record Keeping][]:** How do we prevent people from signing promises they can't keep, or
+* **[Record Keeping][section record keeping]:** How do we prevent people from signing promises they can't keep, or
   from making contradictory promises? Bitcoin lets anyone keep a record
   of what promises they consider valid.
 
-* **[Bitcoin Lottery][]:** What do we do when the records of two or more people disagree about
+* **[Bitcoin Lottery][section bitcoin lottery]:** What do we do when the records of two or more people disagree about
   which promises are valid? Bitcoin holds a decentralized lottery, and
   the winner gets to decide which promises are added to the official
   record.
@@ -122,16 +124,16 @@ tickets; and miners who can win more than one lottery in a row can
 change the official record and possibly steal bitcoins. These problems
 need their own solutions:
 
-* **[Proof Of Work][]:** If each miner can make his own tickets, how do we prevent miners
+* **[Proof Of Work][section proof of work]:** If each miner can make his own tickets, how do we prevent miners
   from making an unlimited number of tickets? Bitcoin makes mining
   equipment do work to create tickets, so the more tickets are
   created, the more work needs to be done.
 
-* **[Block Chain][]:** What do we do when two or more miners each discover a winning lottery
+* **[Block Chain][section the block chain]:** What do we do when two or more miners each discover a winning lottery
   ticket? Bitcoin lets the miner who wins the next lottery decide which
   of the previous winning tickets actually won the previous lottery.
 
-* **[Attacks][]:** How do we discourage dishonest miners from changing the official record by
+* **[Attacks][section attacks]:** How do we discourage dishonest miners from changing the official record by
   using their wins in new lotteries to choose their own tickets in old
   lotteries? Bitcoin pays lottery winners for the work they do, but if
   a miner makes the system unreliable by changing the record, the
@@ -258,7 +260,7 @@ useful and bitcoins less valuable.
 
 #### Majority Attack
 
-Recall from the [block chain section][] that a miner must do more work
+Recall from the [block chain section][section the block chain] that a miner must do more work
 than every other miner combined in order to find enough winning tickets
 (valid blocks) to change the official record (the block chain). This is
 a **majority attack,** often called a **51% attack.**
@@ -387,21 +389,21 @@ confirmed just once.
 Outside of Bitcoin itself, miners have created tools and techniques to
 solve problems they've encountered trying to win the lottery:
 
-* **[Mining Software][section]:** How can miners use specialized mining hardware that Bitcoin Core does
+* **[Mining Software][section mining software]:** How can miners use specialized mining hardware that Bitcoin Core does
   not support? Miners develop and use specialized mining software which
   manages communication between mining equipment and Bitcoin software.
 
-* **[Pooling][]:** In the Bitcoin lottery, bad luck can delay a big miner's next payment
+* **[Pooling][section pooling]:** In the Bitcoin lottery, bad luck can delay a big miner's next payment
   by hours or days---but it can delay a small miner's payment by weeks
   or months---so how do we prevent bad luck from driving small miners
   out of business? Small miners become big miners when they work
   together, combining work and splitting rewards.
 
-* **[Shares][]:** How can tiny miners combine work with small miners and ensure each
+* **[Shares][section shares]:** How can tiny miners combine work with small miners and ensure each
   miner gets paid fairly? Miners hold a miniature version of the lottery
   Bitcoin itself holds.
 
-* **[Decentralized Mining][]:** How do small miners combine work without giving up control over
+* **[Decentralized Mining][section decentralized mining]:** How do small miners combine work without giving up control over
   their hardware to someone who can use it in an attack? Miners can
   choose from two different protocols that let them keep control over
   what they mine.
@@ -432,9 +434,9 @@ own full node (such as Bitcoin Core), it's **decentralized mining.**
 If the information comes from someone else's server, it's **centralized
 mining.**
 
-**Resource:** The [Mining Software][] sub-forum on BitcoinTalk.org.
+**Resource:** The [Mining Software Subforum][] on BitcoinTalk.org.
 
-[Mining Software]: https://bitcointalk.org/index.php?board=42.0
+[Mining Software Subforum]: https://bitcointalk.org/index.php?board=42.0
 
 
 
@@ -502,7 +504,8 @@ More usefully, ten percent of the random numbers below 10 will also be
 below 1 (on average). Pools use this math to allow miners to prove they
 did a share of the work even when they don't find valid blocks. In this
 example, the pool target is 10 and the network target is 1, so we
-can say there are (on average) 10 **"shares"** for every valid block.
+can say there are (on average) 10 **"shares"** for every valid block and
+each share is worth 1/10<sup>th</sup> of a block.
 
 ![FIXME](/img/mining/en-shares.svg)
 
@@ -527,12 +530,12 @@ of payment adjustment formula that reduces or delays some payments.
 **Resources:** although somewhat dated, Meni Rosenfeld's [Analysis of
 Bitcoin Pooled Mining Reward Systems][] remains an excellent detailed
 description of pool payment formulas.  The Bitcoin Wiki has a [simple
-overview of the formulas][], and the [Mining Pools][] Bitcoin
-Talk sub-forum has posts describing all popular pools in detail.
+overview of the formulas][], and the [Mining Pools Subform][] on
+BitcoinTalk has posts describing all popular pools in detail.
 
 [Analysis of Bitcoin Pooled Mining Reward Systems]: https://bitcointalk.org/index.php?topic=32814.0
 [simple overview of the formulas]: /FIXME
-[Mining Pools]: https://bitcointalk.org/index.php?board=41.0
+[Mining Pools Subform]: https://bitcointalk.org/index.php?board=41.0
 
 
 ### Decentralized Mining
@@ -547,22 +550,23 @@ double spend fraud.
 ![FIXME](/img/mining/en-centralized-mining.svg)
 
 Other miners also want to join a pool for the reduced variance, but
-they're not willing to risk participating in an [attack][] that can
+they're not willing to risk participating in an [attack][section attacks] that can
 reduce user trust in the Bitcoin mining process and lower bitcoin
 prices. Instead, these miners start up a full node so that they can
 perform one of the decentralized mining methods described below:
 
-* **[Solo mining][]:** is the simplest form of
-  decentralized mining but also has the highest variance of any type
-  of mining, so it is rarely a good option for small-scale miners.
+* **[Solo mining][section solo mining]:** The opposite of pool mining, solo mining is the
+  simplest form of decentralized mining but also has the highest
+  variance of any type of mining, so it is rarely a good option for
+  small-scale miners.
 
-* **[P2Pool][]:** requires one additional software
+* **[P2Pool][section p2pool]:** requires one additional software
   installation over solo mining and greatly reduces variance, so it is
   an excellent option for all miners. In addition, some people donate
   bitcoins to P2Pool miners as a thanks for helping prevent double spend
   attacks, increasing miner income.
 
-* **[GetBlockTemplate][]:** can allow you to join certain
+* **[GetBlockTemplate][section getblocktemplate]:** can allow you to join certain
   pools and still build your own blocks in a decentralized mode,
   reducing variance without letting someone else make choices for you.
   However, instructions describing how to use that mode with standard
@@ -618,7 +622,7 @@ Variance for P2Pool miners is reduced significantly, not only because
 shares are created 20 times as often as blocks but also because P2Pool
 miners are only competing against other P2Pool miners to create shares.
 
-For example, recall our imaginary "average" miner from the [Pooling][]
+For example, recall our imaginary "average" miner from the [Pooling][section pooling]
 section who does 1/10,000<sup>th</sup> of the work on the Bitcoin network and so
 has to wait about 70 days on average to create a block. If there are 400
 of these average miners on P2Pool, they'll each individually create a
@@ -683,7 +687,7 @@ each block mined.
 
 In addition, there are several non-financial rewards:
 
-* **Help/Hurt Bitcoin:** People who want to see Bitcoin succeed can [choose to mine honestly][] to
+* **Help/Hurt Bitcoin:** People who want to see Bitcoin succeed can [choose to mine honestly][section choose to be honest] to
   improve transaction security. On the other hand, people who want to
   see Bitcoin fail can also mine, deliberately using their hashes to try
   to make transactions less reliable.
@@ -905,7 +909,7 @@ Locations with regular cold weather typically have more cost effective
 ways to generate heat than electrical heating, so the reduction in
 required heat due to mining may not be significant.
 
-On the other hand, modern air conditioning ([heat pumps][])
+On the other hand, modern air conditioning ([a heat pump][])
 tends to use about 0.67 watts of electricity for every 1.00 watts you
 use mining.  Adding full-time air conditioning costs to our
 illustration of imaginary situations shows a significant effect on
@@ -913,7 +917,7 @@ profitability.
 
 ![FIXME](/img/mining/en-mining-equipment-roi-electricity-cooling.svg)
 
-[heat pumps]: https://en.wikipedia.org/wiki/Heat_pump
+[a heat pump]: https://en.wikipedia.org/wiki/Heat_pump
 
 Some people may know how much they pay for heating or cooling, but very
 few people know how efficient their equipment or location is, so we
@@ -929,7 +933,7 @@ income, but it can also add to your costs.
 writing, pool fees are typically from 0% to 5% plus (sometimes) part or
 all of the transaction fees in a block.   Whatever is left is paid to
 miners according to the pool's share reward formula.  (See the [Shares
-section][] for more details.)
+section][section shares] for more details.)
 
 **Skimming:** If a pool doesn't charge any fees or survive based on
 donations, you should investigate how they make their money. Some pools
@@ -988,7 +992,7 @@ electricity. But when bitcoin prices go down, the opposite holds true:
 you earn less and your expenses in local currency become relatively more
 expensive.
 
-Extending our example plot from the [Electrical Costs][] subsection
+Extending our example plot from the [Electrical Costs][section electrical costs] subsection
 above, if bitcoins start off worth $500 USD and you pay $50 USD per week
 for electricity, the red plot below shows your profits in USD with
 bitcoin prices increasing by 2% per week and the green plot shows your
@@ -1011,7 +1015,8 @@ of 2% would be extraordinary compared to other investments, but some
 amount of price increase is likely if users increasingly trust the
 mining process to keep Bitcoin safe and reliable. However, compounding
 hurts miners if prices fall, which is also likely if user trust is lost.
-The section below about [choosing to mine honestly][] describes how miners can
+The section below about [choosing to mine honestly][section choose to
+be honest] describes how miners can
 keep Bitcoin safe and reliable to encourage price increases.
 
 
@@ -1027,7 +1032,7 @@ financially foolish.
 **Delays:** Possibly the most frequently-reported scam is a mining equipment
 manufacturer or reseller which accepts preorders but does not
 deliver its equipment at the promised time. As shown in the
-[Equipment Costs][] subsection, even a small delay in delivery can
+[Equipment Costs][section equipment costs] subsection, even a small delay in delivery can
 significantly reduce profits.
 
 **Competing With The Customer:** Another often reported scam is burn-in
@@ -1058,7 +1063,8 @@ in profit, why are they selling them in the first place?
 
 It can be argued that they need your money to buy more hardware so that
 they can take advantage of [economies of scale][], but large scale
-mining operations can perform the [attacks described above][], which
+mining operations can perform the [attacks described above][section
+attacks], which
 makes Bitcoin mining less effective at protecting recent transactions.
 
 It's also easy to create a [Ponzi scheme][] out of such a contract where
@@ -1107,7 +1113,8 @@ have a reasonable chance of succeeding.
 
 What happens when an operator chooses to steal thousands of bitcoins? We
 can only imagine, but if the fallout includes a drop in bitcoin prices,
-miners in particular are likely to be hurt due to [compound loses][].
+miners in particular are likely to be hurt due to [compound loses][section
+compounding].
 
 On the other hand, we can also imagine that some people are unwilling to
 accept or hold bitcoins today because of this double spend risk.  If the
@@ -1120,11 +1127,41 @@ to choose to mine honestly.
 
 To learn how miners can make their own choices and also enjoy the
 low variance of pooled mining, please see the [Decentralized Mining
-section][].
+section][section decentralized mining].
 
 *Would you like to help write documentation about decentralized mining?
 If so, please subscribe to the [Bitcoin Documentation mailing list][] to
 volunteer.*
+
+[Bitcoin Documentation mailing list]: https://groups.google.com/forum/#!forum/bitcoin-documentation
+
+[section how it works]: #how-it-works
+[section record keeping]: #record-keeping
+[section bitcoin lottery]: #bitcoin-lottery
+[section proof of work]: #proof-of-work
+[section the block chain]: #the-block-chain
+[section attacks]: #attacks
+[section majority attack]: #majority-attack
+[section lucky attack]: #lucky-attack
+[section tools and techniques]: #tools-and-techniques
+[section mining software]: #mining-software
+[section pooling]: #pooling
+[section shares]: #shares
+[section decentralized mining]: #decentralized-mining
+[section solo mining]: solo-mining
+[section p2pool]: #p2pool
+[section getblocktemplate]: #getblocktemplate
+[section income and expenses]: #income-and-expenses
+[section base income]: #base-income
+[section difficulty]: #difficulty
+[section equipment costs]: #equipment-costs
+[section electrical costs]: #electrical-costs
+[section cooling costs]: #cooling-costs
+[section pool costs]: #pool-costs
+[section legal costs]: #legal-costs
+[section compounding]: #compounding
+[section scams]: #scams
+[section choose to be honest]: #choose-to-be-honest
 
 </div>
 <script>updateToc();</script>
