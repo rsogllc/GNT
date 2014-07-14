@@ -102,20 +102,18 @@ can be very hard to change.
 
 Some of the problems Bitcoin solves are:
 
-* How can people transfer wealth over the Internet? Bitcoin invents a
+* **[Online Exchange][section above]:** How can people transfer wealth over the Internet? Bitcoin invents a
   new type of property (bitcoins) and lets people transfer control
-  over certain amounts of bitcoins using signed promises.  (For details,
-  see the section above.)
+  over certain amounts of bitcoins using signed promises.
 
-* How do we prevent people from signing promises they can't keep, or
+* **[Record Keeping][]:** How do we prevent people from signing promises they can't keep, or
   from making contradictory promises? Bitcoin lets anyone keep a record
-  of what promises they consider valid. (For details, see the [Record
-  Keeping][] section below.)
+  of what promises they consider valid.
 
-* What do we do when the records of two or more people disagree about
+* **[Bitcoin Lottery][]:** What do we do when the records of two or more people disagree about
   which promises are valid? Bitcoin holds a decentralized lottery, and
   the winner gets to decide which promises are added to the official
-  record.  (For details, see the [Bitcoin Lottery][] section below.)
+  record.
 
 Using the Bitcoin lottery to manage the official record is the essence
 of mining---but running a decentralized lottery is complicated: miners
@@ -124,23 +122,21 @@ tickets; and miners who can win more than one lottery in a row can
 change the official record and possibly steal bitcoins. These problems
 need their own solutions:
 
-* If each miner can make his own tickets, how do we prevent miners
+* **[Proof Of Work][]:** If each miner can make his own tickets, how do we prevent miners
   from making an unlimited number of tickets? Bitcoin makes mining
   equipment do work to create tickets, so the more tickets are
-  created, the more work needs to be done. (For details, see the [Proof
-  Of Work][] section below.)
+  created, the more work needs to be done.
 
-* What do we do when two or more miners each discover a winning lottery
+* **[Block Chain][]:** What do we do when two or more miners each discover a winning lottery
   ticket? Bitcoin lets the miner who wins the next lottery decide which
   of the previous winning tickets actually won the previous lottery.
-  (For details, see the [Block Chain][] section below.)
 
-* How do we discourage miners from changing the official record by
+* **[Attacks][]:** How do we discourage dishonest miners from changing the official record by
   using their wins in new lotteries to choose their own tickets in old
   lotteries? Bitcoin pays lottery winners for the work they do, but if
   a miner makes the system unreliable by changing the record, the
   bitcoins he earns become less valuable than the work he does,
-  costing him money. (For details, see the [Attacks][] section below.)
+  costing him money.
 
 
 
@@ -215,9 +211,10 @@ the lottery.
 Having only one winning ticket is important, because the promises on
 that ticket get added to the official record of promises. If we had two
 winning tickets, they could add conflicting promises, which doesn't
-work. It's also important that when we choose a winning ticket, it stay
-the winner, or a replacement ticket could change the official record and
-remove some of the promises people relied upon. Bitcoin partly solves
+work. We must also prevent someone from later changing which ticket won
+the lottery or a replacement ticket could change the official
+record and remove some of the promises people relied upon. Bitcoin
+partly solves 
 this problem the same way it partly solves the official record problem
 in the first place: another lottery.
 
@@ -257,10 +254,7 @@ each block they find, currently valued at 25 bitcoins or more.
 Users can trust the block chain (official record) instead of each other,
 making Bitcoin useful for sending wealth over the Internet. But the same
 miners who build the block chain can also attack it, making Bitcoin less
-useful and bitcoins less valuable. All miners should be aware of these
-attacks so that they can help prevent them, or so they can sell their
-bitcoins and mining equipment when an attack threatens to make bitcoins
-lose too much value.
+useful and bitcoins less valuable.
 
 #### Majority Attack
 
@@ -273,15 +267,15 @@ A miner who does the majority of work on the network can, given enough
 time, change the results of any past lottery, allowing him to undo
 previous transactions.  For example, he can:
 
-* Replace (double spend) a transaction where he paid Alice with a
+* **Steal For Himself:** Replace (double spend) a transaction where he paid Alice with a
   different transaction that pays himself, stealing back to himself
   the bitcoins he previously paid Alice.
 
-* Offer to help other people replace (double spend) their previous
+* **Steal For Others:** Offer to help other people replace (double spend) their previous
   transactions for a fee, letting them steal back to themselves the
   bitcoins they previously paid.
 
-* Threaten to make purchases with bitcoin which he will later double
+* **Extort From Merchants:** Threaten to make purchases with bitcoin which he will later double
   spend unless merchants pay him an extortion fee today. (He can charge
   people this extortion fee based on the possibility of an attack even
   if he never actually attacks.)
@@ -310,7 +304,7 @@ two block rewards---the same as if he had created any other two blocks.
 
 However, if a dishonest miner is willing to risk losing his block
 reward, he can attempt to change the official record. Instead of trying
-to add a block to the **tip** of the bock chain, he tries to replace the
+to add a block to the **tip** of the block chain, he tries to replace the
 block at the current tip. To make this work, he has to also find the
 next block so that he can choose his replacement block as the winner of
 the previous lottery.
@@ -330,15 +324,15 @@ on the network and who attempts to attack every block will succeed about
 once every 19 hours by sacrificing about 48 bitcoins worth of income. He
 can steal or extort back that lost income if he can:
 
-* Replace (double spend) transactions from the last block, where he paid
+* **Steal For Himself:** Replace (double spend) transactions from the last block, where he paid
   other people more than 48 bitcoins, with new transactions that pay
   himself, stealing back to himself those 48-plus bitcoins.
 
-* Offer to help other people replace their previous transactions from
+* **Steal For Others:** Offer to help other people replace their previous transactions from
   the last block for a fee totaling more than 48 bitcoins, letting them
   steal back to themselves the bitcoins they previously paid.
 
-* Threaten to make purchases with bitcoin which he will later double
+* **Extort From Merchants:** Threaten to make purchases with bitcoin which he will later double
   spend unless merchants pay him an extortion fee today. (He can charge people
   this extortion fee based on the possibility of an attack even if he
   never actually attacks.)
@@ -393,27 +387,24 @@ confirmed just once.
 Outside of Bitcoin itself, miners have created tools and techniques to
 solve problems they've encountered trying to win the lottery:
 
-* How can miners use specialized mining hardware that Bitcoin Core does
+* **[Mining Software][section]:** How can miners use specialized mining hardware that Bitcoin Core does
   not support? Miners develop and use specialized mining software which
   manages communication between mining equipment and Bitcoin software.
-  (For details, see the [Mining Software][section mining software] section below.)
 
-* In the Bitcoin lottery, bad luck can delay a big miner's next payment
+* **[Pooling][]:** In the Bitcoin lottery, bad luck can delay a big miner's next payment
   by hours or days---but it can delay a small miner's payment by weeks
   or months---so how do we prevent bad luck from driving small miners
   out of business? Small miners become big miners when they work
-  together, combining work and splitting rewards. (For details, see the
-  [Pooling][] section below.)
+  together, combining work and splitting rewards.
 
-* How can tiny miners combine work with small miners and ensure each
+* **[Shares][]:** How can tiny miners combine work with small miners and ensure each
   miner gets paid fairly? Miners hold a miniature version of the lottery
-  Bitcoin itself holds. (For details, see the [Shares][] section below.)
+  Bitcoin itself holds.
 
-* How do small miners combine work without giving up control over
+* **[Decentralized Mining][]:** How do small miners combine work without giving up control over
   their hardware to someone who can use it in an attack? Miners can
   choose from two different protocols that let them keep control over
-  what they mine. (For details, see the [GetBlockTemplate][] and [P2Pool][]
-  sections below.)
+  what they mine.
 
 
 ### Mining Software
@@ -435,6 +426,11 @@ Bitcoin Core does not use these devices directly. Instead, mining
 software was developed which takes the information that needs to be
 hashed, gives it to the hardware, and returns the results to Bitcoin
 Core or another specialized program.
+
+If the information that needs to be hashed comes primarily from your
+own full node (such as Bitcoin Core), it's **decentralized mining.**
+If the information comes from someone else's server, it's **centralized
+mining.**
 
 **Resource:** The [Mining Software][] sub-forum on BitcoinTalk.org.
 
@@ -490,6 +486,7 @@ little variance.
 
 
 
+
 ### Shares
 
 In a pool, not all miners have the same hash rate, so they use Bitcoin's
@@ -538,40 +535,60 @@ Talk sub-forum has posts describing all popular pools in detail.
 [Mining Pools]: https://bitcointalk.org/index.php?board=41.0
 
 
-### GetBlockTemplate
+### Decentralized Mining
 
 There are different ways of participating in a pool. Some miners
+don't run a full node such as Bitcoin core but instead
 slave their mining equipment to a pool server, trusting that their
 equipment will be used honestly to generate new blocks. This trust is
 sometimes misplaced, leading to the equipment being used to perform
-double spend fraud.
+double spend fraud.  
 
 ![FIXME](/img/mining/en-centralized-mining.svg)
 
 Other miners also want to join a pool for the reduced variance, but
 they're not willing to risk participating in an [attack][] that can
 reduce user trust in the Bitcoin mining process and lower bitcoin
-prices. Some of these miners use the GetBlockTemplate (GBT)
-mining data protocol.
+prices. Instead, these miners start up a full node so that they can
+perform one of the decentralized mining methods described below:
 
-![FIXME](/img/mining/en-decentralized-mining.svg)
+* **[Solo mining][]:** is the simplest form of
+  decentralized mining but also has the highest variance of any type
+  of mining, so it is rarely a good option for small-scale miners.
 
-Pool servers using GetBlockTemplate send to each miner all of the
-data required to create a valid block for that pool, allowing the
-miner to inspect the data for double spend attempts. Miners can also
-remove some transactions from the template and add in others it gets
-from a full node such as Bitcoin Core, letting the miner's software
-make a decentralized choice about what transactions to put in the
-blocks it creates.
+* **[P2Pool][]:** requires one additional software
+  installation over solo mining and greatly reduces variance, so it is
+  an excellent option for all miners. In addition, some people donate
+  bitcoins to P2Pool miners as a thanks for helping prevent double spend
+  attacks, increasing miner income.
 
-Unfortunately, as of this writing, no mining software takes full
-advantage of what GetBlockTemplate offers for decentralized mining.
+* **[GetBlockTemplate][]:** can allow you to join certain
+  pools and still build your own blocks in a decentralized mode,
+  reducing variance without letting someone else make choices for you.
+  However, instructions describing how to use that mode with standard
+  mining software are not available as of this writing.
 
 
 
-### P2Pool
+#### Solo Mining
 
-An alternative to GetBlockTemplate is P2Pool, a decentralized mining
+Although rarely done today, **solo mining** is done by miners who
+attempt to find blocks on their own using just decentralized full node
+software such as Bitcoin Core.
+
+    TK: illustration
+    network <-> bitcoind <-----> mining software
+
+Unless you control hundreds or thousands of bitcoins worth of mining
+equipment, solo mining has very high variance, so you might have to wait
+months or years before finding a block.  P2Pool, described below, is
+almost certainly a better option for most miners.
+
+
+
+#### P2Pool
+
+P2Pool is a decentralized mining
 pool that reduces variance but still lets miners build their own blocks
 using data from their own full nodes.
 
@@ -629,19 +646,24 @@ if they had mined in any other way.
 **Resources:** TK wiki, contribute link, p2pool.in
 
 
-### Solo Mining
 
-Although rarely done today, **solo mining** is done by miners who
-attempt to find blocks on their own using just decentralized full node
-software such as Bitcoin Core.
+#### GetBlockTemplate
 
-    TK: illustration
-                           GBT
-    network <-> bitcoind <-----> mining software
+The GetBlockTemplate (GBT) mining data protocol supported by some mining
+pools allows for both centralized and decentralized mining.
 
-Unless you control hundreds or thousands of bitcoins worth of mining
-equipment, solo mining has very high variance, so you might have to wait
-months or years before finding a block.
+Pool servers using GetBlockTemplate send to each miner all of the
+data required to create a valid block for that pool, allowing the
+miner to inspect the data for double spend attempts. Miners can also
+perform decentralized mining by getting transactions from their own full
+node, such as Bitcoin Core, and using those transactions instead of the
+optional transactions in the template.
+
+![FIXME](/img/mining/en-decentralized-mining.svg)
+
+Unfortunately, as of this writing, no mining software takes full
+advantage of what GetBlockTemplate offers for decentralized mining.
+
 
 
 
@@ -661,19 +683,19 @@ each block mined.
 
 In addition, there are several non-financial rewards:
 
-* People who want to see Bitcoin succeed can [choose to mine honestly][] to
+* **Help/Hurt Bitcoin:** People who want to see Bitcoin succeed can [choose to mine honestly][] to
   improve transaction security. On the other hand, people who want to
   see Bitcoin fail can also mine, deliberately using their hashes to try
   to make transactions less reliable.
 
-* Miners can use their hash rate to easily vote on whether to allow or
+* **Voting Rights:** Miners can use their hash rate to easily vote on whether to allow or
   discourage changes to some parts of the Bitcoin network. For example,
   miners voted in 2012 to allow a new transaction type. Although
   non-miners can also influence Bitcoin decision making, they generally
   must take time to establish a reputation in the community and then
   advocate for the decision they want.
 
-* Mining can be as anonymous as it is possible to be when using the
+* **Anonymous Income:** Mining can be as anonymous as it is possible to be when using the
   Internet. If a miner uses privacy technology correctly, and if that
   technology works as expected, a miner may be able to earn bitcoins
   which cannot be traced back to the miner.  (The miner must also use
@@ -945,14 +967,14 @@ Bitcoin.org does not provide legal advice, but we do recommend that you
 discuss the following considerations with a legal expert to ensure you
 follow the law:
 
-* Is mining legal in your area? Does it require you spend time and money
+* **Permitting:** Is mining legal in your area? Does it require you spend time and money
   to get a license or permit?
 
-* Is mining considered a business, and are there any special rules about
+* **Zoning:** Is mining considered a business, and are there any special rules about
   businesses in your area? For example, some areas may forbid running a
   business in your home, so you will have to rent commercial space.
 
-* Do you have to pay taxes on mining income?
+* **Taxes:** Do you have to pay taxes on mining income?
 
 
 
@@ -1096,27 +1118,9 @@ To avoid loss and possibly increase gains---not just for miners but for
 everyone who owns bitcoins---Bitcoin.org strongly encourages all miners
 to choose to mine honestly.
 
-The list below briefly describes decentralized mining methods that allow
-miners to make their own choices:
-
-* Solo mining ([described above][]) is the simplest form of
-  decentralized mining but also has the highest variance of any type
-  of mining, so it is rarely a good option for small-scale miners.
-
-* GetBlockTemplate ([described above][]) allows you to join certain
-  pools and still build your own blocks in a decentralized mode,
-  reducing variance without letting someone else make choices for you.
-  However, instructions describing how to use that mode with standard
-  mining software are not available as of this writing.
-
-* P2Pool ([described above][]) requires one additional software
-  installation over solo mining and greatly reduces variance, so it is
-  an excellent option for all miners. In addition, some people donate
-  bitcoins to P2Pool miners as a thanks for helping prevent double spend
-  attacks, increasing miner income. [Instructions][] for using P2Pool
-  are distributed with every copy of the `p2pool` software. Additional
-  information can be found on the [P2Pool Bitcoin Wiki page][] and the
-  [P2Pool BitcoinTalk Thread][].
+To learn how miners can make their own choices and also enjoy the
+low variance of pooled mining, please see the [Decentralized Mining
+section][].
 
 *Would you like to help write documentation about decentralized mining?
 If so, please subscribe to the [Bitcoin Documentation mailing list][] to
