@@ -53,12 +53,12 @@ But, before you start reading, we urge you to review the following
 warnings:
 
 ![Warning icon](/img/icon_warning.svg)
-**Warning:** mining requires an investment of time and money with no
+**You Could Lose Your Money:** mining requires an investment of time and money with no
 guarantee of return. Never invest more money into bitcoins or mining
 equipment than you can afford to lose.
 
 ![Warning icon](/img/icon_warning.svg)
-**Scam Warning:** many scams surround Bitcoin mining. Several common
+**Watch Out For Scams:** many scams surround Bitcoin mining. Several common
 scams are [described in this guide][section scams], but you should also remain on guard
 against new or uncommon scams.
 
@@ -190,7 +190,7 @@ winning ticket is to check a lot of losing tickets. That means a winning
 ticket in the Bitcoin lottery proves that a lot of work was done to find
 it, called **proof of work.**
 
-    TK illustration of ticket checking
+![FIXME](/img/mining/en-ticket-checking.svg)
 
 Work uses resources that could be used elsewhere, so proof of work is
 proof that somebody sacrificed something in return for creating a
@@ -223,14 +223,14 @@ in the first place: another lottery.
 In order to create a valid ticket for a particular lottery, that ticket
 must include the winning number of a ticket from the previous lottery.
 
-    TK: illustration of sequential chained tickets
+![FIXME](/img/mining/en-sequential-chain.svg)
 
 The tickets form a chain with each winning ticket linking to a
 previous winning ticket. Whenever there are two or more winning tickets
 for a particular lottery, we find which ticket is part of the **longest
 chain** and declare that the actual winning ticket.
 
-    TK: illustration of forked chained tickets
+![FIXME](/img/mining/en-forked-chain.svg)
 
 This means a miner cannot change the official record by finding
 winning tickets for a past lottery unless he also finds winning
@@ -311,8 +311,7 @@ block at the current tip. To make this work, he has to also find the
 next block so that he can choose his replacement block as the winner of
 the previous lottery.
 
-    TK illustration o---o---x       o---o
-                         \--o---o--/
+![FIXME](/img/mining/en-forked-chain-attack.svg)
 
 The attack fails if someone else adds one new block to the tip before
 the attacker can find two blocks. Any work an attacker does on a failed
@@ -580,8 +579,7 @@ Although rarely done today, **solo mining** is done by miners who
 attempt to find blocks on their own using just decentralized full node
 software such as Bitcoin Core.
 
-    TK: illustration
-    network <-> bitcoind <-----> mining software
+![FIXME](/img/mining/en-solo-mining.svg)
 
 Unless you control hundreds or thousands of bitcoins worth of mining
 equipment, solo mining has very high variance, so you might have to wait
@@ -602,13 +600,7 @@ the share chain on average every 30 seconds instead of Bitcoin's every
 10 minutes. Occasionally one of these shares is also a valid
 block for the Bitcoin block chain.
 
-	        share chain: shares every 30 seconds on avg
-	                     some also valid blocks
-    TK illustration o--o--o--o--o--o--o--o--o--o--o--o--o
-                                      |
-                    ------------------o----------o-------
-	        block chain: blocks every 10 minutes on avg
-                                     some from p2pool
+![FIXME](/img/mining/en-share-chain-block-chain.svg)
 
 To use P2Pool, you run the P2Pool open source software along with a full
 node such as Bitcoin Core. The P2Pool program can then create block
@@ -710,7 +702,7 @@ smaller profit margins or even at a loss, making it more difficult for
 profit-seeking miners to compete with them.
 
 ![Warning icon](/img/icon_warning.svg)
-**Warning:** the formulas in the following subsections are not always
+**Rough Guesses Only:** the formulas in the following subsections are not always
 the most precise formulas available. We selected less precise formulas
 when they were simpler, so you can use them more easily. That doesn't
 mean more precise formulas will give you better results---with bitcoin

@@ -1,0 +1,55 @@
+digraph {
+
+size=6.25;
+rankdir=TB
+//splines = ortho;
+ranksep = 0.2;
+nodesep = 0.01;
+
+edge [ penwidth = 1.75, fontname="Sans" ]
+node [ penwidth = 1.75, shape = "box", fontname="Sans", label = "", width=0.3, height=0.3 ]
+graph [ penwidth = 1.75, fontname="Sans" ]
+
+ticket [ label = "Tickets With\nSigned Promises\n& Other Data", shape = "none" ]
+hash [ label =    "Random Hash Number;\nMust Be Below Target\nNumber To Win", shape = "none" ]
+
+hash0001 [ label = "#", fontsize = 18, shape = "none" ]
+hash0002 [ label = "#", fontsize = 18, shape = "none" ]
+hash0003 [ label = "#", fontsize = 18, shape = "none" ]
+hash0730 [ label = "#", fontsize = 18, shape = "none" ]
+hash0731 [ label = "#", fontsize = 18, shape = "none" ]
+hash0732 [ label = "#", fontsize = 18, shape = "none" ]
+hash0733 [ label = "#", fontsize = 18, shape = "none" ]
+hash0734 [ label = "#", fontsize = 18, shape = "none" ]
+hash0735 [ label = "#", fontsize = 18, shape = "none" ]
+hash0736 [ label = "#", fontsize = 18, shape = "none" ]
+hash0737 [ label = "#", fontsize = 18, shape = "none" ]
+//hash0738 [ label = "#", fontsize = 18, shape = "none" ]
+
+ticket -> hash [ style = "invis" ];
+ticket0001 -> hash0001
+ticket0002 -> hash0002
+ticket0003 -> hash0003
+ticket730 -> hash0730
+ticket731 -> hash0731
+ticket732 -> hash0732
+ticket733 -> hash0733
+ticket734 -> hash0734
+ticket735 -> hash0735
+ticket736 -> hash0736
+ticket737 -> hash0737
+//ticket738 -> hash0738
+//ticket739 -> hash0739
+
+//p2pnetwork [ label = "Decentralized\nBitcoin\nNetwork" ]
+//software [ label = "Mining\nSoftware" ]
+//pool0 [ label = "Mining\nPool" ];
+
+//pool0 -> software [ label = "GetWork Or\nStratum→" ];
+//p2pnetwork -> pool0 [ label = "Transactions→" ];
+//pool0 -> p2pnetwork [ label = "←Blocks" ];
+
+//software -> pool0 [ constraint = false, label = "←Shares" ];
+
+label = " \nChecking Random Hash Numbers From Many Different Tickets Requires Work"
+}
