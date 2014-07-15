@@ -76,11 +76,15 @@ someone *control* over a certain amount of bitcoins. The receiver of
 that promise can then digitally sign another promise to give someone
 else control over those bitcoins.
 
+![FIXME](/img/mining/en-unvalidated-promises.svg)
+
 Nobody wants to accept promises over the Internet from people they don't
 know or trust, so Bitcoin mining validates these promises and makes it
 difficult for anyone to take back or change a promise they made earlier.
 This lets people trust the mining process rather than the person who
 made the promise.
+
+![FIXME](/img/mining/en-mining-validation.svg)
 
 Mining also releases new bitcoins into circulation. In this special
 case, miners are allowed to give themselves control over a certain

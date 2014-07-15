@@ -25,7 +25,7 @@ block3 -> invis1 [ style = "dashed", minlen = 1.5 ];
 
 block1 -> block2 -> block3;
 
-label = "Bitcoin Block Chain (Blocks Every 10 Minutes On Average)\nSome Come From P2Pool"
+label = "Bitcoin Block Chain (Blocks Every 10 Minutes On Average)\nSome Blocks Come From P2Pool"
 labelloc = b;
 }
 
@@ -43,7 +43,7 @@ share0 -> share1 -> share2 -> share3 -> share4 -> share5 -> share6 -> share7 -> 
 share10 -> share11 -> share12 -> share13 -> share14 -> share15 -> share16 -> share17 -> share18 -> share19 -> share20;
 share20 -> share21 -> share22 -> share23 -> share24 -> share25 -> share26 ;//-> share27 -> share28 -> share29 -> share30;
 
-label = "P2Pool Share Chain (Shares Every 30 Seconds On Average)\nSome Also Valid Blocks";
+label = "P2Pool Share Chain (Shares Every 30 Seconds On Average)\nSome Shares Also Valid Blocks";
 }
 share13 -> block2 [ constraint = false, minlen = 5 ];
 
