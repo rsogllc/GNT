@@ -392,8 +392,9 @@ confirmed just once.
 Outside of Bitcoin itself, miners have created tools and techniques to
 solve problems they've encountered trying to win the lottery:
 
-* **[Mining Software][section mining software]:** How can miners use specialized mining hardware that Bitcoin Core does
-  not support? Miners develop and use specialized mining software which
+* **[Hardware And Software][section hardware and software]:** How can
+  miners use specialized mining hardware that Bitcoin Core does not
+  support? Miners develop and use specialized mining software which
   manages communication between mining equipment and Bitcoin software.
 
 * **[Pooling][section pooling]:** In the Bitcoin lottery, bad luck can delay a big miner's next payment
@@ -412,7 +413,7 @@ solve problems they've encountered trying to win the lottery:
   what they mine.
 
 
-### Mining Software
+### Hardware And Software
 
 As Bitcoin has matured, people have begun splitting off parts of the
 system so that they can focus on the needs of that particular part.
@@ -437,9 +438,15 @@ own full node (such as Bitcoin Core), it's **decentralized mining.**
 If the information comes from someone else's server, it's **centralized
 mining.**
 
-**Resource:** The [Mining Software Subforum][] on BitcoinTalk.org.
+**Resources:** The Bitcoin Wiki has lists of [mining hardware][wiki
+mining hardware] and [mining software][wiki mining software]. On
+BitcoinTalk there is a [mining hardware subforum][] and [mining software
+subforum][].
 
-[Mining Software Subforum]: https://bitcointalk.org/index.php?board=42.0
+[wiki mining hardware]: https://en.bitcoin.it/wiki/Mining_hardware_comparison
+[wiki mining software]: https://en.bitcoin.it/wiki/Mining_software
+[mining software subforum]: https://bitcointalk.org/index.php?board=42.0
+[mining hardware subforum]: https://bitcointalk.org/index.php?board=76.0
 
 
 
@@ -1140,7 +1147,7 @@ volunteer.*
 [section majority attack]: #majority-attack
 [section lucky attack]: #lucky-attack
 [section tools and techniques]: #tools-and-techniques
-[section mining software]: #mining-software
+[section hardware and software]: #hardware-and-software
 [section pooling]: #pooling
 [section shares]: #shares
 [section decentralized mining]: #decentralized-mining
