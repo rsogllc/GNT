@@ -65,7 +65,7 @@ against new or uncommon scams.
 
 
 
-## How It Works
+## Theory
 
 Bitcoin mining protects the Bitcoin network and releases new bitcoins
 into circulation.
@@ -97,7 +97,7 @@ and protect promises, Bitcoin is useless and bitcoins have no value.
 
 
 
-
+<!--
 ### Overview
 
 To make promises hard to change, Bitcoin partly solves several
@@ -144,7 +144,7 @@ need their own solutions:
   bitcoins he earns become less valuable than the work he does,
   costing him money.
 
-
+-->
 
 
 ### Record Keeping
@@ -156,7 +156,7 @@ to Alice" and another promise saying "I give control over my only
 bitcoin to Bob."
 
 Only one of these promises can be accepted. It doesn't matter which one
-as long as people know which promises won't be accepted. If Bob knows
+as long as people know which promise won't be accepted. If Bob knows
 the promise he received won't be accepted, he won't give anything to the
 fraudster, so it will be attempted fraud rather than actual fraud.
 
@@ -1138,7 +1138,7 @@ volunteer.*
 
 [Bitcoin Documentation mailing list]: https://groups.google.com/forum/#!forum/bitcoin-documentation
 
-[section how it works]: #how-it-works
+[section how it works]: #theory
 [section record keeping]: #record-keeping
 [section bitcoin lottery]: #bitcoin-lottery
 [section proof of work]: #proof-of-work

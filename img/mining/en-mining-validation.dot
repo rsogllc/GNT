@@ -49,6 +49,7 @@ subgraph cluster_mining {
 }
 
 
-label = "Users Trust Mining To Validate And Protect Promises"
+label = "Mining Validates And Protects Promises So Users Who Get Paid, Stay Paid"
+//label = "Users Trust Mining To Validate And Protect Promises"
 //label = "Users Sign Promises To Give Control Over Bitcoins To Someone Else"
 }
