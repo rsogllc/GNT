@@ -750,6 +750,10 @@ For example, with a 99% decay constant, you can calculate that 10.0
 TH/s of mining equipment which will be delivered in thirty days is
 equivalent to having 7.4 TH/s of mining equipment today:
 
+    Note: I decided to change this and following formulas to use
+          e^(diff_increase_percent*days). I'll update the text once I
+          get the javascript calculators working.
+
     TK: javascript calculator
     TH/s    DC  Days   Today's Equivalent TH/s
     ----   ---- ----   -----------------------
