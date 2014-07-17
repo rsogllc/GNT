@@ -422,15 +422,11 @@ Bitcoin's proof of work, called **hashing.**
 
 This specialization ultimately moved the hashing to dedicated hardware,
 called Application-Specific Integrated Circuits (**ASICs**), which vastly
-outperform Bitcoin Core software running on a general computer. For
-example, the small $22 USD mining chip pictured below is almost 1,000 times
-faster at hashing than the laptop to which it's connected:
+outperform Bitcoin Core software running on a general computer.
 
-    TK photo
-
-Bitcoin Core does not use these devices directly. Instead, mining
+Bitcoin Core does not use ASICs directly. Instead, mining
 software was developed which takes the information that needs to be
-hashed, gives it to the hardware, and returns the results to Bitcoin
+hashed, gives it to the ASIC, and returns the results to Bitcoin
 Core or another specialized program.
 
 If the information that needs to be hashed comes primarily from your
@@ -751,7 +747,7 @@ TH/s of mining equipment which will be delivered in thirty days is
 equivalent to having 7.4 TH/s of mining equipment today:
 
     Note: I decided to change this and following formulas to use
-          e^(diff_increase_percent*days). I'll update the text once I
+          e^(-diff_increase_percent*days). I'll update the text once I
           get the javascript calculators working.
 
     TK: javascript calculator
@@ -902,7 +898,7 @@ equipment after the network hash rate increases significantly.
 
 ### Cooling Costs
 
-Almost all of the electricity used by mining equipment gets converted to
+Almost all of the electricity used by mining equipment is immediately converted to
 heat. You must get rid of any excess heat. Some mining hardware can be
 cooled without extra equipment, but you usually need a fan or something
 more complicated, so be sure to add the cost of cooling equipment to
