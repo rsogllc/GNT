@@ -374,6 +374,8 @@ for that cost of 48 bitcoins. As seen in the illustration above, the amount
 of luck required to make a successful attack drops exponentially as an
 attacker gets closer to becoming a majority miner.
 
+<!-- TODO: maybe a slider from 0-50% which shows cost & time for attack -->
+
 Just as the Bitcoin community discourages majority mining, it also to a
 lesser extent discourages anyone from mining with a significant
 fraction of the network hash rate because these miners can also make
@@ -819,7 +821,7 @@ the network hash rate---1/100<sup>th</sup> of a percent.
 <tr>
     <th width="30%">Your Hash Rate In <a href="FIXME">Today's Terms</a></th>
     <th>Network Difficulty<br/><a href="FIXME">(Get Current Value)</a></th>
-    <th>Result:<br/>Your Percent Of The Network Hash Rate</th></tr>
+    <th>Result:<br/>Your Share Of The Network Hash Rate</th></tr>
 <tr>
     <td><input id="rate" type="number" value="7.408" size="7" onchange="calculate_percent()"/>
     <select id="multiplier" onchange="calculate_percent()">
@@ -828,7 +830,8 @@ the network hash rate---1/100<sup>th</sup> of a percent.
         <option value="PH/s">PH/s</option>
     </select></td>
     <td><input id="difficulty" type="number" value="8853416309" size="20" onchange="calculate_percent()"/></td>
-    <td><label><input id="result" type="text" size="10"/></label></td>
+    <td><input id="result" type="text" size="10"/> or <input id="percent"
+    type="text" size="10"/></td>
 </tr>
 </table>
 
@@ -861,9 +864,9 @@ function calculate_percent() {
     multiplier = get_multiplier(percent_form),
     //diff_increase = diff_form.diff_increase.value;
     //days = diff_form.days.value;
-    //answer = "" + (rate/(difficulty*7158588/multiplier)*100).toFixed(5) + "%";
-    answer = "" + (rate*Math.pow(10,multiplier)/(difficulty*7158588)*100).toFixed(5) + "%";
+    answer = (rate*Math.pow(10,multiplier)/(difficulty*7158588)).toFixed(5);
     percent_form.result.value = answer;
+    percent_form.percent.value = "" + answer*100 + "%";
     percent_form.formula.value = "=" + rate + "*10^" + multiplier + "/(" + difficulty + "*7158588)";
 }
  
@@ -878,6 +881,7 @@ about 0.0025 bitcoins per block in the example described above. There
 are about 1,008 blocks a week, so your average income in this example
 would be about 2.5 bitcoins a week until difficulty rises.
 
+    TK calculator for rate to weekly income?
 
 
 
@@ -916,14 +920,44 @@ third week, and so on.
 For example, if you only make 95% as much after each week and you start
 out competitive enough to make 1 bitcoin a week, the formula to see how
 much you make in 52 weeks is:
+ 
+<form id="income" class="mining-calculator" style="border: thin solid grey;
+text-align: left;" action="javascript:void(null);" method="post" onSubmit="calculate_income();">
+<table>
+<tr>
+    <th>Starting Income Per Week In Bitcoins</th>
+    <th>Number Of Weeks</th>
+    <th>Estimated Difficulty Increase Per Week</th>
+    <th>Result:<br/>Total Estimated Income In Bitcoins</th></tr>
+<tr>
+    <td><input id="rate" type="number" value="1.00" size="7" onchange="calculate_income()"/></td>
+    <td><input id="weeks" type="number" value="52" size="3" onchange="calculate_income()"/></td>
+    <td><label><input id="diff_increase" type="number" value="5" size="3" onchange="calculate_income()"/>%</label></td>
+    <td><label><input id="result" type="text" size="14"/></label></td>
+</tr>
+</table>
 
-    TK: javascript calculator
-    Starting            (DC)         (CR)    Total BTC Earned
-    BTC/Wk       100%   95%  Weeks    5%     In 52 Weeks
-    --------     ----   ---- -----   ----   -----------------
-    1        * ( 1    - 0.95^52 )  / 0.05 = 18.61
-    (Maybe let users choose between BTC, mBTC, uBTC; maybe explain the
-    Common Ratio (CR) as the inverse of the DC here)
+<p>Spreadsheet formula:
+<label><input id="formula" size="30" type="text"/></label>
+<a href="FIXME">Link to this calculator</a></p>
+
+</form>
+
+
+
+<script type="text/javascript">
+function calculate_income() {
+    var income_form = document.forms["income"];
+    rate = income_form.rate.value;
+    weeks = income_form.weeks.value;
+    diff_increase = income_form.diff_increase.value / 100;
+    answer = "" + (rate*(1-Math.exp(-diff_increase*weeks))/(1-Math.exp(-diff_increase))).toFixed(8);
+    income_form.result.value = answer;
+    income_form.formula.value = "=" + rate + "*(1-exp(-" + diff_increase + "*" + weeks + "))/(1-exp(-" + diff_increase + "))";
+}
+
+calculate_income();
+</script>
 
 Here's a plot similar to the plot above showing total income with the
 same 95%, 90%, and 85% guesses about how competitive your equipment will
@@ -970,14 +1004,43 @@ this paragraph pays $0.15 USD per kWh and currently about $600 USD per
 bitcoin, so a 3,000 watt collection of equipment would cost him about
 0.126 bitcoins a week to run.
 
-    TK: javascript calculator; no need to get exchange rate---anyone who
-        wants to mine knows how to find the exchange rate for their currency
+<form id="electricity" class="mining-calculator" style="border: thin solid grey;
+text-align: left;" action="javascript:void(null);" method="post" onSubmit="calculate_electricity();">
+<table>
+<tr>
+    <th>Watts Used By Equipment</th>
+    <th>Price Per Kilowatt Hour (kWh)</th>
+    <th>Price Per Bitcoin</th>
+    <th>Result:<br/>Electricity Price Per Week In Bitcoins</th></tr>
+<tr>
+    <td><input id="watts" type="number" value="3000" size="7" onchange="calculate_electricity()"/></td>
+    <td><input id="price_kwh" type="number" value="0.15" size="5" onchange="calculate_electricity()"/></td>
+    <td><input id="price_btc" type="number" value="600" size="5" onchange="calculate_electricity()"/></td>
+    <td><label><input id="result" type="text" size="14"/></label></td>
+</tr>
+</table>
 
-                                 Price     Exchange    Electricity/Wk
-    Wattage   Hours/Wk   W->kW   Per kWh   Rate        In BTC
-    -------   --------   -----   -------   --------    --------------
-    3000    * 168      / 1000  * $0.15   / $600      = 0.126
-    (Maybe let users choose between BTC, mBTC, uBTC)
+<p>Spreadsheet formula:
+<label><input id="formula" size="30" type="text"/></label>
+<a href="FIXME">Link to this calculator</a></p>
+
+</form>
+
+
+
+<script type="text/javascript">
+function calculate_electricity() {
+    var electricity_form = document.forms["electricity"];
+    watts = electricity_form.watts.value;
+    price_kwh = electricity_form.price_kwh.value;
+    price_btc = electricity_form.price_btc.value;
+    answer = "" + (watts * price_kwh / price_btc * 168 / 1000).toFixed(6);
+    electricity_form.result.value = answer;
+    electricity_form.formula.value = "=" + watts + "*" + price_kwh + "/" + price_btc + "*168/1000";
+}
+
+calculate_electricity();
+</script>
 
 Using the 5% increase in weekly network hash rate from before, the
 illustration below subtracts the cost of electricity from the daily
