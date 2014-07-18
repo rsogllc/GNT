@@ -750,12 +750,55 @@ equivalent to having 7.4 TH/s of mining equipment today:
           e^(-diff_increase_percent*days). I'll update the text once I
           get the javascript calculators working.
 
-    TK: javascript calculator
-    TH/s    DC  Days   Today's Equivalent TH/s
-    ----   ---- ----   -----------------------
-      10 * 0.99^30   = 7.397
-    (Let users choose between GH/s, TH/s, PH/s)
 
+<form class="mining-calculator" style="border: thin solid grey;
+text-align: left;" id="diff" action="javascript:void(null);" method="post" onSubmit="calculate(this);">
+<table>
+<tr>
+    <th width="30%">Hash Rate Of Equipment To Buy</th>
+    <th>Estimated Difficulty Increase Per Day</th>
+    <th>Days Until Equipment Is Operational</th>
+    <th>Result:<br/>Hash Rate In Today's Terms</th></tr>
+<tr>
+    <td><input id="rate" type="number" value="10.0" size="7" onchange="calculate()"/>
+    <select id="multiplier" onchange="calculate()">
+        <option value="GH/s">GH/s</option>
+        <option value="TH/s" selected="true" >TH/s</option>
+        <option value="PH/s">PH/s</option>
+    </select></td>
+    <td><label><input id="diff_increase" onchange="calculate()" type="text" value="1.0" size = "4"/>%</label></td>
+    <td><label><input id="days" onchange="calculate()" type="number" value="30" size="3"/></label></td>
+    <td><label><input id="result" type="text" size="10"/></label></td>
+</tr>
+</table>
+
+<p>Spreadsheet formula:
+<label><input id="formula" type="text"/></label>
+<a href="FIXME">Link to this calculator</a></p>
+
+</form>
+
+
+<script type="text/javascript">
+function get_multiplier_name(form)
+{
+    var selected_multiplier = form.elements["multiplier"];
+    return selected_multiplier.value;
+}
+
+function calculate() {
+    var diff_form = document.forms["diff"];
+    rate = diff_form.rate.value;
+    multiplier = get_multiplier_name(diff_form),
+    diff_increase = diff_form.diff_increase.value;
+    days = diff_form.days.value;
+    answer = "" + (rate*Math.exp(-diff_increase/100*days)).toFixed(3) + " " + multiplier;
+    diff_form.result.value = answer;
+    diff_form.formula.value = "=" + rate + "*exp(-" + diff_increase/100 + "*" + days + ")";
+}
+
+calculate();
+</script>
 
 Once you guess how many hashes per second your equipment will generate
 in today's terms, you can estimate how much income that equipment will
@@ -771,13 +814,63 @@ For example, if network difficulty is 8,853,416,309 and your equipment's
 hash rate is 7.4 TH/s in today's terms, you will control about 0.0001 of
 the network hash rate---1/100<sup>th</sup> of a percent.
 
-    TK: javascript calculator; maybe Jekyll plugin to grab current 
-	               difficulty at site build time?
-    Your Equipment                                            Your
-           In TH/s   Network Hash Rate In TH/s               Percent 
-    --------------   -------------------------------------   ------
-               7.4 / ( 8,853,416,309 * 7,160,000 / 10^12 ) = 0.0001
-    (Let users choose between GH/s, TH/s, PH/s)
+<form id="percent" class="mining-calculator" style="border: thin solid grey; text-align: left;" action="javascript:void(null);" method="post" onSubmit="calculate_percent();">
+<table>
+<tr>
+    <th width="30%">Your Hash Rate In <a href="FIXME">Today's Terms</a></th>
+    <th>Network Difficulty<br/><a href="FIXME">(Get Current Value)</a></th>
+    <th>Result:<br/>Your Percent Of The Network Hash Rate</th></tr>
+<tr>
+    <td><input id="rate" type="number" value="7.408" size="7" onchange="calculate_percent()"/>
+    <select id="multiplier" onchange="calculate_percent()">
+        <option value="GH/s">GH/s</option>
+        <option value="TH/s" selected="true" >TH/s</option>
+        <option value="PH/s">PH/s</option>
+    </select></td>
+    <td><input id="difficulty" type="number" value="8853416309" size="20" onchange="calculate_percent()"/></td>
+    <td><label><input id="result" type="text" size="10"/></label></td>
+</tr>
+</table>
+
+<p>Spreadsheet formula:
+<label><input id="formula" size="30" type="text"/></label>
+<a href="FIXME">Link to this calculator</a></p>
+
+</form>
+
+
+
+<script type="text/javascript">
+var hashes_per_sec= new Array();
+hashes_per_sec["GH/s"]=9;
+hashes_per_sec["TH/s"]=12;
+hashes_per_sec["PH/s"]=15;
+
+function get_multiplier(form)
+{   
+    var selected_multiplier = form.elements["multiplier"];
+    //return selected_multiplier.value;
+    multiplier = hashes_per_sec[selected_multiplier.value];
+    return multiplier;
+}
+ 
+function calculate_percent() {
+    var percent_form = document.forms["percent"];
+    rate = percent_form.rate.value;
+    difficulty = percent_form.difficulty.value;
+    multiplier = get_multiplier(percent_form),
+    //diff_increase = diff_form.diff_increase.value;
+    //days = diff_form.days.value;
+    //answer = "" + (rate/(difficulty*7158588/multiplier)*100).toFixed(5) + "%";
+    answer = "" + (rate*Math.pow(10,multiplier)/(difficulty*7158588)*100).toFixed(5) + "%";
+    percent_form.result.value = answer;
+    percent_form.formula.value = "=" + rate + "*10^" + multiplier + "/(" + difficulty + "*7158588)";
+}
+ 
+calculate_percent();
+</script>
+
+<!-- TODO: maybe a jekyll plugin to grab current difficulty at site build time. -->
 
 Each block (as of this writing) is worth at least 25 bitcoins, which
 means your average reward per block is 25 bitcoins times your rate, or
