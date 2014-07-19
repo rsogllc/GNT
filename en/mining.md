@@ -374,8 +374,6 @@ for that cost of 48 bitcoins. As seen in the illustration above, the amount
 of luck required to make a successful attack drops exponentially as an
 attacker gets closer to becoming a majority miner.
 
-<!-- TODO: maybe a slider from 0-50% which shows cost & time for attack -->
-
 Just as the Bitcoin community discourages majority mining, it also to a
 lesser extent discourages anyone from mining with a significant
 fraction of the network hash rate because these miners can also make
@@ -648,7 +646,14 @@ the amount of work each miner has recently done. This has lead many
 P2Pool miners to report that they made more money mining on P2Pool than
 if they had mined in any other way.
 
-**Resources:** TK wiki, contribute link, p2pool.in
+**Resources:** The [P2Pool home page][] has instructions for getting
+started and the Bitcoin Wiki has a more [detailed description of
+P2Pool][] along with [instructions for donating to P2Pool miners][]
+(requires running a P2Pool node, which you can do without mining).
+
+[P2Pool home page]: http://p2pool.in/
+[detailed description of P2Pool]: https://en.bitcoin.it/wiki/P2Pool
+[instructinos for donating to P2Pool miners]: https://en.bitcoin.it/wiki/P2Pool#Donating_to_P2Pool_miners
 
 
 
@@ -726,10 +731,9 @@ equipment whose performance is measured in how many hashes per second
 (H/s) it produces. For convenience, hash rates are usually reported in
 gigahashes (GH/s), terahashes (TH/s), or petahashes (PH/s):
 
-    TK: table
-    GH/s | 1 billion H/s   | 10^9 H/s
-    TH/s | 1 thousand GH/s | 10^12 H/s
-    PH/s | 1 thousand TH/s | 10^15 H/s
+GH/s | 1 billion H/s   | 10<sup>9</sup> H/s
+TH/s | 1 thousand GH/s | 10<sup>12</sup> H/s
+PH/s | 1 thousand TH/s | 10<sup>15</sup> H/s
 
 Mining is a lottery, so your equipment competes against everyone elses'
 equipment. That means, for new equipment, you need to know how many
@@ -738,23 +742,15 @@ start using your equipment.
 
 There's no way to predict the future network hash rate, but you can make
 a guess. As of this writing, network hash rate typically increases by
-about 0.5% to 3.0% a day---meaning a piece of equipment is only 99.5%
-to 97.0% as competitive as it was the day before. We'll call this your
-Decay Constant (DC); multiplying it by itself once for each day elapsed
-tells you how competitive the equipment will be after a certain
-number of days.
+about 0.5% to 3.0% a day---meaning a piece of equipment is about 0.5% to
+3.0% less competitive each day.
 
-For example, with a 99% decay constant, you can calculate that 10.0
-TH/s of mining equipment which will be delivered in thirty days is
-equivalent to having 7.4 TH/s of mining equipment today:
-
-    Note: I decided to change this and following formulas to use
-          e^(-diff_increase_percent*days). I'll update the text once I
-          get the javascript calculators working.
-
+Using the calculator below, we can see that 10.0 TH/s of mining
+equipment which will be delivered in thirty days is equivalent to having
+7.4 TH/s of mining equipment today if hash rate increases by 1% a day:
 
 <form class="mining-calculator" style="border: thin solid grey;
-text-align: left;" id="diff" action="javascript:void(null);" method="post" onSubmit="calculate(this);">
+text-align: left;" id="diff" action="javascript:void(null);" method="post" onSubmit="calculate_todays_terms();">
 <table>
 <tr>
     <th width="30%">Hash Rate Of Equipment To Buy</th>
@@ -762,50 +758,30 @@ text-align: left;" id="diff" action="javascript:void(null);" method="post" onSub
     <th>Days Until Equipment Is Operational</th>
     <th>Result:<br/>Hash Rate In Today's Terms</th></tr>
 <tr>
-    <td><input id="rate" type="number" value="10.0" size="7" onchange="calculate()"/>
-    <select id="multiplier" onchange="calculate()">
+    <td><input id="rate" type="number" value="10.0" size="7" onchange="calculate_todays_terms()"/>
+    <select id="multiplier" onchange="calculate_todays_terms()">
         <option value="GH/s">GH/s</option>
         <option value="TH/s" selected="true" >TH/s</option>
         <option value="PH/s">PH/s</option>
     </select></td>
-    <td><label><input id="diff_increase" onchange="calculate()" type="text" value="1.0" size = "4"/>%</label></td>
-    <td><label><input id="days" onchange="calculate()" type="number" value="30" size="3"/></label></td>
+    <td><label><input id="diff_increase" onchange="calculate_todays_terms()" type="text" value="1.0" size = "4"/>%</label></td>
+    <td><label><input id="days" onchange="calculate_todays_terms()" type="number" value="30" size="3"/></label></td>
     <td><label><input id="result" type="text" size="10"/></label></td>
 </tr>
 </table>
 
 <p>Spreadsheet formula:
-<label><input id="formula" type="text"/></label>
+<label><input id="formula" type="text"/></label></p>
+<p>Formula used: <a href="FIXME">exponential decay</a>
 <a href="FIXME">Link to this calculator</a></p>
 
 </form>
 
 
-<script type="text/javascript">
-function get_multiplier_name(form)
-{
-    var selected_multiplier = form.elements["multiplier"];
-    return selected_multiplier.value;
-}
-
-function calculate() {
-    var diff_form = document.forms["diff"];
-    rate = diff_form.rate.value;
-    multiplier = get_multiplier_name(diff_form),
-    diff_increase = diff_form.diff_increase.value;
-    days = diff_form.days.value;
-    answer = "" + (rate*Math.exp(-diff_increase/100*days)).toFixed(3) + " " + multiplier;
-    diff_form.result.value = answer;
-    diff_form.formula.value = "=" + rate + "*exp(-" + diff_increase/100 + "*" + days + ")";
-}
-
-calculate();
-</script>
-
 Once you guess how many hashes per second your equipment will generate
 in today's terms, you can estimate how much income that equipment will
 earn. To start, get the [current network difficulty][] and multiply it
-by 7.16 million to get the approximate number of hashes per second on the
+by 7,158,588 to get the approximate number of hashes per second on the
 Bitcoin network.
 
 [current network difficulty]: http://blockexplorer.com/q/getdifficulty
@@ -836,52 +812,21 @@ the network hash rate---1/100<sup>th</sup> of a percent.
 </table>
 
 <p>Spreadsheet formula:
-<label><input id="formula" size="30" type="text"/></label>
+<label><input id="formula" size="30" type="text"/></label></p>
+<p>Learn more on the Bitcoin Wiki about <a href="FIXME">difficulty</a>
 <a href="FIXME">Link to this calculator</a></p>
 
 </form>
 
 
 
-<script type="text/javascript">
-var hashes_per_sec= new Array();
-hashes_per_sec["GH/s"]=9;
-hashes_per_sec["TH/s"]=12;
-hashes_per_sec["PH/s"]=15;
-
-function get_multiplier(form)
-{   
-    var selected_multiplier = form.elements["multiplier"];
-    //return selected_multiplier.value;
-    multiplier = hashes_per_sec[selected_multiplier.value];
-    return multiplier;
-}
- 
-function calculate_percent() {
-    var percent_form = document.forms["percent"];
-    rate = percent_form.rate.value;
-    difficulty = percent_form.difficulty.value;
-    multiplier = get_multiplier(percent_form),
-    //diff_increase = diff_form.diff_increase.value;
-    //days = diff_form.days.value;
-    answer = (rate*Math.pow(10,multiplier)/(difficulty*7158588)).toFixed(5);
-    percent_form.result.value = answer;
-    percent_form.percent.value = "" + answer*100 + "%";
-    percent_form.formula.value = "=" + rate + "*10^" + multiplier + "/(" + difficulty + "*7158588)";
-}
- 
-calculate_percent();
-</script>
-
 <!-- TODO: maybe a jekyll plugin to grab current difficulty at site build time. -->
 
 Each block (as of this writing) is worth at least 25 bitcoins, which
-means your average reward per block is 25 bitcoins times your rate, or
+means your average reward per block is about 25 bitcoins times your rate, or
 about 0.0025 bitcoins per block in the example described above. There
 are about 1,008 blocks a week, so your average income in this example
 would be about 2.5 bitcoins a week until difficulty rises.
-
-    TK calculator for rate to weekly income?
 
 
 
@@ -902,12 +847,10 @@ profitable your equipment will be at the end of an average week, and how
 many weeks into the future you want to guess, you can use the basic
 formula from above to approximate your weekly income at a certain time.
 
-For example, if you make 1 bitcoin a week now, you make only 95% as much
-after each week (your decay constant), and you want to look 52 weeks
-into the future, the formula is: `1*0.95^52`, which results in you only
-earning 0.069 bitcoins per week after 52 weeks. The plot below
-substitutes *x* for the number of weeks elapsed over 104 weeks (two
-years) with guesses of 95%, 90%, and 85% for the decay constant:
+For example, if you make 1 bitcoin a week now and you expect difficulty
+to rise by about 5% a week on average, you will only earn 0.069 bitcoins
+in week 52. The plot below shows the amout of money you would make each
+week if difficulty increases by 5%, 10%, or 15% a week.
 
 ![FIXME](/img/mining/en-mining-equipment-exponential-decay.svg)
 
@@ -917,9 +860,9 @@ bitcoins you make in the first week to the slightly fewer bitcoins you
 make in the second week to the even fewer bitcoins you make in the
 third week, and so on.
 
-For example, if you only make 95% as much after each week and you start
-out competitive enough to make 1 bitcoin a week, the formula to see how
-much you make in 52 weeks is:
+For example, if difficulty increases by 5% a week and you start out
+competitive enough to make 1 bitcoin a week, you will make just under 19
+bitcoins in 52 weeks.
  
 <form id="income" class="mining-calculator" style="border: thin solid grey;
 text-align: left;" action="javascript:void(null);" method="post" onSubmit="calculate_income();">
@@ -938,30 +881,15 @@ text-align: left;" action="javascript:void(null);" method="post" onSubmit="calcu
 </table>
 
 <p>Spreadsheet formula:
-<label><input id="formula" size="30" type="text"/></label>
+<label><input id="formula" size="30" type="text"/></label></p>
+<p>Formulas used: <a href="FIXME">exponential decay</a> and <a
+href="FIXME">geometric progression</a>
 <a href="FIXME">Link to this calculator</a></p>
 
 </form>
 
-
-
-<script type="text/javascript">
-function calculate_income() {
-    var income_form = document.forms["income"];
-    rate = income_form.rate.value;
-    weeks = income_form.weeks.value;
-    diff_increase = income_form.diff_increase.value / 100;
-    answer = "" + (rate*(1-Math.exp(-diff_increase*weeks))/(1-Math.exp(-diff_increase))).toFixed(8);
-    income_form.result.value = answer;
-    income_form.formula.value = "=" + rate + "*(1-exp(-" + diff_increase + "*" + weeks + "))/(1-exp(-" + diff_increase + "))";
-}
-
-calculate_income();
-</script>
-
 Here's a plot similar to the plot above showing total income with the
-same 95%, 90%, and 85% guesses about how competitive your equipment will
-be after each week of increase in the network hash rate:
+same 5%, 10%, and 15% guesses about difficulty increases:
 
 ![FIXME](/img/mining/en-mining-equipment-profit-progression.svg)
 
@@ -1021,26 +949,15 @@ text-align: left;" action="javascript:void(null);" method="post" onSubmit="calcu
 </table>
 
 <p>Spreadsheet formula:
-<label><input id="formula" size="30" type="text"/></label>
+<label><input id="formula" size="30" type="text"/></label></p>
+<p>See Wikipedia's <a
+href="https://en.wikipedia.org/wiki/Electricity_pricing#Global_electricity_price_comparison">table
+of global electrical prices</a>
 <a href="FIXME">Link to this calculator</a></p>
 
 </form>
 
 
-
-<script type="text/javascript">
-function calculate_electricity() {
-    var electricity_form = document.forms["electricity"];
-    watts = electricity_form.watts.value;
-    price_kwh = electricity_form.price_kwh.value;
-    price_btc = electricity_form.price_btc.value;
-    answer = "" + (watts * price_kwh / price_btc * 168 / 1000).toFixed(6);
-    electricity_form.result.value = answer;
-    electricity_form.formula.value = "=" + watts + "*" + price_kwh + "/" + price_btc + "*168/1000";
-}
-
-calculate_electricity();
-</script>
 
 Using the 5% increase in weekly network hash rate from before, the
 illustration below subtracts the cost of electricity from the daily
@@ -1325,3 +1242,68 @@ volunteer.*
 </div>
 <script>updateToc();</script>
 <script>addAnchorLinks();</script>
+
+<script type="text/javascript">
+function calculate_todays_terms() {
+    var diff_form = document.forms["diff"];
+    rate = diff_form.rate.value;
+    multiplier = diff_form.multiplier.value;
+    diff_increase = diff_form.diff_increase.value;
+    days = diff_form.days.value;
+    answer = "" + (rate*Math.exp(-diff_increase/100*days)).toFixed(3) + " " + multiplier;
+    diff_form.result.value = answer;
+    diff_form.formula.value = "=" + rate + "*exp(-" + diff_increase/100 + "*" + days + ")";
+}
+
+
+var hashes_per_sec= new Array();
+hashes_per_sec["GH/s"]=9;
+hashes_per_sec["TH/s"]=12;
+hashes_per_sec["PH/s"]=15;
+
+function get_multiplier(form)
+{   
+    var selected_multiplier = form.elements["multiplier"];
+    multiplier = hashes_per_sec[selected_multiplier.value];
+    return multiplier;
+}
+ 
+function calculate_percent() {
+    var percent_form = document.forms["percent"];
+    rate = percent_form.rate.value;
+    difficulty = percent_form.difficulty.value;
+    multiplier = get_multiplier(percent_form),
+    answer = (rate*Math.pow(10,multiplier)/(difficulty*7158588)).toFixed(5);
+    percent_form.result.value = answer;
+    percent_form.percent.value = "" + (answer*100).toFixed(3) + "%";
+    percent_form.formula.value = "=" + rate + "*10^" + multiplier + "/(" + difficulty + "*7158588)";
+}
+ 
+
+function calculate_income() {
+    var income_form = document.forms["income"];
+    rate = income_form.rate.value;
+    weeks = income_form.weeks.value;
+    diff_increase = income_form.diff_increase.value / 100;
+    answer = "" + (rate*(1-Math.exp(-diff_increase*weeks))/(1-Math.exp(-diff_increase))).toFixed(8);
+    income_form.result.value = answer;
+    income_form.formula.value = "=" + rate + "*(1-exp(-" + diff_increase + "*" + weeks + "))/(1-exp(-" + diff_increase + "))";
+}
+
+
+function calculate_electricity() {
+    var electricity_form = document.forms["electricity"];
+    watts = electricity_form.watts.value;
+    price_kwh = electricity_form.price_kwh.value;
+    price_btc = electricity_form.price_btc.value;
+    answer = "" + (watts * price_kwh / price_btc * 168 / 1000).toFixed(6);
+    electricity_form.result.value = answer;
+    electricity_form.formula.value = "=" + watts + "*" + price_kwh + "/" + price_btc + "*168/1000";
+}
+
+calculate_todays_terms();
+calculate_percent();
+calculate_income();
+calculate_electricity();
+</script>
+
