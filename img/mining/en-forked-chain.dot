@@ -10,23 +10,7 @@ edge [ penwidth = 1.75, fontname="Sans" ]
 node [ penwidth = 1.75, shape = "box", fontname="Sans", label = "", width=0.3, height=0.3 ]
 graph [ penwidth = 1.75, fontname="Sans" ]
 
-//ticket [ label = "Tickets With\nSigned Promises\n& Other Data", shape = "none" ]
-//hash [ label =    "Random Hash Number;\nMust Be Below Target\nNumber To Win", shape = "none" ]
-
-//hash0001 [ label = "#", fontsize = 18, shape = "none" ]
-//hash0002 [ label = "#", fontsize = 18, shape = "none" ]
-//hash0003 [ label = "#", fontsize = 18, shape = "none" ]
-//hash0730 [ label = "#", fontsize = 18, shape = "none" ]
-//hash0731 [ label = "#", fontsize = 18, shape = "none" ]
-//hash0732 [ label = "#", fontsize = 18, shape = "none" ]
-//hash0733 [ label = "#", fontsize = 18, shape = "none" ]
-//hash0734 [ label = "#", fontsize = 18, shape = "none" ]
-//hash0735 [ label = "#", fontsize = 18, shape = "none" ]
-//hash0736 [ label = "#", fontsize = 18, shape = "none" ]
-//hash0737 [ label = "#", fontsize = 18, shape = "none" ]
-//hash0738 [ label = "#", fontsize = 18, shape = "none" ]
-
-invis1 [ shape = "none", label = "Losers\n(Not Longest)" ]
+invis1 [ shape = "none", label = " \nLosers\n(Not Longest)" ]
 invis0 [ shape = "none", label = "Longest\nChain" ];
 
 subgraph cluster_mainchain {

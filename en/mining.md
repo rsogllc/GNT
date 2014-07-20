@@ -653,7 +653,7 @@ P2Pool][] along with [instructions for donating to P2Pool miners][]
 
 [P2Pool home page]: http://p2pool.in/
 [detailed description of P2Pool]: https://en.bitcoin.it/wiki/P2Pool
-[instructinos for donating to P2Pool miners]: https://en.bitcoin.it/wiki/P2Pool#Donating_to_P2Pool_miners
+[instructions for donating to P2Pool miners]: https://en.bitcoin.it/wiki/P2Pool#Donating_to_P2Pool_miners
 
 
 
@@ -832,7 +832,11 @@ would be about 2.5 bitcoins a week until difficulty rises.
 
 ### Difficulty
 
-The network difficulty increases when the network hash rate increases.
+Every 2,016 blocks, Bitcoin adjusts how difficult it is to find a block,
+increasing the difficulty when the network hash rate increases and
+decreasing it when the rate decreaeses. In 2009, difficulty mostly
+stayed the same; ever since, it has almost always gone up.
+
 Every increase in difficulty makes your mining equipment that much less
 competitive, reducing your mining income. Although you can look at a
 [table of past difficulty changes][], all you can do is guess about
@@ -840,19 +844,25 @@ future changes.
 
 [table of past difficulty changes]: https://bitcoinwisdom.com/bitcoin/difficulty
 
-Because your guess is very likely to be inaccurate, you probably want to
-make several guesses to see how they compare. If you know about how many
-bitcoins you'll make in a week at current rates, about how much less
-profitable your equipment will be at the end of an average week, and how
-many weeks into the future you want to guess, you can use the basic
-formula from above to approximate your weekly income at a certain time.
+Because guesses are very likely to be inaccurate, you should always make
+several guesses to see how they compare. If you know about how many
+bitcoins you'll make in a week at current rates, about how much
+difficulty increases in an average week, and how many weeks into the
+future you want to guess, you can approximate your weekly income at a
+certain time.
 
 For example, if you make 1 bitcoin a week now and you expect difficulty
-to rise by about 5% a week on average, you will only earn 0.069 bitcoins
+to rise by about 5% a week on average, you will only earn 0.074 bitcoins
 in week 52. The plot below shows the amout of money you would make each
 week if difficulty increases by 5%, 10%, or 15% a week.
 
 ![FIXME](/img/mining/en-mining-equipment-exponential-decay.svg)
+
+The formula used above, and in the calculator below, models difficulty
+changes as continous even though they really occur only every 2,016
+blocks. This keeps the formula simple but means it may produce a number
+that is a few percent higher or lower than reality, depending mostly
+upon how close you are to a 2,016-block boundary when you start mining.
 
 A more useful number is how much income you might make over the
 lifetime of your mining equipment. We use a formula that adds the
