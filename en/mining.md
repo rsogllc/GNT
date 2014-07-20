@@ -1080,8 +1080,8 @@ expensive.
 
 Extending our example plot from the [Electrical Costs][section electrical costs] subsection
 above, if bitcoins start off worth $500 USD and you pay $50 USD per week
-for electricity, the red plot below shows your profits in USD with
-bitcoin prices increasing by 2% per week and the green plot shows your
+for electricity, the green plot below shows your profits in USD with
+bitcoin prices increasing by 2% per week and the red plot shows your
 profits with bitcoin prices decreasing by 2% per week. For easy
 comparison, we assume you sell or spend your bitcoins as soon as you
 earn them. As with previous charts, we also assume network hash rate

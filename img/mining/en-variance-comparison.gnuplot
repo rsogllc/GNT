@@ -17,7 +17,8 @@ plot [0:300] 1-exp(-(1./70)*x) ls 1 title "1x 'Average' Hash Rate", \
     1-exp(-(1./(70./4))*x) ls 3 title "4x 'Average' Hash Rate", \
     1-exp(-(1./(70./8))*x) ls 4 title "8x 'Average' Hash Rate"
 
-set terminal png size 600,220 font "Sans,12"
+set samples 10000
+set terminal pngcairo size 600,220 font "Sans,12"
 set output "en-variance-comparison.png"
 
 replot
