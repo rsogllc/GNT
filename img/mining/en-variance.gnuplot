@@ -8,9 +8,10 @@ set yrange [0:1]
 set key right center samplen 0
 unset key
 set ylabel "Culmative Probability\nOf Finding A Block"
-set xlabel "Days Since Starting Search For An 'Average' (1/10,000) Miner"
-
+set xlabel "Days Since Starting Search"
 set grid
+
+set label 1 "An 'Average' (1/10,000) Miner's\nCulmative Probability Of\nFinding A Block" at 95,.65 tc ls 1
 
 
 plot [0:300] 1-exp(-1/(10000*600./24/60/60)*x) ls 1

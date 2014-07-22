@@ -749,8 +749,7 @@ Using the calculator below, we can see that 10.0 TH/s of mining
 equipment which will be delivered in thirty days is equivalent to having
 7.4 TH/s of mining equipment today if hash rate increases by 1% a day:
 
-<form class="mining-calculator" style="border: thin solid grey;
-text-align: left;" id="diff" action="javascript:void(null);" method="post" onSubmit="calculate_todays_terms();">
+<form class="mining-calculator" id="diff" action="javascript:void(null);" method="post" onSubmit="calculate_todays_terms();">
 <table>
 <tr>
     <th width="30%">Hash Rate Of Equipment To Buy</th>
@@ -758,20 +757,19 @@ text-align: left;" id="diff" action="javascript:void(null);" method="post" onSub
     <th>Days Until Equipment Is Operational</th>
     <th>Result:<br/>Hash Rate In Today's Terms</th></tr>
 <tr>
-    <td><input id="rate" type="number" value="10.0" size="7" onchange="calculate_todays_terms()"/>
-    <select id="multiplier" onchange="calculate_todays_terms()">
+    <td><input id="diff_rate" type="number" value="10.0" step="0.1" onchange="calculate_todays_terms()" style="width: 70px;" /><select id="diff_multiplier" onchange="calculate_todays_terms()">
         <option value="GH/s">GH/s</option>
         <option value="TH/s" selected="true" >TH/s</option>
         <option value="PH/s">PH/s</option>
     </select></td>
-    <td><label><input id="diff_increase" onchange="calculate_todays_terms()" type="text" value="1.0" size = "4"/>%</label></td>
-    <td><label><input id="days" onchange="calculate_todays_terms()" type="number" value="30" size="3"/></label></td>
-    <td><label><input id="result" type="text" size="10"/></label></td>
+    <td><label><input id="diff_diff_increase" onchange="calculate_todays_terms()" step="0.5" type="number" value="1.0" style="width: 50px;"/>%</label></td>
+    <td><label><input id="diff_days" onchange="calculate_todays_terms()" type="number" step="1" value="30" style="width:70px;" /></label></td>
+    <td><label><input id="diff_result" type="text" style="width:200px;" /></label></td>
 </tr>
 </table>
 
 <p>Spreadsheet formula:
-<label><input id="formula" type="text"/></label></p>
+<label><input id="diff_formula" class="mining-formula" type="text" /></label></p>
 <p>Formula used: <a href="FIXME">exponential decay</a>
 <a href="FIXME">Link to this calculator</a></p>
 
@@ -792,27 +790,26 @@ For example, if network difficulty is 8,853,416,309 and your equipment's
 hash rate is 7.4 TH/s in today's terms, you will control about 0.0001 of
 the network hash rate---1/100<sup>th</sup> of a percent.
 
-<form id="percent" class="mining-calculator" style="border: thin solid grey; text-align: left;" action="javascript:void(null);" method="post" onSubmit="calculate_percent();">
+<form id="percent" class="mining-calculator" action="javascript:void(null);" method="post" onSubmit="calculate_percent();">
 <table>
 <tr>
     <th width="30%">Your Hash Rate In <a href="FIXME">Today's Terms</a></th>
     <th>Network Difficulty<br/><a href="FIXME">(Get Current Value)</a></th>
     <th>Result:<br/>Your Share Of The Network Hash Rate</th></tr>
 <tr>
-    <td><input id="rate" type="number" value="7.408" size="7" onchange="calculate_percent()"/>
-    <select id="multiplier" onchange="calculate_percent()">
+    <td><input id="percent_rate" type="number" value="7.408" step="0.1" style="width: 70px;" onchange="calculate_percent()"/><select id="percent_multiplier" onchange="calculate_percent()">
         <option value="GH/s">GH/s</option>
         <option value="TH/s" selected="true" >TH/s</option>
         <option value="PH/s">PH/s</option>
     </select></td>
-    <td><input id="difficulty" type="number" value="8853416309" size="20" onchange="calculate_percent()"/></td>
-    <td><input id="result" type="text" size="10"/> or <input id="percent"
-    type="text" size="10"/></td>
+    <td><input id="percent_difficulty" type="number" value="8853416309"  step="1000000000" stlye="width: 70px;" onchange="calculate_percent()"/></td>
+    <td><input id="percent_result" type="text" style="width: 90px;"/> or<br/><input id="percent_percent"
+    type="text" style="width:90px;"/></td>
 </tr>
 </table>
 
 <p>Spreadsheet formula:
-<label><input id="formula" size="30" type="text"/></label></p>
+<label><input id="percent_formula" type="text" class="mining-formula" /></label></p>
 <p>Learn more on the Bitcoin Wiki about <a href="FIXME">difficulty</a>
 <a href="FIXME">Link to this calculator</a></p>
 
@@ -874,8 +871,7 @@ For example, if difficulty increases by 5% a week and you start out
 competitive enough to make 1 bitcoin a week, you will make just under 19
 bitcoins in 52 weeks.
  
-<form id="income" class="mining-calculator" style="border: thin solid grey;
-text-align: left;" action="javascript:void(null);" method="post" onSubmit="calculate_income();">
+<form id="income" class="mining-calculator" action="javascript:void(null);" method="post" onSubmit="calculate_income();">
 <table>
 <tr>
     <th>Starting Income Per Week In Bitcoins</th>
@@ -883,15 +879,15 @@ text-align: left;" action="javascript:void(null);" method="post" onSubmit="calcu
     <th>Estimated Difficulty Increase Per Week</th>
     <th>Result:<br/>Total Estimated Income In Bitcoins</th></tr>
 <tr>
-    <td><input id="rate" type="number" value="1.00" size="7" onchange="calculate_income()"/></td>
-    <td><input id="weeks" type="number" value="52" size="3" onchange="calculate_income()"/></td>
-    <td><label><input id="diff_increase" type="number" value="5" size="3" onchange="calculate_income()"/>%</label></td>
-    <td><label><input id="result" type="text" size="14"/></label></td>
+    <td><input id="income_rate" type="number" value="1.00"  step="0.1" style="width:70px;" onchange="calculate_income()"/></td>
+    <td><input id="income_weeks" type="number" value="52"  step="1" style="width:40px;" onchange="calculate_income()"/></td>
+    <td><label><input id="income_diff_increase" type="number" value="5" step="1" style="width:40px;"  onchange="calculate_income()"/>%</label></td>
+    <td><label><input id="income_result" style="width:140px;" type="text" /></label></td>
 </tr>
 </table>
 
 <p>Spreadsheet formula:
-<label><input id="formula" size="30" type="text"/></label></p>
+<label><input id="income_formula"  class="mining-formula" type="text"/></label></p>
 <p>Formulas used: <a href="FIXME">exponential decay</a> and <a
 href="FIXME">geometric progression</a>
 <a href="FIXME">Link to this calculator</a></p>
@@ -942,8 +938,7 @@ this paragraph pays $0.15 USD per kWh and currently about $600 USD per
 bitcoin, so a 3,000 watt collection of equipment would cost him about
 0.126 bitcoins a week to run.
 
-<form id="electricity" class="mining-calculator" style="border: thin solid grey;
-text-align: left;" action="javascript:void(null);" method="post" onSubmit="calculate_electricity();">
+<form id="electricity" class="mining-calculator" action="javascript:void(null);" method="post" onSubmit="calculate_electricity();">
 <table>
 <tr>
     <th>Watts Used By Equipment</th>
@@ -951,15 +946,15 @@ text-align: left;" action="javascript:void(null);" method="post" onSubmit="calcu
     <th>Price Per Bitcoin</th>
     <th>Result:<br/>Electricity Price Per Week In Bitcoins</th></tr>
 <tr>
-    <td><input id="watts" type="number" value="3000" size="7" onchange="calculate_electricity()"/></td>
-    <td><input id="price_kwh" type="number" value="0.15" size="5" onchange="calculate_electricity()"/></td>
-    <td><input id="price_btc" type="number" value="600" size="5" onchange="calculate_electricity()"/></td>
-    <td><label><input id="result" type="text" size="14"/></label></td>
+    <td><input id="electricity_watts" type="number" value="3000" step="100" style="width:60px;" onchange="calculate_electricity()"/></td>
+    <td><input id="electricity_price_kwh" type="number" value="0.15" step="0.01" style="width:60px;" onchange="calculate_electricity()"/></td>
+    <td><input id="electricity_price_btc" type="number" value="600" step="50" style="width:60px;"  onchange="calculate_electricity()"/></td>
+    <td><label><input id="electricity_result" type="text" style="width:120px;" /></label></td>
 </tr>
 </table>
 
 <p>Spreadsheet formula:
-<label><input id="formula" size="30" type="text"/></label></p>
+<label><input id="electricity_formula"  type="text" class="mining-formula" /></label></p>
 <p>See Wikipedia's <a
 href="https://en.wikipedia.org/wiki/Electricity_pricing#Global_electricity_price_comparison">table
 of global electrical prices</a>
@@ -1256,13 +1251,13 @@ volunteer.*
 <script type="text/javascript">
 function calculate_todays_terms() {
     var diff_form = document.forms["diff"];
-    rate = diff_form.rate.value;
-    multiplier = diff_form.multiplier.value;
-    diff_increase = diff_form.diff_increase.value;
-    days = diff_form.days.value;
+    rate = diff_form.diff_rate.value;
+    multiplier = diff_form.diff_multiplier.value;
+    diff_increase = diff_form.diff_diff_increase.value;
+    days = diff_form.diff_days.value;
     answer = "" + (rate*Math.exp(-diff_increase/100*days)).toFixed(3) + " " + multiplier;
-    diff_form.result.value = answer;
-    diff_form.formula.value = "=" + rate + "*exp(-" + diff_increase/100 + "*" + days + ")";
+    diff_form.diff_result.value = answer;
+    diff_form.diff_formula.value = "=" + rate + "*exp(-" + diff_increase/100 + "*" + days + ")";
 }
 
 
@@ -1273,42 +1268,42 @@ hashes_per_sec["PH/s"]=15;
 
 function get_multiplier(form)
 {   
-    var selected_multiplier = form.elements["multiplier"];
+    var selected_multiplier = form.elements["percent_multiplier"];
     multiplier = hashes_per_sec[selected_multiplier.value];
     return multiplier;
 }
  
 function calculate_percent() {
     var percent_form = document.forms["percent"];
-    rate = percent_form.rate.value;
-    difficulty = percent_form.difficulty.value;
+    rate = percent_form.percent_rate.value;
+    difficulty = percent_form.percent_difficulty.value;
     multiplier = get_multiplier(percent_form),
     answer = (rate*Math.pow(10,multiplier)/(difficulty*7158588)).toFixed(5);
-    percent_form.result.value = answer;
-    percent_form.percent.value = "" + (answer*100).toFixed(3) + "%";
-    percent_form.formula.value = "=" + rate + "*10^" + multiplier + "/(" + difficulty + "*7158588)";
+    percent_form.percent_result.value = answer;
+    percent_form.percent_percent.value = "" + (answer*100).toFixed(3) + "%";
+    percent_form.percent_formula.value = "=" + rate + "*10^" + multiplier + "/(" + difficulty + "*7158588)";
 }
  
 
 function calculate_income() {
     var income_form = document.forms["income"];
-    rate = income_form.rate.value;
-    weeks = income_form.weeks.value;
-    diff_increase = income_form.diff_increase.value / 100;
+    rate = income_form.income_rate.value;
+    weeks = income_form.income_weeks.value;
+    diff_increase = income_form.income_diff_increase.value / 100;
     answer = "" + (rate*(1-Math.exp(-diff_increase*weeks))/(1-Math.exp(-diff_increase))).toFixed(8);
-    income_form.result.value = answer;
-    income_form.formula.value = "=" + rate + "*(1-exp(-" + diff_increase + "*" + weeks + "))/(1-exp(-" + diff_increase + "))";
+    income_form.income_result.value = answer;
+    income_form.income_formula.value = "=" + rate + "*(1-exp(-" + diff_increase + "*" + weeks + "))/(1-exp(-" + diff_increase + "))";
 }
 
 
 function calculate_electricity() {
     var electricity_form = document.forms["electricity"];
-    watts = electricity_form.watts.value;
-    price_kwh = electricity_form.price_kwh.value;
-    price_btc = electricity_form.price_btc.value;
+    watts = electricity_form.electricity_watts.value;
+    price_kwh = electricity_form.electricity_price_kwh.value;
+    price_btc = electricity_form.electricity_price_btc.value;
     answer = "" + (watts * price_kwh / price_btc * 168 / 1000).toFixed(6);
-    electricity_form.result.value = answer;
-    electricity_form.formula.value = "=" + watts + "*" + price_kwh + "/" + price_btc + "*168/1000";
+    electricity_form.electricity_result.value = answer;
+    electricity_form.electricity_formula.value = "=" + watts + "*" + price_kwh + "/" + price_btc + "*168/1000";
 }
 
 calculate_todays_terms();
