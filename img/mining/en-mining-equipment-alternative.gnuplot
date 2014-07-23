@@ -7,7 +7,7 @@ set output "en-mining-equipment-alternative.svg"
 set key left top reverse Left samplen .01 
 unset key
 set format y "$%'g"
-set xlabel "Weeks Since Investing $2,500 In Either Bitcoins Or Imaginary 5 BTC Equipment" offset -4
+set xlabel "Weeks Since Investing $2,500 In Either Bitcoins Or Imaginary Equipment" offset -4
 set ylabel "Investment Return"
 
 set label 1 "Mining At +2% Price & +5% Difficulty / Week\nElectricity Included" at 2,13000 tc ls 2 rotate by 0

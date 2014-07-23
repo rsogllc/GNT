@@ -7,13 +7,14 @@ set grid
 set key opaque box height .1 width 0.1 samplen 0 spacing 0.95 right center
 unset key
 unset ytics
-set xtics ("10" 10, "1" 1, "99" 99)
+set xtics ("" 10, "" 1, "" 99) nomirror
+set x2tics ("10" 10, "1" 1, "99" 99)
 set xlabel "Simulated Distribution Of 100 Random Numbers"
 set xrange [0:99]
 
-set label 3 "Share & Block" at 19,-28 tc ls 3 rotate by 0
-set label 2 "Share But Not Block" at 40,-28 tc ls 2
-set label 1 "Invalid Block" at 69,-28 tc ls 1
+set label 3 "Share & Block" at 9,-65 tc ls 3 rotate by 0
+set label 2 "Share But Not Block" at 40,-65 tc ls 2
+set label 1 "Invalid Block" at 79,-65 tc ls 1
 
 ## We cheat here: instead of illustrating true randomness
 ## (which---surprise---makes for random graphs), we illustrate a perfect

@@ -76,7 +76,7 @@ someone *control* over a certain amount of bitcoins. The receiver of
 that promise can then digitally sign another promise to give someone
 else control over those bitcoins.
 
-![FIXME](/img/mining/en-unvalidated-promises.svg)
+![Users Sign Promises To Give Control Over Bitcoins To Other People](/img/mining/en-unvalidated-promises.svg)
 
 Nobody wants to accept promises over the Internet from people they don't
 know or trust, so Bitcoin mining validates these promises and makes it
@@ -84,7 +84,7 @@ difficult for anyone to take back or change a promise they made earlier.
 This lets people trust the mining process rather than the person who
 made the promise.
 
-![FIXME](/img/mining/en-mining-validation.svg)
+![Mining Validates And Protects Promises So Users Who Get Paid, Stay Paid](/img/mining/en-mining-validation.svg)
 
 Mining also releases new bitcoins into circulation. In this special
 case, miners are allowed to give themselves control over a certain
@@ -94,57 +94,6 @@ bitcoins to other people.
 Many people focus on mining as the distribution of new bitcoins---it is
 called mining after all---but unless users can trust mining to validate
 and protect promises, Bitcoin is useless and bitcoins have no value.
-
-
-
-<!--
-### Overview
-
-To make promises hard to change, Bitcoin partly solves several
-problems. The problems are partly solved because each solution
-introduces new problems. By partly solving these new problems, and
-their sub-problems (and so on), we arrive at a system where promises
-can be very hard to change.
-
-Some of the problems Bitcoin solves are:
-
-* **[Online Exchange][section how it works]:** How can people transfer wealth over the Internet? Bitcoin invents a
-  new type of property (bitcoins) and lets people transfer control
-  over certain amounts of bitcoins using signed promises.
-
-* **[Record Keeping][section record keeping]:** How do we prevent people from signing promises they can't keep, or
-  from making contradictory promises? Bitcoin lets anyone keep a record
-  of what promises they consider valid.
-
-* **[Bitcoin Lottery][section bitcoin lottery]:** What do we do when the records of two or more people disagree about
-  which promises are valid? Bitcoin holds a decentralized lottery, and
-  the winner gets to decide which promises are added to the official
-  record.
-
-Using the Bitcoin lottery to manage the official record is the essence
-of mining---but running a decentralized lottery is complicated: miners
-can make their own tickets; a single lottery might have multiple winning
-tickets; and miners who can win more than one lottery in a row can
-change the official record and possibly steal bitcoins. These problems
-need their own solutions:
-
-* **[Proof Of Work][section proof of work]:** If each miner can make his own tickets, how do we prevent miners
-  from making an unlimited number of tickets? Bitcoin makes mining
-  equipment do work to create tickets, so the more tickets are
-  created, the more work needs to be done.
-
-* **[Block Chain][section the block chain]:** What do we do when two or more miners each discover a winning lottery
-  ticket? Bitcoin lets the miner who wins the next lottery decide which
-  of the previous winning tickets actually won the previous lottery.
-
-* **[Attacks][section attacks]:** How do we discourage dishonest miners from changing the official record by
-  using their wins in new lotteries to choose their own tickets in old
-  lotteries? Bitcoin pays lottery winners for the work they do, but if
-  a miner makes the system unreliable by changing the record, the
-  bitcoins he earns become less valuable than the work he does,
-  costing him money.
-
--->
 
 
 ### Record Keeping
@@ -194,7 +143,7 @@ winning ticket is to check a lot of losing tickets. That means a winning
 ticket in the Bitcoin lottery proves that a lot of work was done to find
 it, called **proof of work.**
 
-![FIXME](/img/mining/en-ticket-checking.svg)
+![Checking Random Hash Numbers From Many Different Tickets Requires Work](/img/mining/en-ticket-checking.svg)
 
 Work uses resources that could be used elsewhere, so proof of work is
 proof that somebody sacrificed something in return for creating a
@@ -227,14 +176,14 @@ in the first place: another lottery.
 In order to create a valid ticket for a particular lottery, that ticket
 must include the winning number of a ticket from the previous lottery.
 
-![FIXME](/img/mining/en-sequential-chain.svg)
+![Tickets Must Include The Winning Hash Number Of A Ticket From The Previous Lottery](/img/mining/en-sequential-chain.svg)
 
 The tickets form a chain with each winning ticket linking to a
 previous winning ticket. Whenever there are two or more winning tickets
 for a particular lottery, we find which ticket is part of the **longest
 chain** and declare that the actual winning ticket.
 
-![FIXME](/img/mining/en-forked-chain.svg)
+![Winning Tickets Must Be Part Of The Longest Chain To Be Actual Winners](/img/mining/en-forked-chain.svg)
 
 This means a miner cannot change the official record by finding
 winning tickets for a past lottery unless he also finds winning
@@ -315,7 +264,7 @@ block at the current tip. To make this work, he has to also find the
 next block so that he can choose his replacement block as the winner of
 the previous lottery.
 
-![FIXME](/img/mining/en-forked-chain-attack.svg)
+![Lucky Attackers Find Multiple Blocks Before Honest Miners Find One](/img/mining/en-forked-chain-attack.svg)
 
 The attack fails if someone else adds one new block to the tip before
 the attacker can find two blocks. Any work an attacker does on a failed
@@ -350,7 +299,7 @@ the more luck he needs to have. For example, the illustration below
 shows that the 5% attacker could never practically attack a transaction
 with six confirmations.
 
-![FIXME](/img/mining/en-confirmed-double-spend-cost.svg)
+![The Cost In Sacrificed Income Of An Attack On Confirmed Transactions](/img/mining/en-confirmed-double-spend-cost.svg)
 
 <!-- the average cost of a successful attack here is
 
@@ -436,13 +385,13 @@ mining.**
 
 **Resources:** The Bitcoin Wiki has lists of [mining hardware][wiki
 mining hardware] and [mining software][wiki mining software]. On
-BitcoinTalk there is a [mining hardware subforum][] and [mining software
-subforum][].
+BitcoinTalk there is a [mining hardware sub-forum][] and [mining software
+sub-forum][].
 
 [wiki mining hardware]: https://en.bitcoin.it/wiki/Mining_hardware_comparison
 [wiki mining software]: https://en.bitcoin.it/wiki/Mining_software
-[mining software subforum]: https://bitcointalk.org/index.php?board=42.0
-[mining hardware subforum]: https://bitcointalk.org/index.php?board=76.0
+[mining software sub-forum]: https://bitcointalk.org/index.php?board=42.0
+[mining hardware sub-forum]: https://bitcointalk.org/index.php?board=76.0
 
 
 
@@ -460,7 +409,7 @@ or "bad luck"). The chance of getting paid follows an exponential
 distribution; for example, here is the distribution for a miner who
 should get paid on average every 70 days:
 
-![FIXME](/img/mining/en-variance.svg)
+![The Variance Of An Average (1/10,000) Miner](/img/mining/en-variance.svg)
 
 As you can see, this imaginary "average" miner with
 1/10,000<sup>th</sup> of the network hash rate will find a valid block
@@ -477,7 +426,7 @@ less variance. This means a miner with twice as much hash rate gets
 paid (on average) twice as often---as you'd expect---but also four times
 more consistently.
 
-![FIXME](/img/mining/en-variance-comparison.svg)
+![The Variance Of An Average (1/10,000) Miner Miners 2x, 4x, And 8x Faster](/img/mining/en-variance-comparison.svg)
 
 (Don't confuse the distribution graph above with progress. There is
 no such thing as being a certain percent of the way towards finding
@@ -513,7 +462,7 @@ example, the pool target is 10 and the network target is 1, so we
 can say there are (on average) 10 **"shares"** for every valid block and
 each share is worth 1/10<sup>th</sup> of a block.
 
-![FIXME](/img/mining/en-shares.svg)
+![The Simulated Distribution Of 100 Random Numbers Showing Blocks, Shares, And Invalid Blocks](/img/mining/en-shares.svg)
 
 Every time a miner finds a share with a hash number below the pool
 target, he submits it to the pool. Most of these shares will be invalid
@@ -540,7 +489,7 @@ overview of the formulas][], and the [Mining Pools Subform][] on
 BitcoinTalk has posts describing all popular pools in detail.
 
 [Analysis of Bitcoin Pooled Mining Reward Systems]: https://bitcointalk.org/index.php?topic=32814.0
-[simple overview of the formulas]: /FIXME
+[simple overview of the formulas]: https://en.bitcoin.it/wiki/Comparison_of_mining_pools
 [Mining Pools Subform]: https://bitcointalk.org/index.php?board=41.0
 
 
@@ -553,7 +502,7 @@ equipment will be used honestly to generate new blocks. This trust is
 sometimes misplaced, leading to the equipment being used to perform
 double spend fraud.  
 
-![FIXME](/img/mining/en-centralized-mining.svg)
+![Mining Only What The Pool Server Requests (Centralized Mining)](/img/mining/en-centralized-mining.svg)
 
 Other miners also want to join a pool for the reduced variance, but
 they're not willing to risk participating in an [attack][section attacks] that can
@@ -586,7 +535,7 @@ Although rarely done today, **solo mining** is done by miners who
 attempt to find blocks on their own using just decentralized full node
 software such as Bitcoin Core.
 
-![FIXME](/img/mining/en-solo-mining.svg)
+![Creating Your Own Blocks With Solo Mining (Decentralized Mining)](/img/mining/en-solo-mining.svg)
 
 Unless you control hundreds or thousands of bitcoins worth of mining
 equipment, solo mining has very high variance, so you might have to wait
@@ -607,7 +556,7 @@ the share chain on average every 30 seconds instead of Bitcoin's every
 10 minutes. Occasionally one of these shares is also a valid
 block for the Bitcoin block chain.
 
-![FIXME](/img/mining/en-share-chain-block-chain.svg)
+![Comparison Of The Bitcoin Block Chain And P2Pool Share Chain](/img/mining/en-share-chain-block-chain.svg)
 
 To use P2Pool, you run the P2Pool open source software along with a full
 node such as Bitcoin Core. The P2Pool program can then create block
@@ -615,7 +564,7 @@ templates using data from your full node, send the template to your
 mining software, and return the shares and blocks you find to the P2Pool
 and Bitcoin decentralized networks.
 
-![FIXME](/img/mining/en-p2pool-decentralized-mining.svg)
+![Peer-To-Peer Creating Your Own Blocks (P2Pool Decentralized Mining)](/img/mining/en-p2pool-decentralized-mining.svg)
 
 Variance for P2Pool miners is reduced significantly, not only because
 shares are created 20 times as often as blocks but also because P2Pool
@@ -669,7 +618,7 @@ perform decentralized mining by getting transactions from their own full
 node, such as Bitcoin Core, and using those transactions instead of the
 optional transactions in the template.
 
-![FIXME](/img/mining/en-decentralized-mining.svg)
+![Evaluating Pool Requests And Creating Your Own Blocks (Decentralized Mining)](/img/mining/en-decentralized-mining.svg)
 
 Unfortunately, as of this writing, no mining software takes full
 advantage of what GetBlockTemplate offers for decentralized mining.
@@ -749,7 +698,7 @@ Using the calculator below, we can see that 10.0 TH/s of mining
 equipment which will be delivered in thirty days is equivalent to having
 7.4 TH/s of mining equipment today if hash rate increases by 1% a day:
 
-<form class="mining-calculator" id="diff" action="javascript:void(null);" method="post" onSubmit="calculate_todays_terms();">
+<form class="mining-calculator" id="calc-diff" action="javascript:void(null);" method="post" onSubmit="calculate_todays_terms();">
 <table>
 <tr>
     <th width="30%">Hash Rate Of Equipment To Buy</th>
@@ -770,8 +719,8 @@ equipment which will be delivered in thirty days is equivalent to having
 
 <p>Spreadsheet formula:
 <label><input id="diff_formula" class="mining-formula" type="text" /></label></p>
-<p>Formula used: <a href="FIXME">exponential decay</a>
-<a href="FIXME">Link to this calculator</a></p>
+<p>Formula used: <a href="https://en.wikipedia.org/wiki/Exponential_decay">exponential decay</a>
+<a href="#calc-diff" class="calculator-link">Link Here</a></p>
 
 </form>
 
@@ -790,11 +739,11 @@ For example, if network difficulty is 8,853,416,309 and your equipment's
 hash rate is 7.4 TH/s in today's terms, you will control about 0.0001 of
 the network hash rate---1/100<sup>th</sup> of a percent.
 
-<form id="percent" class="mining-calculator" action="javascript:void(null);" method="post" onSubmit="calculate_percent();">
+<form id="calc-percent" class="mining-calculator" action="javascript:void(null);" method="post" onSubmit="calculate_percent();">
 <table>
 <tr>
-    <th width="30%">Your Hash Rate In <a href="FIXME">Today's Terms</a></th>
-    <th>Network Difficulty<br/><a href="FIXME">(Get Current Value)</a></th>
+    <th width="30%">Your Hash Rate In <a href="#calc-diff">Today's Terms</a></th>
+    <th>Network Difficulty<br/><a href="http://blockexplorer.com/q/getdifficulty">(Get Current Value)</a></th>
     <th>Result:<br/>Your Share Of The Network Hash Rate</th></tr>
 <tr>
     <td><input id="percent_rate" type="number" value="7.408" step="0.1" style="width: 70px;" onchange="calculate_percent()"/><select id="percent_multiplier" onchange="calculate_percent()">
@@ -802,7 +751,7 @@ the network hash rate---1/100<sup>th</sup> of a percent.
         <option value="TH/s" selected="true" >TH/s</option>
         <option value="PH/s">PH/s</option>
     </select></td>
-    <td><input id="percent_difficulty" type="number" value="8853416309"  step="1000000000" stlye="width: 70px;" onchange="calculate_percent()"/></td>
+    <td><input id="percent_difficulty" type="number" value="8853416309"  step="1000000000" style="width: 70px;" onchange="calculate_percent()"/></td>
     <td><input id="percent_result" type="text" style="width: 90px;"/> or<br/><input id="percent_percent"
     type="text" style="width:90px;"/></td>
 </tr>
@@ -810,8 +759,8 @@ the network hash rate---1/100<sup>th</sup> of a percent.
 
 <p>Spreadsheet formula:
 <label><input id="percent_formula" type="text" class="mining-formula" /></label></p>
-<p>Learn more on the Bitcoin Wiki about <a href="FIXME">difficulty</a>
-<a href="FIXME">Link to this calculator</a></p>
+<p>Learn more on the Bitcoin Wiki about <a href="https://en.bitcoin.it/wiki/Difficulty">difficulty</a>
+<a href="#calc-percent" class="calculator-link">Link Here</a></p>
 
 </form>
 
@@ -831,7 +780,7 @@ would be about 2.5 bitcoins a week until difficulty rises.
 
 Every 2,016 blocks, Bitcoin adjusts how difficult it is to find a block,
 increasing the difficulty when the network hash rate increases and
-decreasing it when the rate decreaeses. In 2009, difficulty mostly
+decreasing it when the rate decreases. In 2009, difficulty mostly
 stayed the same; ever since, it has almost always gone up.
 
 Every increase in difficulty makes your mining equipment that much less
@@ -850,13 +799,13 @@ certain time.
 
 For example, if you make 1 bitcoin a week now and you expect difficulty
 to rise by about 5% a week on average, you will only earn 0.074 bitcoins
-in week 52. The plot below shows the amout of money you would make each
+in week 52. The plot below shows the amount of money you would make each
 week if difficulty increases by 5%, 10%, or 15% a week.
 
-![FIXME](/img/mining/en-mining-equipment-exponential-decay.svg)
+![Exponential Decay Of Mining Revenue From Difficulty Increases](/img/mining/en-mining-equipment-exponential-decay.svg)
 
 The formula used above, and in the calculator below, models difficulty
-changes as continous even though they really occur only every 2,016
+changes as continuous even though they really occur only every 2,016
 blocks. This keeps the formula simple but means it may produce a number
 that is a few percent higher or lower than reality, depending mostly
 upon how close you are to a 2,016-block boundary when you start mining.
@@ -871,7 +820,7 @@ For example, if difficulty increases by 5% a week and you start out
 competitive enough to make 1 bitcoin a week, you will make just under 19
 bitcoins in 52 weeks.
  
-<form id="income" class="mining-calculator" action="javascript:void(null);" method="post" onSubmit="calculate_income();">
+<form id="calc-income" class="mining-calculator" action="javascript:void(null);" method="post" onSubmit="calculate_income();">
 <table>
 <tr>
     <th>Starting Income Per Week In Bitcoins</th>
@@ -888,16 +837,16 @@ bitcoins in 52 weeks.
 
 <p>Spreadsheet formula:
 <label><input id="income_formula"  class="mining-formula" type="text"/></label></p>
-<p>Formulas used: <a href="FIXME">exponential decay</a> and <a
-href="FIXME">geometric progression</a>
-<a href="FIXME">Link to this calculator</a></p>
+<p>Formulas used: <a href="https://en.wikipedia.org/wiki/Exponential_decay">exponential decay</a> and <a
+href="https://en.wikipedia.org/wiki/Geometric_progression">geometric progression</a>
+<a href="#calc-income" class="calculator-link">Link Here</a></p>
 
 </form>
 
 Here's a plot similar to the plot above showing total income with the
 same 5%, 10%, and 15% guesses about difficulty increases:
 
-![FIXME](/img/mining/en-mining-equipment-profit-progression.svg)
+![Geometric Progression Of Total Revenue From Mining With Exponential Decay Figured In](/img/mining/en-mining-equipment-profit-progression.svg)
 
 ### Equipment Costs
 
@@ -906,15 +855,15 @@ requires factoring in costs. For example, let's say that you spend 5
 bitcoins to buy that mining equipment. We repeat the same plot from the
 subsection above but start at negative five bitcoins instead of zero.
 
-![FIXME](/img/mining/en-mining-equipment-roi.svg)
+![Mining Equipment Return Of Investment (ROI) For An Imaginary 5 BTC Of Mining Equipment](/img/mining/en-mining-equipment-roi.svg)
 
 Any delay in getting started mining has a disproportionate effect on
 your earnings. For example, using the same parameters as before, the
 illustration below shows that a seemingly minor two week delay in
-getting started costs you about 1.85 bitcoins---over a third of the cost
+getting started costs you about 1.95 bitcoins---over a third of the cost
 of the mining equipment in this imaginary example.
 
-![FIXME](/img/mining/en-mining-equipment-roi-delay.svg)
+![A Two Week Delay In Getting Started Costs Almost 2 BTC In This Example](/img/mining/en-mining-equipment-roi-delay.svg)
 
 In addition to equipment costs, there may be other start-up costs, such
 as the cost of the time required to set up your equipment. Many home
@@ -938,7 +887,7 @@ this paragraph pays $0.15 USD per kWh and currently about $600 USD per
 bitcoin, so a 3,000 watt collection of equipment would cost him about
 0.126 bitcoins a week to run.
 
-<form id="electricity" class="mining-calculator" action="javascript:void(null);" method="post" onSubmit="calculate_electricity();">
+<form id="calc-electricity" class="mining-calculator" action="javascript:void(null);" method="post" onSubmit="calculate_electricity();">
 <table>
 <tr>
     <th>Watts Used By Equipment</th>
@@ -958,7 +907,7 @@ bitcoin, so a 3,000 watt collection of equipment would cost him about
 <p>See Wikipedia's <a
 href="https://en.wikipedia.org/wiki/Electricity_pricing#Global_electricity_price_comparison">table
 of global electrical prices</a>
-<a href="FIXME">Link to this calculator</a></p>
+<a class="calculator-link" href="#calc-electricity">Link Here</a></p>
 
 </form>
 
@@ -968,7 +917,7 @@ Using the 5% increase in weekly network hash rate from before, the
 illustration below subtracts the cost of electricity from the daily
 profits. 
 
-![FIXME](/img/mining/en-mining-equipment-roi-electricity.svg)
+![The Effect Of Adding Electrical Costs To The ROI Calculation](/img/mining/en-mining-equipment-roi-electricity.svg)
 
 As you can see, electrical costs not only make mining less profitable
 but they can even make mining unprofitable with a particular piece of
@@ -996,7 +945,7 @@ use mining.  Adding full-time air conditioning costs to our
 illustration of imaginary situations shows a significant effect on
 profitability.
 
-![FIXME](/img/mining/en-mining-equipment-roi-electricity-cooling.svg)
+![The Effect Of Adding Cooling Costs To The Electrical Costs In The ROI Calculation](/img/mining/en-mining-equipment-roi-electricity-cooling.svg)
 
 [a heat pump]: https://en.wikipedia.org/wiki/Heat_pump
 
@@ -1082,14 +1031,14 @@ comparison, we assume you sell or spend your bitcoins as soon as you
 earn them. As with previous charts, we also assume network hash rate
 increases by 5% a week.
 
-![FIXME](/img/mining/en-mining-equipment-compounding.svg)
+![Compound Gains Or Losses From A +2% or -2% Weekly Price Change](/img/mining/en-mining-equipment-compounding.svg)
 
 Taking advantage of compounding is one of the top reasons people invest
 in mining. Compare the Return On Investment (ROI) from our 5 bitcoins of
 imaginary mining equipment against the ROI from simply holding those
 5 bitcoins if bitcoin prices start at $500 USD and rise 2% a week:
 
-![FIXME](/img/mining/en-mining-equipment-alternative.svg)
+![The Difference In Investing In Mining Vs. Investing In Bitcoins With Our Imaginary Equipment](/img/mining/en-mining-equipment-alternative.svg)
 
 Compounding only works in a miner's favor if prices rise. A weekly rise
 of 2% would be extraordinary compared to other investments, but some
@@ -1181,7 +1130,7 @@ them. When a pool operator can make choices for hundreds or thousands of
 miners at once, the incentives change---honesty is no longer the only
 reasonable choice.
 
-![FIXME](/img/mining/en-confirmed-double-spend-cost.svg)
+![The Cost In Sacrificed Income Of A Double Spend Attack On A Confirmed Transaction](/img/mining/en-confirmed-double-spend-cost.svg)
 
 With control over 1% or more of the network hash rate, operators of
 large pools, mining farms, and cloud mining services can try to steal
@@ -1190,7 +1139,7 @@ from merchants who accept transactions confirmed once. With more than
 times. Because they're backed by a significant hash rate, these attacks
 have a reasonable chance of succeeding.
 
-![FIXME](/img/mining/en-mining-equipment-compounding.svg)
+![The Difference Between Compound Gains Of +2%/Week And Compound Loses Of -2%/Week](/img/mining/en-mining-equipment-compounding.svg)
 
 What happens when an operator chooses to steal thousands of bitcoins? We
 can only imagine, but if the fallout includes a drop in bitcoin prices,
@@ -1250,7 +1199,7 @@ volunteer.*
 
 <script type="text/javascript">
 function calculate_todays_terms() {
-    var diff_form = document.forms["diff"];
+    var diff_form = document.forms["calc-diff"];
     rate = diff_form.diff_rate.value;
     multiplier = diff_form.diff_multiplier.value;
     diff_increase = diff_form.diff_diff_increase.value;
@@ -1274,7 +1223,7 @@ function get_multiplier(form)
 }
  
 function calculate_percent() {
-    var percent_form = document.forms["percent"];
+    var percent_form = document.forms["calc-percent"];
     rate = percent_form.percent_rate.value;
     difficulty = percent_form.percent_difficulty.value;
     multiplier = get_multiplier(percent_form),
@@ -1286,7 +1235,7 @@ function calculate_percent() {
  
 
 function calculate_income() {
-    var income_form = document.forms["income"];
+    var income_form = document.forms["calc-income"];
     rate = income_form.income_rate.value;
     weeks = income_form.income_weeks.value;
     diff_increase = income_form.income_diff_increase.value / 100;
@@ -1297,7 +1246,7 @@ function calculate_income() {
 
 
 function calculate_electricity() {
-    var electricity_form = document.forms["electricity"];
+    var electricity_form = document.forms["calc-electricity"];
     watts = electricity_form.electricity_watts.value;
     price_kwh = electricity_form.electricity_price_kwh.value;
     price_btc = electricity_form.electricity_price_btc.value;
