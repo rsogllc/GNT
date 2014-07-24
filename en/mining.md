@@ -1212,11 +1212,6 @@ function calculate_todays_terms(e) {
 }
 
 
-var hashes_per_sec= new Array();
-hashes_per_sec["GH/s"]=9;
-hashes_per_sec["TH/s"]=12;
-hashes_per_sec["PH/s"]=15;
-
 function calculate_percent(e) {
     if(e!=null&&e.type=='propertychange'&&window.event.propertyName!='value')return;
     var hashes_per_sec={"GH/s" : 9, "TH/s" : 12, "PH/s" : 15};
