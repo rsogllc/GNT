@@ -1202,10 +1202,10 @@ volunteer.*
 function calculate_todays_terms() {
     if(window.event&&window.event.type=='propertychange'&&window.event.propertyName!='value')return;
     var diff_form = document.forms["calc-diff"];
-    var rate = diff_form.diff_rate.value;
-    var multiplier = diff_form.diff_multiplier.value;
-    var diff_increase = diff_form.diff_diff_increase.value;
-    var days = diff_form.diff_days.value;
+    var rate = diff_form.diff_rate.value.replace(/[^0-9.]/g,'');
+    var multiplier = diff_form.diff_multiplier.value.replace(/[^0-9.]/g,'');
+    var diff_increase = diff_form.diff_diff_increase.value.replace(/[^0-9.]/g,'');
+    var days = diff_form.diff_days.value.replace(/[^0-9.]/g,'');
     var answer = "" + (rate*Math.exp(-diff_increase/100*days)).toFixed(3) + " " + multiplier;
     diff_form.diff_result.value = answer;
     diff_form.diff_formula.value = "=" + rate + "*exp(-" + diff_increase/100 + "*" + days + ")";
@@ -1216,8 +1216,8 @@ function calculate_percent() {
     if(window.event&&window.event.type=='propertychange'&&window.event.propertyName!='value')return;
     var hashes_per_sec={"GH/s" : 9, "TH/s" : 12, "PH/s" : 15};
     var percent_form = document.forms["calc-percent"];
-    var rate = percent_form.percent_rate.value;
-    var difficulty = percent_form.percent_difficulty.value;
+    var rate = percent_form.percent_rate.value.replace(/[^0-9.]/g,'');
+    var difficulty = percent_form.percent_difficulty.value.replace(/[^0-9.]/g,'');
     var multiplier = hashes_per_sec[percent_form.elements["percent_multiplier"].value]
     var answer = (rate*Math.pow(10,multiplier)/(difficulty*7158588)).toFixed(5);
     percent_form.percent_result.value = answer;
@@ -1229,9 +1229,9 @@ function calculate_percent() {
 function calculate_income() {
     if(window.event&&window.event.type=='propertychange'&&window.event.propertyName!='value')return;
     var income_form = document.forms["calc-income"];
-    var rate = income_form.income_rate.value;
-    var weeks = income_form.income_weeks.value;
-    var diff_increase = income_form.income_diff_increase.value / 100;
+    var rate = income_form.income_rate.value.replace(/[^0-9.]/g,'');
+    var weeks = income_form.income_weeks.value.replace(/[^0-9.]/g,'');
+    var diff_increase = income_form.income_diff_increase.value.replace(/[^0-9.]/g,'') / 100;
     var answer = (rate*(1-Math.exp(-diff_increase*weeks))/(1-Math.exp(-diff_increase))).toFixed(8);
     income_form.income_result.value = answer;
     income_form.income_formula.value = "=" + rate + "*(1-exp(-" + diff_increase + "*" + weeks + "))/(1-exp(-" + diff_increase + "))";
@@ -1241,9 +1241,9 @@ function calculate_income() {
 function calculate_electricity() {
     if(window.event&&window.event.type=='propertychange'&&window.event.propertyName!='value')return;
     var electricity_form = document.forms["calc-electricity"];
-    var watts = electricity_form.electricity_watts.value;
-    var price_kwh = electricity_form.electricity_price_kwh.value;
-    var price_btc = electricity_form.electricity_price_btc.value;
+    var watts = electricity_form.electricity_watts.value.replace(/[^0-9.]/g,'');
+    var price_kwh = electricity_form.electricity_price_kwh.value.replace(/[^0-9.]/g,'');
+    var price_btc = electricity_form.electricity_price_btc.value.replace(/[^0-9.]/g,'');
     var answer = (watts * price_kwh / price_btc * 168 / 1000).toFixed(6);
     electricity_form.electricity_result.value = answer;
     electricity_form.electricity_formula.value = "=" + watts + "*" + price_kwh + "/" + price_btc + "*168/1000";
