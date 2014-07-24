@@ -1203,7 +1203,7 @@ function calculate_todays_terms() {
     if(window.event&&window.event.type=='propertychange'&&window.event.propertyName!='value')return;
     var diff_form = document.forms["calc-diff"];
     var rate = diff_form.diff_rate.value.replace(/[^0-9.]/g,'');
-    var multiplier = diff_form.diff_multiplier.value.replace(/[^0-9.]/g,'');
+    var multiplier = diff_form.diff_multiplier.value;
     var diff_increase = diff_form.diff_diff_increase.value.replace(/[^0-9.]/g,'');
     var days = diff_form.diff_days.value.replace(/[^0-9.]/g,'');
     var answer = "" + (rate*Math.exp(-diff_increase/100*days)).toFixed(3) + " " + multiplier;
