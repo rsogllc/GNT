@@ -39,7 +39,7 @@ title: "Bitcoin Mining"
 
 This guide helps you find answers to the following questions:
 
-* [How does mining work?][section how it works]
+* [What does mining do?][section how it works]
 
 * [What tools and techniques do miners use?][section tools and
 techniques]
@@ -698,7 +698,7 @@ Using the calculator below, we can see that 10.0 TH/s of mining
 equipment which will be delivered in thirty days is equivalent to having
 7.4 TH/s of mining equipment today if hash rate increases by 1% a day:
 
-<form class="mining-calculator" id="calc-diff" action="javascript:void(null);" method="post" onSubmit="calculate_todays_terms();">
+<form class="mining-calculator" id="calc-diff" action="javascript:void(null);" method="post" onSubmit="calculate_todays_terms(null);">
 <table>
 <tr>
     <th width="30%">Hash Rate Of Equipment To Buy</th>
@@ -706,13 +706,13 @@ equipment which will be delivered in thirty days is equivalent to having
     <th>Days Until Equipment Is Operational</th>
     <th>Result:<br/>Hash Rate In Today's Terms</th></tr>
 <tr>
-    <td><input id="diff_rate" type="number" value="10.0" step="0.1" onchange="calculate_todays_terms()" style="width: 70px;" /><select id="diff_multiplier" onchange="calculate_todays_terms()">
+    <td><input id="diff_rate" type="number" value="10.0" step="0.1" onpropertychange="calculate_todays_terms(event);" oninput="calculate_todays_terms(event);" onkeypress="calculate_todays_terms(event);" style="width: 70px;" /><select id="diff_multiplier" onchange="calculate_todays_terms(event)">
         <option value="GH/s">GH/s</option>
         <option value="TH/s" selected="true" >TH/s</option>
         <option value="PH/s">PH/s</option>
     </select></td>
-    <td><label><input id="diff_diff_increase" onchange="calculate_todays_terms()" step="0.5" type="number" value="1.0" style="width: 50px;"/>%</label></td>
-    <td><label><input id="diff_days" onchange="calculate_todays_terms()" type="number" step="1" value="30" style="width:70px;" /></label></td>
+    <td><label><input id="diff_diff_increase" onpropertychange="calculate_todays_terms(event);" oninput="calculate_todays_terms(event);" onkeypress="calculate_todays_terms(event);" step="0.5" type="number" value="1.0" style="width: 50px;"/>%</label></td>
+    <td><label><input id="diff_days" onpropertychange="calculate_todays_terms(event);" oninput="calculate_todays_terms(event);" onkeypress="calculate_todays_terms(event);" type="number" step="1" value="30" style="width:70px;" /></label></td>
     <td><label><input id="diff_result" type="text" style="width:200px;" /></label></td>
 </tr>
 </table>
@@ -739,19 +739,19 @@ For example, if network difficulty is 8,853,416,309 and your equipment's
 hash rate is 7.4 TH/s in today's terms, you will control about 0.0001 of
 the network hash rate---1/100<sup>th</sup> of a percent.
 
-<form id="calc-percent" class="mining-calculator" action="javascript:void(null);" method="post" onSubmit="calculate_percent();">
+<form id="calc-percent" class="mining-calculator" action="javascript:void(null);" method="post" onSubmit="calculate_percent(null);">
 <table>
 <tr>
     <th width="30%">Your Hash Rate In <a href="#calc-diff">Today's Terms</a></th>
     <th>Network Difficulty<br/><a href="http://blockexplorer.com/q/getdifficulty">(Get Current Value)</a></th>
     <th>Result:<br/>Your Share Of The Network Hash Rate</th></tr>
 <tr>
-    <td><input id="percent_rate" type="number" value="7.408" step="0.1" style="width: 70px;" onchange="calculate_percent()"/><select id="percent_multiplier" onchange="calculate_percent()">
+    <td><input id="percent_rate" type="number" value="7.408" step="0.1" style="width: 70px;" onpropertychange="calculate_percent(event);" oninput="calculate_percent(event);" onkeypress="calculate_percent(event);"/><select id="percent_multiplier" onchange="calculate_percent()">
         <option value="GH/s">GH/s</option>
         <option value="TH/s" selected="true" >TH/s</option>
         <option value="PH/s">PH/s</option>
     </select></td>
-    <td><input id="percent_difficulty" type="number" value="8853416309"  step="1000000000" style="width: 70px;" onchange="calculate_percent()"/></td>
+    <td><input id="percent_difficulty" type="number" value="8853416309"  step="1000000000" style="width: 180px;" onpropertychange="calculate_percent(event);" oninput="calculate_percent(event);" onkeypress="calculate_percent(event);"/></td>
     <td><input id="percent_result" type="text" style="width: 90px;"/> or<br/><input id="percent_percent"
     type="text" style="width:90px;"/></td>
 </tr>
@@ -820,7 +820,7 @@ For example, if difficulty increases by 5% a week and you start out
 competitive enough to make 1 bitcoin a week, you will make just under 19
 bitcoins in 52 weeks.
  
-<form id="calc-income" class="mining-calculator" action="javascript:void(null);" method="post" onSubmit="calculate_income();">
+<form id="calc-income" class="mining-calculator" action="javascript:void(null);" method="post" onSubmit="calculate_income(null);">
 <table>
 <tr>
     <th>Starting Income Per Week In Bitcoins</th>
@@ -828,9 +828,10 @@ bitcoins in 52 weeks.
     <th>Estimated Difficulty Increase Per Week</th>
     <th>Result:<br/>Total Estimated Income In Bitcoins</th></tr>
 <tr>
-    <td><input id="income_rate" type="number" value="1.00"  step="0.1" style="width:70px;" onchange="calculate_income()"/></td>
-    <td><input id="income_weeks" type="number" value="52"  step="1" style="width:40px;" onchange="calculate_income()"/></td>
-    <td><label><input id="income_diff_increase" type="number" value="5" step="1" style="width:40px;"  onchange="calculate_income()"/>%</label></td>
+    <td><input id="income_rate" type="number" value="1.00"  step="0.1" style="width:70px;" onpropertychange="calculate_income(event);" oninput="calculate_income(event);" onkeypress="calculate_income(event);"/></td>
+    <td><input id="income_weeks" type="number" value="52"  step="1" style="width:40px;" onchange="calculate_income()"
+    onpropertychange="calculate_income(event);" oninput="calculate_income(event);" onkeypress="calculate_income(event);"/></td>
+    <td><label><input id="income_diff_increase" type="number" value="5" step="1" style="width:40px;" onpropertychange="calculate_income(event);" oninput="calculate_income(event);" onkeypress="calculate_income(event);"/>%</label></td>
     <td><label><input id="income_result" style="width:140px;" type="text" /></label></td>
 </tr>
 </table>
@@ -887,7 +888,7 @@ this paragraph pays $0.15 USD per kWh and currently about $600 USD per
 bitcoin, so a 3,000 watt collection of equipment would cost him about
 0.126 bitcoins a week to run.
 
-<form id="calc-electricity" class="mining-calculator" action="javascript:void(null);" method="post" onSubmit="calculate_electricity();">
+<form id="calc-electricity" class="mining-calculator" action="javascript:void(null);" method="post" onSubmit="calculate_electricity(null);">
 <table>
 <tr>
     <th>Watts Used By Equipment</th>
@@ -895,9 +896,9 @@ bitcoin, so a 3,000 watt collection of equipment would cost him about
     <th>Price Per Bitcoin</th>
     <th>Result:<br/>Electricity Price Per Week In Bitcoins</th></tr>
 <tr>
-    <td><input id="electricity_watts" type="number" value="3000" step="100" style="width:60px;" onchange="calculate_electricity()"/></td>
-    <td><input id="electricity_price_kwh" type="number" value="0.15" step="0.01" style="width:60px;" onchange="calculate_electricity()"/></td>
-    <td><input id="electricity_price_btc" type="number" value="600" step="50" style="width:60px;"  onchange="calculate_electricity()"/></td>
+    <td><input id="electricity_watts" type="number" value="3000" step="100" style="width:60px;" onpropertychange="calculate_electricity(event);" oninput="calculate_electricity(event);" onkeypress="calculate_electricity(event);"/></td>
+    <td><input id="electricity_price_kwh" type="number" value="0.15" step="0.01" style="width:60px;" onpropertychange="calculate_electricity(event);" oninput="calculate_electricity(event);" onkeypress="calculate_electricity(event);"/></td>
+    <td><input id="electricity_price_btc" type="number" value="600" step="50" style="width:60px;"  onpropertychange="calculate_electricity(event);" oninput="calculate_electricity(event);" onkeypress="calculate_electricity(event);"/></td>
     <td><label><input id="electricity_result" type="text" style="width:120px;" /></label></td>
 </tr>
 </table>
@@ -1198,13 +1199,14 @@ volunteer.*
 <script>addAnchorLinks();</script>
 
 <script type="text/javascript">
-function calculate_todays_terms() {
+function calculate_todays_terms(e) {
+    if(e!=null&&e.type=='propertychange'&&window.event.propertyName!='value')return;
     var diff_form = document.forms["calc-diff"];
-    rate = diff_form.diff_rate.value;
-    multiplier = diff_form.diff_multiplier.value;
-    diff_increase = diff_form.diff_diff_increase.value;
-    days = diff_form.diff_days.value;
-    answer = "" + (rate*Math.exp(-diff_increase/100*days)).toFixed(3) + " " + multiplier;
+    var rate = diff_form.diff_rate.value;
+    var multiplier = diff_form.diff_multiplier.value;
+    var diff_increase = diff_form.diff_diff_increase.value;
+    var days = diff_form.diff_days.value;
+    var answer = "" + (rate*Math.exp(-diff_increase/100*days)).toFixed(3) + " " + multiplier;
     diff_form.diff_result.value = answer;
     diff_form.diff_formula.value = "=" + rate + "*exp(-" + diff_increase/100 + "*" + days + ")";
 }
@@ -1215,49 +1217,46 @@ hashes_per_sec["GH/s"]=9;
 hashes_per_sec["TH/s"]=12;
 hashes_per_sec["PH/s"]=15;
 
-function get_multiplier(form)
-{   
-    var selected_multiplier = form.elements["percent_multiplier"];
-    multiplier = hashes_per_sec[selected_multiplier.value];
-    return multiplier;
-}
- 
-function calculate_percent() {
+function calculate_percent(e) {
+    if(e!=null&&e.type=='propertychange'&&window.event.propertyName!='value')return;
+    var hashes_per_sec={"GH/s" : 9, "TH/s" : 12, "PH/s" : 15};
     var percent_form = document.forms["calc-percent"];
-    rate = percent_form.percent_rate.value;
-    difficulty = percent_form.percent_difficulty.value;
-    multiplier = get_multiplier(percent_form),
-    answer = (rate*Math.pow(10,multiplier)/(difficulty*7158588)).toFixed(5);
+    var rate = percent_form.percent_rate.value;
+    var difficulty = percent_form.percent_difficulty.value;
+    var multiplier = hashes_per_sec[percent_form.elements["percent_multiplier"].value]
+    var answer = (rate*Math.pow(10,multiplier)/(difficulty*7158588)).toFixed(5);
     percent_form.percent_result.value = answer;
     percent_form.percent_percent.value = "" + (answer*100).toFixed(3) + "%";
     percent_form.percent_formula.value = "=" + rate + "*10^" + multiplier + "/(" + difficulty + "*7158588)";
 }
  
 
-function calculate_income() {
+function calculate_income(e) {
+    if(e!=null&&e.type=='propertychange'&&window.event.propertyName!='value')return;
     var income_form = document.forms["calc-income"];
-    rate = income_form.income_rate.value;
-    weeks = income_form.income_weeks.value;
-    diff_increase = income_form.income_diff_increase.value / 100;
-    answer = "" + (rate*(1-Math.exp(-diff_increase*weeks))/(1-Math.exp(-diff_increase))).toFixed(8);
+    var rate = income_form.income_rate.value;
+    var weeks = income_form.income_weeks.value;
+    var diff_increase = income_form.income_diff_increase.value / 100;
+    var answer = (rate*(1-Math.exp(-diff_increase*weeks))/(1-Math.exp(-diff_increase))).toFixed(8);
     income_form.income_result.value = answer;
     income_form.income_formula.value = "=" + rate + "*(1-exp(-" + diff_increase + "*" + weeks + "))/(1-exp(-" + diff_increase + "))";
 }
 
 
-function calculate_electricity() {
+function calculate_electricity(e) {
+    if(e!=null&&e.type=='propertychange'&&window.event.propertyName!='value')return;
     var electricity_form = document.forms["calc-electricity"];
-    watts = electricity_form.electricity_watts.value;
-    price_kwh = electricity_form.electricity_price_kwh.value;
-    price_btc = electricity_form.electricity_price_btc.value;
-    answer = "" + (watts * price_kwh / price_btc * 168 / 1000).toFixed(6);
+    var watts = electricity_form.electricity_watts.value;
+    var price_kwh = electricity_form.electricity_price_kwh.value;
+    var price_btc = electricity_form.electricity_price_btc.value;
+    var answer = (watts * price_kwh / price_btc * 168 / 1000).toFixed(6);
     electricity_form.electricity_result.value = answer;
     electricity_form.electricity_formula.value = "=" + watts + "*" + price_kwh + "/" + price_btc + "*168/1000";
 }
 
-calculate_todays_terms();
-calculate_percent();
-calculate_income();
-calculate_electricity();
+calculate_todays_terms(null);
+calculate_percent(null);
+calculate_income(null);
+calculate_electricity(null);
 </script>
 
