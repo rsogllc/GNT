@@ -303,18 +303,18 @@ with six confirmations.
 
 <!-- the average cost of a successful attack here is
 
-    r * h / p(h,b) - r * b
+    r * h * b / p(h,b) - r * (b-1)
 
 Where _r_ is the block reward (25 BTC), _h_ is the percentage of network
-hash rate, _p()_ is Satoshi's probability calculator from bitcoin.pdf
-page 7, and _b_ is the number of blocks to create (confirmations plus
-one). r * h is the average value of work used per attempt; p(h,b) is the
-probability of success per attempt; r * b is the block reward from a
-successful attack.
+hash rate, _b_ is the number of blocks to create (confirmations plus
+one), and_p()_ is Satoshi's probability calculator from bitcoin.pdf page
+7. r * h * b is the average value of work used per attempt; p(h,b) is
+the probability of success per attempt; r * (b-1) is the block reward
+the attacker would've received if they mined honestly.
 
-The time (number of blocks elapsed) an attack takes is simply
+The time (average number of blocks elapsed) an attack takes is simply
 
-    1 / p(h,c)
+    1 / p(h,b)
 -->
 
 However, an attacker who does 24.4% of the work on the network (called
