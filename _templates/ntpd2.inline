@@ -1,0 +1,18 @@
+<table>
+<tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Presence</th>
+</tr>
+
+{% for item in entry %}
+<tr>
+  <td markdown="span">{{item.n}}</td>
+  <td markdown="span">{{item.t}}</td>
+  <td markdown="span">{{item.p}}</td>
+</tr>
+<tr>
+  <td colspan="3" markdown="span">{{item.d}}</td>
+</tr>
+{% endfor %}
+</table>

@@ -27,7 +27,7 @@ The `addmultisigaddress` RPC {{summary_addMultiSigAddress}}
 
 *Parameter #2---the full public keys, or addresses for known public keys*
 
-{% itemplate ntpd1 %}
+{% itemplate ntpd2 %}
 - n: "Keys Or Addresses"
   t: "array"
   p: "Required<br>(exactly 1)"
