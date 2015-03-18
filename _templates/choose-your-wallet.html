@@ -732,6 +732,7 @@ wallets:
   </ul>
 </div>
 
+<div class="wallets-container">
 <div class="wallets" id="wallets" onclick="walletShow(event);">
 {% for wallet in page.wallets %}{% for wallet in wallet %}{% if wallet[1].platform.mobile %}{% assign platform = wallet[1].platform.mobile %}{% elsif wallet[1].platform.desktop %}{% assign platform = wallet[1].platform.desktop %}{% elsif wallet[1].platform.hardware %}{% assign platform = wallet[1].platform.hardware %}{% else %}{% assign platform = wallet[1].platform.web %}{% endif %}
 <div id="wallet-{{ wallet[0] }}" data-walletcompat="{{ wallet[1].compat }}" data-walletlevel="{{ wallet[1].level }}">
@@ -757,9 +758,11 @@ wallets:
     <p>{% translate {{platform.text}} %}</p>
     <div><img src="/img/screenshots/{{ platform.screenshot }}" alt="screenshot"></div>
   </div>
-  <a href="#" onclick="return false;"><img src="/img/wallet/{{ wallet[0] }}.png" alt="{{ wallet[1].title }}" />{{ wallet[1].titleshort }}<span></span></a>
+  <a href="#" onclick="return false;"><img src="/img/wallet/{{ wallet[0] }}.png" alt="{{ wallet[1].title }}" />{{ wallet[1].titleshort }}<span class="wallet-item-sponsored"></span></a>
 </div>
 {% endfor %}{% endfor %}
+</div>
+<div class="show-more-container"><a href="#" onclick="return false;" class="show-more sponsored">Click to see more</a></div>
 </div>
 
 <div class="wallets walletsswitch" id="walletsswitch">

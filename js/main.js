@@ -434,7 +434,35 @@ if (p.getAttribute('timeout') === null || p.getAttribute('timeout') === '' || !s
 addClass(p, 'disabled');
 clearTimeout(p.getAttribute('timeout'));
 p.setAttribute('timeout', setTimeout(function() {
+	var sponsoredShowed = false,
+		a = $('.show-more.sponsored');
+
+	a.show();
+
 	p.innerHTML = '';
+	addClass(p, 'sponsored');
+
+	$(p).animate({
+		marginLeft: '42%',
+		height: '140px'
+	}, 0);
+
+	$(a).off('click').on('click', function(){
+		var jp = $(p),
+			childs = jp.children();
+
+		jp.animate({
+			marginLeft: '0'
+		}, 500, function(){
+			$(childs).show(500);
+			jp.animate({
+				height: '100%'
+			}, 500);
+		});
+
+		$(a).hide();
+	});
+
 	for (var i = 0, nds = document.getElementById('walletsswitch').childNodes, n = nds.length; i < n; i++) {
 		if (nds[i].nodeType != 1) continue;
 		var id = nds[i].id.split('-')[1];
@@ -454,6 +482,12 @@ p.setAttribute('timeout', setTimeout(function() {
 		nd = nd.cloneNode(true);
 		nd.id = 'wallet-' + id;
 		addClass(nd, 'nohover');
+		if (sponsoredShowed){
+			$(nd).hide();
+		} else {
+			$(nd).find('.wallet-item-sponsored').text('Sponsored');
+			sponsoredShowed = true;
+		}
 		p.appendChild(nd);
 	}
 	walletRotate()
