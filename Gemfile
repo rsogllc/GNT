@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.0.0'
+#ruby '2.0.0'
 
 group :development do
   gem 'ffi-icu'
@@ -10,5 +10,6 @@ group :development do
   gem 'kramdown'
   gem 'RedCloth'
   gem 'therubyracer' # required by less
+  gem 'html-proofer'
 end
 
