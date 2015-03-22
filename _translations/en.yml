@@ -511,7 +511,7 @@ en:
     title: "Privacy - Bitcoin"
     pagetitle: "Privacy"
     datacollect: "Data collected"
-    datacollecttxt: "Bitcoin.org collects anonymized server logs. These logs include IP addresses with replaced last byte, time of the visit, requested page, user agent and referer url. Bitcoin.org does not collect data using cookies."
+    datacollecttxt: "Bitcoin.com collects anonymized server logs. These logs include IP addresses with replaced last byte, time of the visit, requested page, user agent and referer url. Bitcoin.com does not collect data using cookies."
     datause: "Usage of data"
     datausetxt: "Collected data is used to provide <a href=\"/stats/\">transparent public stats</a>."
   protect-your-privacy:
