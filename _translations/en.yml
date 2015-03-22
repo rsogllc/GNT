@@ -1,8 +1,8 @@
 en:
   about-us:
-    title: "About bitcoin.org"
-    pagetitle: "About bitcoin.org"
-    pagedesc: "Bitcoin.org is dedicated to help Bitcoin to develop in a sustainable way."
+    title: "About bitcoin.com"
+    pagetitle: "About bitcoin.com"
+    pagedesc: "Bitcoin.com is dedicated to help Bitcoin to develop in a sustainable way."
     own: "Who owns bitcoin.com?"
     owntxt: "Bitcoin.com is the just one domain name used to promote Bitcoin. It was registered and is still managed by various community members, with the input of many <a href=\"#community#\">Bitcoin communities</a>. Bitcoin.com is not an official website. Just like nobody owns the email technology, nobody owns the Bitcoin network. As such, nobody can speak with authority in the name of Bitcoin."
     control: "Then... who controls Bitcoin?"
@@ -16,7 +16,7 @@ en:
     missiontxt6: "Improve Bitcoin worldwide accessibility with internationalization."
     missiontxt7: "Become an informative resource about Bitcoin."
     help: "Help us"
-    helptxt: "You can report any problem or help to improve bitcoin.org on <a href=\"https://github.com/bitcoin/bitcoin.org#how-to-participate\">GitHub</a> by opening an issue or a pull request in English. When submitting a pull request, please take required time to discuss your changes and adapt your work. You can help with translations by joining a team on <a href=\"https://github.com/bitcoin/bitcoin.org#translation\">Transifex</a>. Please don't ask for promotion for your personal business or website, except for special cases like conferences. Many thanks to all contributors who are spending time improving bitcoin.org!"
+    helptxt: "You can report any problem or help to improve bitcoin.com on <a href=\"https://github.com/bitcoin-portal/bitcoin-portal-content#how-to-participate\">GitHub</a> by opening an issue or a pull request in English. When submitting a pull request, please take required time to discuss your changes and adapt your work. You can help with translations by joining a team on <a href=\"https://github.com/bitcoin-portal/bitcoin-portal-content#translation\">Transifex</a>. Please don't ask for promotion for your personal business or website, except for special cases like conferences. Many thanks to all contributors who are spending time improving bitcoin.com!"
     maintenance: "Maintenance"
     documentation: "Documentation"
     translation: "Translation"
@@ -434,7 +434,7 @@ en:
     readmoretxt: "This is only a very short and concise summary of the system. If you want to get into the details, you can <a href=\"/bitcoin.pdf\">read the original paper</a> that describes the system's design, read the <a href=\"/en/developer-documentation\">developer documentation</a>, and explore the <a href=\"https://en.bitcoin.it/wiki/Main_Page\">Bitcoin wiki</a>."
   index:
     title: "Bitcoin - Open source P2P money"
-    metadescription: "Bitcoin is an innovative payment network and a new kind of money. Find all you need to know and get started with Bitcoin on bitcoin.org."
+    metadescription: "Bitcoin is an innovative payment network and a new kind of money. Find all you need to know and get started with Bitcoin on bitcoin.com."
     listintro: "Bitcoin is an innovative payment network and a new kind of money."
     list1: "Instant peer-to-peer<br>transactions"
     list2: "Worldwide<br>payments"
@@ -473,9 +473,9 @@ en:
     title: "Legal disclaimer - Bitcoin"
     pagetitle: "Legal disclaimer"
     information: "Information published on bitcoin.com"
-    informationtxt1: "The website http://bitcoin.org/ (hereinafter, referred to as the \"Website\") provides information and material of a general nature. You are not authorized and nor should you rely on the Website for legal advice, business advice, or advice of any kind. You act at your own risk in reliance on the contents of the Website. Should you make a decision to act or not act you should contact a licensed attorney in the relevant jurisdiction in which you want or need help. In no way are the owners of, or contributors to, the Website responsible for the actions, decisions, or other behavior taken or not taken by you in reliance upon the Website."
+    informationtxt1: "The website http://bitcoin.com/ (hereinafter, referred to as the \"Website\") provides information and material of a general nature. You are not authorized and nor should you rely on the Website for legal advice, business advice, or advice of any kind. You act at your own risk in reliance on the contents of the Website. Should you make a decision to act or not act you should contact a licensed attorney in the relevant jurisdiction in which you want or need help. In no way are the owners of, or contributors to, the Website responsible for the actions, decisions, or other behavior taken or not taken by you in reliance upon the Website."
     translations: "Translations"
-    translationstxt1: "The Website may contain translations of the English version of the content available on the Website. These translations are provided only as a convenience. In the event of any conflict between the English language version and the translated version, the English language version shall take precedence. If you notice any inconsistency, please report them on <a href=\"https://github.com/bitcoin/bitcoin.org\">GitHub</a>."
+    translationstxt1: "The Website may contain translations of the English version of the content available on the Website. These translations are provided only as a convenience. In the event of any conflict between the English language version and the translated version, the English language version shall take precedence. If you notice any inconsistency, please report them on <a href=\"https://github.com/bitcoin-portal/bitcoin-portal-content\">GitHub</a>."
     userisks: "Risks related to the use of Bitcoin"
     useriskstxt1: "The Website will not be responsible for any losses, damages or claims arising from events falling within the scope of the following five categories:"
     useriskstxt2: "Mistakes made by the user of any Bitcoin-related software or service, e.g., forgotten passwords, payments sent to wrong Bitcoin addresses, and accidental deletion of wallets."
@@ -608,7 +608,7 @@ en:
     spread: "Spread"
     spreadtxt: "Speak about Bitcoin to interested people. Write about it on your blog. Tell your favorite shops you would like to pay with Bitcoin. Help keeping <a href=\"http://usebitcoins.info/\">merchant directories</a> up to date. Or be creative and make yourself a nice Bitcoin T-shirt."
     wiki: "Documentation"
-    wikitxt: "<a href=\"https://github.com/bitcoin/bitcoin.org#how-to-participate\">Bitcoin.org</a> and the <a href=\"https://en.bitcoin.it/\">Bitcoin wiki</a> provide useful documentation and we are constantly improving the information they contain. You can help to improve these resources and keep them up to date."
+    wikitxt: "<a href=\"https://github.com/bitcoin/bitcoin.com#how-to-participate\">Bitcoin.com</a> and the <a href=\"https://en.bitcoin.it/\">Bitcoin wiki</a> provide useful documentation and we are constantly improving the information they contain. You can help to improve these resources and keep them up to date."
     translate: "Translate"
     translatetxt: "You can help to increase Bitcoin availability by translating or improving translations inside important parts of the Bitcoin ecosystem. Just pick a project you would like to help."
     help: "Meet the communities"
@@ -667,7 +667,7 @@ en:
     tax: "Government taxes and regulations"
     taxtxt: "Most jurisdictions require you to pay income, sales, payroll, and capital gains taxes on anything that has value, including bitcoins. It is your own decision if you adhere to the tax and other legal or regulatory mandates issued by various governments."
   layout:
-    menu-about-us: "About bitcoin.org"
+    menu-about-us: "About bitcoin.com"
     menu-bitcoin-for-businesses: Businesses
     menu-bitcoin-for-developers: Developers
     menu-bitcoin-for-individuals: Individuals
@@ -687,7 +687,7 @@ en:
     menu-support-bitcoin: Participate
     menu-vocabulary: Vocabulary
     menu-you-need-to-know: "You need to know"
-    banner-translate: "Translations for this language are outdated. <a href=\"https://github.com/bitcoin/bitcoin.org#translation\">Click here to help translate bitcoin.org in your language</a>."
+    banner-translate: "Translations for this language are outdated. <a href=\"https://github.com/bitcoin-portal/bitcoin-portal-content#translation\">Click here to help translate bitcoin.com in your language</a>."
     footer: "Released under the <a href=\"http://opensource.org/licenses/mit-license.php\" target=\"_blank\">MIT license</a>"
     sponsor: "A community website sponsored by"
     getstarted: "Get started with Bitcoin"
