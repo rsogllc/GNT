@@ -431,11 +431,11 @@ if (platform != 'default') {
 var p = document.getElementById('wallets');
 var ti = 200;
 if (p.getAttribute('timeout') === null || p.getAttribute('timeout') === '' || !supportCSS('transition')) ti = 1;
-addClass(p, 'disabled');
-clearTimeout(p.getAttribute('timeout'));
-p.setAttribute('timeout', setTimeout(function() {
+	addClass(p, 'disabled');
+	clearTimeout(p.getAttribute('timeout'));
+	p.setAttribute('timeout', setTimeout(function() {
 	var sponsoredShowed = false,
-		a = $('.show-more.sponsored');
+	a = $('.show-more.sponsored');
 
 	a.show();
 
@@ -448,8 +448,7 @@ p.setAttribute('timeout', setTimeout(function() {
 	}, 0);
 
 	$(a).off('click').on('click', function(){
-		var jp = $(p),
-			childs = jp.children();
+		var jp = $(p), childs = jp.children();
 
 		jp.animate({
 			marginLeft: '0'
@@ -482,11 +481,11 @@ p.setAttribute('timeout', setTimeout(function() {
 		nd = nd.cloneNode(true);
 		nd.id = 'wallet-' + id;
 		addClass(nd, 'nohover');
-		if (sponsoredShowed){
-			$(nd).hide();
-		} else {
+		if (sponsoredShowed == false && (sponsoredWallet == undefined || sponsoredWallet[platform] == id)){
 			$(nd).find('.wallet-item-sponsored').text('Sponsored');
 			sponsoredShowed = true;
+		} else {
+			$(nd).hide();
 		}
 		p.appendChild(nd);
 	}
