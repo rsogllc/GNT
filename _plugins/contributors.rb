@@ -108,7 +108,7 @@ module Jekyll
 
       # Populate site.corecontributors and site.sitecontributors arrays
       site.corecontributors = contributors('bitcoin/bitcoin',site.config['aliases'])
-      site.sitecontributors = contributors('bitcoin/bitcoin.org',site.config['aliases'])
+      site.sitecontributors = contributors('bitcoin-portal/bitcoin-portal-content',site.config['aliases'])
 
     end
 
