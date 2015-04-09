@@ -481,9 +481,10 @@ if (p.getAttribute('timeout') === null || p.getAttribute('timeout') === '' || !s
 		nd = nd.cloneNode(true);
 		nd.id = 'wallet-' + id;
 		addClass(nd, 'nohover');
-		if (sponsoredShowed == false && (sponsoredWallet == undefined || sponsoredWallet[platform] == id)){
-			$(nd).css('display', 'block-inline');
+		if (sponsoredShowed == false && (sponsoredWallet === undefined || sponsoredWallet[platform] == id)){
 			$(nd).find('.wallet-item-sponsored').text('Sponsored');
+			if (platform == 'default' && id == 'blockchain')
+				$(nd).show()
 			sponsoredShowed = true;
 		} else {
 			$(nd).hide();
