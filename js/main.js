@@ -479,6 +479,12 @@ if (p.getAttribute('timeout') === null || p.getAttribute('timeout') === '' || !s
 		}
 		if (nd === null) continue;
 		nd = nd.cloneNode(true);
+
+		// rewrite url to pass thru redirect engine
+		origurl = nd.getElementsByTagName('div')[2].getElementsByTagName('a')[0].href
+		url = "/url?promo=" + id + "-" + platform + "&url=" + encodeURI(origurl);
+		nd.getElementsByTagName('div')[2].getElementsByTagName('a')[0].href = url
+
 		nd.id = 'wallet-' + id;
 		addClass(nd, 'nohover');
 		if (sponsoredShowed == false && (sponsoredWallet === undefined || sponsoredWallet[platform] == id)){
