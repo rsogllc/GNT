@@ -483,7 +483,7 @@ if (p.getAttribute('timeout') === null || p.getAttribute('timeout') === '' || !s
 		addClass(nd, 'nohover');
 		if (sponsoredShowed == false && (sponsoredWallet === undefined || sponsoredWallet[platform] == id)){
 			$(nd).find('.wallet-item-sponsored').text('Sponsored');
-			if (platform == 'default' && id == 'blockchain')
+			if (platform == 'default')
 				$(nd).show()
 			sponsoredShowed = true;
 		} else {
