@@ -407,7 +407,22 @@ if (select === null || active === null) return;
 walletShowPlatform(select.getAttribute('data-walletcompat'));
 }
 
+var sponsoredWallet = null;
 function walletShowPlatform(platform) {
+	if (sponsoredWallet == null)
+	{
+		$.ajax('/api/listing/chooseYourWallet').success(function(sw)
+		{
+			sponsoredWallet = sw;
+			___walletShowPlatform(platform);
+		});
+	}
+	else
+	{
+		___walletShowPlatform(platform);
+	}
+}
+function ___walletShowPlatform(platform) {
 // Show wallets for given platform in the menu.
 var fallback = '';
 // Update menu and set fallback category if hovering in a submenu.
