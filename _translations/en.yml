@@ -710,6 +710,7 @@ en:
     protect-your-privacy: protect-your-privacy
     resources: resources
     secure-your-wallet: secure-your-wallet
+    select-an-exchange: select-an-exchange
     support-bitcoin: support-bitcoin
     vocabulary: vocabulary
     you-need-to-know: you-need-to-know
@@ -786,3 +787,14 @@ en:
       quantum: is-bitcoin-vulnerable-to-quantum-computing
       help: help
       morehelp: more-help
+  select-an-exchange:
+    title: "Select an Exchange"
+    pagetitle: "Select an Exchange"
+    multi-select-title: "Verified Bitcoin Exchanges"
+    stats-exchanges-text: "exchanges"
+    stats-countries-text: "countries"
+    stats-referrals-text: "referrals"
+    multi-select-placeholder: "Search for an exchange..."
+    multi-select-instructions: "e.g., search by country, city, exchange, or keyword"
+    location-title: "Select a Location:"
+    featured-exchanges: "Featured Exchanges"

@@ -1,0 +1,311 @@
+---
+# This file is licensed under the MIT License (MIT) available on
+# http://opensource.org/licenses/MIT.
+
+layout: base
+id: select-an-exchange
+---
+<style>
+input:focus::-webkit-input-placeholder { color:transparent; }
+input:focus:-moz-placeholder { color:transparent; } /* FF 4-18 */
+input:focus::-moz-placeholder { color:transparent; } /* FF 19+ */
+input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
+
+#exchange-multiselect-container {
+  background-image: url("/img/exchange/exchange-world-map.jpg");
+  padding-top:45px;
+  margin:0px 0px 0px 0px;
+}
+
+.exchange-multiselect-title {
+  font-family: 'Ubuntu',sans-serif;
+  font-size:300%;
+  letter-spacing:-0.03em;
+  font-weight:700;
+  color:white;
+  text-align:center;
+}
+
+.exchange-multiselect-stats {
+  font-size:150%;
+  text-shadow: 4px 4px 1px rgba(11, 80, 121, 0.19);
+  color:white;
+  text-align:center;
+  margin-top:-10px;
+}
+
+.exchange-multiselect-stats b {
+  color: #f7931a;
+}
+
+.exchange-multiselect-form {
+  width:600px;
+  resize:horizontal;
+  display:block;
+  margin: 0 auto;
+  padding:30px 0;
+}
+
+.exchange-multiselect-input {
+  border-color: #F0F0F0;
+  border-style: solid;
+  font-size: 22px;
+  padding: 15px;
+  border-width: 2px;
+  color: #c2c2c2;
+  width:430px;
+  resize:horizontal;
+}
+
+.exchange-multiselect-btn {
+  font-family: 'Ubuntu',sans-serif;
+  color: #ffffff;
+  font-size: 26px;
+  background: #ff9d12;
+  padding: 10px 20px 10px 20px;
+  border: solid #ffffff 2px;
+  text-decoration: none;
+  margin-left:10px;
+}
+
+.exchange-multiselect-btn:hover {
+  background: #d17d08;
+  text-decoration: none;
+}
+
+.exchange-multiselect-input-instructions {
+  font-family: 'Ubuntu',sans-serif;
+  color: #cccccc;
+  font-weight:light;
+  margin-top:5px;
+}
+
+#exchange-location-container {
+  background-color:#f9f9f9;
+  margin:0px;
+}
+
+.exchange-location-title {
+  color: #0d579b;
+  font-weight: 200;
+  margin-left:20px;
+  padding:20px 10px;
+  font-size:25px;
+  letter-spacing:-0.03em;
+  display: inline-block;
+  vertical-align:middle;
+  line-height: 50px;
+}
+
+.exchange-location-tree {
+  color: #3b3b3b;
+}
+
+.select-style {
+  vertical-align:middle;
+  line-height: 40px;
+  width:230px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  overflow: hidden;
+  background: #fafafa url("data:image/png;base64,R0lGODlhDwAUAIABAAAAAP///yH5BAEAAAEALAAAAAAPABQAAAIXjI+py+0Po5wH2HsXzmw//lHiSJZmUAAAOw==") no-repeat 95% 50%;
+  display: inline-block;
+}
+
+.select-style select {
+    padding: 0px 0px;
+    width: 130%;
+    border: none;
+    box-shadow: none;
+    background: transparent;
+    background-image: none;
+    -webkit-appearance: none;
+}
+
+.select-style select:focus {
+    outline: none;
+}
+
+#exchange-location-treeview {
+  display:inline-block;
+  width:100%;
+  padding:0px 30px 40px 30px;
+}
+
+.exchange-location-treenode {
+  display:inline-block;
+  width:49%;
+  line-height:2.5em;
+  font-family: 'Ubuntu',sans-serif;
+  font-size:1.1em;
+  color: #3b3b3b;
+  position:relative;
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAARCAYAAAA7bUf6AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAEFJREFUeNpinLxiNwMO4ALEMMlZQJyOSyETAxXAqCE0NOQ/Dowc92l41KUNLu8w4sCuSOpm4VE3azSdDGZDAAIMAEKuExj1TD6+AAAAAElFTkSuQmCC') no-repeat right 50px center;
+
+}
+
+.exchange-location-treenode:after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  width: 90%;
+  bottom: -1px;
+  left: 0px;
+  border-top: 1px solid #ddd;
+}
+
+#exchange-listing-container {
+  display:flex;
+  width:100%;
+  text-align:justify;
+}
+
+.exchange-listing {
+  padding:10px;
+  margin:10px;
+  display:inline;
+  border:1px solid silver;
+  border-radius: 5px;
+}
+
+.exchange-listing-left {
+  float:left;
+  margin-right:10px;
+  height:100%;
+}
+
+.exchange-listing-right {
+  display:block;overflow:hidden;
+  margin-right:10px;
+
+}
+
+.exchange-listing-title {
+  color:#5290e7;
+  font-family: 'Ubuntu',sans-serif;
+  font-size:1.2em;
+  font-weight:500;
+  letter-spacing:-0.02em;
+}
+
+.exchange-listing-description {
+  color:#757575;
+  font-family: 'Ubuntu',sans-serif;
+  font-size:0.8em;
+}
+
+.exchange-listing-button {
+  background:#208712;
+  color:white;
+  font-family: 'Ubuntu',sans-serif;
+  font-size:1em;
+  font-weight:500;
+  letter-spacing:-0.03em;
+  text-transform:uppercase;
+  float:right;
+  width:120px;
+  text-align:center;
+  margin-top:10px;
+}
+
+.exchange-listing-facebook {
+  display:inline-block;
+  width: 15px;
+  height: 15px;
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAEN0lEQVRYR7XWe1BUVRgA8O/eu8LuRdgF1lDCfIz9odNMM9Y0aFH2oIea4wrCLpCSub5SWSsZpXScKGowc/GBD1LReK7gmila9nDAJqapP5rRmmZ6aBGmwLJ3kXsX2b2nc/cQcbmyci9yZnZ39sz3fed3vrP37qWgb2RvdjtQEG1DCBn/mxuNT4qiOIqhtlW+Z3FK9SnpLTu/3hEIijt1OgaijSxE6McAxdB3dX0UFOGWvxe6OB4CgSDoGHpDZXGaMwTIfN3lZWjamJAUHwryC70g4oS7OWi8Ib1hTGhz11s6ICiKXO2ODFMIkO6oQab4GBADAEGsG83B4C7TOgBvhw/qnFYqBEjLq0Kx4+Kgh781mmv3145kI6CzzQP1JVkEYFlXgaKNxhG3XegWgOcF8ODig8f9M6b1T0nH0cVx4N6dQwAL1x5D7NiYEe1eWnTK+CiY+cBEWG6dpaiVvfkT2Rx/0wcn9ywhgAVryhEbrf3qE/Cu582eBHbr7CE3Ydt0Ug7o4uBUaS4BvLjqyIgA95kjoTh/btgOWvPdCsCn+18mgHkrD2FArOYjSJ2ZAHbb0LuXCmdsHAzohDMHXiGAF+xliI2J0wxwbbcATUqFBr6pgevcZfjlTy9c/q3ttnV5nwfOltlJ1vPLD2BAvGZA/Y40Re7W0sYhF5eCeV8HnPtoJQE8u2wfBpg1A9w70xW5lg11Yevxvnb4/PBqAkjN3YsMxnGqAC2/XumP/+H0RkXuQ/O3y+aSpk2WfRe4Njhf/ioBPL10N2KN96gCnCrJUBW/IM8li+e5G/Dl0XUE8OSSEgxIUFXw9K5MVfHz19cOAlyHr4/lEcCcHCc+gvGqCjbsUQeYu1YOELh/4EKFgwAez/oQsaYJqgBn91qHjBcRkl2WlQ2XoOLMJXkHvNegseo1AkixfYAMpkRVgIHBn5XaFLnPrakOW0/wtkJT9RsE8GhmMTLE3qsZcH5fliI3dXVVeEDn3/BNbT4BzFr8PmLjkjQDvtifrch9ZlVl2Hq8pwW+Pb6JAJLTi3AHJmoGfHUwR5H71IqKO3TgL2iuKyCARxa9gwxxkzQDLpQpAXPsdwB4rsJ3J94igIcthYjRq7sRDdQ2V61Q4JOzDobdUNB/A753b+m7DG1FaPL0BzV34OgW5bPA0sKGsPWu/PwjNFb3HUFK5rsoceoMzYCaooWKXGuB/AlocEDr7z9BU+2bpAOPZRQic+IUiDREaUKoBfQI3dDe+gdcdPUdQYq1KBihZ2nzBG0/RLWA9mtXocfPixdrChipA9QTLzkP9/q5XENUDESbzLgTY1V1YriAHuEmdHnbQej2AaM3ljd97FgmASLwKzY5/e1d+LFqMRID/z9bqWIML5iidQj/Vxxvrtu6Hmd0Soux+CXdBrX9AIa37u2iuvFkS38H8Bf9gKjR6gIasIZf6sC/pUyBR/UNAkgAAAAASUVORK5CYII') no-repeat;
+  background-size: 100% 100%;
+}
+
+.exchange-listing-youtube {
+  display:inline-block;
+  width: 15px;
+  height: 15px;
+  background: url('data:image/png;base64,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') no-repeat;
+  background-size: 100% 100%;
+}
+
+.exchange-listing-linkedin {
+  display:inline-block;
+  width: 15px;
+  height: 15px;
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAEwUlEQVRYR72Xe1BUVRzHf3efsCwvebi8hCBMI8lybIxpomF0tJiRSCl1pIywx+AwMAJBSFJIEMjAMDFZmln4KjQyo2hsmOhBTk4JIuaAIMtjd1lY5bmwy7Kne++B25692+4/N8/Mmbnf3/d3fr/PPecsd6DAZuw48eN7VrCmUlYItY0L9YxEMCQCUf3ZPRvfWqpJLT1sP9p8naKomBWBfhDo5QEyiUiovmwds8UK+skZGNAbACHUdW7vloeYOAuQfLSpjEJU/qPR4TBhssKY0QzmBaugADKxCPwVMvCWi+CvHjUgCpU37k0sYAG21l0YjFAFhk6DFIzzC4I2ti+mkIpBCfPQr9MPfZORFMYCJNY2ovDQEBidI5sbDSMwru5ha/iER4PCb7kgcAFuYlAPDUNTZjLFAmypPod8VSFgos/JdkTODMAr8WvZ0Cet7dDnsUIQADl9v+7qhqE5ezsG2FT5JVIEBPGKV8aRb5zbNiIIAFPEOKqFS7nPY4CE8jM0QDCveE18CBHLah0WEEADLfk7MUB86UmkCCSbMfENQUpIfdCPbVp/wwCXtdPCAeiHobVwNwZ44t3PHQII1s1BISMN8OvbL2KAxw9+SgPw//iNdV4mlvqv2cDq+ZlJmOi7wXnM7kmV3mAcGaS9KS4u8/IFxfIwkLgpeAhG/RD8/s7LGOCxA8cQk2g/Tm9bQ4R2ne9k9QPeEji4cTXnnfqtE9pvqSE1fh3ERvx7mdtu9sOpXzpgTBkCYpmcqMXA/nEoHQOsK/jYIUDDjkeIRSlnr7I6wtcdKjev4rxenQGiVPiu2I/pORPsq2+BGU8VD+DPslcxwNq8D2kA/m/869T1xKJn669w2t5z2H0x2Hy1G45cn7ADGID2ijcwQGxOHXJ3APBdWhyx6JnjbZy29/rGpqCkpZv1ixJWQqS/J5eruzsFaY34+JbG7MgAXDucgQFismqRuyqc9xKXXnuSiG366GdO23s5F69Bh2ac9WNVnlCVRB6f7VomZ1anhq6aTAywKrOaBojgAfyUkUDEnqpr4bQzTymXwLfpJLztWgzQDzdrszHAyowq5OYAoC17MwEQV/0Dp515TJIrf44G6K7bjwGiXq90CHAlL5EAWF/RxGlnHpPkymcAeo/kYoCI9DLkFnQf7wg6DiQTsYcPNXLamcckufLntLeh/1gBBghLK0VyBwB/F6cQAKuLGzjtzGOSXPkmGmDweCEGCN5TguQq/g7cKt1JANxfeIbTzjwmyZVv0t0GzYkiDKDaXYxkQZG8I1BXpBKx8Lx6TjvzmCRXvlnbB7qTxRggYFcRDRDFAxg6/BIRC835jNPOPCbJlW/W9sLo6RIM4PdCIZI6AOARCRiYpwEMX5RiAJ+UAiRZFgyUzF3AFv9dCplnwXJHA+MNZRjAa1u+Ru61LGhB4XNPAMTGcTBN3tFOni8PZgGUz71ZDQiyRH70LkjI77bQRMhiAqtBw/xLVDP91fvZDAAzJe5b93fRj9EiD3oX6KMQ+jiYbQd6WmfoDxZCPbMXq2LovhamuZSezLdTKn96XwmIJUl0QqDQb87Woyg9LFgumL7/oIhW8/ScIgAWd+N/6W1XFNkCsEew2Jy9E/dgMADMtPwDDOTIPExid4AAAAAASUVORK5CYII=') no-repeat;
+  background-size: 100% 100%;
+}
+
+</style>
+
+<h1>{% translate pagetitle %}</h1>
+<div id="exchange-multiselect-container">
+  <div class="exchange-multiselect-title">{% translate multi-select-title %}</div>
+  <div class="exchange-multiselect-stats"><b>37</b> {% translate stats-exchanges-text %} <b>246</b> {% translate stats-countries-text %} <b>14,234</b> {% translate stats-referrals-text %}</div>
+  <div class="exchange-multiselect-form">
+    <form>
+      <input type="text" class="exchange-multiselect-input" placeholder="{% translate multi-select-placeholder %}">
+      <input type="submit" value="FIND" class="exchange-multiselect-btn">
+    </form>
+    <div class="exchange-multiselect-input-instructions">{% translate multi-select-instructions %}</div>
+  </div>
+</div>
+<div id="exchange-location-container">
+  <div>
+    <div class="exchange-location-title">{% translate location-title %}</div>
+    <div class="select-style">
+      <select>
+        <option value="USA">USA</option>
+        <option value="Europe">Europe</option>
+        <option value="Asia">Asia</option>
+        <option value="South America">South America</option>
+      </select>
+    </div>
+  </div>
+  <div id="exchange-location-treeview">
+      <div class="exchange-location-treenode">North America</div><div class="exchange-location-treenode">Central &amp; South America</div><div class="exchange-location-treenode">Caribbean</div><div class="exchange-location-treenode">Oceania &amp; Pacific</div><div class="exchange-location-treenode">Europe</div><div class="exchange-location-treenode">Middle East</div><div class="exchange-location-treenode">Africa</div><div class="exchange-location-treenode">Asia &amp; India</div>
+  </div>
+</div>
+
+
+
+
+<br>
+<h1>{% translate featured-exchanges %}</h1>
+<div id="exchange-listing-container">
+  <div class="exchange-listing">
+      <div class="exchange-listing-left">
+        <div class="exchange-listing-thumbnail">
+          <img src="http://placehold.it/127x85">
+        </div>
+        <div>
+            <div class="exchange-listing-facebook"></div>
+            <div class="exchange-listing-youtube"></div>
+            <div class="exchange-listing-linkedin"></div>
+        </div>
+      </div>
+      <div class="exchange-listing-right">
+          <div class="exchange-listing-title">Exchange Title</div>
+          <div class="exchange-listing-description">
+            The fastest New York based exchange. Buy from anywhere in the world. No waiting, no hassles. Buy Bitcoins with cash, check, wire transfer, Western Union, or credit/debit card.
+          </div>
+          <div class="exchange-listing-button">buy bitcoin</div>
+      </div>
+  </div>
+
+  <div class="exchange-listing">
+      <div class="exchange-listing-left">
+        <div class="exchange-listing-thumbnail">
+          <img src="http://placehold.it/127x85">
+        </div>
+        <div>
+            <div class="exchange-listing-facebook"></div>
+            <div class="exchange-listing-youtube"></div>
+            <div class="exchange-listing-linkedin"></div>
+        </div>
+      </div>
+      <div class="exchange-listing-right">
+          <div class="exchange-listing-title">Exchange Title</div>
+          <div class="exchange-listing-description">
+            The fastest New York based exchange. Buy from anywhere in the world. No waiting, no hassles. Buy Bitcoins with cash, check, wire transfer, Western Union, or credit/debit card.
+          </div>
+          <div class="exchange-listing-button">buy bitcoin</div>
+      </div>
+  </div>
+</div>
