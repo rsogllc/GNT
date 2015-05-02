@@ -1,0 +1,31 @@
+---
+# This file is licensed under the MIT License (MIT) available on
+# http://opensource.org/licenses/MIT.
+
+layout: base
+id: mine-bitcoins
+
+---
+
+<h1>{% translate pagetitle %}</h1>
+<p class="summary">{% translate pagedesc %}</p>
+
+<div class="walletmenu" id="walletmenu">
+  <ul>
+    <li class="icon-hardware"><a id="hardware" data-walletcompat="hardware">{% translate hardware %}</a></li>
+    <li class="icon-cloud"><a id="cloud" data-walletcompat="cloud">{% translate cloud %}</a></li>
+  </ul>
+</div>
+
+<div class="wallets-container">
+	<div class="wallets" id="wallets" onclick="walletShow(event);" style="margin-left: 42%; height: 140px;">
+
+	</div>
+<div class="show-more-container"><a href="#" id="moreBtn" class="show-more sponsored">Click to see more</a></div>
+</div>
+
+<div class="wallets walletsmobile" id="walletsmobile"></div>
+
+<script>if (isMobile()) walletShowPlatform('mobile'); else walletShowPlatform('default');</script>
+
+<script src="/js/page-miners.js"></script>
