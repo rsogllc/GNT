@@ -399,7 +399,7 @@ en:
     choosetxt: "You can bring a Bitcoin wallet in your everyday life with your mobile or you can have a wallet only for online payments on your computer. In any case, choosing your wallet can be done in a minute."
     choosebut: "Choose your wallet"
     get: "Get bitcoins"
-    gettxt: "You can get bitcoins by accepting them as a payment for goods and services or by buying them from a friend or someone near you. You can also buy them directly from an exchange with your bank account."
+    gettxt: "You can get bitcoins by accepting them as a payment for goods and services or by buying them from a friend or someone near you. You can also buy them directly from an exchange with your bank account. You can also help secure the bitcoin network by mining bitcoins."
     getbut: "Buy Bitcoins"
     getbutmine: "Mine Bitcoins"
     spend: "Spend bitcoins"
