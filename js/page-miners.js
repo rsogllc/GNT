@@ -7,7 +7,7 @@ $(document).ready(function(){
 $('.icon-hardware').addClass('icon-active');
 
 $.ajax({
-              url: "https://www.btc.org/api/listing/mineBitcoins",
+              url: "/api/listing/mineBitcoins",
               type: "GET",
               cache: false,
               data: { },
