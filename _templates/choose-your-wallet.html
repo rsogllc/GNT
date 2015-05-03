@@ -650,10 +650,10 @@ wallets:
 - coinbase:
     title: "Coinbase"
     titleshort: "Coinbase"
-    compat: "web"
+    compat: "bank"
     level: 4
     platform:
-      web:
+      bank:
         text: "walletcoinbase"
         link: "https://coinbase.com"
         screenshot: "coinbase.png"
@@ -692,10 +692,10 @@ wallets:
 - xapo:
     title: "Xapo"
     titleshort: "Xapo"
-    compat: "web"
+    compat: "bank"
     level: 4
     platform:
-      web:
+      bank:
         text: "walletxapo"
         link: "https://xapo.com/"
         screenshot: "xapo.png"
@@ -713,10 +713,10 @@ wallets:
 - circle:
     title: "Circle"
     titleshort: "Circle"
-    compat: "web"
+    compat: "bank"
     level: 4
     platform:
-      web:
+      bank:
         text: "walletcircle"
         link: "https://circle.com/"
         screenshot: "circle.png"
@@ -781,12 +781,13 @@ wallets:
     </li>
     <li class="wallet-hardware"><a id="hardware" data-walletcompat="hardware">{% translate walletcathardware %}</a></li>
     <li class="wallet-web"><a id="web" data-walletcompat="web">{% translate walletcatweb %}</a></li>
+    <li class="wallet-bank"><a id="bank" data-walletcompat="bank">{% translate bank %}</a></li>
   </ul>
 </div>
 
 <div class="wallets-container">
 <div class="wallets" id="wallets" onclick="walletShow(event);">
-{% for wallet in page.wallets %}{% for wallet in wallet %}{% if wallet[1].platform.mobile %}{% assign platform = wallet[1].platform.mobile %}{% elsif wallet[1].platform.desktop %}{% assign platform = wallet[1].platform.desktop %}{% elsif wallet[1].platform.hardware %}{% assign platform = wallet[1].platform.hardware %}{% else %}{% assign platform = wallet[1].platform.web %}{% endif %}
+{% for wallet in page.wallets %}{% for wallet in wallet %}{% if wallet[1].platform.mobile %}{% assign platform = wallet[1].platform.mobile %}{% elsif wallet[1].platform.desktop %}{% assign platform = wallet[1].platform.desktop %}{% elsif wallet[1].platform.hardware %}{% assign platform = wallet[1].platform.hardware %}{% elsif wallet[1].platform.bank %}{% assign platform = wallet[1].platform.bank %}{% else %}{% assign platform = wallet[1].platform.web %}{% endif %}
 <div id="wallet-{{ wallet[0] }}" data-walletcompat="{{ wallet[1].compat }}" data-walletlevel="{{ wallet[1].level }}">
   <span></span>
   <div>
@@ -850,6 +851,7 @@ wallets:
 <div class="wallets walletsmobile" id="walletsmobile"></div>
 
 <script>if (isMobile()) walletShowPlatform('mobile'); else walletShowPlatform('default');</script>
+<script src="/js/page-wallets.js"></script>
 
 <div class="walletsdisclaimer">
 <h2><img src="/img/icons/warning.svg" class="warningicon" alt="warning">{% translate educate %}</h2>
