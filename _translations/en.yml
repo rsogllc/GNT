@@ -400,7 +400,8 @@ en:
     choosebut: "Choose your wallet"
     get: "Get bitcoins"
     gettxt: "You can get bitcoins by accepting them as a payment for goods and services or by buying them from a friend or someone near you. You can also buy them directly from an exchange with your bank account."
-    getbut: "Find an exchange"
+    getbut: "Buy Bitcoins"
+    getbutmine: "Mine Bitcoins"
     spend: "Spend bitcoins"
     spendtxt: "There is a growing number of services and merchants accepting Bitcoin all over the world. You can use Bitcoin to pay them and rate your experience to help honest businesses to gain more visibility."
     spendbut: "Find merchants"
@@ -710,7 +711,7 @@ en:
     protect-your-privacy: protect-your-privacy
     resources: resources
     secure-your-wallet: secure-your-wallet
-    select-an-exchange: select-an-exchange
+    buy-bitcoins: buy-bitcoins
     mine-bitcoins: mine-bitcoins
     support-bitcoin: support-bitcoin
     vocabulary: vocabulary
@@ -788,9 +789,9 @@ en:
       quantum: is-bitcoin-vulnerable-to-quantum-computing
       help: help
       morehelp: more-help
-  select-an-exchange:
-    title: "Select an Exchange"
-    pagetitle: "Select an Exchange"
+  buy-bitcoins:
+    title: "Buy Bitcoins"
+    pagetitle: "Buy Bitcoins"
     multi-select-title: "Verified Bitcoin Exchanges"
     stats-exchanges-text: "exchanges"
     stats-countries-text: "countries"
@@ -800,9 +801,9 @@ en:
     location-title: "Select a Location:"
     featured-exchanges: "Featured Exchanges"
   mine-bitcoins:
-    title: "Mine bitcoins"
-    pagetitle: "Mine bitcoins"
-    cloud: "Cloud"    
+    title: "Mine Bitcoins"
+    pagetitle: "Mine Bitcoins"
+    cloud: "Cloud"
     hardware: "Hardware"
     pagedesc: "Mining is the backbone of the bitcoin network. You can invest in mining and earn bitcoin yourself."
     walletcatmobile: "Mobile"
