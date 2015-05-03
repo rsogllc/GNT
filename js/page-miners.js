@@ -4,6 +4,8 @@ var sponsoredListingMap;
 
 $(document).ready(function(){
 
+$('.icon-hardware').addClass('icon-active');
+
 $.ajax({
               url: "https://www.btc.org/api/listing/mineBitcoins",
               type: "GET",
@@ -30,9 +32,12 @@ $.ajax({
 								{
 									style = '';
 								}
-			  					$('#wallets').append($('<div id="wallet-' + i + '" data-walletcompat="cloud hardware" data-walletlevel="1" style="'+style+'">')
-			                                                      .html('<a href="'+ item.homepageURL +'"><img src="'+item.faviconURL+'" alt="'+ item.name +'">'+item.name+'<span class="wallet-item-sponsored"></span></a>')
-			                                                  )
+								if (item.categories.indexOf('hardware') > -1)
+								{
+				  					$('#wallets').append($('<div id="wallet-' + i + '" data-walletcompat="cloud hardware" data-walletlevel="1" style="'+style+'">')
+				                                                      .html('<a href="'+ item.homepageURL +'"><img src="'+item.faviconURL+'" alt="'+ item.name +'">'+item.name+'<span class="wallet-item-sponsored"></span></a>')
+				                                                  )
+								}
 			  				}
                           }
                       },
@@ -47,26 +52,35 @@ $.ajax({
 });
 
 $('#moreBtn').click(function(event){
-        event.preventDefault();
-	$('#wallets').animate({	marginLeft: 0, height: "100%" }, 1000, function() {
-		console.log("Done");
-		$('#wallets').find( "div" ).show(500);
+    event.preventDefault();
+	$('#wallets').animate({	marginLeft: 0, height: "100%" }, 500, function() {
+		$('#wallets').find( "div" ).show(300);
 	});
+	$('#moreBtn').hide(200);
 });
 
 $('#hardware').mouseenter(function(event){
-    console.log("Enter hw");
-    relistMiners('hardware');
+	if (!$(this).parent().hasClass('icon-active'))
+	{
+		$('#walletmenu').find('li').removeClass('icon-active');
+		$(this).parent().addClass('icon-active');
+		relistMiners('hardware');
+	}
 });
 
 $('#cloud').mouseenter(function(event){
-    console.log("Enter klåd");
-    relistMiners('cloud');
+	if (!$(this).parent().hasClass('icon-active'))
+	{
+		$('#walletmenu').find('li').removeClass('icon-active');
+		$(this).parent().addClass('icon-active');
+		relistMiners('cloud');
+	}
 });
 
 function relistMiners(category)
 {
 	$('#wallets div').remove();
+	$('#moreBtn').show();
 	var sponsoredListing = sponsoredListingMap[category];
 	console.log(sponsoredListing);
     
@@ -88,4 +102,7 @@ function relistMiners(category)
 	        )
 		}
 	}
+    $('#wallets').animate({	marginLeft: "42%", height: "100%" }, 200, function() {
+    	// NOP
+	});
 }
