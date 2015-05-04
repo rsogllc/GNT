@@ -853,7 +853,27 @@ wallets:
 <script>if (isMobile()) walletShowPlatform('mobile'); else walletShowPlatform('default');</script>
 <script src="/js/page-wallets.js"></script>
 
-<div class="walletsdisclaimer">
-<h2><img src="/img/icons/warning.svg" class="warningicon" alt="warning">{% translate educate %}</h2>
-<p>{% translate educatetxt %}</p>
+<div class="walletsdisclaimer" data-disclaimer="bank" style="display: none;">
+<h2>About bitcoin banks</h2>
+<p>Bitcoin banks are not registered banks and thus not allowed to call themselfs banks officially, but they act as a typical bank since they are a custodian of your bitcoins. The users themselfs does not controll the bitcoins and if the service goes down it's not possible to retrive them via technical means.</p>
+</div>
+
+<div class="walletsdisclaimer" data-disclaimer="web" style="display: none;">
+<h2>About web wallets</h2>
+<p>Web wallets are a convinient way to handle your bitcoins. They all work differently and have different security features.</p>
+</div>
+
+<div class="walletsdisclaimer" data-disclaimer="desktop" style="display: none;">
+<h2>About desktop wallets</h2>
+<p>The original.</p>
+</div>
+
+<div class="walletsdisclaimer" data-disclaimer="mobile" style="display: none;">
+<h2>About mobile wallets</h2>
+<p>The convinient.</p>
+</div>
+
+<div class="walletsdisclaimer" data-disclaimer="hardware" style="display: none;">
+<h2>About hardware wallets</h2>
+<p>The secure.</p>
 </div>

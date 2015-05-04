@@ -51,28 +51,15 @@
     {% endfor %}
     </select></div>
     <ul id="menusimple" class="menusimple" onclick="mobileMenuHover(event);">
-      <li><a href="#" onclick="return false;">{% translate menu-intro layout %}</a>
+      <li {% if page.id == 'getting-started' %} class="active"{% endif %}><a href="#" onclick="return false;">{% translate menu-getting-started layout %}</a>
         <ul>
-          <li{% if page.id == 'bitcoin-for-individuals' %} class="active"{% endif %}><a href="/{{ page.lang }}/{% translate bitcoin-for-individuals url %}">{% translate menu-bitcoin-for-individuals layout %}</a></li>
-          <li{% if page.id == 'bitcoin-for-businesses' %} class="active"{% endif %}><a href="/{{ page.lang }}/{% translate bitcoin-for-businesses url %}">{% translate menu-bitcoin-for-businesses layout %}</a></li>
-          <li{% if page.id == 'bitcoin-for-developers' %} class="active"{% endif %}><a href="/{{ page.lang }}/{% translate bitcoin-for-developers url %}">{% translate menu-bitcoin-for-developers layout %}</a></li>
-          <li{% if page.id == 'getting-started' %} class="active"{% endif %}><a href="/{{ page.lang }}/{% translate getting-started url %}">{% translate menu-getting-started layout %}</a></li>
-          <li{% if page.id == 'how-it-works' %} class="active"{% endif %}><a href="/{{ page.lang }}/{% translate how-it-works url %}">{% translate menu-how-it-works layout %}</a></li>
-          <li{% if page.id == 'you-need-to-know' %} class="active"{% endif %}><a href="/{{ page.lang }}/{% translate you-need-to-know url %}">{% translate menu-you-need-to-know layout %}</a></li>
+          <li{% if page.id == 'choose-your-wallet' %} class="active"{% endif %}><a href="/{{ page.lang }}/{% translate choose-your-wallet url %}">Choose a wallet</a></li>
+          <li{% if page.id == 'buy-bitcoins' %} class="active"{% endif %}><a href="/{{ page.lang }}/{% translate buy-bitcoins url %}">Buy bitcoins</a></li>
+          <li{% if page.id == 'mine-bitcoins' %} class="active"{% endif %}><a href="/{{ page.lang }}/{% translate mine-bitcoins url %}">Mine bitcoins</a></li>
+          <li{% if page.id == 'spend-bitcoins' %} class="active"{% endif %}><a href="/{{ page.lang }}/{% translate spend-bitcoins url %}">Spend bitcoins</a></li>
         </ul>
       </li>
-      <li><a href="#" onclick="return false;">{% translate menu-resources layout %}</a>
-        <ul>
-          <li{% if page.id == 'resources' %} class="active"{% endif %}><a href="/{{ page.lang }}/{% translate resources url %}">{% translate menu-resources layout %}</a></li>
-          <li{% if page.id == 'community' %} class="active"{% endif %}><a href="/{{ page.lang }}/{% translate community url %}">{% translate menu-community layout %}</a></li>
-          {% if page.lang == 'en' %}<li{% if page.id == 'developer-documentation' %} class="active"{% endif %}><a href="/en/developer-documentation">Documentation</a></li>{% endif %}
-          <li{% if page.id == 'development' %} class="active"{% endif %}><a href="/{{ page.lang }}/{% translate development url %}">{% translate menu-development layout %}</a></li>
-          <li{% if page.id == 'vocabulary' %} class="active"{% endif %}><a href="/{{ page.lang }}/{% translate vocabulary url %}">{% translate menu-vocabulary layout %}</a></li>
-          <li{% if page.id == 'events' %} class="active"{% endif %}><a href="/{{ page.lang }}/{% translate events url %}">{% translate menu-events layout %}</a></li>
-        </ul>
-      </li>
-      <li{% if page.id == 'innovation' %} class="active"{% endif %}><a href="/{{ page.lang }}/{% translate innovation url %}">{% translate menu-innovation layout %}</a></li>
-      <li{% if page.id == 'support-bitcoin' %} class="active"{% endif %}><a href="/{{ page.lang }}/{% translate support-bitcoin url %}">{% translate menu-support-bitcoin layout %}</a></li>
+      <li{% if page.id == 'news' %} class="active"{% endif %}><a href="/{{ page.lang }}/{% translate news url %}">News</a></li>
       {% case page.lang %}
       {% when 'sv' %}
       {% else %}
