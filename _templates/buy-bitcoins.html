@@ -126,23 +126,56 @@ input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
     outline: none;
 }
 
-#exchange-location-treeview {
+.exchange-location-treeview {
   display:inline-block;
   width:100%;
-  padding:0px 30px 40px 30px;
+  padding-left:5%;
+}
+
+.exchange-location-treeleft {
+  float:left;
+  width:45%;
+  padding:0px 0px 0px 0px;
+}
+
+.exchange-location-treeright {
+  float:left;
+  width:50%;
+  padding:0px 0px 0px 0px;
 }
 
 .exchange-location-treenode {
   display:inline-block;
-  width:49%;
+  width:100%;
   line-height:2.5em;
   font-family: 'Ubuntu',sans-serif;
   font-size:1.1em;
   color: #3b3b3b;
   position:relative;
   background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAARCAYAAAA7bUf6AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAEFJREFUeNpinLxiNwMO4ALEMMlZQJyOSyETAxXAqCE0NOQ/Dowc92l41KUNLu8w4sCuSOpm4VE3azSdDGZDAAIMAEKuExj1TD6+AAAAAElFTkSuQmCC') no-repeat right 50px center;
-
+  background-position: 89% 13px;
 }
+
+.exchange-location-treenode a:hover {
+  font-weight:bold;
+}
+
+
+.exchange-location-treenode a {
+  text-decoration: none;
+  color: #3b3b3b;
+}
+
+.exchange-location-treechild {
+  margin-left:10px;
+  line-height:1.2em;
+  font-size:0.9em;
+}
+
+.exchange-location-treechild:last-of-type {
+  margin-bottom:10px;
+}
+
 
 .exchange-location-treenode:after {
   content: '';
@@ -152,6 +185,7 @@ input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
   bottom: -1px;
   left: 0px;
   border-top: 1px solid #ddd;
+
 }
 
 #exchange-listing-container {
@@ -237,29 +271,66 @@ input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
 <h1>{% translate pagetitle %}</h1>
 <div id="exchange-multiselect-container">
   <div class="exchange-multiselect-title">{% translate multi-select-title %}</div>
-  <div class="exchange-multiselect-stats"><b>37</b> {% translate stats-exchanges-text %} <b>246</b> {% translate stats-countries-text %} <b>14,234</b> {% translate stats-referrals-text %}</div>
+  <div ng-controller="exchangeStatsCtrl" class="exchange-multiselect-stats"><b>{% raw %}{{exchange.stats.exchanges}}{% endraw %}</b> {% translate stats-exchanges-text %} <b>{% raw %}{{exchange.stats.countries}}{% endraw %}</b> {% translate stats-countries-text %} <b>{% raw %}{{exchange.stats.referrals | number}}{% endraw %}</b> {% translate stats-referrals-text %}</div>
   <div class="exchange-multiselect-form">
-    <form>
-      <input type="text" class="exchange-multiselect-input" placeholder="{% translate multi-select-placeholder %}">
-      <input type="submit" value="FIND" class="exchange-multiselect-btn">
-    </form>
+    <div ng-controller="exchangeLocationCtrl">
+        <select ng-model="selectedItem"
+                ng-options="value for (name, value) in countries"
+                ng-change="update(selectedItem)"
+                class="exchange-multiselect-input">
+                <option value="">{% raw %}{{localData.val.localizedCountryName}}{% endraw %}</option>
+        </select>
+        <input type="submit" value="FIND" class="exchange-multiselect-btn" ng-click="update(selectedItem)">
+    </div>
     <div class="exchange-multiselect-input-instructions">{% translate multi-select-instructions %}</div>
-  </div>
-</div>
-<div id="exchange-location-container">
-  <div>
-    <div class="exchange-location-title">{% translate location-title %}</div>
-    <div class="select-style">
-      <select>
-        <option value="USA">USA</option>
-        <option value="Europe">Europe</option>
-        <option value="Asia">Asia</option>
-        <option value="South America">South America</option>
-      </select>
     </div>
   </div>
-  <div id="exchange-location-treeview">
-      <div class="exchange-location-treenode">North America</div><div class="exchange-location-treenode">Central &amp; South America</div><div class="exchange-location-treenode">Caribbean</div><div class="exchange-location-treenode">Oceania &amp; Pacific</div><div class="exchange-location-treenode">Europe</div><div class="exchange-location-treenode">Middle East</div><div class="exchange-location-treenode">Africa</div><div class="exchange-location-treenode">Asia &amp; India</div>
+
+  <div class="exchange-location-treeview" ng-controller="exchangeTreeviewCtrl">
+    <div class="exchange-location-treeleft">
+      <div class="exchange-location-treenode"><a ng-click="showNA = !showNA" href="#">{% translate regionNA %}</a>
+        <div ng-show="showNA" id="nodeNA">
+        <div class="exchange-location-treechild" ng-repeat="region in regions.NA"><a ng-click="showListings(region)" href="#">{% raw %}{{getCountryFromCode(region)}}{% endraw %}</a></div>
+        </div>
+      </div>
+      <div class="exchange-location-treenode"><a ng-click="showCR = !showCR" href="#">{% translate regionCR %}</a>
+        <div ng-show="showCR" id="nodeCR">
+          <div class="exchange-location-treechild" ng-repeat="region in regions.CR"><a ng-click="showListings(region)" href="#">{% raw %}{{getCountryFromCode(region)}}{% endraw %}</a></div>
+        </div>
+      </div>
+      <div class="exchange-location-treenode"><a ng-click="showEU = !showEU" href="#">{% translate regionEU %}</a>
+        <div ng-show="showEU" id="nodeEU">
+          <div class="exchange-location-treechild" ng-repeat="region in regions.EU"><a ng-click="showListings(region)" href="#">{% raw %}{{getCountryFromCode(region)}}{% endraw %}</a></div>
+        </div>
+      </div>
+      <div class="exchange-location-treenode"><a ng-click="showAF = !showAF" href="#">{% translate regionAF %}</a>
+        <div ng-show="showAF" id="nodeAF">
+          <div class="exchange-location-treechild" ng-repeat="region in regions.AF"><a ng-click="showListings(region)" href="#">{% raw %}{{getCountryFromCode(region)}}{% endraw %}</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="exchange-location-treeright">
+      <div class="exchange-location-treenode"><a ng-click="showSA = !showSA" href="#">{% translate regionSA %}</a>
+        <div ng-show="showSA" id="nodeXX">
+          <div class="exchange-location-treechild" ng-repeat="region in regions.SA"><a ng-click="showListings(region)" href="#">{% raw %}{{getCountryFromCode(region)}}{% endraw %}</a></div>
+        </div>
+      </div>
+      <div class="exchange-location-treenode"><a ng-click="showOP = !showOP" href="#">{% translate regionOP %}</a>
+        <div ng-show="showOP" id="nodeXX">
+          <div class="exchange-location-treechild" ng-repeat="region in regions.OP"><a ng-click="showListings(region)" href="#">{% raw %}{{getCountryFromCode(region)}}{% endraw %}</a></div>
+        </div>
+      </div>
+      <div class="exchange-location-treenode"><a ng-click="showME = !showME" href="#">{% translate regionME %}</a>
+        <div ng-show="showME" id="nodeXX">
+          <div class="exchange-location-treechild" ng-repeat="region in regions.ME"><a ng-click="showListings(region)" href="#">{% raw %}{{getCountryFromCode(region)}}{% endraw %}</a></div>
+        </div>
+      </div>
+      <div class="exchange-location-treenode"><a ng-click="showAS = !showAS" href="#">{% translate regionAS %}</a>
+        <div ng-show="showAS" id="nodeXX">
+          <div class="exchange-location-treechild" ng-repeat="region in regions.AS"><a ng-click="showListings(region)" href="#">{% raw %}{{getCountryFromCode(region)}}{% endraw %}</a></div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -268,44 +339,22 @@ input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
 
 <br>
 <h1>{% translate featured-exchanges %}</h1>
-<div id="exchange-listing-container">
-  <div class="exchange-listing">
+<div id="exchange-listing-container" ng-controller="exchangeListingCtrl">
+  <div class="exchange-listing" ng-repeat="listing in localData.val.localListings">
       <div class="exchange-listing-left">
         <div class="exchange-listing-thumbnail">
           <img src="https://placehold.it/127x85">
         </div>
         <div>
-            <div class="exchange-listing-facebook"></div>
-            <div class="exchange-listing-youtube"></div>
-            <div class="exchange-listing-linkedin"></div>
+            <!-- Social Media -->
         </div>
       </div>
       <div class="exchange-listing-right">
-          <div class="exchange-listing-title">Exchange Title</div>
+          <div class="exchange-listing-title"><img src="{% raw %}{{listing.faviconURL}}{% endraw %}">{% raw %}{{listing.name}}{% endraw %}</div>
           <div class="exchange-listing-description">
-            The fastest New York based exchange. Buy from anywhere in the world. No waiting, no hassles. Buy Bitcoins with cash, check, wire transfer, Western Union, or credit/debit card.
+            {% raw %}{{listing.description}}{% endraw %}
           </div>
-          <div class="exchange-listing-button">buy bitcoin</div>
-      </div>
-  </div>
-
-  <div class="exchange-listing">
-      <div class="exchange-listing-left">
-        <div class="exchange-listing-thumbnail">
-          <img src="https://placehold.it/127x85">
-        </div>
-        <div>
-            <div class="exchange-listing-facebook"></div>
-            <div class="exchange-listing-youtube"></div>
-            <div class="exchange-listing-linkedin"></div>
-        </div>
-      </div>
-      <div class="exchange-listing-right">
-          <div class="exchange-listing-title">Exchange Title</div>
-          <div class="exchange-listing-description">
-            The fastest New York based exchange. Buy from anywhere in the world. No waiting, no hassles. Buy Bitcoins with cash, check, wire transfer, Western Union, or credit/debit card.
-          </div>
-          <div class="exchange-listing-button">buy bitcoin</div>
+          <a href="{% raw %}{{listing.homepageURL}}{% endraw %}"><div class="exchange-listing-button">buy bitcoin</div></a>
       </div>
   </div>
 </div>
