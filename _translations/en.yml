@@ -685,9 +685,14 @@ en:
     menu-privacy: "Privacy"
     menu-resources: Resources
     menu-stats: "Stats"
+    menu-choose-wallet: "Choose your wallet"
+    menu-buy-bitcoins: "Buy Bitcoins"
+    menu-mine-bitcoins: "Mine bitcoins"
+    menu-spend-bitcoins: "Spend bitcoins"
     menu-support-bitcoin: Participate
     menu-vocabulary: Vocabulary
     menu-you-need-to-know: "You need to know"
+    menu-news: "News"
     banner-translate: "Translations for this language are outdated. <a href=\"https://github.com/bitcoin-portal/bitcoin-portal-content#translation\">Click here to help translate bitcoin.com in your language</a>."
     footer: "Released under the <a href=\"http://opensource.org/licenses/mit-license.php\" target=\"_blank\">MIT license</a>"
     sponsor: "A community website sponsored by"
