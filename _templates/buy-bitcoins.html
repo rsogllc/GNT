@@ -361,7 +361,7 @@ input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
           <div class="exchange-listing-description">
             {% raw %}{{listing.description}}{% endraw %}
           </div>
-          <a href="{% raw %}{{listing.homepageURL}}{% endraw %}"><div class="exchange-listing-button">buy bitcoin</div></a>
+          <a href="{% raw %}/url?promo={{listing.id}}-{{localData.val.countryCode}}&url={{listing.homepageURL}}{% endraw %}"><div class="exchange-listing-button">buy bitcoin</div></a>
       </div>
   </div>
 </div>
