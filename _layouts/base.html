@@ -15,13 +15,13 @@
 {% if page.lang == 'ar' or page.lang == 'fa' %}{% lesscss rtl.less %}{% endif %}
 {% if page.lang == 'bg' or page.lang == 'el' or page.lang == 'ko' or page.lang == 'hi' or page.lang == 'pl' or page.lang == 'sl' or page.lang == 'ro' or page.lang == 'ru' or page.lang == 'tr' or page.lang == 'uk' or page.lang == 'zh_CN' or page.lang == 'zh_TW' %}{% lesscss sans.less %}{% endif %}
 <script type="text/javascript" src="/js/base.js"></script>
+<script type="text/javascript" src="/js/jquery-2.1.3.min.js"></script>
 {% if page.id == 'buy-bitcoins' %}
 <script type="text/javascript" src="/js/main.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
 <script type="text/javascript" src="/js/buy-bitcoins.js"></script>
 {% endif %}
 {% if page.id != 'download' and page.id != 'buy-bitcoins' %}
-<script type="text/javascript" src="/js/jquery-2.1.3.min.js"></script>
 <script type="text/javascript" src="/js/main.js"></script>
 {% endif %}
 <link rel="shortcut icon" href="/favicon.png">
