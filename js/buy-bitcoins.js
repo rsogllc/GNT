@@ -31,6 +31,7 @@ $(document).ready(function(){
 	            	$(sponsoredId).show();
 	            	$(sponsoredId).css('width', '400px');
 	            	$(sponsoredId).css('margin-left', '260px');
+	            	$('#show-more').show(200);
 	            },
 	            500: function (response) {
 	
@@ -45,6 +46,7 @@ $(document).ready(function(){
 
 $(document).on("click", "#show-more", function(event) {
     event.preventDefault();
+    $('#show-more').hide(200);
     $('#exchange-listing-container').children('.exchange-listing').each(function () {
         if ($(this).width() > 275)
         {
@@ -153,37 +155,30 @@ app.controller('exchangeTreeviewCtrl',function($scope, LocalData, $http) {
   $scope.getCountryFromCode = function( value ) {
     return $scope.countries.countries[value];
   }
+  
+  $scope.hideCountries = function(region) {
+		if ($scope.showEU != null && region != 'showEU')
+			$scope.showEU = false;
+		if ($scope.showNA != null && region != 'showNA')
+			$scope.showNA = false;
+		if ($scope.showCR != null && region != 'showCR')
+			$scope.showCR = false;
+		if ($scope.showAF != null && region != 'showAF')
+			$scope.showAF = false;
+		if ($scope.showSA != null && region != 'showSA')
+			$scope.showSA = false;
+		if ($scope.showOP != null && region != 'showOP')
+			$scope.showOP = false;
+		if ($scope.showME != null && region != 'showME')
+			$scope.showME = false;
+		if ($scope.showAS != null && region != 'showAS')
+			$scope.showAS = false;
+  }
 
   $scope.showListings = function(countryCode, event) {
 	event.preventDefault();
-	if ($scope.showEU != null)
-		$scope.showEU = false;
-	if ($scope.showNA != null)
-		$scope.showNA = false;
-	if ($scope.showCR != null)
-		$scope.showCR = false;
-	if ($scope.showAF != null)
-		$scope.showAF = false;
-	if ($scope.showSA != null)
-		$scope.showSA = false;
-	if ($scope.showOP != null)
-		$scope.showOP = false;
-	if ($scope.showME != null)
-		$scope.showME = false;
-	if ($scope.showAS != null)
-		$scope.showAS = false;
+	$scope.hideCountries(null);
 	
-	/*
-    $http.get("/api/frontend/buyBitcoins?country="+countryCode)
-    .success(function(response) {
-      LocalData.getValue(response);
-      console.log(response);
-      console.log($scope);
-      var baseText = $('#featuredH1').data('text');
-      $('#featuredH1').html(baseText.replace("@", response.localizedCountryName));
-      
-    });
-    */
 	$.ajax({
 	    url: "/api/frontend/buyBitcoins?country="+countryCode,
 	    type: "GET",
@@ -215,6 +210,7 @@ app.controller('exchangeTreeviewCtrl',function($scope, LocalData, $http) {
 	            	$(sponsoredId).show();
 	            	$(sponsoredId).css('width', '400px');
 	            	$(sponsoredId).css('margin-left', '260px');
+	            	$('#show-more').show(200);
 	            },
 	            500: function (response) {
 	
