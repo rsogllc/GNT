@@ -15,7 +15,7 @@ $(document).ready(function(){
 
 	*/
 	$.ajax({
-	    url: "/api/listing/buyBitcoins",
+	    url: "/api/frontend/buyBitcoins",
 	    type: "GET",
 	    cache: false,
 	    data: { },
@@ -118,7 +118,7 @@ app.factory('LocalData', function() {
 app.controller('exchangeStatsCtrl', function($scope, LocalData, $http) {
     //$http.get("./buy.json")
     /*
-	$http.get("/api/listing/buyBitcoins")
+	$http.get("/api/frontend/buyBitcoins")
     .success(function(response) {
       //console.log(response);
       $scope.exchange = response;
@@ -140,7 +140,7 @@ app.controller('exchangeStatsCtrl', function($scope, LocalData, $http) {
 
 app.controller('exchangeLocationCtrl', function($scope, LocalData, $http) {
     //$http.get("./buy.json")
-    $http.get("/api/listing/countryList")
+    $http.get("/api/frontend/countryList")
     .success(function(response) {
       //console.log(response);
       $scope.countries = response;
@@ -156,7 +156,7 @@ app.controller('exchangeLocationCtrl', function($scope, LocalData, $http) {
                if( $scope.countries[ prop ] === value )
                //$http.get("./buy.json")
             	   
-               $http.get("/api/listing/buyBitcoins?country="+prop)
+               $http.get("/api/frontend/buyBitcoins?country="+prop)
                .success(function(response) {
                  LocalData.getValue(response);
                  // console.log($scope.localData);
@@ -173,7 +173,7 @@ app.controller('exchangeListingCtrl',function($scope, LocalData, $http) {
 });
 
 app.controller('exchangeTreeviewCtrl',function($scope, LocalData, $http) {
-  $http.get("/api/listing/regionMap")
+  $http.get("/api/frontend/regionMap")
   .success(function(response) {
     $scope.regions = response.data;
     console.log(response);
@@ -206,7 +206,7 @@ app.controller('exchangeTreeviewCtrl',function($scope, LocalData, $http) {
 		$scope.showAS = false;
 	
 	/*
-    $http.get("/api/listing/buyBitcoins?country="+countryCode)
+    $http.get("/api/frontend/buyBitcoins?country="+countryCode)
     .success(function(response) {
       LocalData.getValue(response);
       console.log(response);
@@ -217,7 +217,7 @@ app.controller('exchangeTreeviewCtrl',function($scope, LocalData, $http) {
     });
     */
 	$.ajax({
-	    url: "/api/listing/buyBitcoins?country="+countryCode,
+	    url: "/api/frontend/buyBitcoins?country="+countryCode,
 	    type: "GET",
 	    cache: false,
 	    data: { },

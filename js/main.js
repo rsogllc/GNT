@@ -411,7 +411,7 @@ var sponsoredWallet = null;
 function walletShowPlatform(platform) {
 	if (sponsoredWallet == null)
 	{
-		$.ajax('/api/listing/chooseYourWallet').success(function(sw)
+		$.ajax('/api/frontend/chooseYourWallet').success(function(sw)
 		{
 			sponsoredWallet = sw;
 			___walletShowPlatform(platform);

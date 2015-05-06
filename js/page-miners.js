@@ -7,7 +7,7 @@ $(document).ready(function(){
 $('.icon-hardware').addClass('icon-active');
 
 $.ajax({
-              url: "/api/listing/mineBitcoins",
+              url: "/api/frontend/mineBitcoins",
               type: "GET",
               cache: false,
               data: { },
