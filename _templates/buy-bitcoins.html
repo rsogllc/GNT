@@ -195,18 +195,20 @@ input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
 }
 
 #exchange-listing-container {
-  display:flex;
+  display:block;
   width:100%;
   text-align:justify;
+  float: left;
 }
 
 .exchange-listing {
   padding:10px;
-  margin:10px;
-  display:inline;
+  margin:8px;
   border:1px solid silver;
   border-radius: 5px;
-  width: 50%;
+  width: 275px;
+  display: block;
+  float: left;
 }
 
 .exchange-listing-left {
@@ -346,22 +348,7 @@ input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
 
 <br>
 <h1 id="featuredH1" data-text="{% translate featured-exchanges %}"></h1>
-<div id="exchange-listing-container" ng-controller="exchangeListingCtrl">
-  <div class="exchange-listing" ng-repeat="listing in localData.val.localListings">
-      <div class="exchange-listing-left">
-        <div class="exchange-listing-thumbnail">
-          <img src="https://placehold.it/127x85">
-        </div>
-        <div>
-            <!-- Social Media -->
-        </div>
-      </div>
-      <div class="exchange-listing-right">
-          <div class="exchange-listing-title"><img src="{% raw %}{{listing.faviconURL}}{% endraw %}">{% raw %}{{listing.name}}{% endraw %}</div>
-          <div class="exchange-listing-description">
-            {% raw %}{{listing.description}}{% endraw %}
-          </div>
-          <a href="{% raw %}/url?promo={{listing.id}}-{{localData.val.countryCode}}&url={{listing.homepageURL}}{% endraw %}"><div class="exchange-listing-button">buy bitcoin</div></a>
-      </div>
-  </div>
+<div id="exchange-listing-container">
+  <img src="/img/ring.gif" style="margin-left: 43.5%;" id="listingsloader"/>
 </div>
+<div class="show-more-container"><a href="#" id="show-more" class="show-more sponsored">Click to see more</a></div>
