@@ -104,6 +104,11 @@ app.factory('LocalData', function() {
 
 
 app.controller('exchangeStatsCtrl', function($scope, LocalData, $http) {
+	
+	$('#content').children().animate({ opacity: 1}, 200, function() {
+		
+	});
+	
 	$http.get("/api/frontend/buyBitcoins")
 	.success(function(response) {
 	//console.log(response);
