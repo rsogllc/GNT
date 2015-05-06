@@ -104,7 +104,13 @@ app.factory('LocalData', function() {
 
 
 app.controller('exchangeStatsCtrl', function($scope, LocalData, $http) {
-
+	$http.get("/api/frontend/buyBitcoins")
+	.success(function(response) {
+	//console.log(response);
+	$scope.exchange = response;
+	LocalData.getValue(response);
+	//console.log(LocalData);
+	});
 });
 
 
@@ -186,6 +192,9 @@ app.controller('exchangeTreeviewCtrl',function($scope, LocalData, $http) {
 	    data: { },
 	    statusCode: {
 	            200: function (response) {
+	            	
+	            	$scope.stats = response.stats.data;
+	            	
 	            	console.log(response);
 	            	var baseText = $('#featuredH1').data('text');
 	            	$('#featuredH1').html(baseText.replace("@", response.localizedCountryName));
@@ -221,13 +230,4 @@ app.controller('exchangeTreeviewCtrl',function($scope, LocalData, $http) {
 	          }
 	});
   }
-  
-	    $scope.gotoBottom = function() {
-	      // set the location.hash to the id of
-	      // the element you wish to scroll to.
-	      $location.hash('exchange-listing-container');
-
-	      // call $anchorScroll()
-	      $anchorScroll();
-	    };
 });
