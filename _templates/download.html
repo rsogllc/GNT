@@ -16,6 +16,8 @@ lin32: "linux32.tar.gz"
 lin64: "linux64.tar.gz"
 
 ---
+<!-- Note: this file exempt from check-for-subheading-anchors check -->
+
 {% capture PATH_PREFIX %}/bin/bitcoin-core-{{ site.DOWNLOAD_VERSION }}{% endcapture %}
 {% capture FILE_PREFIX %}bitcoin-{{ site.DOWNLOAD_VERSION }}{% endcapture %}
 <link rel="alternate" type="application/rss+xml" href="/en/rss/releases.rss" title="Bitcoin Core releases">
@@ -77,7 +79,7 @@ lin64: "linux64.tar.gz"
     <p>
       <a href="{{ PATH_PREFIX }}/SHA256SUMS.asc" class="dl">{% translate downloadsig %}</a><br>
       <a href="{{ PATH_PREFIX }}/{{ FILE_PREFIX }}.torrent" class="dl">{% translate downloadtorrent %}</a>
-        {% if site.DOWNLOAD_MAGNETLINK %} <a href="{{ site.DOWNLOAD_MAGNETLINK }}" class="magnetlink"></a>{% endif %}<br>
+        {% if site.DOWNLOAD_MAGNETLINK %} <a href="{{ site.DOWNLOAD_MAGNETLINK | replace: '&', '\&amp;'}}" class="magnetlink" data-proofer-ignore></a>{% endif %}<br>
       <a href="/en/version-history">{% translate versionhistory %}</a>
     </p>
   </div>

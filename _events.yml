@@ -1,75 +1,3 @@
-- date: 2015-03-31
-  title: "Transact 15"
-  venue: "Moscone center / South building"
-  address: "747 Howard Street"
-  city: "San Francisco, CA"
-  country: "United States"
-  link: "http://electran.org/events/transact15/"
-
-- date: 2015-04-02
-  title: "Bitcoin Conference Russia 2015"
-  venue: "MSU Science Park"
-  address: "Buildings 75, Leninskie Gory"
-  city: "Moscow"
-  country: "Russia"
-  link: "http://bitcoinconf.moscow/"
-
-- date: 2015-04-08
-  title: "Bitcoin in the City"
-  venue: "SAS"
-  address: "7th floor, 199 Bishopsgate, EC2M 3TY"
-  city: "London"
-  country: "England"
-  link: "https://events.roolo.io/"
-
-- date: 2015-04-16
-  title: "Bitcoin Africa Conference"
-  venue: "Atlantic Imbizo Conference And Function Studio"
-  address: "V & A Waterfront"
-  city: "Cape Town"
-  country: "South Africa"
-  link: "http://bitcoinconference.co.za/"
-
-- date: 2015-04-18
-  title: "The State of Digital Money"
-  venue: "Rhubarb Studios"
-  address: "633 W 5th St"
-  city: "Los Angeles, CA"
-  country: "United States"
-  link: "http://www.cureativ.com/sodm#digitalmoney"
-
-- date: 2015-04-18
-  title: "Atlanta Bitcoin Consumer Fair"
-  venue: "Loudermilk Conference Center"
-  address: "40 Courtland Street NE"
-  city: "Atlanta, GA"
-  country: "United States"
-  link: "http://bitcoinconsumerfair.com/"
-
-- date: 2015-04-22
-  title: "The Age of Cryptocurrency"
-  venue: "Consumers' Research - DACOR Bacon House"
-  address: "1801 F Street, NW"
-  city: "Washington, DC"
-  country: "United States"
-  link: "http://consumersresearch.org/event/the-age-of-cryptocurrency/"
-
-- date: 2015-04-27
-  title: "Inside Bitcoins New York"
-  venue: "Javits Convention Center"
-  address: "655 W 34th St"
-  city: "New York, NY"
-  country: "United States"
-  link: "http://insidebitcoins.com/new-york/2015?utm_source=bitcoinorg&utm_medium=eventlisting&utm_campaign=bitcoinorgeventlistingibny"
-
-- date: 2015-04-29
-  title: "Virtual Currency Today Summit"
-  venue: "Hilton Boston Back Bay"
-  address: "40 Dalton St"
-  city: "Boston"
-  country: "United States"
-  link: "http://summit.virtualcurrencytoday.com/"
-
 - date: 2015-05-02
   title: "WeBTCExpo"
   venue:
@@ -133,6 +61,30 @@
   city: "Moscow"
   country: "Russia"
   link: "http://www.advapay.eu/"
+
+- date: 2015-06-11
+  title: "BL0CKCHA1N: The Blockchain Forum"
+  venue: "Novotel Paris Centre Tour Eiffel"
+  address: "61 quai de Grenelle, 75015"
+  city: "Paris"
+  country: "France"
+  link: "http://www.bl0ckcha1n.com"
+
+- date: 2015-07-10
+  title: "Inside Bitcoins Chicago"
+  venue: "Navy Pier"
+  address: "600 East Grand Ave, Chaicago, IL 60611"
+  city: "Chicago"
+  country: "United States"
+  link: "http://insidebitcoins.com/chicago/2015?utm_source=bitcoinorg&utm_medium=eventlisting&utm_campaign=bitcoinorgeventlistingibchicago"
+
+- date: 2015-08-13
+  title: "Coin Congress San Francisco 2015"
+  venue: "Hilton Union Square - San Francisco"
+  address: "333 O'Farrell St"
+  city: "San Francisco"
+  country: "USA"
+  link: "http://www.coincongressevents.org"
 
 - date: 2015-11-09
   title: "MTBIT - Bitcoin & Remittances Miami Beach"

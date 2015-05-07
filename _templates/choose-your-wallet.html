@@ -115,7 +115,7 @@ wallets:
       desktop:
         text: "walletmsigna"
         link: "https://ciphrex.com/redirect/?referer=bitcoin.org"
-        source: "https://ciphrex.com/redirect/?url=https://github.com/ciphrex/CoinVault&referer=bitcoin.org"
+        source: "https://ciphrex.com/redirect/?url=https://github.com/ciphrex/CoinVault?referer=bitcoin.org"
         screenshot: "msigna.png"
         os:
         - windows
@@ -307,23 +307,99 @@ wallets:
           transparency: "checkfailtransparencynew"
           environment: "checkgoodenvironmenthardware"
           privacy: "checkneutralprivacyvariable"
-- hw1:
-    title: "Ledger HW.1"
-    titleshort: "HW.1"
+- ledgernano:
+    title: "Ledger Nano"
+    titleshort: "Ledger<br>Nano"
     compat: "hardware"
     level: 2
     platform:
       hardware:
-        text: "wallethw1"
+        text: "walletnano"
         link: "https://www.ledgerwallet.com/"
-        source: "https://github.com/btchip/"
-        screenshot: "hw1.png"
+        source: "https://github.com/LedgerHQ/"
+        screenshot: "ledger.png"
         check:
           control: "checkgoodcontrolfull"
           validation: "checkneutralvalidationvariable"
           transparency: "checkfailtransparencynew"
           environment: "checkgoodenvironmenthardware"
           privacy: "checkneutralprivacyvariable"
+- bither:
+    title: "Bither"
+    titleshort: "Bither"
+    compat: "mobile ios android desktop windows mac linux"
+    level: 2
+    platform:
+      mobile:
+        text: "walletbither"
+        link: "https://itunes.apple.com/us/app/bither/id899478936"
+        source: "https://github.com/bither/bither-ios"
+        screenshot: "bithermobile.png"
+        os:
+        - ios
+        check:
+          control: "checkgoodcontrolfull"
+          validation: "checkpassvalidationspvp2p"
+          transparency: "checkpasstransparencyopensource"
+          environment: "checkpassenvironmentmobile"
+          privacy: "checkfailprivacyweak"
+        privacycheck:
+          privacyaddressreuse: "checkfailprivacyaddressrotation"
+          privacydisclosure: "checkfailprivacydisclosurespv"
+          privacynetwork: "checkfailprivacynetworknosupporttor"
+      ios:
+        text: "walletbither"
+        link: "https://itunes.apple.com/us/app/bither/id899478936"
+        source: "https://github.com/bither/bither-ios"
+        screenshot: "bithermobile.png"
+        os:
+        - ios
+        check:
+          control: "checkgoodcontrolfull"
+          validation: "checkpassvalidationspvp2p"
+          transparency: "checkpasstransparencyopensource"
+          environment: "checkpassenvironmentmobile"
+          privacy: "checkfailprivacyweak"
+        privacycheck:
+          privacyaddressreuse: "checkfailprivacyaddressrotation"
+          privacydisclosure: "checkfailprivacydisclosurespv"
+          privacynetwork: "checkfailprivacynetworknosupporttor"
+      android:
+        text: "walletbither"
+        link: "https://play.google.com/store/apps/details?id=net.bither"
+        source: "https://github.com/bither/bither-android"
+        screenshot: "bithermobile.png"
+        os:
+        - android
+        check:
+          control: "checkgoodcontrolfull"
+          validation: "checkpassvalidationspvp2p"
+          transparency: "checkpasstransparencyopensource"
+          environment: "checkpassenvironmentmobile"
+          privacy: "checkfailprivacyweak"
+        privacycheck:
+          privacyaddressreuse: "checkfailprivacyaddressrotation"
+          privacydisclosure: "checkfailprivacydisclosurespv"
+          privacynetwork: "checkfailprivacynetworknosupporttor"
+      desktop:
+        text: "walletbither"
+        link: "http://bither.net"
+        source: "https://github.com/bither/bither-desktop-java"
+        screenshot: "bitherdesktop.png"
+        os:
+        - windows
+        - mac
+        - linux
+        check:
+          control: "checkgoodcontrolfull"
+          validation: "checkpassvalidationspvp2p"
+          transparency: "checkpasstransparencyopensource"
+          environment: "checkfailenvironmentdesktop"
+          privacy: "checkfailprivacyweak"
+        privacycheck:
+          privacyaddressreuse: "checkfailprivacyaddressrotation"
+          privacydisclosure: "checkfailprivacydisclosurespv"
+          privacynetwork: "checkfailprivacynetworknosupporttor"
 - hive:
     title: "Hive"
     titleshort: "Hive"
@@ -534,9 +610,28 @@ wallets:
 - bitgo:
     title: "BitGo"
     titleshort: "BitGo"
-    compat: "web"
+    compat: "web desktop windows mac linux"
     level: 3
     platform:
+      desktop:
+        text: "walletbitgo"
+        link: "https://chrome.google.com/webstore/detail/bitgo/jlgeogaipkoajobchncghcojanffjfhl"
+        source: "https://github.com/BitGo/bitgo-chrome"
+        screenshot: "bitgo.png"
+        os:
+        - windows
+        - mac
+        - linux
+        check:
+          control: "checkpasscontrolmulti"
+          validation: "checkfailvalidationcentralized"
+          transparency: "checkfailtransparencyremote"
+          environment: "checkpassenvironmenttwofactor"
+          privacy: "checkpassprivacybasic"
+        privacycheck:
+          privacyaddressreuse: "checkpassprivacyaddressrotation"
+          privacydisclosure: "checkfailprivacydisclosureaccount"
+          privacynetwork: "checkpassprivacynetworksupporttorproxy"
       web:
         text: "walletbitgo"
         link: "https://www.bitgo.com/"
@@ -613,7 +708,7 @@ wallets:
           privacynetwork: "checkpassprivacynetworksupporttorproxy"
       ios:
         text: "walletgreenaddress"
-        link: "https://itunes.apple.com/us/app/greenaddress/id889740745?ls=1&mt=8"
+        link: "https://itunes.apple.com/us/app/greenaddress/id889740745?ls=1&amp;mt=8"
         source: "https://github.com/greenaddress/WalletCordova"
         screenshot: "greenaddressandroid.png"
         os:
@@ -710,6 +805,28 @@ wallets:
           privacyaddressreuse: "checkpassprivacyaddressrotation"
           privacydisclosure: "checkfailprivacydisclosureaccount"
           privacynetwork: "checkpassprivacynetworksupporttorproxy"
+- coinapult:
+    title: "Coinapult"
+    titleshort: "Coinapult"
+    compat: "web"
+    level: 4
+    platform:
+      web:
+        text: "walletcoinapult"
+        link: "https://coinapult.com/"
+        screenshot: "coinapult.png"
+        os:
+        check:
+          control: "checkfailcontrolthirdparty"
+          validation: "checkfailvalidationcentralized"
+          transparency: "checkfailtransparencyremote"
+          environment: "checkfailenvironmentdesktop"
+          privacy: "checkpassprivacybasic"
+        privacycheck:
+          privacyaddressreuse: "checkpassprivacyaddressrotation"
+          privacydisclosure: "checkfailprivacydisclosureaccount"
+          privacynetwork: "checkpassprivacynetworksupporttorproxy"
+
 - circle:
     title: "Circle"
     titleshort: "Circle"
@@ -757,6 +874,8 @@ wallets:
           privacydisclosure: "checkfailprivacydisclosureaccount"
           privacynetwork: "checkfailprivacynetworknosupporttor"
 ---
+
+<!-- Note: this file exempt from check-for-subheading-anchors check -->
 
 <h1>{% translate pagetitle %}</h1>
 <p class="summary">{% translate pagedesc %}</p>

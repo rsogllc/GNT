@@ -121,7 +121,7 @@ hu:
     walletbitgo: "A BitGo egy csoportos aláírást igénylő pénztárca, amely magas szintű biztonságot garantál. Minden tranzakció két aláírást igényel, megvédve ezzel bitcoinjait a rosszindulatú szoftverektől és szervertámadásoktól. A privát kulcsokat a felhasználók birtokolják, ily módon a BitGo nem férhet hozzá a bitcoinokhoz. Jó választás a számítástechnikai ismeretekkel nem rendelkező felhasználók számára."
     walletgreenaddress: "A GreenAddress egy felhasználóbarát, csoportos aláírást igénylő pénztárca megnövelt biztonsággal és adatvédelemmel. A privát kulcsai sohasem lesznek szerveroldalon, még titkosított állapotban sem. Biztonsági okokból 2FA-t (kétszintű hitelesítést) és a böngészőkiterjesztést vagy Android-alkalmazást érdemes használnia."
     wallettrezor: "A TREZOR egy, a kényelem feláldozása nélkül magas szintű biztonságot kínáló hardverpénztárca. A hidegtárolással ellentétben a TREZOR egy online készülékhez csatlakozva is képes tranzakciókat aláírni. Ez azt jelenti, hogy a bitcoinok küldése akár akkor is biztonságos, ha egy feltört számítógépet használ."
-    wallethw1: "A HW.1 egy ST23YT66 banki okoskártya platformra épülő hardverpénztárca. Biztonságban tartja a felhasználó privát kulcsait, érvényesíti a tranzakciókat és biztonságos feltöltőkártyaként vagy egy csoportos aláírású félként használható. Bár nem nyílt forráskódú, determinisztikusan érvényesíthető."
+    walletnano: "A Ledger Nano egy ST23YT66 banki okoskártya platformra épülő hardverpénztárca. Biztonságban tartja a felhasználó privát kulcsait, érvényesíti a tranzakciókat és biztonságos feltöltőkártyaként vagy egy csoportos aláírású félként használható. Bár nem nyílt forráskódú, determinisztikusan érvényesíthető."
     walletcoinapult: "A Coinapult pénztárcáját a kezdő bitcoinosokra gondolva alkották meg. Lehetővé teszi a bitcoinok e-mailben és SMS-ben való elküldését, és egy Locks névre hallgató, hasznos kis eszköz segít megvédeni az egyenlegét a bitcoin nagy mértékű árfolyamváltozásaitól. A felhasználók többek között aranyhoz és euróhoz is köthetik a bitcoinjaikat!"
     walletdownload: "Telepítés"
     walletvisit: "Tovább a weboldalra"
@@ -223,7 +223,7 @@ hu:
     devcommunitiesintro: "A következő chatszobák és weboldalak a Bitcoin fejlesztésével kapcsolatos párbeszédnek biztosítanak felületet. A posztolás előtt, kérjük, olvassa el a magatartási szabályokat."
     ircjoin: "<a href=\"https://webchat.freenode.net/?channels=bitcoin-dev\">#bitcoin-dev IRC-csatona </a> a freenode-on."
     stackexchange: "<a href=\"https://bitcoin.stackexchange.com/\">Bitcoin StackExchange</a>"
-    bitcointalkdev: "<a href=\"https://bitcointalk.org/index.php?board=6.0\">BitcoinTalk Development & Technical Discussion Forum</a>"
+    bitcointalkdev: "<a href=\"https://bitcointalk.org/index.php?board=6.0\">BitcoinTalk Development &amp; Technical Discussion Forum</a>"
   download:
     title: "Letöltés - Bitcoin"
     pagetitle: "Töltse le a Bitcoin Core-t"
@@ -260,7 +260,7 @@ hu:
     whocontrolstxt1: "Éppen úgy senki nem birtokolja a Bitcoin-hálózatot, ahogyan senki sem birtokolja az e-mail technológiáját. A Bitcoint a világ minden táján élő Bitcoin-felhasználók irányítják. Bár a fejlesztők tökéletesítik a szoftvert, mégsem kényszeríthetik ki a Bitcoin-protokoll változását, mivel minden felhasználó szabadon választhatja meg, hogy milyen szoftvert és verziót használ. A kompatibilitás megteremtése érdekében az összes felhasználónak azonos szabályokat követő szoftvert kell használnia. A Bitcoin csak a felhasználók teljes egyetértése mellett képes megfelelően működni. Ebből fakadóan minden felhasználó és fejlesztő erősen érdekelt e konszenzus megteremtésében és fenntartásában."
     howitworks: "Hogyan működik a Bitcoin?"
     howitworkstxt1: "Felhasználói szemszögből a Bitcoin nem más, mint egy mobilalkalmazás vagy számítógépes program, amely személyes Bitcoin-pénztárcát biztosít, és amely lehetővé teszi a felhasználó számára, hogy segítségével bitcoinokat küldjön és fogadjon. A legtöbb felhasználó számára a Bitcoin így működik."
-    howitworkstxt2: "A színfalak mögött a Bitcoin-hálózat egy \"blokkláncnak\" nevezett nyilvános főkönyvet oszt meg. Ez a főkönyv tartalmaz minden valaha feldolgozott tranzakciót, lehetőséget teremtve a felhasználók számítógépeinek minden egyes tranzakció érvényességének megerősítésére. Minden egyes tranzakció hitelességét a küldő féllel megegyező digitális aláírások védik, teljes irányítást biztosítva minden felhasználó számára a Bitcoin-címekről történő bitcoin-küldéshez. Ezenkívül bárki feldolgozhatja a tranzakciókat specializált hardver számítási kapacitását kihasználva, valamint e szolgáltatásért cserébe bitcoin-jutalomban részesülhet. Erre a tevékenységre gyakran \"bányászatként\" hivatkoznak. A Bitcoinnal kapcsolatos további információkért keresse fel az <a href=\"#how-it-works#\">e célnak szentelt oldalt</a> és olvassa el az <a href=\"/bitcoin.pdf\">eredeti tanulmányt</a> (angol nyelven)."
+    howitworkstxt2: "A színfalak mögött a Bitcoin-hálózat egy \"blokkláncnak\" nevezett nyilvános főkönyvet oszt meg. Ez a főkönyv tartalmaz minden valaha feldolgozott tranzakciót, lehetőséget teremtve a felhasználók számítógépeinek minden egyes tranzakció érvényességének megerősítésére. Minden egyes tranzakció hitelességét a küldő féllel megegyező digitális aláírások védik, teljes irányítást biztosítva minden felhasználó számára a Bitcoin-címekről történő bitcoin-küldéshez. Ezenkívül bárki feldolgozhatja a tranzakciókat specializált hardver számítási kapacitását kihasználva, valamint e szolgáltatásért cserébe bitcoin-jutalomban részesülhet. Erre a tevékenységre gyakran \"bányászatként\" hivatkoznak. A Bitcoinnal kapcsolatos további információkért keresse fel az <a href=\"#how-it-works#\">e célnak szentelt oldalt</a> és olvassa el az <a href=\"#bitcoin-paper#\">eredeti tanulmányt</a> (angol nyelven)."
     used: "Tényleg használják az emberek a Bitcoint?"
     usedtxt1: "Igen. A Bitcoint használó magánszemélyek és <a href=\"http://usebitcoins.info/\">vállalkozások</a> száma egyre növekszik. Ez magában foglal fizikai vállalkozásokat - például éttermeket, ügyvédi irodákat -, illetve a Namecheaphez, Wordpresshez, Reddithez és Flattrhöz hasonló, népszerű online szolgáltatásokat. Mivel a Bitcoin továbbra is relatíve új jelenségnek tekinthető, ezért gyorsan növekszik. 2013 augusztásának végén a <a href=\"https://bitcoincharts.com/bitcoin/\">forgalomban lévő bitcoinok értéke</a> meghaladta az 1,5 milliárd dollárt; valamint nap mint nap több millió dollár értékű bitcoin cserél gazdát."
     acquire: "Hogyan szerezhetőek bitcoinok?"
@@ -425,7 +425,7 @@ hu:
     processing: "Feldolgozás<span class=\"titlelight\"> - bányászat</span>"
     processingtxt: "A bányászat egy <b>megosztott, konszenzusra épülő rendszer</b>, amely a blokkláncra való fűzéssel a visszaigazolásra váró tranzakciók <a href=\"#vocabulary##[vocabulary.confirmation]\"><i>megerősítésére</i></a> szolgál. Kikényszeríti a blokkláncon belül található elemek időrendi sorrendet, biztosítja a hálózat semlegességét és lehetővé teszi, hogy különböző számítógépek egyetérthessenek a rendszer állapotát illetően. A visszaigazoláshoz a tranzakcióknak <a href=\"#vocabulary##[vocabulary.block]\"><i>blokkba</i></a> csomagoltnak kell lenniük, amely nagyon szigorú kriptográfiai szabályokat követ, és amelyet a hálózat visszaigazol. E szabályok megakadályozzák a korábbi blokkok módosítását, mivel a módosítás érvénytelenítené az azt követő összes blokkot. A bányászat ezenkívül egyfajta lottót hoz létre, amely meggátolja, hogy bármely személy egyszerűen egymás után blokkokat adjon hozzá a blokklánchoz. Ily módon egyetlen személy sem befolyásolhatja a blokklánc tartalmát vagy cserélheti ki a blokklánc egyes részeit kifizetései visszatérítése érdekében."
     readmore: "Fejest ugrani az ismeretlenbe"
-    readmoretxt: "Ez csak a rendszer nagyon rövid és tömör összefoglalása. Amennyiben szeretné megismerni a részleteket, <a href=\"/bitcoin.pdf\">elolvashatja az eredeti tanulmányt</a>, amely leírja a rendszer felépítését, vagy belenézhet a <a href=\"/en/developer-documentation\">fejlesztői dokumentációba</a>, valamint felfedezheti a <a href=\"https://en.bitcoin.it/wiki/Main_Page\">Bitcoin wikit</a>."
+    readmoretxt: "Ez csak a rendszer nagyon rövid és tömör összefoglalása. Amennyiben szeretné megismerni a részleteket, <a href=\"#bitcoin-paper#\">elolvashatja az eredeti tanulmányt</a>, amely leírja a rendszer felépítését, vagy belenézhet a <a href=\"/en/developer-documentation\">fejlesztői dokumentációba</a>, valamint felfedezheti a <a href=\"https://en.bitcoin.it/wiki/Main_Page\">Bitcoin wikit</a>."
   index:
     title: "Bitcoin - Nyílt forráskódú, P2P pénz"
     metadescription: "A Bitcoin egy innovatív fizetési hálózat és egy újfajta pénz. Tudjon meg mindent, és vágjon bele a Bitcoinba a bitcoin.org weboldalon."
@@ -660,6 +660,7 @@ hu:
     tax: "Kormányzati adók és szabályozások"
     taxtxt: "A bitcoin nem hivatalos pénznem. Mindemellett a legtöbb törvényalkotó elvárja, hogy minden után, aminek értéke van - beleértve a bitcoinokat is - vállalkozói, forgalmi, jövedelem- és kamatadót fizessen. Az Ön felelőssége, hogy pontosan betartsa a kormánya és/vagy helyi önkormányzata által kibocsátott <a href=\"https://en.wikipedia.org/wiki/Legality_of_bitcoin_by_country\">adó- és egyéb jogi vagy szabályozói rendelkezéseket</a>."
   layout:
+    menu-support-bitcoin: "Támogassa a Bitcoint"
     menu-about-us: "A bitcoin.org-ról"
     menu-bitcoin-for-businesses: Vállalkozások
     menu-bitcoin-for-developers: Fejlesztők
@@ -677,7 +678,7 @@ hu:
     menu-privacy: "Adatvédelem"
     menu-resources: Információs anyagok
     menu-stats: "Statisztikák"
-    menu-support-bitcoin: Részvétel
+    menu-participate: Részvétel
     menu-vocabulary: Szótár
     menu-you-need-to-know: "Érdemes tudnia"
     banner-translate: "Az ehhez a nyelvhez tartozó fordítások elavultak. <a href=\"https://github.com/bitcoin/bitcoin.org#translation\">A bitcoin.org saját nyelvére történő fordításában való segítséghez kattintson ide </a>."
