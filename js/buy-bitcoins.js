@@ -28,9 +28,12 @@ $(document).ready(function(){
 	            	}
 	            	$('.exchange-listing').hide();
 	            	var sponsoredId = '#listing-' + response.sponsoredListing;
+	            	var listCont = $('#exchange-listing-container').width();
+	            	console.log(listCont);
+	            	var marginLeft = (listCont - 408)/2;
 	            	$(sponsoredId).show();
 	            	$(sponsoredId).css('width', '400px');
-	            	$(sponsoredId).css('margin-left', '260px');
+	            	$(sponsoredId).css('margin-left', marginLeft + 'px');
 	            	$('#show-more').show(200);
 	            },
 	            500: function (response) {
@@ -49,7 +52,7 @@ $(document).on("click", "#show-more", function(event) {
     $('#show-more').hide(200);
     var realHeight = $('div.body').height();
     $('#exchange-listing-container').children('.exchange-listing').each(function () {
-        if ($(this).width() > 275)
+        if ($(this).width() > 275 && $('#exchange-listing-container').width() > 626)
         {
         	$(this).animate({ width: "275px", marginLeft: "8px"}, 500, function() {
         		var maxHeight = 0;
@@ -63,6 +66,14 @@ $(document).on("click", "#show-more", function(event) {
         		$('.exchange-listing').show(300);
         		realHeight += $('#exchange-listing-container').height();
         		$('div.body').height(realHeight);
+        	});
+        } else if ($('#exchange-listing-container').width() <= 626)
+        {
+        	$(this).animate({ width: "95%", marginLeft: "8px"}, 500, function() {
+        		$('#exchange-listing-container').children('.exchange-listing').each(function () {
+        	    	$(this).width('95%');
+        	    	$(this).show(300);
+        	    });
         	});
         }
     });
@@ -149,11 +160,19 @@ app.controller('exchangeListingCtrl',function($scope, LocalData, $http) {
 });
 
 app.controller('exchangeTreeviewCtrl',function($scope, LocalData, $http) {
+	$('div.exchange-location-treeleft').children().each(function(){
+    	var padWidth = $(this).width() - $(this).find('a').width() - 30;
+    	$(this).find('a').css('padding-right', padWidth);
+    });
+    $('div.exchange-location-treeright').children().each(function(){
+    	var padWidth = $(this).width() - $(this).find('a').width() - 30;
+    	$(this).find('a').css('padding-right', padWidth);
+    });
+    
   $http.get("/api/frontend/regionMap")
   .success(function(response) {
     $scope.regions = response.data;
     console.log(response);
-    // exchange-listing
   });
 
   $scope.countries = LocalData.getCountries();

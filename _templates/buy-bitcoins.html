@@ -164,7 +164,6 @@ input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
 .exchange-location-treenode a {
   text-decoration: none;
   color: #3b3b3b;
-  padding-right: 100%;
   white-space: nowrap;
 }
 
@@ -302,17 +301,17 @@ input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
         <div class="exchange-location-treechild" ng-repeat="region in regions.NA"><a ng-click="showListings(region, $event)" href="#">{% raw %}{{getCountryFromCode(region)}}{% endraw %}</a></div>
         </div>
       </div>
-      <div class="exchange-location-treenode"><a ng-click="showCR = !showCR; hideCountries('showCR'); $event.preventDefault();" href="#">{% translate regionCR %}</a>
+      <div class="exchange-location-treenode"><a class="regionlink" ng-click="showCR = !showCR; hideCountries('showCR'); $event.preventDefault();" href="#">{% translate regionCR %}</a>
         <div ng-show="showCR" id="nodeCR" class="top-treenode">
           <div class="exchange-location-treechild" ng-repeat="region in regions.CR"><a ng-click="showListings(region, $event)" href="#">{% raw %}{{getCountryFromCode(region)}}{% endraw %}</a></div>
         </div>
       </div>
-      <div class="exchange-location-treenode"><a ng-click="showEU = !showEU; hideCountries('showEU'); $event.preventDefault();" href="#">{% translate regionEU %}</a>
+      <div class="exchange-location-treenode"><a class="regionlink" ng-click="showEU = !showEU; hideCountries('showEU'); $event.preventDefault();" href="#">{% translate regionEU %}</a>
         <div ng-show="showEU" id="nodeEU" class="top-treenode">
           <div class="exchange-location-treechild" ng-repeat="region in regions.EU"><a ng-click="showListings(region, $event)" href="#">{% raw %}{{getCountryFromCode(region)}}{% endraw %}</a></div>
         </div>
       </div>
-      <div class="exchange-location-treenode"><a ng-click="showAF = !showAF; hideCountries('showAF'); $event.preventDefault();" href="#">{% translate regionAF %}</a>
+      <div class="exchange-location-treenode"><a class="regionlink" ng-click="showAF = !showAF; hideCountries('showAF'); $event.preventDefault();" href="#">{% translate regionAF %}</a>
         <div ng-show="showAF" id="nodeAF" class="top-treenode">
           <div class="exchange-location-treechild" ng-repeat="region in regions.AF"><a ng-click="showListings(region, $event)" href="#">{% raw %}{{getCountryFromCode(region)}}{% endraw %}</a></div>
         </div>
