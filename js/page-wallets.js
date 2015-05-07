@@ -11,6 +11,7 @@ $("#wallets").on('click', 'a', function(event){
 $("#walletmenu").on('click', 'a', function(event){
 	console.log("Clicked category");
 	console.log($(this).data('walletcompat'));
+	walletShowPlatform($(this).data('walletcompat'));
 	var category = $(this).data('walletcompat');
 	$('.walletsdisclaimer').hide();
 	if (category == 'android' || category == 'ios' || category == 'blackberry')

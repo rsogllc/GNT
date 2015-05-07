@@ -808,10 +808,10 @@ wallets:
 - coinapult:
     title: "Coinapult"
     titleshort: "Coinapult"
-    compat: "web"
+    compat: "bank"
     level: 4
     platform:
-      web:
+      bank:
         text: "walletcoinapult"
         link: "https://coinapult.com/"
         screenshot: "coinapult.png"
@@ -873,6 +873,63 @@ wallets:
           privacyaddressreuse: "checkpassprivacyaddressrotation"
           privacydisclosure: "checkfailprivacydisclosureaccount"
           privacynetwork: "checkfailprivacynetworknosupporttor"
+- luxstack:
+    title: "Luxstack"
+    titleshort: "Luxstack"
+    compat: "mobile android ios"
+    level: 4
+    platform:
+      mobile:
+        text: "luxstack-mobile"
+        link: "https://play.google.com/store/apps/details?id=com.luxstack.LUXSTACK.android&hl=en"
+        source: "https://github.com/hivewallet/hive-ios/tree/android"
+        screenshot: "luxstack.png"
+        os:
+        - android
+        check:
+          control: "checkgoodcontrolfull"
+          validation: "checkfailvalidationcentralized"
+          transparency: "checkfailtransparencynew"
+          environment: "checkpassenvironmentmobile"
+          privacy: "checkpassprivacybasic"
+        privacycheck:
+          privacyaddressreuse: "checkpassprivacyaddressrotation"
+          privacydisclosure: "checkfailprivacydisclosureaccount"
+          privacynetwork: "checkfailprivacynetworknosupporttor"
+      android:
+        text: "luxstack-mobile"
+        link: "https://play.google.com/store/apps/details?id=com.hivewallet.hive.cordova"
+        source: "https://github.com/hivewallet/hive-ios/tree/android"
+        screenshot: "luxstack.png"
+        os:
+        - android
+        check:
+          control: "checkgoodcontrolfull"
+          validation: "checkfailvalidationcentralized"
+          transparency: "checkfailtransparencynew"
+          environment: "checkpassenvironmentmobile"
+          privacy: "checkpassprivacybasic"
+        privacycheck:
+          privacyaddressreuse: "checkpassprivacyaddressrotation"
+          privacydisclosure: "checkfailprivacydisclosureaccount"
+          privacynetwork: "checkfailprivacynetworknosupporttor"
+      ios:
+        text: "luxstack-mobile"
+        link: "https://itunes.apple.com/us/app/hive-wallet/id906990301?mt=8"
+        source: "https://github.com/hivewallet/hive-ios"
+        screenshot: "luxstack.png"
+        os:
+        - ios
+        check:
+          control: "checkgoodcontrolfull"
+          validation: "checkfailvalidationcentralized"
+          transparency: "checkfailtransparencynew"
+          environment: "checkpassenvironmentmobile"
+          privacy: "checkpassprivacybasic"
+        privacycheck:
+          privacyaddressreuse: "checkpassprivacyaddressrotation"
+          privacydisclosure: "checkfailprivacydisclosureaccount"
+          privacynetwork: "checkfailprivacynetworknosupporttor"
 ---
 
 <!-- Note: this file exempt from check-for-subheading-anchors check -->
@@ -880,7 +937,7 @@ wallets:
 <h1>{% translate pagetitle %}</h1>
 <p class="summary">{% translate pagedesc %}</p>
 
-<div class="walletmenu" id="walletmenu" onmouseover="walletListener(event);" onmouseout="walletListener(event);" onclick="walletListener(event);">
+<div class="walletmenu" id="walletmenu" onclick="walletListener(event);">
   <ul onclick="mobileMenuHover(event);">
     <li class="wallet-mobile">
     <a id="mobile" data-walletcompat="mobile">{% translate walletcatmobile %}</a>
@@ -907,7 +964,7 @@ wallets:
 <div class="wallets-container">
 <div class="wallets" id="wallets" onclick="walletShow(event);">
 {% for wallet in page.wallets %}{% for wallet in wallet %}{% if wallet[1].platform.mobile %}{% assign platform = wallet[1].platform.mobile %}{% elsif wallet[1].platform.desktop %}{% assign platform = wallet[1].platform.desktop %}{% elsif wallet[1].platform.hardware %}{% assign platform = wallet[1].platform.hardware %}{% elsif wallet[1].platform.bank %}{% assign platform = wallet[1].platform.bank %}{% else %}{% assign platform = wallet[1].platform.web %}{% endif %}
-<div id="wallet-{{ wallet[0] }}" data-walletcompat="{{ wallet[1].compat }}" data-walletlevel="{{ wallet[1].level }}">
+<div id="wallet-{{ wallet[0] }}" data-walletcompat="{{ wallet[1].compat }}" data-walletlevel="{{ wallet[1].level }}" style="display: none;">
   <span></span>
   <div>
     <h2>{{ wallet[1].title }}</h2>
