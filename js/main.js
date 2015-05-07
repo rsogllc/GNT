@@ -587,8 +587,8 @@ switch (e.type) {
 			if (getStyle(t, 'overflow') == 'auto' || getStyle(t, 'overflow-y') == 'auto' || getStyle(t, 'overflow-x') == 'auto') return;
 			t = t.parentNode;
 		}
-		addEvent(document.body, 'mouseup', makeEditable);
-		addEvent(document.body, 'mousemove', makeEditable);
+		// addEvent(document.body, 'mouseup', makeEditable);
+		// addEvent(document.body, 'mousemove', makeEditable);
 		document.body.setAttribute('timeoutEdit', setTimeout(function() {
 			removeEvent(document.body, 'mouseup', makeEditable);
 			removeEvent(document.body, 'mousemove', makeEditable);
@@ -612,6 +612,6 @@ switch (e.type) {
 // Add makeEditable event listener
 var xint = setInterval(function() {
 if (!document.body) return;
-addEvent(document.body, 'mousedown', makeEditable);
+// addEvent(document.body, 'mousedown', makeEditable);
 clearInterval(xint);
 }, 200);

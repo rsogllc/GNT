@@ -47,6 +47,7 @@ $(document).ready(function(){
 $(document).on("click", "#show-more", function(event) {
     event.preventDefault();
     $('#show-more').hide(200);
+    var realHeight = $('div.body').height();
     $('#exchange-listing-container').children('.exchange-listing').each(function () {
         if ($(this).width() > 275)
         {
@@ -60,6 +61,8 @@ $(document).on("click", "#show-more", function(event) {
         	    });
         		$('.exchange-listing').height(maxHeight);
         		$('.exchange-listing').show(300);
+        		realHeight += $('#exchange-listing-container').height();
+        		$('div.body').height(realHeight);
         	});
         }
     });
@@ -135,15 +138,7 @@ app.controller('exchangeLocationCtrl', function($scope, LocalData, $http) {
       for( var prop in $scope.countries ) {
           if( $scope.countries.hasOwnProperty( prop ) ) {
                if( $scope.countries[ prop ] === value )
-               //$http.get("./buy.json")
-            	   
-               $http.get("/api/frontend/buyBitcoins?country="+prop)
-               .success(function(response) {
-                 LocalData.getValue(response);
-                 // console.log($scope.localData);
-                 var baseText = $('#featuredH1').data('text');
-                 $('#featuredH1').html(baseText.replace("@", response.localizedCountryName));
-               });
+            	   listExchanges();
           }
       }
     }
@@ -187,7 +182,6 @@ app.controller('exchangeTreeviewCtrl',function($scope, LocalData, $http) {
   }
 
   $scope.showListings = function(countryCode, event) {
-	event.preventDefault();
 	$scope.hideCountries(null);
 	
 	$.ajax({
@@ -214,7 +208,7 @@ app.controller('exchangeTreeviewCtrl',function($scope, LocalData, $http) {
 	            			.append($('<div class="exchange-listing-right">')
 	            				.append($('<div class="exchange-listing-title"><img src="'+listingData.faviconURL+'">'+listingData.name+'</div>'+
 	            						'<div class="exchange-listing-description">'+listingData.description+'</div>'+
-	            						'<a href="{% raw %}/url?promo='+listingData.id+'-'+response.countryCode+'&url='+listingData.homepageURL+'"><div class="exchange-listing-button">Buy bitcoin</div></a>')
+	            						'<a href="/url?promo='+listingData.id+'-'+response.countryCode+'&url='+listingData.homepageURL+'"><div class="exchange-listing-button">Buy bitcoin</div></a>')
 	            				)
 	            			)
 	            		);
@@ -236,3 +230,50 @@ app.controller('exchangeTreeviewCtrl',function($scope, LocalData, $http) {
 	});
   }
 });
+
+function listExchanges() {
+	$.ajax({
+	    url: "/api/frontend/buyBitcoins?country="+countryCode,
+	    type: "GET",
+	    cache: false,
+	    data: { },
+	    statusCode: {
+	            200: function (response) {
+	            	
+	            	$scope.stats = response.stats.data;
+	            	
+	            	console.log(response);
+	            	var baseText = $('#featuredH1').data('text');
+	            	$('#featuredH1').html(baseText.replace("@", response.localizedCountryName));
+	            	
+	            	$('#listingsloader').hide();
+	            	$('.exchange-listing').remove();
+	            	
+	            	for (var i=0; i<response.localListings.length; i++) {
+	            		var listingData = response.localListings[i];
+	            		
+	            		$('#exchange-listing-container').append($('<div class="exchange-listing" data-listid="'+listingData.id+'" id="listing-'+listingData.id+'">')
+	            			.append($('<div class="exchange-listing-right">')
+	            				.append($('<div class="exchange-listing-title"><img src="'+listingData.faviconURL+'">'+listingData.name+'</div>'+
+	            						'<div class="exchange-listing-description">'+listingData.description+'</div>'+
+	            						'<a href="/url?promo='+listingData.id+'-'+response.countryCode+'&url='+listingData.homepageURL+'"><div class="exchange-listing-button">Buy bitcoin</div></a>')
+	            				)
+	            			)
+	            		);
+	            	}
+	            	$('.exchange-listing').hide();
+	            	var sponsoredId = '#listing-' + response.sponsoredListing;
+	            	$(sponsoredId).show();
+	            	$(sponsoredId).css('width', '400px');
+	            	$(sponsoredId).css('margin-left', '260px');
+	            	$('#show-more').show(200);
+	            },
+	            500: function (response) {
+	
+	            }
+	          },
+	          complete: function(e, xhr, settings){
+	        	  
+	          }
+	});
+}
