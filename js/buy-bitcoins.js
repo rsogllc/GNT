@@ -71,9 +71,13 @@ $(document).on("click", "#show-more", function(event) {
         {
         	$(this).animate({ width: "95%", marginLeft: "8px"}, 500, function() {
         		$('#exchange-listing-container').children('.exchange-listing').each(function () {
-        	    	$(this).width('95%');
+        			$(this).css('margin-right', '8px');
+        			$(this).width('95%');
         	    	$(this).show(300);
         	    });
+        		
+        		realHeight += $('#exchange-listing-container').height();
+        		$('div.body').height(realHeight);
         	});
         }
     });
@@ -160,6 +164,16 @@ app.controller('exchangeListingCtrl',function($scope, LocalData, $http) {
 });
 
 app.controller('exchangeTreeviewCtrl',function($scope, LocalData, $http) {
+	
+	if ($('#content').width() <= 530)
+	{
+		console.log("Small page");
+		$('.exchange-location-treeview').css('padding-left', '0px');
+		$('.exchange-location-treeleft').css("width", "auto");
+		$('.exchange-location-treeright').css("width", "auto");
+		$('.exchange-multiselect-input').css('width', '100%');
+	}
+	
 	$('div.exchange-location-treeleft').children().each(function(){
     	var padWidth = $(this).width() - $(this).find('a').width() - 30;
     	$(this).find('a').css('padding-right', padWidth);
