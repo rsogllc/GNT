@@ -32,7 +32,11 @@ $(document).ready(function(){
 	            	console.log(listCont);
 	            	var marginLeft = (listCont - 408)/2;
 	            	$(sponsoredId).show();
-	            	$(sponsoredId).css('width', '400px');
+	            	if ($('#exchange-listing-container').width() <= 626) {
+	            		$(sponsoredId).css('width', '91%');
+	            	} else {
+	            		$(sponsoredId).css('width', '400px');
+	            	}
 	            	$(sponsoredId).css('margin-left', marginLeft + 'px');
 	            	$('#show-more').show(200);
 	            },
@@ -69,10 +73,10 @@ $(document).on("click", "#show-more", function(event) {
         	});
         } else if ($('#exchange-listing-container').width() <= 626)
         {
-        	$(this).animate({ width: "95%", marginLeft: "8px"}, 500, function() {
+        	$(this).animate({ width: "91%", marginLeft: "8px"}, 500, function() {
         		$('#exchange-listing-container').children('.exchange-listing').each(function () {
         			$(this).css('margin-right', '8px');
-        			$(this).width('95%');
+        			$(this).width('91%');
         	    	$(this).show(300);
         	    });
         		

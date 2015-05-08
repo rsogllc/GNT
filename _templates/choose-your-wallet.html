@@ -848,6 +848,27 @@ wallets:
           privacyaddressreuse: "checkpassprivacyaddressrotation"
           privacydisclosure: "checkfailprivacydisclosureaccount"
           privacynetwork: "checkpassprivacynetworksupporttorproxy"
+- changetip:
+    title: "Changetip"
+    titleshort: "Changetip"
+    compat: "bank"
+    level: 4
+    platform:
+      bank:
+        text: "walletchangetip"
+        link: "https://changetip.com/"
+        screenshot: "changetip.png"
+        os:
+        check:
+          control: "checkfailcontrolthirdpartyinsured"
+          validation: "checkfailvalidationcentralized"
+          transparency: "checkfailtransparencyremote"
+          environment: "checkpassenvironmenttwofactor"
+          privacy: "checkpassprivacybasic"
+        privacycheck:
+          privacyaddressreuse: "checkpassprivacyaddressrotation"
+          privacydisclosure: "checkfailprivacydisclosureaccount"
+          privacynetwork: "checkpassprivacynetworksupporttorproxy"
 - ninki:
     title: "Ninki Wallet"
     titleshort: "Ninki"
@@ -882,13 +903,12 @@ wallets:
       mobile:
         text: "luxstack-mobile"
         link: "https://play.google.com/store/apps/details?id=com.luxstack.LUXSTACK.android&hl=en"
-        source: "https://github.com/hivewallet/hive-ios/tree/android"
         screenshot: "luxstack.png"
         os:
         - android
         check:
           control: "checkgoodcontrolfull"
-          validation: "checkfailvalidationcentralized"
+          validation: "checkpassvalidationservers"
           transparency: "checkfailtransparencynew"
           environment: "checkpassenvironmentmobile"
           privacy: "checkpassprivacybasic"
@@ -899,13 +919,12 @@ wallets:
       android:
         text: "luxstack-mobile"
         link: "https://play.google.com/store/apps/details?id=com.hivewallet.hive.cordova"
-        source: "https://github.com/hivewallet/hive-ios/tree/android"
         screenshot: "luxstack.png"
         os:
         - android
         check:
           control: "checkgoodcontrolfull"
-          validation: "checkfailvalidationcentralized"
+          validation: "checkpassvalidationservers"
           transparency: "checkfailtransparencynew"
           environment: "checkpassenvironmentmobile"
           privacy: "checkpassprivacybasic"
@@ -916,13 +935,12 @@ wallets:
       ios:
         text: "luxstack-mobile"
         link: "https://itunes.apple.com/us/app/hive-wallet/id906990301?mt=8"
-        source: "https://github.com/hivewallet/hive-ios"
         screenshot: "luxstack.png"
         os:
         - ios
         check:
           control: "checkgoodcontrolfull"
-          validation: "checkfailvalidationcentralized"
+          validation: "checkpassvalidationservers"
           transparency: "checkfailtransparencynew"
           environment: "checkpassenvironmentmobile"
           privacy: "checkpassprivacybasic"
