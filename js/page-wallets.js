@@ -21,3 +21,23 @@ $("#walletmenu").on('click', 'a', function(event){
 
 	$('.walletsdisclaimer[data-disclaimer="'+ category +'"]').show();
 });
+
+$(document).on('click', 'body', function(event){
+	if ($(event.target).parents('.modalopen').length == 0)
+	{
+		closeModal();
+	}
+});
+
+$(document).keyup(function(e) {
+	  if (e.keyCode == 27)
+		  closeModal();
+});
+
+function closeModal() {
+	if ($('#wallets div').hasClass('modalopen'))
+	{
+		$('#wallets div.modalopen a span').css('display', '');
+		$('#wallets div').removeClass('modalopen');
+	}
+}

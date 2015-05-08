@@ -544,8 +544,27 @@ for (var k in ar) {
 function walletShow(e) {
 // Show wallet on click on mobile or desktop.
 var t = getEventTarget(e);
+
+if ($('#wallets div').hasClass('modalopen'))
+{
+	$('#wallets div.modalopen a span').css('display', '');
+	$('#wallets div').removeClass('modalopen');
+}
+
 if (t.id == 'wallets') return;
 while (t.parentNode.id != null && t.parentNode.id != 'wallets') t = t.parentNode;
+
+$(t).find('a span').css('display', 'block');
+
+var checkOffset = $(t).children('div').offset().top + 390 + 2;
+
+if (checkOffset != $(t).find('a span').offset().top)
+{
+	var topPos = 77 - $(t).find('a span').offset().top;
+	$(t).children('div').css('top', topPos);
+	$(t).children('span').css('top', topPos);
+}
+
 if (isMobile()) {
 	var p = document.getElementById('walletsmobile');
 	t = t.cloneNode(true);
@@ -556,8 +575,11 @@ if (isMobile()) {
 	t.setAttribute('data-previousclass', t.className);
 	removeClass(t, 'nohover');
 	removeClass(t, 'disabled');
-	addEvent(t, 'mouseover', walletHide);
-	addEvent(t, 'mouseout', walletHide);
+	removeClass(t, 'display');
+	addClass(t, 'modalopen');
+	addEvent(t, 'mouseclick', walletHide);
+	console.log($(t).css('top'));
+	// addEvent(t, 'mouseout', walletHide);
 }
 }
 
