@@ -1,5 +1,7 @@
 $(document).ready(function(){
 	listNewsItems();
+	
+	// setInterval(function(){ $(".date").prettyDate(); }, 5000);
 });
 
 
@@ -12,8 +14,6 @@ function listNewsItems() {
 	    statusCode: {
 	            200: function (response) {
 	            	
-	            	console.log(response);
-	            	
 	            	var hasPrimary = false;
 	            	var hasSecondary = false;
 	            	var hasVOTD = false;
@@ -22,7 +22,6 @@ function listNewsItems() {
 	            	
 	            	for (var i=0; i<response.items.length; i++)
 	            	{
-	            		console.log(response.items[i].labels.indexOf('headline'));
 		            	if (response.items[i].labels.indexOf('headline') != -1)
 	            		{
 		            		if (!hasPrimary)
@@ -31,8 +30,6 @@ function listNewsItems() {
 		            			$('.news-featured .lead-story .figcaption').html(response.items[i].title);
 		            			hasPrimary = true;
 		            		} else {
-		            			console.log(secondaryHeadlines);
-		            			console.log(response.items[i].id);
 		            			for (var j=0; j<secondaryHeadlines.length; j++)
 		            			{
 		            				if (secondaryHeadlines[j] == 0 && secondaryHeadlines.indexOf(response.items[i].id) == -1)
@@ -46,17 +43,7 @@ function listNewsItems() {
 		            			}
 		            		}
 	            		}
-		            	/*
-		            	if (response.items[i].labels.indexOf('videos') != -1 && !hasVOTD)
-	            		{
-		            		$('.news-secondary .secondary-story').eq(0).find('.headline').html(response.items[i].title);
-	            			$('.news-secondary .secondary-story').eq(0).find('img').attr('src',response.items[i].images[0].url);
-			            	hasVOTD = true;
-	            		}
-	            		*/
 	            	}
-	            	// secondary-story
-	            	
 	            	$('.news-featured .latest-stories .latest-story').remove();
 	            	
 	            	var newsListLength = response.items.length;
@@ -67,27 +54,17 @@ function listNewsItems() {
 	            	
 	            	for (var i=0; i<=newsListLength; i++)
 	            	{
-	            		console.log(response.items[i]);
 	            		if (response.items[i].labels.indexOf('news') != -1)
 	            		{
 	            			$('.news-featured .latest-stories').append($('<div class="latest-story">').
 	            					append(
 	            							'<img src="'+ response.items[i].images[0].url +'">' + response.items[i].title +
-	            							'<div class="date">' + response.items[i].published + '</div>'
+	            							'<div class="date" title="'+ response.items[i].published +'">' + prettyDate(response.items[i].published) + '</div>'
 	            					)
 	            			);
 	            		}
 	            	}
 	            	
-	            	/*
-	            	<div class="latest-story">
-				      <img src="/img/news/latest-icon.jpg">
-				      Fed open up probe
-				      <div class="date">
-				        May 6, 2015
-				      </div>
-				    </div>
-	            	*/
 	            },
 	            500: function (response) {
 	
