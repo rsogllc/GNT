@@ -734,6 +734,7 @@ en:
     vocabulary: vocabulary
     you-need-to-know: you-need-to-know
     bitcoin-paper: bitcoin-paper
+    bitcoin-news: bitcoin-news
   anchor:
     community:
       non-profit: non-profit
@@ -826,6 +827,8 @@ en:
     regionOP: "Oceania &amp; Pacific"
     regionME: "Middle East"
     regionAS: "Asia"
+  bitcoin-news:
+    news-title: "News"
   mine-bitcoins:
     title: "Mine Bitcoins"
     pagetitle: "Mine Bitcoins"

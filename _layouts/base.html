@@ -14,6 +14,9 @@
 <!--[if lt IE 8]>{% lesscss ie.css %}<script type="text/javascript" src="/js/ie.js"></script><![endif]-->
 {% if page.lang == 'ar' or page.lang == 'fa' %}{% lesscss rtl.less %}{% endif %}
 {% if page.lang == 'bg' or page.lang == 'el' or page.lang == 'ko' or page.lang == 'hi' or page.lang == 'pl' or page.lang == 'sl' or page.lang == 'ro' or page.lang == 'ru' or page.lang == 'tr' or page.lang == 'uk' or page.lang == 'zh_CN' or page.lang == 'zh_TW' %}{% lesscss sans.less %}{% endif %}
+{% if page.id == 'bitcoin-news' %}
+<link rel="stylesheet" href="http://yui.yahooapis.com/combo?pure/0.6.0/base-min.css&pure/0.6.0/grids-min.css&pure/0.6.0/grids-responsive-min.css">
+{% endif %}
 <script type="text/javascript" src="/js/base.js"></script>
 <script type="text/javascript" src="/js/jquery-2.1.3.min.js"></script>
 {% if page.id == 'buy-bitcoins' %}
@@ -66,7 +69,7 @@
           <li{% if page.id == 'spend-bitcoins' %} class="active"{% endif %}><a href="/{{ page.lang }}/{% translate spend-bitcoins url %}">{% translate menu-spend-bitcoins layout %}</a></li>
         </ul>
       </li>
-      <li{% if page.id == 'news' %} class="active"{% endif %}><a href="/{{ page.lang }}/{% translate news url %}">{% translate menu-news layout %}</a></li>
+      <li{% if page.id == 'bitcoin-news' %} class="active"{% endif %}><a href="/{{ page.lang }}/bitcoin-news">{% translate menu-news layout %}</a></li>
       <li{% if page.id == 'faq' %} class="active"{% endif %}><a href="/{{ page.lang }}/{% translate faq url %}">{% translate menu-faq layout %}</a></li>
     </ul>
   </div></div>
