@@ -89,7 +89,9 @@ function listNewsItems() {
 	            }
 	          },
 	          complete: function(e, xhr, settings){
-	        	  
+	        	  $('.starthidden').fadeTo( 300 , 1, function() {
+	        		    // Animation complete
+	        	  });
 	          }
 	});
 }
