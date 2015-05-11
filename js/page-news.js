@@ -18,6 +18,7 @@ function listNewsItems() {
 	            	var hasSecondary = false;
 	            	var hasVOTD = false;
 	            	var secondaryHeadlines = [0, 0, 0, 0];
+	            	var usedArticles = [];
 	            	var secondaryHeadlineLocations = [0, 1, 3, 4];
 	            	
 	            	for (var i=0; i<response.items.length; i++)
@@ -28,6 +29,7 @@ function listNewsItems() {
 		            		{
 		            			$('.news-featured .lead-story img').attr('src',response.items[i].images[0].url);
 		            			$('.news-featured .lead-story .figcaption').html(response.items[i].title);
+		            			usedArticles[usedArticles.length] = response.items[i].id;
 		            			hasPrimary = true;
 		            		} else {
 		            			for (var j=0; j<secondaryHeadlines.length; j++)
@@ -39,6 +41,7 @@ function listNewsItems() {
 		            					// $('.news-secondary .secondary-story').eq(secondaryHeadlineLocations[j]).find('.headline').html(response.items[i].title);
 		            					$('.news-secondary .secondary-story').eq(secondaryHeadlineLocations[j]).find('img').attr('src',response.items[i].images[0].url);
 		            					secondaryHeadlines[j] = response.items[i].id;
+		            					usedArticles[usedArticles.length] = response.items[i].id;
 		            				}
 		            			}
 		            		}
@@ -52,6 +55,8 @@ function listNewsItems() {
 	            		newsListLength = 8;
 	            	}
 	            	
+	            	var tertiaryStory = 0;
+	            	
 	            	for (var i=0; i<=newsListLength; i++)
 	            	{
 	            		if (response.items[i].labels.indexOf('news') != -1)
@@ -62,6 +67,19 @@ function listNewsItems() {
 	            							'<div class="date" title="'+ response.items[i].published +'">' + prettyDate(response.items[i].published) + '</div>'
 	            					)
 	            			);
+	            			if (usedArticles.indexOf(response.items[i].id) == -1 && tertiaryStory < 4) {
+	            				usedArticles[usedArticles.length] = response.items[i].id;
+	            				
+	            				var html = $.parseHTML( response.items[i].content );
+	            				var element = document.createElement('div');
+	            				$(element).html(response.items[i].content);
+	            				
+	            				$('.tertiary-story').eq(tertiaryStory).find('.headline').html(response.items[i].title);
+	            				$('.tertiary-story').eq(tertiaryStory).find('.date').html(prettyDate(response.items[i].published));
+	            				$('.tertiary-story').eq(tertiaryStory).find('img').attr('src',response.items[i].images[0].url);
+	            				$('.tertiary-story').eq(tertiaryStory).find('.description').html($(element).find('div#brief').first().html());
+	            				tertiaryStory++;
+	            			}
 	            		}
 	            	}
 	            	
