@@ -3,7 +3,7 @@
 # http://opensource.org/licenses/MIT.
 
 layout: base
-id: bitcoin-news
+id: bitcoin-news-article
 ---
 
 <style>
@@ -428,6 +428,10 @@ html, button, input, select, textarea,
 	opacity: 0;
 }
 
+#brief {
+	font-weight: bold;
+}
+
 </style>
 <div class="pure-g news-header">
   <div class="news-header-masthead pure-u-1 pure-u-md-5-24">
@@ -456,14 +460,25 @@ html, button, input, select, textarea,
 <!-- Start Featured  -->
 <div class="pure-g news-featured starthidden">
   <div class="lead-story pure-u-1 pure-u-md-2-3">
-  	<a href="#">
+  	<h1 style="text-align: left; color: #000; margin-bottom: 5px;">Roger Ver spotted at bitcoin conference</h1>
+  	<div class="date">Published <span title="2015-05-11T18:04:00-07:00" class="prettydate">22 minutes ago</span>. Updated <span title="2015-05-11T18:04:00-07:00" class="prettydate">2 minutes ago</span>.</div>
     <img src="/img/news/feature.jpg" class="pure-img" style="width:100%">
-    <div class="figcaption">
-      Block Chain Summit Responds to Backlash Over  Private Island Bash
-    </div>
-    </a>
+    <div id="textcontent">
+    <div id="brief">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in tristique tellus, nec finibus elit. Maecenas at tortor sit amet nisl consectetur convallis. </div>
+<p>
+Cras convallis pellentesque metus vel malesuada. Duis eu imperdiet lectus, eu interdum nulla. Praesent feugiat auctor nulla, nec faucibus mi consequat vel. Nulla ex mi, lacinia vitae semper vestibulum, gravida aliquam felis. Nulla vulputate elit eget tempor scelerisque. Pellentesque eget mi viverra, rutrum neque ac, vulputate orci. Sed dignissim tempor nibh, nec tempus turpis semper in. Morbi dictum egestas tempor. Integer neque tortor, scelerisque eu arcu sit amet, venenatis volutpat tellus. Aliquam malesuada tempus sodales. Donec quis mauris ac nibh volutpat tempus sit amet quis est. Duis nec finibus nibh. Phasellus luctus rutrum arcu malesuada molestie.
+</p>
+Cras tempor purus at dui condimentum ultricies. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras est sem, rhoncus at mauris vel, aliquet molestie arcu. Ut eget eros tempus, imperdiet lectus a, laoreet odio. Vivamus eu bibendum ex. Morbi tempus, lacus at tempus feugiat, arcu elit sollicitudin nisl, ut lobortis sapien turpis vel lectus. Vestibulum bibendum in sem quis porttitor. Pellentesque massa sem, facilisis vitae congue ac, pellentesque vitae est. Morbi dictum quam lectus, nec luctus magna venenatis non. Nunc a felis ante. Curabitur quis ornare justo, non varius elit. Phasellus rhoncus non tellus sit amet dignissim. Nullam interdum convallis felis at venenatis. Nam finibus risus lectus, at tristique risus tincidunt blandit. Fusce egestas viverra consequat. Phasellus magna quam, ultrices eget ornare et, lacinia at dolor.
+<p>
+Praesent aliquet magna elit, ut tincidunt nibh lobortis a. Duis quis mi aliquet, condimentum quam quis, semper lacus. Vivamus accumsan facilisis velit vel luctus. Donec volutpat feugiat varius. Praesent gravida erat id sapien vehicula, at laoreet nisi semper. Sed a scelerisque leo. Praesent euismod, libero ut mollis ullamcorper, mi elit faucibus lectus, id tincidunt nibh risus eu ligula. Ut eget convallis nisi. Duis ipsum elit, finibus in nisi a, imperdiet faucibus mi. Etiam auctor bibendum ullamcorper. In et diam sem. Curabitur quis neque est. Nullam egestas non urna at pellentesque. Nulla facilisi. Etiam quis accumsan neque. Nulla vel eleifend sem, id convallis ex.
+</p>
+In non finibus lorem, a elementum lorem. Nullam sit amet magna placerat, pulvinar turpis ut, feugiat nisl. Ut sed tempor orci, eu venenatis tellus. Nam turpis arcu, venenatis et euismod ac, consectetur et nisi. Quisque dapibus volutpat nibh, ac ultricies nisi viverra condimentum. Nulla facilisi. Quisque et urna dui. Phasellus auctor sem congue diam tincidunt maximus. Nulla facilisi. Quisque interdum commodo sem nec dapibus. Suspendisse potenti. Morbi tincidunt, dolor ut aliquet semper, quam orci ultricies justo, sit amet eleifend odio metus a ipsum. Aenean sit amet metus suscipit mauris scelerisque aliquet. Donec venenatis, augue vel venenatis ultrices, nulla nisi pulvinar mauris, et feugiat lorem ex vitae turpis. Aliquam aliquam finibus ex ac tempus. Praesent finibus mattis nulla eu rutrum.
+<p>
+Sed vel posuere tellus, vitae interdum purus. Mauris turpis ante, tristique ut dignissim sed, fermentum in urna. Praesent in commodo enim, id rutrum risus. Maecenas sed ipsum porttitor, gravida metus sed, convallis tortor. Aliquam nisl tellus, hendrerit vitae tincidunt id, mollis eget est. Integer pellentesque leo vitae urna sollicitudin faucibus. Nunc enim orci, hendrerit posuere mauris id, finibus cursus lacus. Mauris in tellus in purus egestas vehicula. Curabitur aliquam turpis tellus, vitae volutpat nulla porta id. Suspendisse pharetra leo a nunc dictum, vel sollicitudin velit pretium. Mauris at imperdiet elit, quis commodo arcu. Sed convallis ullamcorper scelerisque. In ultrices egestas efficitur.
+</p>
+</div>
   </div>
-  <div class="latest-stories pure-u-1 pure-u-md-1-3" style="height: 313px; overflow-y: scroll;">
+  <div class="latest-stories pure-u-1 pure-u-md-1-3" style="height: 700px;">
     <hr class="divider">
     <div class="header">
         LATEST FEATURES
@@ -499,110 +514,10 @@ html, button, input, select, textarea,
   </div>
 </div>
 
-<!-- Start Secondary -->
-<div class="news-secondary pure-g starthidden">
-  <div class="pure-u-1 pure-u-md-1-3 secondary-story">
-  	<div class="figcaptionsmall">Sub headline</div>
-    <div class="headline">
-        Video of the day
-    </div>
-    <img src="/img/news/secondary-1.jpg">
-  </div>
-  <div class="pure-u-1 pure-u-md-1-3 secondary-story">
-    <div class="figcaptionsmall">Sub headline</div>
-    <div class="headline">
-        Headline
-    </div>
-    <img src="/img/news/secondary-2.jpg">
-  </div>
-  <div class="pure-u-1 pure-u-md-1-3 secondary-story">
-    <div class="headline">
-        Media
-    </div>
-    <div>
-      <img src="/img/news/media-1.jpg">
-      <img src="/img/news/media-2.jpg">
-      <img src="/img/news/media-3.jpg">
-      <img src="/img/news/media-4.jpg">
-      <img src="/img/news/media-5.jpg">
-      <img src="/img/news/media-6.jpg">
-      <img src="/img/news/media-7.jpg">
-      <img src="/img/news/media-8.jpg">
-    </div>
-  </div>
-  <div class="pure-u-1 pure-u-md-1-3 secondary-story">
-    <div class="figcaptionsmall">Sub headline</div>
-    <div class="headline">
-      Headline
-    </div>
-    <img src="/img/news/secondary-3.jpg">
-  </div>
-  <div class="pure-u-1 pure-u-md-1-3 secondary-story">
-    <div class="figcaptionsmall">Sub headline</div>
-    <div class="headline">
-      Headline
-    </div>
-    <img src="/img/news/secondary-4.jpg">
-  </div>
-  <div class="pure-u-1 pure-u-md-1-3 secondary-story">
-    <div class="headline">
-        Recent Posts
-    </div>
-    <div class="blog">
-      <img src="/img/news/media-1.jpg">
-      This is a blog post title.
-      <div class="date">
-        10/10/2015
-      </div>
-    </div>
-    <div class="blog">
-      <img src="/img/news/media-1.jpg">
-      This is a blog post title.
-      <div class="date">
-        10/10/2015
-      </div>
-    </div>
-    <div class="blog">
-      <img src="/img/news/media-1.jpg">
-      This is a blog post title.
-      <div class="date">
-        10/10/2015
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
 <div class="news-tertiary pure-g starthidden">
   <div class="pure-u-1 pure-u-md-2-3">
     <div class="tertiary-story">
-      <img src="/img/news/secondary-1.jpg" style="max-width: 260px">
-      <div class="headline">Apple accused of pressuring labels to remove music from Spotify.</div>
-      <div class="date">November 1, 2015</div>
-      <div class="description">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tortor neque, porttitor in mauris et, hendrerit auctor massa.
-      </div>
-    </div>
-    <div class="tertiary-story">
-      <img src="/img/news/secondary-1.jpg" style="max-width: 260px">
-      <div class="headline">Apple accused of pressuring labels to remove music from Spotify.</div>
-      <div class="date">November 1, 2015</div>
-      <div class="description">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tortor neque, porttitor in mauris et, hendrerit auctor massa.
-      </div>
-    </div>
-    <div class="tertiary-story">
-      <img src="/img/news/secondary-1.jpg" style="max-width: 260px">
-      <div class="headline">Apple accused of pressuring labels to remove music from Spotify.</div>
-      <div class="date">November 1, 2015</div>
-      <div class="description">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tortor neque, porttitor in mauris et, hendrerit auctor massa.
-      </div>
-    </div>
-    <div class="tertiary-story">
-      <img src="/img/news/secondary-1.jpg" style="max-width: 260px">
-      <div class="headline">Apple accused of pressuring labels to remove music from Spotify.</div>
+      <div class="headline">Comment</div>
       <div class="date">November 1, 2015</div>
       <div class="description">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tortor neque, porttitor in mauris et, hendrerit auctor massa.
@@ -615,4 +530,4 @@ html, button, input, select, textarea,
     <img src="/img/news/240x400.jpg">
   </div>
 </div>
-<script src="/js/page-news.js"></script>
+<script src="/js/page-article.js"></script>
