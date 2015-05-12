@@ -52,9 +52,9 @@ function listNewsItems() {
 	            	$('.news-featured .latest-stories .latest-story').remove();
 	            	
 	            	var newsListLength = response.items.length;
-	            	if (newsListLength > 8)
+	            	if (newsListLength > 10)
 	            	{
-	            		newsListLength = 8;
+	            		newsListLength = 10;
 	            	}
 	            	
 	            	var tertiaryStory = 0;

@@ -91,6 +91,8 @@ function getArticle(articleId) {
 	            	$('#textcontent').html($(content).html());
 	            	$('.news-featured .lead-story h1').html(response.title);
 	            	
+	            	$('#article-timestamp span').eq(0).html(prettyDate(response.published));
+	            	$('#article-timestamp span').eq(1).html(prettyDate(response.updated));
 	            	
 	            },
 	            500: function (response) {
@@ -103,9 +105,55 @@ function getArticle(articleId) {
 	        	  if (listLoaded && articleLoaded)
 	        	  {
 	        		  $('.starthidden').fadeTo( 300 , 1, function() {
-	        			  // Animation complete
+	        			  
 	        		  });	        		 
 	        	  }
+	        	  getComments(articleId);
+	          }
+	});
+}
+
+function getComments(articleId) {
+	$.ajax({
+	    url: "/api/news/comments/" + articleId,
+	    type: "GET",
+	    cache: false,
+	    data: { },
+	    statusCode: {
+	            200: function (response) {
+	            	console.log(response);
+	            	var comment = document.createElement('div');
+	            	$(comment).html($('#comment-template').html());
+	            	
+	            	if (response.items.length == 0)
+	            	{
+	            		// No comments
+	            	} else {
+	            		for (var i=0; i<response.items.length; i++)
+	            		{
+	            			var comment = document.createElement('div');
+	            			$(comment).html($('#comment-template').html());
+	            			$(comment).addClass('tertiary-story');
+	            			
+	            			var commentData = response.items[i];
+	            			var author = commentData.author.displayName
+	            			
+	            			$(comment).find('.headline').html(author + ' says:');
+	            			$(comment).find('.description').html(commentData.content);
+	            			$(comment).find('.date').html(prettyDate(commentData.published));
+	            			
+	            			$('#comment-container').append($(comment));
+	            		}
+	            	}
+	            	$('#comment-template').remove();
+	            	$('.html-template').remove();
+	            },
+	            500: function (response) {
+	            	console.log(response);
+	            }
+	          },
+	          complete: function(e, xhr, settings){
+	        	  
 	          }
 	});
 }
