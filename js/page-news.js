@@ -29,6 +29,7 @@ function listNewsItems() {
 		            		{
 		            			$('.news-featured .lead-story img').attr('src',response.items[i].images[0].url);
 		            			$('.news-featured .lead-story .figcaption').html(response.items[i].title);
+		            			$('.news-featured .lead-story a').attr('href','bitcoin-news/' + response.items[i].id);
 		            			usedArticles[usedArticles.length] = response.items[i].id;
 		            			hasPrimary = true;
 		            		} else {
@@ -42,6 +43,7 @@ function listNewsItems() {
 		            					var imgUrl = response.items[i].images[0].url;
 		            					imgUrl = imgUrl.replace(/^http:\/\//i, 'https://');
 		            					$('.news-secondary .secondary-story').eq(secondaryHeadlineLocations[j]).find('img').attr('src',imgUrl);
+		            					$('.news-secondary .secondary-story').eq(secondaryHeadlineLocations[j]).find('a').attr('href','bitcoin-news/' + response.items[i].id);
 		            					secondaryHeadlines[j] = response.items[i].id;
 		            					usedArticles[usedArticles.length] = response.items[i].id;
 		            				}
@@ -76,12 +78,17 @@ function listNewsItems() {
 	            				var element = document.createElement('div');
 	            				$(element).html(response.items[i].content);
 	            				
+	            				var link = document.createElement('a');
+	            				$(link).html(response.items[i].title)
+	            				
 	            				var imgUrl = response.items[i].images[0].url;
             					imgUrl = imgUrl.replace(/^http:\/\//i, 'https://');
 	            				
-	            				$('.tertiary-story').eq(tertiaryStory).find('.headline').html(response.items[i].title);
+            					$('.tertiary-story').eq(tertiaryStory).find('.headline').html('');
+	            				$('.tertiary-story').eq(tertiaryStory).find('.headline').append($(link));
 	            				$('.tertiary-story').eq(tertiaryStory).find('.date').html(prettyDate(response.items[i].published));
 	            				$('.tertiary-story').eq(tertiaryStory).find('img').attr('src',imgUrl);
+	            				$('.tertiary-story').eq(tertiaryStory).find('a').attr('href','bitcoin-news/' + response.items[i].id);
 	            				$('.tertiary-story').eq(tertiaryStory).find('.description').html($(element).find('div#brief').first().html());
 	            				tertiaryStory++;
 	            			}

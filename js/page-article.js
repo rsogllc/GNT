@@ -1,5 +1,6 @@
 var listLoaded;
 var articleLoaded;
+var articleId;
 
 $(document).ready(function(){
 	
@@ -8,7 +9,7 @@ $(document).ready(function(){
 	
 	listNewsItems();
 	
-	var articleId = document.URL.substr(document.URL.lastIndexOf('/')+1);
+	articleId = document.URL.substr(document.URL.lastIndexOf('/')+1);
 	
 	if (articleId != null)
 	{
@@ -32,7 +33,7 @@ function listNewsItems() {
 	            	var usedArticles = [];
 	            	var secondaryHeadlineLocations = [0, 1, 3, 4];
 	            	
-	            	$('.news-featured .latest-stories .latest-story').remove();
+	            	// $('.news-featured .latest-stories .latest-story').remove();
 	            	
 	            	var newsListLength = response.items.length;
 	            	if (newsListLength > 10)
@@ -44,14 +45,23 @@ function listNewsItems() {
 	            	{
 	            		if (response.items[i].labels != null && response.items[i].labels.indexOf('news') != -1)
 	            		{
-	            			$('.news-featured .latest-stories').append($('<div class="latest-story">').
-	            					append(
-	            							'<img src="'+ response.items[i].images[0].url +'">' + response.items[i].title +
-	            							'<div class="date" title="'+ response.items[i].published +'">' + prettyDate(response.items[i].published) + '</div>'
-	            					)
-	            			);
+	            			var articleItem = response.items[i];
+	            			
+	            			var storyItem = $('#latest-story-template').clone();
+	            			
+	            			$(storyItem).removeAttr('id');
+	            			$(storyItem).find('.date').html(prettyDate(articleItem.published));
+	            			$(storyItem).find('img').attr('src', articleItem.images[0].url);
+	            			$(storyItem).find('a').attr('href', articleItem.id);
+	            			$(storyItem).find('a').html(articleItem.title);
+	            			
+	            			if (articleItem.id != articleId)
+	            			{
+	            				$('#right-story-container').append($(storyItem));
+	            			}
 	            		}
 	            	}
+	            	$('#latest-story-template').remove();
 	            	
 	            },
 	            500: function (response) {
@@ -127,26 +137,25 @@ function getComments(articleId) {
 	            	
 	            	if ('items' in response)
 	            	{
-	            		if (response.items.length == 0)
+	            		for (var i=0; i<response.items.length; i++)
 	            		{
-	            			// No comments
-	            		} else {
-	            			for (var i=0; i<response.items.length; i++)
-	            			{
-	            				var comment = document.createElement('div');
-	            				$(comment).html($('#comment-template').html());
-	            				$(comment).addClass('tertiary-story');
+	            			var comment = document.createElement('div');
+	            			$(comment).html($('#comment-template').html());
+	            			$(comment).addClass('tertiary-story');
 	            				
-	            				var commentData = response.items[i];
-	            				var author = commentData.author.displayName
+	            			var commentData = response.items[i];
+	            			var author = commentData.author.displayName
 	            				
-	            				$(comment).find('.headline').html(author + ' says:');
-	            				$(comment).find('.description').html(commentData.content);
-	            				$(comment).find('.date').html(prettyDate(commentData.published));
+	            			$(comment).find('.headline').html(author + ' says:');
+	            			$(comment).find('.description').html(commentData.content);
+	            			$(comment).find('.date').html(prettyDate(commentData.published));
 	            				
-	            				$('#comment-container').append($(comment));
-	            			}
+	            			$('#comment-container').append($(comment));
 	            		}
+	            	} else {
+	            		var comment = document.createElement('h2');
+            			$(comment).html('No comments');
+            			$('#comment-container').append($(comment));
 	            	}
 	            	$('#comment-template').remove();
 	            	$('.html-template').remove();
