@@ -1,3 +1,5 @@
+var nextToken;
+
 $(document).ready(function(){
 	listNewsItems();
 	
@@ -6,10 +8,74 @@ $(document).ready(function(){
 	// getTicker();
 });
 
+$('#seemore').click(function(event){
+	event.preventDefault();
+	if (nextToken)
+	{
+		console.log(nextToken);
+		listMoreArticles(nextToken);
+	}
+});
 
-function listNewsItems() {
+function listMoreArticles(pageToken) {
+	
+	var urlString = "/api/news/posts?pageToken=" + pageToken;
+	
 	$.ajax({
-	    url: "/api/news/posts",
+	    url: urlString,
+	    type: "GET",
+	    cache: false,
+	    data: { },
+	    statusCode: {
+	            200: function (response) {
+	            	console.log(response);
+	            	
+	            	for (var i=0; i<response.items.length; i++)
+	            	{
+	            		var newTertiaryStory = $('.tertiary-story').first().clone();
+	            		
+	            		var html = $.parseHTML( response.items[i].content );
+	            		var element = document.createElement('div');
+	            		$(element).html(response.items[i].content);
+	            		
+	            		var link = document.createElement('a');
+	            		$(link).html(response.items[i].title)
+	            		
+	            		var imgUrl = response.items[i].images[0].url;
+	            		imgUrl = imgUrl.replace(/^http:\/\//i, 'https://');
+	            		
+	            		$(newTertiaryStory).find('.headline').html('');
+	            		$(newTertiaryStory).find('.headline').append($(link));
+	            		$(newTertiaryStory).find('.date').html(prettyDate(response.items[i].published));
+	            		$(newTertiaryStory).find('img').attr('src',imgUrl);
+	            		$(newTertiaryStory).find('a').attr('href','bitcoin-news/' + response.items[i].id);
+	            		$(newTertiaryStory).find('.description').html($(element).find('div#brief').first().html());
+	            		
+	            		$('div.news-tertiary').append($(newTertiaryStory));
+	            		
+	            	}
+	            	if (!response.nextPageToken)
+	            	{
+	            		$('#seemore').hide();
+	            	}
+	            	
+	            },
+	            500: function (response) {
+	            	console.log(response);
+	            }
+	          },
+	          complete: function(e, xhr, settings){
+	        	  
+	          }
+	});
+}
+
+function listNewsItems(pageToken) {
+	
+	var urlString = "/api/news/posts";
+	
+	$.ajax({
+	    url: urlString,
 	    type: "GET",
 	    cache: false,
 	    data: { },
@@ -22,6 +88,8 @@ function listNewsItems() {
 	            	var secondaryHeadlines = [0, 0, 0, 0];
 	            	var usedArticles = [];
 	            	var secondaryHeadlineLocations = [0, 1, 2, 3];
+	            	
+	            	nextToken = response.nextPageToken;
 	            	
 	            	for (var i=0; i<response.items.length; i++)
 	            	{
