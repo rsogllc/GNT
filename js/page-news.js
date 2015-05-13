@@ -21,7 +21,7 @@ function listNewsItems() {
 	            	var hasVOTD = false;
 	            	var secondaryHeadlines = [0, 0, 0, 0];
 	            	var usedArticles = [];
-	            	var secondaryHeadlineLocations = [0, 1, 3, 4];
+	            	var secondaryHeadlineLocations = [0, 1, 2, 3];
 	            	
 	            	for (var i=0; i<response.items.length; i++)
 	            	{
@@ -39,6 +39,8 @@ function listNewsItems() {
 		            			{
 		            				if (secondaryHeadlines[j] == 0 && secondaryHeadlines.indexOf(response.items[i].id) == -1)
 		            				{
+		            					console.log($('.news-secondary .secondary-story').eq(secondaryHeadlineLocations[j]).height());
+		            					console.log($('.news-secondary .secondary-story').eq(secondaryHeadlineLocations[j]).width());
 		            					$('.news-secondary .secondary-story').eq(secondaryHeadlineLocations[j]).find('.headline').remove();
 		            					$('.news-secondary .secondary-story').eq(secondaryHeadlineLocations[j]).find('.figcaptionsmall').html(response.items[i].title);
 		            					// $('.news-secondary .secondary-story').eq(secondaryHeadlineLocations[j]).find('.headline').html(response.items[i].title);
@@ -46,6 +48,10 @@ function listNewsItems() {
 		            					imgUrl = imgUrl.replace(/^http:\/\//i, 'https://');
 		            					$('.news-secondary .secondary-story').eq(secondaryHeadlineLocations[j]).find('img').attr('src',imgUrl);
 		            					$('.news-secondary .secondary-story').eq(secondaryHeadlineLocations[j]).find('a').attr('href','bitcoin-news/' + response.items[i].id);
+		            					
+		            					var parentHeight = $('.news-secondary .secondary-story').eq(secondaryHeadlineLocations[j]).height();
+		            					var parentWidth = $('.news-secondary .secondary-story').eq(secondaryHeadlineLocations[j]).width();
+		            					
 		            					secondaryHeadlines[j] = response.items[i].id;
 		            					usedArticles[usedArticles.length] = response.items[i].id;
 		            				}
