@@ -3,9 +3,6 @@ var nextToken;
 $(document).ready(function(){
 	listNewsItems();
 	
-	// setInterval(function(){ $(".date").prettyDate(); }, 5000);
-	
-	// getTicker();
 });
 
 $('#seemore').click(function(event){
@@ -107,11 +104,8 @@ function listNewsItems(pageToken) {
 		            			{
 		            				if (secondaryHeadlines[j] == 0 && secondaryHeadlines.indexOf(response.items[i].id) == -1)
 		            				{
-		            					console.log($('.news-secondary .secondary-story').eq(secondaryHeadlineLocations[j]).height());
-		            					console.log($('.news-secondary .secondary-story').eq(secondaryHeadlineLocations[j]).width());
 		            					$('.news-secondary .secondary-story').eq(secondaryHeadlineLocations[j]).find('.headline').remove();
 		            					$('.news-secondary .secondary-story').eq(secondaryHeadlineLocations[j]).find('.figcaptionsmall').html(response.items[i].title);
-		            					// $('.news-secondary .secondary-story').eq(secondaryHeadlineLocations[j]).find('.headline').html(response.items[i].title);
 		            					var imgUrl = response.items[i].images[0].url;
 		            					imgUrl = imgUrl.replace(/^http:\/\//i, 'https://');
 		            					$('.news-secondary .secondary-story').eq(secondaryHeadlineLocations[j]).find('img').attr('src',imgUrl);
@@ -180,26 +174,6 @@ function listNewsItems(pageToken) {
 	        	  $('.starthidden').fadeTo( 300 , 1, function() {
 	        		    // Animation complete
 	        	  });
-	          }
-	});
-}
-
-function getTicker() {
-	$.ajax({
-	    url: "https://www.bitstamp.net/api/ticker/",
-	    type: "GET",
-	    cache: false,
-	    data: { },
-	    statusCode: {
-	            200: function (response) {
-	            	console.log(response);
-	            },
-	            500: function (response) {
-	            	console.log(response);
-	            }
-	          },
-	          complete: function(e, xhr, settings){
-	        	  
 	          }
 	});
 }
