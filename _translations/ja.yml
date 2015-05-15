@@ -704,9 +704,14 @@ ja:
     protect-your-privacy: protect-your-privacy
     resources: resources
     secure-your-wallet: secure-your-wallet
+    buy-bitcoins: buy-bitcoins
+    mine-bitcoins: mine-bitcoins
     support-bitcoin: support-bitcoin
     vocabulary: vocabulary
     you-need-to-know: you-need-to-know
+    bitcoin-paper: bitcoin-paper
+    bitcoin-news: bitcoin-news
+    bitcoin-news-article: bitcoin-news-article
   anchor:
     community:
       non-profit: non-profit
@@ -780,3 +785,32 @@ ja:
       quantum: is-bitcoin-vulnerable-to-quantum-computing
       help: help
       morehelp: more-help
+  buy-bitcoins:
+    title: "ビットコインを買う"
+    pagetitle: "ビットコインを買う"
+    multi-select-title: "ビットコインの取引所"
+    stats-exchanges-text: "取引所"
+    stats-countries-text: "国"
+    stats-referrals-text: "参照"
+    multi-select-placeholder: "取引所を検索..."
+    multi-select-instructions: "e.g., search by country, city, exchange, or keyword"
+    location-title: "Select a Location:"
+    featured-exchanges: "@の特徴な取引所"
+    regionNA: "北アメリカ"
+    regionCR: "カリブ海"
+    regionEU: "ヨーロッパ"
+    regionAF: "アフリカ"
+    regionSA: "中央・南アメリカ"
+    regionOP: "オセアニア・パシフィック"
+    regionME: "中東"
+    regionAS: "アジア"
+  bitcoin-news:
+    news-title: "ニュース"
+  bitcoin-news-article:
+    news-title: "News"
+  mine-bitcoins:
+    title: "Mine Bitcoins"
+    pagetitle: "Mine Bitcoins"
+    cloud: "Cloud"
+    hardware: "Hardware"
+    pagedesc: "Mining is the backbone of the bitcoin network. You can invest in mining and earn bitcoin yourself."
