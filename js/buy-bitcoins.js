@@ -1,7 +1,10 @@
-// Jquery stuff
+var divBodyHeight;
 
 $(document).ready(function(){
-
+	
+	$('#show-more').hide();
+	divBodyHeight = $('div.body').height();
+		
 	$.ajax({
 	    url: "/api/frontend/buyBitcoins",
 	    type: "GET",
@@ -28,6 +31,7 @@ $(document).ready(function(){
 	            			)
 	            		);
 	            	}
+	            	
 	            	if (response.sponsoredListing != null)
 	            	{
 	            		$('.exchange-listing').hide();
@@ -56,7 +60,7 @@ $(document).ready(function(){
 	            	        	    });
 	            	        		$('.exchange-listing').height(maxHeight);
 	            	        		realHeight += $('#exchange-listing-container').height();
-	            	        		// $('div.body').height(realHeight);
+	            	        		$('div.body').height(realHeight);
 	            	        } else if ($('#exchange-listing-container').width() <= 626)
 	            	        {
 	            	        		$('#exchange-listing-container').children('.exchange-listing').each(function () {
@@ -66,7 +70,7 @@ $(document).ready(function(){
 	            	        	    });
 	            	        		
 	            	        		realHeight += $('#exchange-listing-container').height();
-	            	        		// $('div.body').height(realHeight);
+	            	        		$('div.body').height(realHeight);
 	            	        }
 	            	}
 	            },
@@ -187,7 +191,9 @@ app.controller('exchangeLocationCtrl', function($scope, LocalData, $http) {
       for( var prop in $scope.countries ) {
           if( $scope.countries.hasOwnProperty( prop ) ) {
                if( $scope.countries[ prop ] === value )
-            	   listExchanges();
+               {
+            	   listExchanges(prop);
+               }
           }
       }
     }
@@ -301,7 +307,7 @@ app.controller('exchangeTreeviewCtrl',function($scope, LocalData, $http) {
 	            		$(sponsoredId).css('margin-left', marginLeft + 'px');
 	            		$('#show-more').show(200);
 	            	} else {
-	            			var realHeight = $('div.body').height();
+	            			var realHeight = divBodyHeight;
 	            			$('#show-more').hide(200);
 	            	        if ($('#exchange-listing-container').width() > 626)
 	            	        {
@@ -314,7 +320,7 @@ app.controller('exchangeTreeviewCtrl',function($scope, LocalData, $http) {
 	            	        	    });
 	            	        		$('.exchange-listing').height(maxHeight);
 	            	        		realHeight += $('#exchange-listing-container').height();
-	            	        		// $('div.body').height(realHeight);
+	            	        		$('div.body').height(realHeight);
 	            	        } else if ($('#exchange-listing-container').width() <= 626)
 	            	        {
 	            	        		$('#exchange-listing-container').children('.exchange-listing').each(function () {
@@ -324,7 +330,7 @@ app.controller('exchangeTreeviewCtrl',function($scope, LocalData, $http) {
 	            	        	    });
 	            	        		
 	            	        		realHeight += $('#exchange-listing-container').height();
-	            	        		// $('div.body').height(realHeight);
+	            	        		$('div.body').height(realHeight);
 	            	        }
 	            	}
 	            },
@@ -341,11 +347,11 @@ app.controller('exchangeTreeviewCtrl',function($scope, LocalData, $http) {
 
 function listExchanges(countryCode) {
 	
-	var url = "/api/frontend/buyBitcoins";
-	if (countryCode != null)
-	{
-		url = "/api/frontend/buyBitcoins?country="+countryCode;		
-	}
+	var url = "/api/frontend/buyBitcoins?country="+countryCode;		
+	
+	$('#listingsloader').show();
+	$('.exchange-listing').hide();
+	$('#featuredH1').hide();
 	
 	$.ajax({
 	    url: url,
@@ -355,11 +361,10 @@ function listExchanges(countryCode) {
 	    statusCode: {
 	            200: function (response) {
 	            	
-	            	$scope.stats = response.stats.data;
-	            	
 	            	console.log(response);
 	            	var baseText = $('#featuredH1').data('text');
 	            	$('#featuredH1').html(baseText.replace("@", response.localizedCountryName));
+	            	$('#featuredH1').show();
 	            	
 	            	$('#listingsloader').hide();
 	            	$('.exchange-listing').remove();
@@ -392,7 +397,8 @@ function listExchanges(countryCode) {
 	            		$('#show-more').show(200);
 	            	} else {
 	            		$('#exchange-listing-container').children('.exchange-listing').each(function () {
-	            	        if ($(this).width() > 275 && $('#exchange-listing-container').width() > 626)
+	            			var realHeight = divBodyHeight;
+	            	        if ($('#exchange-listing-container').width() > 626)
 	            	        {
 	            	        		var maxHeight = 0;
 	            	        		$('#exchange-listing-container').children('.exchange-listing').each(function () {
