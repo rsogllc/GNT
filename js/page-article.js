@@ -50,11 +50,14 @@ function listNewsItems() {
 	            			var articleItem = response.items[i];
 	            			
 	            			var storyItem = $('#latest-story-template').clone();
+	            			var imgUrl = articleItem.images[0].url;
+        					imgUrl = imgUrl.replace(/^http:\/\//i, 'https://');
+            				
 	            			
 	            			$(storyItem).removeAttr('id');
 	            			$(storyItem).data('articleid', articleItem.id);
 	            			$(storyItem).find('.date').html(prettyDate(articleItem.published));
-	            			$(storyItem).find('img').attr('src', articleItem.images[0].url);
+	            			$(storyItem).find('img').attr('src', imgUrl);
 	            			$(storyItem).find('a').attr('href', articleItem.id);
 	            			$(storyItem).find('a').html(articleItem.title);
 	            			
@@ -127,7 +130,17 @@ function getArticle(articleId) {
 	            	
 	            	// Take the first image, place it first and remove it
 	            	$(content).find('img').first().remove();
-	            	$('.news-featured .lead-story .pure-img').attr('src',response.images[0].url);
+	            	
+	            	$(content).find('img').each(function () {
+	            		var imgUrl = $(this).attr('src');
+	            		imgUrl = imgUrl.replace(/^http:\/\//i, 'https://');
+	            		$(this).attr('src', imgUrl)
+	            	});
+	            	
+	            	var imgUrl = response.images[0].url;
+					imgUrl = imgUrl.replace(/^http:\/\//i, 'https://');
+	            	
+	            	$('.news-featured .lead-story .pure-img').attr('src',imgUrl);
 	            	
 	            	$('#textcontent').html($(content).html());
 	            	$('.news-featured .lead-story h1').html(response.title);
