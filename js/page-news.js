@@ -40,6 +40,7 @@ function listMoreArticles(pageToken) {
 	            		
 	            		var imgUrl = response.items[i].images[0].url;
 	            		imgUrl = imgUrl.replace(/^http:\/\//i, 'https://');
+	            		console.log(imgUrl);
 	            		
 	            		$(newTertiaryStory).find('.headline').html('');
 	            		$(newTertiaryStory).find('.headline').append($(link));
@@ -94,7 +95,10 @@ function listNewsItems(pageToken) {
 	            		{
 		            		if (!hasPrimary)
 		            		{
-		            			$('.news-featured .lead-story img').attr('src',response.items[i].images[0].url);
+		            			var imgUrl = response.items[i].images[0].url;
+            					imgUrl = imgUrl.replace(/^http:\/\//i, 'https://');
+            					
+		            			$('.news-featured .lead-story img').attr('src',imgUrl);
 		            			$('.news-featured .lead-story .figcaption').html(response.items[i].title);
 		            			$('.news-featured .lead-story a').attr('href','bitcoin-news/' + response.items[i].id);
 		            			usedArticles[usedArticles.length] = response.items[i].id;
@@ -108,6 +112,8 @@ function listNewsItems(pageToken) {
 		            					$('.news-secondary .secondary-story').eq(secondaryHeadlineLocations[j]).find('.figcaptionsmall').html(response.items[i].title);
 		            					var imgUrl = response.items[i].images[0].url;
 		            					imgUrl = imgUrl.replace(/^http:\/\//i, 'https://');
+		            					console.log(imgUrl);
+		            					
 		            					$('.news-secondary .secondary-story').eq(secondaryHeadlineLocations[j]).find('img').attr('src',imgUrl);
 		            					$('.news-secondary .secondary-story').eq(secondaryHeadlineLocations[j]).find('a').attr('href','bitcoin-news/' + response.items[i].id);
 		            					
@@ -135,9 +141,12 @@ function listNewsItems(pageToken) {
 	            	{
 	            		if (response.items[i].labels != null && response.items[i].labels.indexOf('news') != -1)
 	            		{
+	            			var imgUrl = response.items[i].images[0].url;
+        					imgUrl = imgUrl.replace(/^http:\/\//i, 'https://');
+        					
 	            			$('.news-featured .latest-stories').append($('<div class="latest-story">').
 	            					append(
-	            							'<img src="'+ response.items[i].images[0].url +'"><a href="bitcoin-news/'+ response.items[i].id +'">' + response.items[i].title +
+	            							'<img src="'+ imgUrl +'"><a href="bitcoin-news/'+ response.items[i].id +'">' + response.items[i].title +
 	            							'</a><div class="date" title="'+ response.items[i].published +'">' + prettyDate(response.items[i].published) + '</div>'
 	            					)
 	            			);
