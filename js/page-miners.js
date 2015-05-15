@@ -59,7 +59,7 @@ $('#moreBtn').click(function(event){
 	$('#moreBtn').hide(200);
 });
 
-$('#hardware').mouseenter(function(event){
+$('#hardware').click(function(event){
 	if (!$(this).parent().hasClass('icon-active'))
 	{
 		$('#walletmenu').find('li').removeClass('icon-active');
@@ -68,7 +68,7 @@ $('#hardware').mouseenter(function(event){
 	}
 });
 
-$('#cloud').mouseenter(function(event){
+$('#cloud').click(function(event){
 	if (!$(this).parent().hasClass('icon-active'))
 	{
 		$('#walletmenu').find('li').removeClass('icon-active');

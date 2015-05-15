@@ -166,6 +166,9 @@ function drawChart(graphData) {
         chart: {
             zoomType: 'x'
         },
+        credits: {
+        	enabled: false
+        },
         title: {
             text: null
         },

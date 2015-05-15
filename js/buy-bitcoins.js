@@ -10,6 +10,8 @@ $(document).ready(function(){
 	    statusCode: {
 	            200: function (response) {
 	            	
+	            	console.log(response);
+	            	
 	            	$('#listingsloader').hide();
 	            	var baseText = $('#featuredH1').data('text');
 	            	$('#featuredH1').html(baseText.replace("@", response.localizedCountryName));
@@ -19,26 +21,54 @@ $(document).ready(function(){
 	            		
 	            		$('#exchange-listing-container').append($('<div class="exchange-listing" data-listid="'+listingData.id+'" id="listing-'+listingData.id+'">')
 	            			.append($('<div class="exchange-listing-right">')
-	            				.append($('<div class="exchange-listing-title"><img src="'+listingData.faviconURL+'">'+listingData.name+'</div>'+
+	            				.append($('<div class="exchange-listing-title"><img src="'+listingData.icon+'">'+listingData.name+'</div>'+
 	            						'<div class="exchange-listing-description">'+listingData.description+'</div>'+
 	            						'<a href="/url?promo='+listingData.id+'-'+response.countryCode+'&url='+listingData.homepageURL+'"><div class="exchange-listing-button">Buy bitcoin</div></a>')
 	            				)
 	            			)
 	            		);
 	            	}
-	            	$('.exchange-listing').hide();
-	            	var sponsoredId = '#listing-' + response.sponsoredListing;
-	            	var listCont = $('#exchange-listing-container').width();
-	            	console.log(listCont);
-	            	var marginLeft = (listCont - 408)/2;
-	            	$(sponsoredId).show();
-	            	if ($('#exchange-listing-container').width() <= 626) {
-	            		$(sponsoredId).css('width', '91%');
+	            	if (response.sponsoredListing != null)
+	            	{
+	            		$('.exchange-listing').hide();
+	            		var sponsoredId = '#listing-' + response.sponsoredListing;
+	            		var listCont = $('#exchange-listing-container').width();
+	            		var marginLeft = (listCont - 408)/2;
+	            		$(sponsoredId).show();
+	            		if ($('#exchange-listing-container').width() <= 626) {
+	            			$(sponsoredId).css('width', '91%');
+	            		} else {
+	            			$(sponsoredId).css('width', '400px');
+	            		}
+	            		$(sponsoredId).css('margin-left', marginLeft + 'px');
+	            		$('#show-more').show(200);
 	            	} else {
-	            		$(sponsoredId).css('width', '400px');
+	            			var realHeight = $('div.body').height();
+	            			$('#show-more').hide(200);
+	            	        if ($('#exchange-listing-container').width() > 626)
+	            	        {
+	            	        		var maxHeight = 0;
+	            	        		$('#exchange-listing-container').children('.exchange-listing').each(function () {
+	            	        	    	if ($(this).height() > maxHeight)
+	            	        	    	{
+	            	        	    		maxHeight = $(this).height();
+	            	        	    	}
+	            	        	    });
+	            	        		$('.exchange-listing').height(maxHeight);
+	            	        		realHeight += $('#exchange-listing-container').height();
+	            	        		// $('div.body').height(realHeight);
+	            	        } else if ($('#exchange-listing-container').width() <= 626)
+	            	        {
+	            	        		$('#exchange-listing-container').children('.exchange-listing').each(function () {
+	            	        			$(this).css('margin-right', '8px');
+	            	        			$(this).width('91%');
+	            	        	    	$(this).show(300);
+	            	        	    });
+	            	        		
+	            	        		realHeight += $('#exchange-listing-container').height();
+	            	        		// $('div.body').height(realHeight);
+	            	        }
 	            	}
-	            	$(sponsoredId).css('margin-left', marginLeft + 'px');
-	            	$('#show-more').show(200);
 	            },
 	            500: function (response) {
 	
@@ -220,6 +250,11 @@ app.controller('exchangeTreeviewCtrl',function($scope, LocalData, $http) {
 
   $scope.showListings = function(countryCode, event) {
 	$scope.hideCountries(null);
+	event.preventDefault();
+	
+	$('#listingsloader').show();
+	$('.exchange-listing').hide();
+	$('#featuredH1').hide();
 	
 	$.ajax({
 	    url: "/api/frontend/buyBitcoins?country="+countryCode,
@@ -234,6 +269,7 @@ app.controller('exchangeTreeviewCtrl',function($scope, LocalData, $http) {
 	            	console.log(response);
 	            	var baseText = $('#featuredH1').data('text');
 	            	$('#featuredH1').html(baseText.replace("@", response.localizedCountryName));
+	            	$('#featuredH1').show();
 	            	
 	            	$('#listingsloader').hide();
 	            	$('.exchange-listing').remove();
@@ -243,19 +279,54 @@ app.controller('exchangeTreeviewCtrl',function($scope, LocalData, $http) {
 	            		
 	            		$('#exchange-listing-container').append($('<div class="exchange-listing" data-listid="'+listingData.id+'" id="listing-'+listingData.id+'">')
 	            			.append($('<div class="exchange-listing-right">')
-	            				.append($('<div class="exchange-listing-title"><img src="'+listingData.faviconURL+'">'+listingData.name+'</div>'+
+	            				.append($('<div class="exchange-listing-title"><img src="'+listingData.icon+'">'+listingData.name+'</div>'+
 	            						'<div class="exchange-listing-description">'+listingData.description+'</div>'+
 	            						'<a href="/url?promo='+listingData.id+'-'+response.countryCode+'&url='+listingData.homepageURL+'"><div class="exchange-listing-button">Buy bitcoin</div></a>')
 	            				)
 	            			)
 	            		);
 	            	}
-	            	$('.exchange-listing').hide();
-	            	var sponsoredId = '#listing-' + response.sponsoredListing;
-	            	$(sponsoredId).show();
-	            	$(sponsoredId).css('width', '400px');
-	            	$(sponsoredId).css('margin-left', '260px');
-	            	$('#show-more').show(200);
+	            	if (response.sponsoredListing != null)
+	            	{
+	            		$('.exchange-listing').hide();
+	            		var sponsoredId = '#listing-' + response.sponsoredListing;
+	            		var listCont = $('#exchange-listing-container').width();
+	            		var marginLeft = (listCont - 408)/2;
+	            		$(sponsoredId).show();
+	            		if ($('#exchange-listing-container').width() <= 626) {
+	            			$(sponsoredId).css('width', '91%');
+	            		} else {
+	            			$(sponsoredId).css('width', '400px');
+	            		}
+	            		$(sponsoredId).css('margin-left', marginLeft + 'px');
+	            		$('#show-more').show(200);
+	            	} else {
+	            			var realHeight = $('div.body').height();
+	            			$('#show-more').hide(200);
+	            	        if ($('#exchange-listing-container').width() > 626)
+	            	        {
+	            	        		var maxHeight = 0;
+	            	        		$('#exchange-listing-container').children('.exchange-listing').each(function () {
+	            	        	    	if ($(this).height() > maxHeight)
+	            	        	    	{
+	            	        	    		maxHeight = $(this).height();
+	            	        	    	}
+	            	        	    });
+	            	        		$('.exchange-listing').height(maxHeight);
+	            	        		realHeight += $('#exchange-listing-container').height();
+	            	        		// $('div.body').height(realHeight);
+	            	        } else if ($('#exchange-listing-container').width() <= 626)
+	            	        {
+	            	        		$('#exchange-listing-container').children('.exchange-listing').each(function () {
+	            	        			$(this).css('margin-right', '8px');
+	            	        			$(this).width('91%');
+	            	        	    	$(this).show(300);
+	            	        	    });
+	            	        		
+	            	        		realHeight += $('#exchange-listing-container').height();
+	            	        		// $('div.body').height(realHeight);
+	            	        }
+	            	}
 	            },
 	            500: function (response) {
 	
@@ -268,9 +339,16 @@ app.controller('exchangeTreeviewCtrl',function($scope, LocalData, $http) {
   }
 });
 
-function listExchanges() {
+function listExchanges(countryCode) {
+	
+	var url = "/api/frontend/buyBitcoins";
+	if (countryCode != null)
+	{
+		url = "/api/frontend/buyBitcoins?country="+countryCode;		
+	}
+	
 	$.ajax({
-	    url: "/api/frontend/buyBitcoins?country="+countryCode,
+	    url: url,
 	    type: "GET",
 	    cache: false,
 	    data: { },
@@ -291,19 +369,54 @@ function listExchanges() {
 	            		
 	            		$('#exchange-listing-container').append($('<div class="exchange-listing" data-listid="'+listingData.id+'" id="listing-'+listingData.id+'">')
 	            			.append($('<div class="exchange-listing-right">')
-	            				.append($('<div class="exchange-listing-title"><img src="'+listingData.faviconURL+'">'+listingData.name+'</div>'+
+	            				.append($('<div class="exchange-listing-title"><img src="'+listingData.icon+'">'+listingData.name+'</div>'+
 	            						'<div class="exchange-listing-description">'+listingData.description+'</div>'+
 	            						'<a href="/url?promo='+listingData.id+'-'+response.countryCode+'&url='+listingData.homepageURL+'"><div class="exchange-listing-button">Buy bitcoin</div></a>')
 	            				)
 	            			)
 	            		);
 	            	}
-	            	$('.exchange-listing').hide();
-	            	var sponsoredId = '#listing-' + response.sponsoredListing;
-	            	$(sponsoredId).show();
-	            	$(sponsoredId).css('width', '400px');
-	            	$(sponsoredId).css('margin-left', '260px');
-	            	$('#show-more').show(200);
+	            	if (response.sponsoredListing != null)
+	            	{
+	            		$('.exchange-listing').hide();
+	            		var sponsoredId = '#listing-' + response.sponsoredListing;
+	            		var listCont = $('#exchange-listing-container').width();
+	            		var marginLeft = (listCont - 408)/2;
+	            		$(sponsoredId).show();
+	            		if ($('#exchange-listing-container').width() <= 626) {
+	            			$(sponsoredId).css('width', '91%');
+	            		} else {
+	            			$(sponsoredId).css('width', '400px');
+	            		}
+	            		$(sponsoredId).css('margin-left', marginLeft + 'px');
+	            		$('#show-more').show(200);
+	            	} else {
+	            		$('#exchange-listing-container').children('.exchange-listing').each(function () {
+	            	        if ($(this).width() > 275 && $('#exchange-listing-container').width() > 626)
+	            	        {
+	            	        		var maxHeight = 0;
+	            	        		$('#exchange-listing-container').children('.exchange-listing').each(function () {
+	            	        	    	if ($(this).height() > maxHeight)
+	            	        	    	{
+	            	        	    		maxHeight = $(this).height();
+	            	        	    	}
+	            	        	    });
+	            	        		$('.exchange-listing').height(maxHeight);
+	            	        		realHeight += $('#exchange-listing-container').height();
+	            	        		$('div.body').height(realHeight);
+	            	        } else if ($('#exchange-listing-container').width() <= 626)
+	            	        {
+	            	        		$('#exchange-listing-container').children('.exchange-listing').each(function () {
+	            	        			$(this).css('margin-right', '8px');
+	            	        			$(this).width('91%');
+	            	        	    	$(this).show(300);
+	            	        	    });
+	            	        		
+	            	        		realHeight += $('#exchange-listing-container').height();
+	            	        		$('div.body').height(realHeight);
+	            	        }
+	            	    });
+	            	}
 	            },
 	            500: function (response) {
 	
