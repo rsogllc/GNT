@@ -140,7 +140,7 @@ function getTicker() {
 	            		$('.news-header-bitcoin-price div.quote').css('font-size', '2.5em');
 	            	} // http://bitcoin.com/url?promo=bitflyer-JP&url=https://www.bitflyer.jp/
             		$('div.news-header-ad-unit-300x100 img').attr('src', '/img/news/exchange/' + response.exchange + '.png')
-            		$('div.news-header-ad-unit-300x100 a').attr('href', 'url?promo=' + featuredExchange + '-' + country + '&url=' + exchangeUrl)
+            		$('div.news-header-ad-unit-300x100 a').attr('href', '/url?promo=' + featuredExchange + '-' + country + '&url=' + exchangeUrl)
 	            },
 	            500: function (response) {
 	            	console.log(response);
@@ -171,11 +171,17 @@ function drawChart(graphData) {
         },
         xAxis: {
             type: 'datetime',
-            text: null
+            text: null,
+            labels: {
+              enabled: false
+            }
         },
         yAxis: {
             text: null,
-            title: null
+            title: null,
+            labels: {
+                enabled: false
+            }
         },
         legend: {
             enabled: false

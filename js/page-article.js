@@ -160,7 +160,7 @@ function getArticle(articleId) {
 	        			  
 	        		  });
 	        	  }
-	        	  getComments(articleId);
+	        	  // getComments(articleId);
 	        	  linkClicked = false;
 	          }
 	});
