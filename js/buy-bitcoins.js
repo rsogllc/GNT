@@ -59,7 +59,7 @@ $(document).ready(function(){
 	            	        	    	}
 	            	        	    });
 	            	        		$('.exchange-listing').height(maxHeight);
-	            	        		realHeight += $('#exchange-listing-container').height();
+	            	        		realHeight += $('#exchange-listing-container').height() + 150;
 	            	        		$('div.body').height(realHeight);
 	            	        } else if ($('#exchange-listing-container').width() <= 626)
 	            	        {
@@ -69,7 +69,7 @@ $(document).ready(function(){
 	            	        	    	$(this).show(300);
 	            	        	    });
 	            	        		
-	            	        		realHeight += $('#exchange-listing-container').height();
+	            	        		realHeight += $('#exchange-listing-container').height() + 150;
 	            	        		$('div.body').height(realHeight);
 	            	        }
 	            	}
@@ -102,7 +102,7 @@ $(document).on("click", "#show-more", function(event) {
         	    });
         		$('.exchange-listing').height(maxHeight);
         		$('.exchange-listing').show(300);
-        		realHeight += $('#exchange-listing-container').height();
+        		realHeight += $('#exchange-listing-container').height() + 150;
         		$('div.body').height(realHeight);
         	});
         } else if ($('#exchange-listing-container').width() <= 626)
@@ -114,7 +114,7 @@ $(document).on("click", "#show-more", function(event) {
         	    	$(this).show(300);
         	    });
         		
-        		realHeight += $('#exchange-listing-container').height();
+        		realHeight += $('#exchange-listing-container').height() + 150;
         		$('div.body').height(realHeight);
         	});
         }
@@ -237,7 +237,7 @@ app.controller('exchangeTreeviewCtrl',function($scope, LocalData, $http) {
   
   $scope.hideCountries = function(region) {
 		if ($scope.showEU != null && region != 'showEU')
-			$scope.showEU = false;
+			$scope.showEU = false;			
 		if ($scope.showNA != null && region != 'showNA')
 			$scope.showNA = false;
 		if ($scope.showCR != null && region != 'showCR')
@@ -252,6 +252,7 @@ app.controller('exchangeTreeviewCtrl',function($scope, LocalData, $http) {
 			$scope.showME = false;
 		if ($scope.showAS != null && region != 'showAS')
 			$scope.showAS = false;
+		$('div.body').css('height', '');
   }
 
   $scope.showListings = function(countryCode, event) {
@@ -319,7 +320,7 @@ app.controller('exchangeTreeviewCtrl',function($scope, LocalData, $http) {
 	            	        	    	}
 	            	        	    });
 	            	        		$('.exchange-listing').height(maxHeight);
-	            	        		realHeight += $('#exchange-listing-container').height();
+	            	        		realHeight += $('#exchange-listing-container').height() + 150;
 	            	        		$('div.body').height(realHeight);
 	            	        } else if ($('#exchange-listing-container').width() <= 626)
 	            	        {
@@ -329,7 +330,7 @@ app.controller('exchangeTreeviewCtrl',function($scope, LocalData, $http) {
 	            	        	    	$(this).show(300);
 	            	        	    });
 	            	        		
-	            	        		realHeight += $('#exchange-listing-container').height();
+	            	        		realHeight += $('#exchange-listing-container').height() + 150;
 	            	        		$('div.body').height(realHeight);
 	            	        }
 	            	}
@@ -408,7 +409,7 @@ function listExchanges(countryCode) {
 	            	        	    	}
 	            	        	    });
 	            	        		$('.exchange-listing').height(maxHeight);
-	            	        		realHeight += $('#exchange-listing-container').height();
+	            	        		realHeight += $('#exchange-listing-container').height() + 150;
 	            	        		$('div.body').height(realHeight);
 	            	        } else if ($('#exchange-listing-container').width() <= 626)
 	            	        {
@@ -418,7 +419,7 @@ function listExchanges(countryCode) {
 	            	        	    	$(this).show(300);
 	            	        	    });
 	            	        		
-	            	        		realHeight += $('#exchange-listing-container').height();
+	            	        		realHeight += $('#exchange-listing-container').height() + 150;
 	            	        		$('div.body').height(realHeight);
 	            	        }
 	            	    });
