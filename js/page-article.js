@@ -128,14 +128,14 @@ function getArticle(articleId) {
 	            	var content = document.createElement('div');
 	            	$(content).html(response.content);
 	            	
-	            	// Take the first image, place it first and remove it
-	            	$(content).find('img').first().remove();
-	            	
 	            	$(content).find('img').each(function () {
 	            		var imgUrl = $(this).attr('src');
 	            		imgUrl = imgUrl.replace(/^http:\/\//i, 'https://');
 	            		$(this).attr('src', imgUrl)
 	            	});
+	            	
+	            	// Take the first image, place it first and remove it
+	            	$(content).find('img').first().remove();
 	            	
 	            	var imgUrl = response.images[0].url;
 					imgUrl = imgUrl.replace(/^http:\/\//i, 'https://');
