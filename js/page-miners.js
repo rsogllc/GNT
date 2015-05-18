@@ -21,6 +21,9 @@ $.ajax({
                           	sponsoredListingMap = response.sponsoredListingMap;
                           	keys = Object.keys(response.listingMap);
                           	listingMap = response.listingMap;
+                          	
+                          	var hasSponsoredListing = false;
+                          	
 			  				for (var i=0; i<keys.length; i++)
 			  				{
 			  					var item = listingMap[keys[i]];
@@ -31,13 +34,23 @@ $.ajax({
 								if (item.id == sponsoredListing)
 								{
 									style = '';
+									hasSponsoredListing = true;
 								}
 								if (item.categories.indexOf('hardware') > -1)
 								{
 				  					$('#wallets').append($('<div id="wallet-' + i + '" data-walletcompat="cloud hardware" data-walletlevel="1" style="'+style+'">')
-				                                                      .html('<a href="'+ item.homepageURL +'"><img src="'+item.faviconURL+'" alt="'+ item.name +'">'+item.name+'<span class="wallet-item-sponsored"></span></a>')
+				                                                      .html('<a href="'+ item.homepageURL +'"><img src="'+item.icon+'" alt="'+ item.name +'">'+item.name+'<span class="wallet-item-sponsored"></span></a>')
 				                                                  )
 								}
+			  				}
+			  				
+			  				if (!hasSponsoredListing)
+			  				{
+			  					$('#wallets div').show();
+			  					$('#wallets').css('margin-left', '0px');
+			  					$('#moreBtn').hide(200);
+			  				} else {
+			  					$('#moreBtn').show();
 			  				}
                           }
                       },
@@ -80,9 +93,9 @@ $('#cloud').click(function(event){
 function relistMiners(category)
 {
 	$('#wallets div').remove();
-	$('#moreBtn').show();
 	var sponsoredListing = sponsoredListingMap[category];
 	console.log(sponsoredListing);
+	var hasSponsoredListing = false;
     
     for (var i=0; i<keys.length; i++)
 	{
@@ -93,16 +106,26 @@ function relistMiners(category)
 		if (item.id == sponsoredListing)
 		{
 			style = '';
+			hasSponsoredListing = true;
 		}
 		
 		if (item.categories.indexOf(category) > -1)
 		{
 			$('#wallets').append($('<div id="wallet-' + i + '" data-walletcompat="cloud hardware" data-walletlevel="1" style="'+style+'">')
-	                   .html('<a href="'+ item.homepageURL +'"><img src="'+item.faviconURL+'" alt="'+ item.name +'">'+item.name+'<span class="wallet-item-sponsored"></span></a>')
+	                   .html('<a href="'+ item.homepageURL +'"><img src="'+item.icon+'" alt="'+ item.name +'">'+item.name+'<span class="wallet-item-sponsored"></span></a>')
 	        )
 		}
 	}
-    $('#wallets').animate({	marginLeft: "42%", height: "100%" }, 200, function() {
-    	// NOP
-	});
+    if (!hasSponsoredListing)
+	{
+    	$('#wallets div').show();
+    	$('#wallets').css('margin-left', '0px');
+    	$('#moreBtn').hide(200);
+	} else {
+		$('#moreBtn').show();
+		$('#wallets').animate({	marginLeft: "42%", height: "100%" }, 200, function() {
+			// NOP
+		});		
+	}
+    
 }
