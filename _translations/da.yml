@@ -711,9 +711,13 @@ da:
     protect-your-privacy: beskyt-dit-privatliv
     resources: ressourcer
     secure-your-wallet: sikr-din-tegnebog
+    buy-bitcoins: buy-bitcoin
+    mine-bitcoins: mine-bitcoins
     support-bitcoin: stoet-bitcoin
     vocabulary: ordliste
     you-need-to-know: du-boer-vide
+    bitcoin-news: bitcoin-news
+    bitcoin-news-article: bitcoin-news-article
   anchor:
     community:
       non-profit: non-profit
@@ -787,3 +791,32 @@ da:
       quantum: er-bitcoin-saarbar-overfor-kvantecomputere
       help: hjaelp
       morehelp: mere-hjaelp
+  buy-bitcoins:
+    title: "Buy Bitcoins"
+    pagetitle: "Buy Bitcoins"
+    multi-select-title: "Verified Bitcoin Exchanges"
+    stats-exchanges-text: "exchanges"
+    stats-countries-text: "countries"
+    stats-referrals-text: "referrals"
+    multi-select-placeholder: "Search for an exchange..."
+    multi-select-instructions: "e.g., search by country, city, exchange, or keyword"
+    location-title: "Select a Location:"
+    featured-exchanges: "Featured Exchanges for @"
+    regionNA: "North America"
+    regionCR: "Caribbean"
+    regionEU: "Europe"
+    regionAF: "Africa"
+    regionSA: "Central &amp; South America"
+    regionOP: "Oceania &amp; Pacific"
+    regionME: "Middle East"
+    regionAS: "Asia"
+  bitcoin-news:
+    news-title: "News"
+  bitcoin-news-article:
+    news-title: "News"
+  mine-bitcoins:
+    title: "Mine Bitcoins"
+    pagetitle: "Mine Bitcoins"
+    cloud: "Cloud"
+    hardware: "Hardware"
+    pagedesc: "Mining is the backbone of the bitcoin network. You can invest in mining and earn bitcoin yourself."
