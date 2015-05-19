@@ -1,7 +1,16 @@
 
 $(document).ready(function(){
+	
+	var qrcode = new QRCode("qrcode", {
+	    text: "1MVEfs8QLgLWZbHF62rjy7qnjHR4Bfe3MY",
+	    width: 144,
+	    height: 144,
+	    colorDark : "#000000",
+	    colorLight : "#ffffff",
+	    correctLevel : QRCode.CorrectLevel.H
+	});
 
-$.ajax({
+	$.ajax({
               url: "/api/frontend/chooseYourWalletDonation",
               type: "GET",
               cache: false,
@@ -19,5 +28,5 @@ $.ajax({
                     complete: function(e, xhr, settings){
                     	
                     }
-            });
+	});
 });
