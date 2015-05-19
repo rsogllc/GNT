@@ -736,6 +736,7 @@ en:
     bitcoin-paper: bitcoin-paper
     bitcoin-news: bitcoin-news
     bitcoin-news-article: bitcoin-news-article
+    bump-wallet: bump-wallet
   anchor:
     community:
       non-profit: non-profit
@@ -838,3 +839,6 @@ en:
     cloud: "Cloud"
     hardware: "Hardware"
     pagedesc: "Mining is the backbone of the bitcoin network. You can invest in mining and earn bitcoin yourself."
+  bump-wallet:
+    title: "Bump wallets"
+    pagetitle: "Bump wallets"
