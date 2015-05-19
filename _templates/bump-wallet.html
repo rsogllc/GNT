@@ -7,18 +7,21 @@ id: bump-wallet
 ---
 <h1>Bump your favourite wallet to the top</h1>
 <p class="summarytxt">On this page we display the address for each wallet. If there is any particular wallet you like and want to support, you can bump it by sending bitcoin to the specified address.</p>
-
-<div class="walletinfo" id="wallettemplate">
-<h2 id="secure">Wallet template</h2>
-<div class="walletlogo" style="float: left;">
-<img src="/img/wallet/luxstack.png" alt="LUXSTACK">
+<div id="walletlist">
+	<div class="walletinfo" style="display: none;">
+		<h2 style="text-align: center;">Wallet template</h2>
+		<div class="walletlogo" style="float: left; width: 144px;">
+			<img src="/img/wallet/luxstack.png" alt="LUXSTACK" style="width: 100%">
+		</div>
+		<div class="walletdescription" style="float: left;   width: 64%; margin-right: 10px;">
+			<p class="platforms">Available on iOS, Android, Windows, Linux, Web, Hardware and as bank service.</p>
+			<p>Send bitcoin to this address to bump it up the priority list.</p>
+			<p><b class="address">1BitcoinEaterAddressDontSendf59kuE</b></p>
+		</div>
+		<div class="walletqr" style="float: left; margin-bottom: 10px;">
+		</div>
+		<hr style="clear: both;">
+	</div>
 </div>
-<div class="walletdescription" style="float: left;   width: 64%; margin-right: 10px;">
-<p>Available on iOS, Android, Windows, Linux, Web, Hardware and as bank service.<br /><br />Send bitcoin to this address to bump it up the priority list.<br /><br /><b>1MVEfs8QLgLWZbHF62rjy7qnjHR4Bfe3MY</b></p>
-</div>
-<div class="walletqr" id="qrcode" style="float: left;">
-</div>
-<hr style="clear: both;">
-
 <script src="/js/qrcode.min.js"></script>
 <script src="/js/page-bump.js"></script>
