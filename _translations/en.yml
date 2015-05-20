@@ -737,6 +737,7 @@ en:
     bitcoin-news: bitcoin-news
     bitcoin-news-article: bitcoin-news-article
     bump-wallet: bump-wallet
+    write-for-bitcoin-news: write-for-bitcoin-news
   anchor:
     community:
       non-profit: non-profit
@@ -842,3 +843,6 @@ en:
   bump-wallet:
     title: "Bump wallets"
     pagetitle: "Bump wallets"
+  write-for-bitcoin-news:
+    title: "Write for Bitcoin News"
+    pagetitle: "Write for Bitcoin News"
