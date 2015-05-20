@@ -16,6 +16,30 @@ Number.prototype.formatMoney = function(c, d, t){
 
 $(document).ready(function(){
 	
+	var today = new Date();
+	
+	var month = today.getUTCMonth();
+	var date = today.getUTCDate();
+	var year = today.getUTCFullYear();
+	var monthString = '';
+	
+	switch (month) {
+		case 0: monthString = 'JAN'; break;
+		case 1: monthString = 'FEB'; break;
+		case 2: monthString = 'MAR'; break;
+		case 3: monthString = 'APR'; break;
+		case 4: monthString = 'MAY'; break;
+		case 5: monthString = 'JUN'; break;
+		case 6: monthString = 'JUL'; break;
+		case 7: monthString = 'AUG'; break;
+		case 8: monthString = 'OCT'; break;
+		case 9: monthString = 'SEP'; break;
+		case 10: monthString = 'NOV'; break;
+		case 11: monthString = 'DEC'; break;
+	}
+	
+	$('.subheader').html(monthString + ' ' + date + ', ' + year);
+	
 	$.ajax({
 	    url: "/api/frontend/buyBitcoins",
 	    type: "GET",
