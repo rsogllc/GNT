@@ -1,16 +1,7 @@
 
 $(document).ready(function(){
 	
-	/*
-	var qrcode = new QRCode("qrcode", {
-	    text: "1MVEfs8QLgLWZbHF62rjy7qnjHR4Bfe3MY",
-	    width: 144,
-	    height: 144,
-	    colorDark : "#000000",
-	    colorLight : "#ffffff",
-	    correctLevel : QRCode.CorrectLevel.H
-	});
-	*/
+	var selectedWallet = window.location.hash.substr(1);
 
 	$.ajax({
               url: "/api/frontend/chooseYourWalletDonation",
@@ -32,7 +23,7 @@ $(document).ready(function(){
 			  					console.log(item);
 			  					
 			  					var wallet = $('.walletinfo').first().clone();
-			  					var divId = 'wallet' + item.name;
+			  					var divId = 'wallet' + item.id;
 			  					$(wallet).attr('id', divId);
 			  					$(wallet).find('.walletlogo img').attr('src', item.icon);
 			  					$(wallet).find('h2').html(item.name);
@@ -84,6 +75,15 @@ $(document).ready(function(){
                     },
                     complete: function(e, xhr, settings){
                     	
+                    	$('#loader').hide();
+                    	
+                    	if (selectedWallet != null && selectedWallet != '')
+                    	{
+                    		var walletId = '#wallet' + selectedWallet;
+                    		var offset = $(walletId).offset().top;
+                    		
+                    		$("html, body").animate({ scrollTop: $(walletId).offset().top - 100 }, 1000);                    		
+                    	}
                     }
 	});
 });
