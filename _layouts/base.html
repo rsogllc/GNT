@@ -71,8 +71,9 @@
           <li{% if page.id == 'mine-bitcoins' %} class="active"{% endif %}><a href="/{{ page.lang }}/{% translate mine-bitcoins url %}">{% translate menu-mine-bitcoins layout %}</a></li>
         </ul>
       </li>
-      <li{% if page.id == 'bitcoin-news' %} class="active"{% endif %}><a href="/{{ page.lang }}/bitcoin-news">{% translate menu-news layout %}</a></li>
-      <li{% if page.id == 'faq' %} class="active"{% endif %}><a href="/{{ page.lang }}/{% translate faq url %}">{% translate menu-faq layout %}</a></li>
+      <li{% if page.id == 'bitcoin-news' %} class="active"{% endif %} style="border-bottom-left-radius: 5px; border-bottom-right-radius: 5px;"><a href="/{{ page.lang }}/bitcoin-news">{% translate menu-news layout %}</a></li>
+      <li{% if page.id == 'innovation' %} class="active"{% endif %}><a href="/{{ page.lang }}/{% translate innovation url %}">{% translate menu-innovation layout %}</a></li>
+      <li{% if page.id == 'faq' %} class="active"{% endif %} style="border-bottom-left-radius: 5px; border-bottom-right-radius: 5px;"><a href="/{{ page.lang }}/{% translate faq url %}">{% translate menu-faq layout %}</a></li>
     </ul>
   </div></div>
   <div class="body">
@@ -89,6 +90,9 @@
     <a href="/{{ page.lang }}/{% translate privacy url %}">{% translate menu-privacy layout %}</a>
     {% endcase %}
     <a href="/{{ page.lang }}/{% translate press url %}">{% translate menu-press layout %}</a>
+    <a href="/{{ page.lang }}/{% translate events url %}">{% translate menu-events layout %}</a>    
+	<a href="/en/full-node">Running a full node</a>
+	<a href="/en/developer-documentation">Documentation</a>
     <a href="/{{ page.lang }}/{% translate about-us url %}">{% translate menu-about-us layout %}</a>
     </div>
     <div class="footerlicense">© Bitcoin.com 2015</div>
