@@ -464,6 +464,28 @@ if (p.getAttribute('timeout') === null || p.getAttribute('timeout') === '' || !s
 
 	$(a).off('click').on('click', function(){
 		var jp = $(p), childs = jp.children();
+		
+		console.log("More clicked");
+		
+		$.ajax({
+            url: "/api/frontend/chooseYourWalletViewAll",
+            type: "GET",
+            cache: false,
+            data: { },
+            statusCode: {
+                    200: function (response) {
+
+                  	  	console.log(response);
+                  	  
+                    },
+                    500: function (response) {
+
+                    }
+                  },
+                  complete: function(e, xhr, settings){
+                  	
+                  }
+		});
 
 		jp.animate({
 			marginLeft: '0'

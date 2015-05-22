@@ -263,6 +263,27 @@ app.controller('exchangeTreeviewCtrl',function($scope, LocalData, $http) {
 	$('.exchange-listing').hide();
 	$('#featuredH1').hide();
 	
+	console.log('Country click');
+	$.ajax({
+        url: "/api/frontend/buyBitcoinsViewCountry?country=" + countryCode,
+        type: "GET",
+        cache: false,
+        data: { },
+        statusCode: {
+                200: function (response) {
+
+              	  	console.log(response);
+              	  
+                },
+                500: function (response) {
+
+                }
+              },
+              complete: function(e, xhr, settings){
+              	
+              }
+	});
+	
 	$.ajax({
 	    url: "/api/frontend/buyBitcoins?country="+countryCode,
 	    type: "GET",

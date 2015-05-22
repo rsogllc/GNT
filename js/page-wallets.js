@@ -20,6 +20,26 @@ $("#walletmenu").on('click', 'a', function(event){
 	}
 
 	$('.walletsdisclaimer[data-disclaimer="'+ category +'"]').show();
+	
+	$.ajax({
+        url: "/api/frontend/chooseYourWalletChangeMe",
+        type: "GET",
+        cache: false,
+        data: { },
+        statusCode: {
+                200: function (response) {
+
+              	  	console.log(response);
+              	  
+                },
+                500: function (response) {
+
+                }
+              },
+              complete: function(e, xhr, settings){
+              	
+              }
+	});
 });
 
 $(document).on('click', 'body', function(event){

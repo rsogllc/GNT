@@ -70,6 +70,22 @@ $('#moreBtn').click(function(event){
 		$('#wallets').find( "div" ).show(300);
 	});
 	$('#moreBtn').hide(200);
+	
+	$.ajax({
+        url: "/api/frontend/mineBitcoinView",
+        type: "GET",
+        cache: false,
+        data: { },
+        statusCode: {
+                200: function (response) {
+              	  	console.log(response);
+                },
+                500: function (response) {
+                }
+              },
+              complete: function(e, xhr, settings){
+              }
+	});
 });
 
 $('#hardware').click(function(event){
@@ -79,6 +95,22 @@ $('#hardware').click(function(event){
 		$(this).parent().addClass('icon-active');
 		relistMiners('hardware');
 	}
+	
+	$.ajax({
+        url: "/api/frontend/mineBitcoinViewHardware",
+        type: "GET",
+        cache: false,
+        data: { },
+        statusCode: {
+                200: function (response) {
+              	  	console.log(response);
+                },
+                500: function (response) {
+                }
+              },
+              complete: function(e, xhr, settings){
+              }
+	});
 });
 
 $('#cloud').click(function(event){
@@ -88,6 +120,22 @@ $('#cloud').click(function(event){
 		$(this).parent().addClass('icon-active');
 		relistMiners('cloud');
 	}
+	
+	$.ajax({
+        url: "/api/frontend/mineBitcoinViewCloud",
+        type: "GET",
+        cache: false,
+        data: { },
+        statusCode: {
+                200: function (response) {
+              	  	console.log(response);
+                },
+                500: function (response) {
+                }
+              },
+              complete: function(e, xhr, settings){
+              }
+	});
 });
 
 function relistMiners(category)
