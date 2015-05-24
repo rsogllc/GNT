@@ -1,6 +1,6 @@
 var country;
 var featuredExchange;
-var availableExchanges = ['bitstamp', 'kraken', 'bitflyer'];
+var availableExchanges = ['bitstamp'];
 var exchangeUrl;
 
 Number.prototype.formatMoney = function(c, d, t){
