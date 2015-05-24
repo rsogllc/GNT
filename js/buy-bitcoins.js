@@ -119,6 +119,22 @@ $(document).on("click", "#show-more", function(event) {
         	});
         }
     });
+    
+    $.ajax({
+        url: "/api/frontend/buyBitcoinsViewAll",
+        type: "GET",
+        cache: false,
+        data: { },
+        statusCode: {
+                200: function (response) {
+              	  	console.log(response);
+                },
+                500: function (response) {
+                }
+              },
+              complete: function(e, xhr, settings){
+              }
+	});
 });
 
 var app = angular.module('buyBitcoins', []);
