@@ -1,5 +1,8 @@
+var qrClicked;
 
 $(document).ready(function(){
+	
+	qrClicked = false;
 	
 	var selectedWallet = window.location.hash.substr(1);
 
@@ -27,7 +30,10 @@ $(document).ready(function(){
 			  					$(wallet).attr('id', divId);
 			  					$(wallet).find('.walletlogo img').attr('src', item.icon);
 			  					$(wallet).find('h2').html(item.name);
-			  					$(wallet).find('.address').html(item.btcaddr);
+			  					$(wallet).find('b.address').html(item.btcaddr);
+			  					$(wallet).find('#bitcoin-uri').attr('href', 'bitcoin:' + item.btcaddr);
+			  					$(wallet).find('.qrcodeshow').data('address', item.btcaddr)
+			  					$(wallet).find('.qrcodeshow').data('qrid', item.id)
 			  					
 			  					var platforms = 'Available for ';
 			  					var platformItems = 0;
@@ -57,6 +63,7 @@ $(document).ready(function(){
 			  					$(wallet).attr('style', '');
 			  					$('#walletlist').append($(wallet));
 			  					
+			  					/*
 			  					var qrcode = new QRCode(qrId, {
 			  					    text: item.btcaddr,
 			  					    width: 144,
@@ -65,7 +72,7 @@ $(document).ready(function(){
 			  					    colorLight : "#ffffff",
 			  					    correctLevel : QRCode.CorrectLevel.H
 			  					});
-			  					
+			  					*/
 			  				}
                     	  
                       },
@@ -86,4 +93,33 @@ $(document).ready(function(){
                     	}
                     }
 	});
+});
+
+
+$('div').on('click', '.qrcodeshow', function(event){
+	event.preventDefault();
+	
+	if (!qrClicked)
+	{
+		qrClicked = true;
+		var qrId = 'qr' + $(this).data('qrid');
+		
+		$('.walletqr').find('img').hide();
+		$('a.qrcodeshow').show();
+		$('a.qrcodeshow').find('img').show();
+		
+		$(this).hide();
+		
+		var qrcode = new QRCode(qrId, {
+			    text: $(this).data('address'),
+			    width: 144,
+			    height: 144,
+			    colorDark : "#000000",
+			    colorLight : "#ffffff",
+			    correctLevel : QRCode.CorrectLevel.H
+			});
+		setTimeout(function (){
+			qrClicked = false;
+		}, 500);
+	}
 });
