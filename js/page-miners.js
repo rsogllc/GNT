@@ -72,7 +72,7 @@ $('#moreBtn').click(function(event){
 	$('#moreBtn').hide(200);
 	
 	$.ajax({
-        url: "/api/frontend/minesBitcoinView",
+        url: "/api/frontend/minesBitcoinsViewAll",
         type: "GET",
         cache: false,
         data: { },
@@ -97,7 +97,7 @@ $('#hardware').click(function(event){
 	}
 	
 	$.ajax({
-		url: "/api/frontend/minesBitcoinView",
+		url: "/api/frontend/minesBitcoinViewAll",
         type: "GET",
         cache: false,
         data: { },
@@ -122,7 +122,7 @@ $('#cloud').click(function(event){
 	}
 	
 	$.ajax({
-		url: "/api/frontend/minesBitcoinView",
+		url: "/api/frontend/minesBitcoinsViewAll",
         type: "GET",
         cache: false,
         data: { },

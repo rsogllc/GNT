@@ -281,7 +281,7 @@ app.controller('exchangeTreeviewCtrl',function($scope, LocalData, $http) {
 	
 	console.log('Country click');
 	$.ajax({
-        url: "/api/frontend/buyBitcoinsViewCountry?country=" + countryCode,
+        url: "/api/frontend/buyBitcoinsViewAll?country=" + countryCode,
         type: "GET",
         cache: false,
         data: { },
