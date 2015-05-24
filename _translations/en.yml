@@ -738,6 +738,8 @@ en:
     bitcoin-news-article: bitcoin-news-article
     bump-wallet: bump-wallet
     write-for-bitcoin-news: write-for-bitcoin-news
+    gaining-visibility: gaining-visibility
+    spend-bitcoins: spend-bitcoins
   anchor:
     community:
       non-profit: non-profit
@@ -846,3 +848,9 @@ en:
   write-for-bitcoin-news:
     title: "Write for Bitcoin News"
     pagetitle: "Write for Bitcoin News"
+  gaining-visibility:
+    title: "Gaining Visibility"
+    pagetitle: "Gaining Visibility"
+  spend-bitcoins:
+    title: "Spend bitcoins"
+    pagetitle: "Spend bitcoins"
