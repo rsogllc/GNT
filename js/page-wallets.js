@@ -22,7 +22,7 @@ $("#walletmenu").on('click', 'a', function(event){
 	$('.walletsdisclaimer[data-disclaimer="'+ category +'"]').show();
 	
 	$.ajax({
-        url: "/api/frontend/chooseYourWalletChangeMe",
+        url: "/api/frontend/chooseYourWalletViewAll",
         type: "GET",
         cache: false,
         data: { },
