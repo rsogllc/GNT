@@ -58,6 +58,8 @@ function listMoreArticles(pageToken) {
 	            	if (!response.nextPageToken)
 	            	{
 	            		$('#seemore').hide();
+	            	} else {
+	            		nextToken = response.nextPageToken;
 	            	}
 	            	
 	            },
