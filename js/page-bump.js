@@ -18,11 +18,18 @@ $(document).ready(function(){
                     	  
                     	  	keys = Object.keys(response);
                     	  	walletMap = response;
+                    	  	
+                    	  	var walletWarray = [];
                         	
 			  				for (var i=0; i<keys.length; i++)
 			  				{
 			  					var item = walletMap[keys[i]];
-			  					
+			  					walletWarray[walletWarray.length] = item;
+			  				}
+			  				
+			  				for (var i=0; i<walletWarray.length; i++)
+			  				{
+			  					var item = walletWarray[i];
 			  					console.log(item);
 			  					
 			  					var wallet = $('.walletinfo').first().clone();
