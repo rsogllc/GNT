@@ -402,6 +402,7 @@ margin: 0px 5px 5px 0px;
 .secondary-story img {
   min-width: 100%;
   min-height: 100%;
+  max-height: 100%;
 }
 
 /* TERTIARY STORIES */

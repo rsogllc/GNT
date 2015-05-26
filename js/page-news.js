@@ -90,6 +90,8 @@ function listNewsItems(pageToken) {
 	    statusCode: {
 	            200: function (response) {
 	            	
+	            	console.log(response);
+	            	
 	            	var hasPrimary = false;
 	            	var hasSecondary = false;
 	            	var hasVOTD = false;
@@ -160,7 +162,7 @@ function listNewsItems(pageToken) {
 	            							'</a><div class="date" title="'+ response.items[i].published +'">' + prettyDate(response.items[i].published) + '</div>'
 	            					)
 	            			);
-	            			if (usedArticles.indexOf(response.items[i].id) == -1 && tertiaryStory <= 4) {
+	            			if (usedArticles.indexOf(response.items[i].id) == -1 && tertiaryStory <= 5) {
 	            				usedArticles[usedArticles.length] = response.items[i].id;
 	            				
 	            				var html = $.parseHTML( response.items[i].content );
