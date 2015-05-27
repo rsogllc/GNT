@@ -9,14 +9,15 @@
 function prettyDate(time){
 	var offset = parseFloat(time.substring(time.length-6, time.length-3));
 	var dateString = (time || "").substring(0,time.length-6) .replace(/-/g,"/").replace(/[TZ]/g," ");
-	var date = new Date(dateString+'Z'),
-		diff = (((new Date()).getTime() - date.getTime()) / 1000),
-		day_diff = Math.floor(diff / 86400);
-	
+	var date = new Date(dateString+'Z');
+	var	diff = (((new Date()).getTime() - date.getTime()) / 1000);
 	diff += offset * 3600;
+	var	day_diff = Math.floor(diff / 86400);
 	
 	if ( isNaN(day_diff) || day_diff < 0 || day_diff >= 31 )
-		return;
+	{
+		return time.substring(0, 10);
+	}
 			
 	return day_diff == 0 && (
 			diff < 60 && "just now" ||

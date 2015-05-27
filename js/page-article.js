@@ -28,14 +28,12 @@ function listNewsItems() {
 	    statusCode: {
 	            200: function (response) {
 	            	
+	            	console.log(response);
+	            	
 	            	var hasPrimary = false;
 	            	var hasSecondary = false;
 	            	var hasVOTD = false;
-	            	var secondaryHeadlines = [0, 0, 0, 0];
 	            	var usedArticles = [];
-	            	var secondaryHeadlineLocations = [0, 1, 3, 4];
-	            	
-	            	// $('.news-featured .latest-stories .latest-story').remove();
 	            	
 	            	var newsListLength = response.items.length;
 	            	if (newsListLength > 10)
