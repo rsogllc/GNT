@@ -20,17 +20,22 @@ $(document).ready(function(){
                     	  	walletMap = response;
                     	  	
                     	  	var walletWarray = [];
+                    	  	var keyOrder = [];
                         	
 			  				for (var i=0; i<keys.length; i++)
 			  				{
 			  					var item = walletMap[keys[i]];
 			  					walletWarray[walletWarray.length] = item;
+			  					keyOrder[keyOrder.length] = keys[i] + '-' + i;
 			  				}
 			  				
-			  				for (var i=0; i<walletWarray.length; i++)
+			  				keyOrder.sort();
+			  				
+			  				for (var i=0; i<keyOrder.length; i++)
 			  				{
-			  					var item = walletWarray[i];
-			  					console.log(item);
+			  					var arrayIndex = keyOrder[i].substring(keyOrder[i].indexOf("-")+1);
+			  					var item = walletWarray[arrayIndex];
+			  					// console.log(item);
 			  					
 			  					var wallet = $('.walletinfo').first().clone();
 			  					var divId = 'wallet' + item.id;
