@@ -9,7 +9,6 @@ $('#seemore').click(function(event){
 	event.preventDefault();
 	if (nextToken)
 	{
-		console.log(nextToken);
 		listMoreArticles(nextToken);
 	}
 });
@@ -25,7 +24,7 @@ function listMoreArticles(pageToken) {
 	    data: { },
 	    statusCode: {
 	            200: function (response) {
-	            	console.log(response);
+	            	// console.log(response);
 	            	
 	            	if (response.items)
 	            	{
@@ -42,14 +41,16 @@ function listMoreArticles(pageToken) {
 	            			
 	            			var imgUrl = response.items[i].images[0].url;
 	            			imgUrl = imgUrl.replace(/^http:\/\//i, 'https://');
-	            			console.log(imgUrl);
+	            			
+	            			var urlSlug = response.items[i].id;
+	            			urlSlug += '-' + convertToSlug(response.items[i].title);
 	            			
 	            			$(newTertiaryStory).find('.headline').html('');
 	            			$(newTertiaryStory).find('.headline').append($(link));
 	            			$(newTertiaryStory).find('.date').html(prettyDate(response.items[i].published));
 	            			$(newTertiaryStory).find('img').attr('src','');
 	            			$(newTertiaryStory).find('img').attr('src',imgUrl);
-	            			$(newTertiaryStory).find('a').attr('href','bitcoin-news/' + response.items[i].id);
+	            			$(newTertiaryStory).find('a').attr('href','bitcoin-news/' + urlSlug);
 	            			$(newTertiaryStory).find('.description').html($(element).find('div#brief').first().html());
 	            			$(newTertiaryStory).css('display: none;')
 	            			
@@ -90,7 +91,7 @@ function listNewsItems(pageToken) {
 	    statusCode: {
 	            200: function (response) {
 	            	
-	            	console.log(response);
+	            	// console.log(response);
 	            	
 	            	var hasPrimary = false;
 	            	var hasSecondary = false;
@@ -110,9 +111,12 @@ function listNewsItems(pageToken) {
 		            			var imgUrl = response.items[i].images[0].url;
             					imgUrl = imgUrl.replace(/^http:\/\//i, 'https://');
             					
+            					var urlSlug = response.items[i].id;
+                				urlSlug += '-' + convertToSlug(response.items[i].title);
+            					
 		            			$('.news-featured .lead-story img').attr('src',imgUrl);
 		            			$('.news-featured .lead-story .figcaption').html(response.items[i].title);
-		            			$('.news-featured .lead-story a').attr('href','bitcoin-news/' + response.items[i].id);
+		            			$('.news-featured .lead-story a').attr('href','bitcoin-news/' + urlSlug);
 		            			usedArticles[usedArticles.length] = response.items[i].id;
 		            			hasPrimary = true;
 		            		} else {
@@ -124,10 +128,12 @@ function listNewsItems(pageToken) {
 		            					$('.news-secondary .secondary-story').eq(secondaryHeadlineLocations[j]).find('.figcaptionsmall').html(response.items[i].title);
 		            					var imgUrl = response.items[i].images[0].url;
 		            					imgUrl = imgUrl.replace(/^http:\/\//i, 'https://');
-		            					console.log(imgUrl);
+		            					
+		            					var urlSlug = response.items[i].id;
+		                				urlSlug += '-' + convertToSlug(response.items[i].title);
 		            					
 		            					$('.news-secondary .secondary-story').eq(secondaryHeadlineLocations[j]).find('img').attr('src',imgUrl);
-		            					$('.news-secondary .secondary-story').eq(secondaryHeadlineLocations[j]).find('a').attr('href','bitcoin-news/' + response.items[i].id);
+		            					$('.news-secondary .secondary-story').eq(secondaryHeadlineLocations[j]).find('a').attr('href','bitcoin-news/' + urlSlug);
 		            					
 		            					var parentHeight = $('.news-secondary .secondary-story').eq(secondaryHeadlineLocations[j]).height();
 		            					var parentWidth = $('.news-secondary .secondary-story').eq(secondaryHeadlineLocations[j]).width();
@@ -156,9 +162,12 @@ function listNewsItems(pageToken) {
 	            			var imgUrl = response.items[i].images[0].url;
         					imgUrl = imgUrl.replace(/^http:\/\//i, 'https://');
         					
+        					var urlSlug = response.items[i].id;
+            				urlSlug += '-' + convertToSlug(response.items[i].title);
+        					
 	            			$('.news-featured .latest-stories').append($('<div class="latest-story">').
 	            					append(
-	            							'<img src="'+ imgUrl +'"><a href="bitcoin-news/'+ response.items[i].id +'">' + response.items[i].title +
+	            							'<img src="'+ imgUrl +'"><a href="bitcoin-news/'+ urlSlug +'">' + response.items[i].title +
 	            							'</a><div class="date" title="'+ response.items[i].published +'">' + prettyDate(response.items[i].published) + '</div>'
 	            					)
 	            			);
@@ -172,6 +181,9 @@ function listNewsItems(pageToken) {
 	            				var link = document.createElement('a');
 	            				$(link).html(response.items[i].title)
 	            				
+	            				var urlSlug = response.items[i].id;
+	            				urlSlug += '-' + convertToSlug(response.items[i].title);
+	            				
 	            				var imgUrl = response.items[i].images[0].url;
             					imgUrl = imgUrl.replace(/^http:\/\//i, 'https://');
 	            				
@@ -179,7 +191,7 @@ function listNewsItems(pageToken) {
 	            				$('.tertiary-story').eq(tertiaryStory).find('.headline').append($(link));
 	            				$('.tertiary-story').eq(tertiaryStory).find('.date').html(prettyDate(response.items[i].published));
 	            				$('.tertiary-story').eq(tertiaryStory).find('img').attr('src',imgUrl);
-	            				$('.tertiary-story').eq(tertiaryStory).find('a').attr('href','bitcoin-news/' + response.items[i].id);
+	            				$('.tertiary-story').eq(tertiaryStory).find('a').attr('href','bitcoin-news/' + urlSlug);
 	            				$('.tertiary-story').eq(tertiaryStory).find('.description').html($(element).find('div#brief').first().html());
 	            				tertiaryStory++;
 	            			}

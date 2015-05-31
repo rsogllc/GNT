@@ -3,6 +3,7 @@ var articleLoaded;
 var articleId;
 var linkClicked = false;
 var statePoped = false;
+var firstLoad = true;
 
 $(document).ready(function(){
 	
@@ -28,7 +29,7 @@ function listNewsItems() {
 	    statusCode: {
 	            200: function (response) {
 	            	
-	            	console.log(response);
+	            	// console.log(response);
 	            	
 	            	var hasPrimary = false;
 	            	var hasSecondary = false;
@@ -51,12 +52,14 @@ function listNewsItems() {
 	            			var imgUrl = articleItem.images[0].url;
         					imgUrl = imgUrl.replace(/^http:\/\//i, 'https://');
             				
+        					var urlSlug = articleItem.id;
+            				urlSlug += '-' + convertToSlug(articleItem.title);
 	            			
 	            			$(storyItem).removeAttr('id');
 	            			$(storyItem).data('articleid', articleItem.id);
 	            			$(storyItem).find('.date').html(prettyDate(articleItem.published));
 	            			$(storyItem).find('img').attr('src', imgUrl);
-	            			$(storyItem).find('a').attr('href', articleItem.id);
+	            			$(storyItem).find('a').attr('href', urlSlug);
 	            			$(storyItem).find('a').html(articleItem.title);
 	            			
 	            			if (articleItem.id == articleId)
@@ -91,7 +94,6 @@ $('div').on('click', '.article-link', function(event) {
 	event.preventDefault();
 	if (linkClicked != true) {
 		linkClicked = true;
-		console.log($(this).attr('href'));
 		var articleId = $(this).attr('href');
 		$('.lead-story').fadeTo( 300 , 0, function() {
 			getArticle(articleId);
@@ -102,7 +104,6 @@ $('div').on('click', '.article-link', function(event) {
 });
 
 window.onpopstate = function(e){
-	console.log(e);
     if (e.state && !linkClicked)
     {
     	var articleId = e.state;
@@ -114,7 +115,9 @@ window.onpopstate = function(e){
 };
 
 function getArticle(articleId) {
-	console.log("/api/news/post/" + articleId);
+	
+	articleId = articleId.substr(0, articleId.indexOf('-'));
+	
 	$.ajax({
 	    url: "/api/news/post/" + articleId,
 	    type: "GET",
@@ -122,7 +125,7 @@ function getArticle(articleId) {
 	    data: { },
 	    statusCode: {
 	            200: function (response) {
-	            	console.log(response);
+	            	// console.log(response);
 	            	var content = document.createElement('div');
 	            	$(content).html(response.content);
 	            	
@@ -148,12 +151,16 @@ function getArticle(articleId) {
 	            	
 	            	$('#byline').html('Writen by ' + response.author.displayName);
 	            	
-	            	if (!statePoped)
+	            	var urlSlug = response.id;
+    				urlSlug += '-' + convertToSlug(response.title);
+	            	
+	            	if (!statePoped && !firstLoad)
 	            	{
-	            		window.history.pushState(response.id, response.title, response.id);
+	            		window.history.pushState(urlSlug, response.title, urlSlug);
 	            	} else {
 	            		statePoped = false;	            		
 	            	}
+	            	firstLoad = false;
 	            },
 	            500: function (response) {
 	            	console.log(response);
@@ -185,7 +192,7 @@ function getComments(articleId) {
 	    data: { },
 	    statusCode: {
 	            200: function (response) {
-	            	console.log(response);
+	            	// console.log(response);
 	            	var comment = document.createElement('div');
 	            	$(comment).html($('#comment-template').html());
 	            	
