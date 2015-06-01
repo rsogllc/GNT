@@ -520,10 +520,10 @@ if (p.getAttribute('timeout') === null || p.getAttribute('timeout') === '' || !s
 
 		nd.id = 'wallet-' + id;
 		addClass(nd, 'nohover');
-		if (sponsoredShowed == false && sponsoredWallet[platform] == id){
+		if (sponsoredShowed == false && sponsoredWallet[platform].tagname == id){
 			// rewrite url of sponsored listing to pass thru redirect engine
 			origurl = nd.getElementsByTagName('div')[2].getElementsByTagName('a')[0].href
-			url = "/url?promo=" + id + "-" + platform + "&url=" + encodeURI(origurl);
+			url = "/url?promo=" + sponsoredWallet[platform].promoCode + "&url=" + encodeURI(origurl);
 			nd.getElementsByTagName('div')[2].getElementsByTagName('a')[0].href = url
 
 			$(nd).find('.wallet-item-sponsored').text('Sponsored');
