@@ -1,5 +1,5 @@
 var country;
-var featuredExchange;
+var featuredExchange = 'bitstamp';
 var availableExchanges = ['bitstamp'];
 var exchangeUrl;
 
@@ -50,7 +50,10 @@ $(document).ready(function(){
 	            	console.log(response);
 	            	
 	            	country = response.countryCode;
-	            	featuredExchange = response.sponsoredListing;
+	            	if (response.sponsoredListing)
+	            	{
+	            		featuredExchange = response.sponsoredListing;	            		
+	            	}
 	            	var useNext = false;
 	            	
 	            	if (availableExchanges.indexOf(featuredExchange) == -1)
@@ -58,17 +61,21 @@ $(document).ready(function(){
 	            		useNext = true;
 	            	}
 	            	
-	            	for (var i=0; i<response.localListings.length; i++)
+	            	if (response.localListings != null && response.localListings.length > 0)
 	            	{
-	            		if (useNext && availableExchanges.indexOf(response.localListings[i].id) > -1)
+	            		for (var i=0; i<response.localListings.length; i++)
 	            		{
-	            			featuredExchange = response.localListings[i].id;
-	            			exchangeUrl = response.localListings[i].homepageURL;
-	            			useNext = false;
-	            		}
-	            		if (response.sponsoredListing == response.localListings[i].id)
-	            		{
-	            			exchangeUrl = response.localListings[i].homepageURL;
+	            			if (useNext && availableExchanges.indexOf(response.localListings[i].id) > -1)
+	            			{
+	            				console.log(response.localListings[i].id);
+	            				featuredExchange = response.localListings[i].id;
+	            				exchangeUrl = response.localListings[i].homepageURL;
+	            				useNext = false;
+	            			}
+	            			if (response.sponsoredListing == response.localListings[i].id)
+	            			{
+	            				exchangeUrl = response.localListings[i].homepageURL;
+	            			}
 	            		}
 	            	}
 	            	
