@@ -523,8 +523,8 @@ en:
     pagetitle: "Privacy"
     datacollect: "Data collected"
     datacollecttxt: "Bitcoin.com collects anonymized server logs. These logs include IP addresses with replaced last byte, time of the visit, requested page, user agent and referer url. Bitcoin.com does not collect data using cookies."
-    datause: "Usage of data"
-    datausetxt: "Collected data is used to provide <a href=\"/stats/\">transparent public stats</a>."
+    datause: "Protect yourself"
+    datausetxt: "The NSA, corporations, and various government agencies around the world are monitoring what you do on the internet,  including this website. For additional privacy while surfing the internet, we recommend using the <a href=\"https://www.torproject.org/\">TOR Browsers</a>. <br /><br /><br />You can also user a VPN service provider like <a href=\"https://www.ipredator.se/\">Ipredator</a> that accepts bitcoin."
   protect-your-privacy:
     title: "Protect your privacy - Bitcoin"
     pagetitle: "Protect your privacy"

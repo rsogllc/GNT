@@ -37,9 +37,9 @@ function listNewsItems() {
 	            	var usedArticles = [];
 	            	
 	            	var newsListLength = response.items.length;
-	            	if (newsListLength > 10)
+	            	if (newsListLength > 5)
 	            	{
-	            		newsListLength = 10;
+	            		newsListLength = 5;
 	            	}
 	            	
 	            	for (var i=0; i<newsListLength; i++)
