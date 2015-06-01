@@ -146,6 +146,8 @@ function getArticle(articleId) {
 	            	$('#textcontent').html($(content).html());
 	            	$('.news-featured .lead-story h1').html(response.title);
 	            	
+	            	document.title = response.title;
+	            	
 	            	$('#article-timestamp span').eq(0).html(prettyDate(response.published));
 	            	$('#article-timestamp span').eq(1).html(prettyDate(response.updated));
 	            	
@@ -161,6 +163,7 @@ function getArticle(articleId) {
 	            		statePoped = false;	            		
 	            	}
 	            	firstLoad = false;
+	            	
 	            },
 	            500: function (response) {
 	            	console.log(response);
@@ -178,7 +181,15 @@ function getArticle(articleId) {
 	        			  
 	        		  });
 	        	  }
-	        	  // getComments(articleId);
+
+	        	  // Load comments
+	        	  var disqus_shortname = 'bitcoincom';
+		      	    (function() {
+		      	        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		      	        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+		      	        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+		      	    })();
+
 	        	  linkClicked = false;
 	          }
 	});
