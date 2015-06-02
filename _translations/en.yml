@@ -136,6 +136,7 @@ en:
     walletninki: "Ninki is a multi-signature wallet with a beautiful user interface that makes sending bitcoin as easy as email. You have full control of your bitcoins at all times."
     walletbither: "Bither is a simple and secure wallet on many platforms. With special designed Cold/Hot modes, user can easily get both safety and simplicity. Bither's XRANDOM uses different entropy sources to generate true random number for users. Also with HDM, users can have HD's advantages and Multisig's security."
     walletcoinapult: "Coinapult's wallet is designed with Bitcoin newcomers in mind. It allows sending bitcoins via email and SMS, and a handy tool called Locks helps protecting your balance from Bitcoin price swings. Users can Lock bitcoins to Gold, Euros, and more!"
+    walletluxstack: "A free, fully native bitcoin wallet that helps you securely store and spend your money without compromising usability or usefulness. LUXSTACK helps you integrate bitcoin into every area of your daily life and delivers the features you expect from a cashless lifestyle."
     walletdownload: "Install"
     walletvisit: "Visit website"
     bank: "Bank"

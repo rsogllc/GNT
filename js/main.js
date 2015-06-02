@@ -414,6 +414,7 @@ function walletShowPlatform(platform) {
 		$.ajax('/api/frontend/chooseYourWallet').success(function(sw)
 		{
 			sponsoredWallet = sw;
+			console.log(sponsoredWallet);
 			___walletShowPlatform(platform);
 		});
 	}
