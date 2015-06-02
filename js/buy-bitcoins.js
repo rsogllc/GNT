@@ -26,7 +26,7 @@ $(document).ready(function(){
 	            			.append($('<div class="exchange-listing-right">')
 	            				.append($('<div class="exchange-listing-title"><img src="'+listingData.icon+'">'+listingData.name+'</div>'+
 	            						'<div class="exchange-listing-description">'+listingData.description+'</div>'+
-	            						'<a href="/url?promo='+listingData.id+'-'+response.countryCode+'&url='+listingData.homepageURL+'"><div class="exchange-listing-button">Buy bitcoin</div></a>')
+	            						'<a href="/url?promo='+listingData.promoCode+'&url='+listingData.homepageURL+'"><div class="exchange-listing-button">Buy bitcoin</div></a>')
 	            				)
 	            			)
 	            		);
@@ -325,7 +325,7 @@ app.controller('exchangeTreeviewCtrl',function($scope, LocalData, $http) {
 	            			.append($('<div class="exchange-listing-right">')
 	            				.append($('<div class="exchange-listing-title"><img src="'+listingData.icon+'">'+listingData.name+'</div>'+
 	            						'<div class="exchange-listing-description">'+listingData.description+'</div>'+
-	            						'<a href="/url?promo='+listingData.id+'-'+response.countryCode+'&url='+listingData.homepageURL+'"><div class="exchange-listing-button">Buy bitcoin</div></a>')
+	            						'<a href="/url?promo='+listingData.promoCode+'&url='+listingData.homepageURL+'"><div class="exchange-listing-button">Buy bitcoin</div></a>')
 	            				)
 	            			)
 	            		);
@@ -414,7 +414,7 @@ function listExchanges(countryCode) {
 	            			.append($('<div class="exchange-listing-right">')
 	            				.append($('<div class="exchange-listing-title"><img src="'+listingData.icon+'">'+listingData.name+'</div>'+
 	            						'<div class="exchange-listing-description">'+listingData.description+'</div>'+
-	            						'<a href="/url?promo='+listingData.id+'-'+response.countryCode+'&url='+listingData.homepageURL+'"><div class="exchange-listing-button">Buy bitcoin</div></a>')
+	            						'<a href="/url?promo='+listingData.promoCode+'&url='+listingData.homepageURL+'"><div class="exchange-listing-button">Buy bitcoin</div></a>')
 	            				)
 	            			)
 	            		);
