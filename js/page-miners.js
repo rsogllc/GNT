@@ -16,7 +16,7 @@ $.ajax({
 
                     	  if (response.status == 200)
                           {
-                          	console.log(response);
+                          	// console.log(response);
                           	var sponsoredListing = response.sponsoredListingMap.hardware;
                           	sponsoredListingMap = response.sponsoredListingMap;
                           	keys = Object.keys(response.listingMap);
@@ -28,7 +28,7 @@ $.ajax({
 			  				{
 			  					var item = listingMap[keys[i]];
 			  					
-			  					console.log(item);
+			  					// console.log(item);
 
 								var style="display: none;";
 								if (item.id == sponsoredListing)
@@ -39,7 +39,7 @@ $.ajax({
 								if (item.categories.indexOf('hardware') > -1)
 								{
 				  					$('#wallets').append($('<div id="wallet-' + i + '" data-walletcompat="cloud hardware" data-walletlevel="1" style="'+style+'">')
-				                                                      .html('<a href="'+ item.homepageURL +'"><img src="'+item.icon+'" alt="'+ item.name +'">'+item.name+'<span class="wallet-item-sponsored"></span></a>')
+				                                                      .html('<a href="/url?promo='+ item.promoCode +'&url='+ item.homepageURL +'"><img src="'+item.icon+'" alt="'+ item.name +'">'+item.name+'<span class="wallet-item-sponsored"></span></a>')
 				                                                  )
 								}
 			  				}
@@ -71,6 +71,7 @@ $('#moreBtn').click(function(event){
 	});
 	$('#moreBtn').hide(200);
 	
+	/*
 	$.ajax({
         url: "/api/frontend/minesBitcoinsViewAll",
         type: "GET",
@@ -86,6 +87,7 @@ $('#moreBtn').click(function(event){
               complete: function(e, xhr, settings){
               }
 	});
+	*/
 });
 
 $('#hardware').click(function(event){
@@ -96,6 +98,7 @@ $('#hardware').click(function(event){
 		relistMiners('hardware');
 	}
 	
+	/*
 	$.ajax({
 		url: "/api/frontend/minesBitcoinViewAll",
         type: "GET",
@@ -110,7 +113,7 @@ $('#hardware').click(function(event){
               },
               complete: function(e, xhr, settings){
               }
-	});
+	}); */
 });
 
 $('#cloud').click(function(event){
@@ -121,6 +124,7 @@ $('#cloud').click(function(event){
 		relistMiners('cloud');
 	}
 	
+	/*
 	$.ajax({
 		url: "/api/frontend/minesBitcoinsViewAll",
         type: "GET",
@@ -136,19 +140,20 @@ $('#cloud').click(function(event){
               complete: function(e, xhr, settings){
               }
 	});
+	*/
 });
 
 function relistMiners(category)
 {
 	$('#wallets div').remove();
 	var sponsoredListing = sponsoredListingMap[category];
-	console.log(sponsoredListing);
+	// console.log(sponsoredListing);
 	var hasSponsoredListing = false;
     
     for (var i=0; i<keys.length; i++)
 	{
     	var item = listingMap[keys[i]];
-		console.log(item);
+		// console.log(item);
 
 		var style="display: none;";
 		if (item.id == sponsoredListing)

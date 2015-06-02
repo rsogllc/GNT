@@ -579,7 +579,11 @@ while (t.parentNode.id != null && t.parentNode.id != 'wallets') t = t.parentNode
 
 $(t).find('a span').css('display', 'block');
 
-var checkOffset = $(t).children('div').offset().top + 390 + 2;
+var checkOffset = 0;
+if ($(t).children('div').offset())
+{
+	checkOffset = $(t).children('div').offset().top + 390 + 2;
+}
 
 if (checkOffset != $(t).find('a span').offset().top)
 {
