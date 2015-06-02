@@ -35,7 +35,7 @@ $(document).ready(function(){
 	            	if (response.sponsoredListing != null)
 	            	{
 	            		$('.exchange-listing').hide();
-	            		var sponsoredId = '#listing-' + response.sponsoredListing;
+	            		var sponsoredId = '#listing-' + response.sponsoredListing.tagname;
 	            		var listCont = $('#exchange-listing-container').width();
 	            		var marginLeft = (listCont - 408)/2;
 	            		$(sponsoredId).show();
