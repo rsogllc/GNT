@@ -2,6 +2,13 @@ $(document).ready(function(){
 	
 	$('.checkcontrol .checkfail').addClass('danger');
 	
+	console.log($('#content').width());
+	
+	if ($('#content').width() > 650)
+	{
+		$('.wallets-container').width(605);
+	}
+	
 });
 
 $("#wallets").on('click', 'a', function(event){

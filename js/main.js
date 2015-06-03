@@ -459,9 +459,12 @@ if (p.getAttribute('timeout') === null || p.getAttribute('timeout') === '' || !s
 	addClass(p, 'sponsored');
 
 	$(p).animate({
-		marginLeft: '42%',
-		height: '140px'
+		margin: 'auto',
+		height: '140px',
+		width: '100px;'
 	}, 0);
+	
+	$('#wallets').width(100);
 
 	$(a).off('click').on('click', function(){
 		var jp = $(p), childs = jp.children();
@@ -489,13 +492,14 @@ if (p.getAttribute('timeout') === null || p.getAttribute('timeout') === '' || !s
 		});
 
 		jp.animate({
-			marginLeft: '0'
+			width: ''
 		}, 500, function(){
 			$(childs).show(500);
 			$('#wallets div').css('display', '');
 			jp.animate({
 				height: '100%'
 			}, 500);
+			$('#wallets').css('width', '');
 		});
 
 		$(a).hide();
