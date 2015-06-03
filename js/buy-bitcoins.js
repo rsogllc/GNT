@@ -338,7 +338,7 @@ app.controller('exchangeTreeviewCtrl',function($scope, LocalData, $http) {
 	            	if (response.sponsoredListing != null)
 	            	{
 	            		$('.exchange-listing').hide();
-	            		var sponsoredId = '#listing-' + response.sponsoredListing;
+	            		var sponsoredId = '#listing-' + response.sponsoredListing.tagname;
 	            		var listCont = $('#exchange-listing-container').width();
 	            		var marginLeft = (listCont - 408)/2;
 	            		if (marginLeft < 0)
@@ -430,7 +430,7 @@ function listExchanges(countryCode) {
 	            	if (response.sponsoredListing != null)
 	            	{
 	            		$('.exchange-listing').hide();
-	            		var sponsoredId = '#listing-' + response.sponsoredListing;
+	            		var sponsoredId = '#listing-' + response.sponsoredListing.tagname;
 	            		var listCont = $('#exchange-listing-container').width();
 	            		var marginLeft = (listCont - 408)/2;
 	            		if (marginLeft < 0)
