@@ -38,6 +38,11 @@ $(document).ready(function(){
 	            		var sponsoredId = '#listing-' + response.sponsoredListing.tagname;
 	            		var listCont = $('#exchange-listing-container').width();
 	            		var marginLeft = (listCont - 408)/2;
+	            		if (marginLeft < 0)
+	            		{
+	            			marginLeft = 0;
+	            		}
+	            		console.log('ML: ' + marginLeft);
 	            		$(sponsoredId).show();
 	            		if ($('#exchange-listing-container').width() <= 626) {
 	            			$(sponsoredId).css('width', '91%');
@@ -336,7 +341,10 @@ app.controller('exchangeTreeviewCtrl',function($scope, LocalData, $http) {
 	            		var sponsoredId = '#listing-' + response.sponsoredListing;
 	            		var listCont = $('#exchange-listing-container').width();
 	            		var marginLeft = (listCont - 408)/2;
-	            		$(sponsoredId).show();
+	            		if (marginLeft < 0)
+	            		{
+	            			marginLeft = 0;
+	            		}
 	            		if ($('#exchange-listing-container').width() <= 626) {
 	            			$(sponsoredId).css('width', '91%');
 	            		} else {
@@ -425,6 +433,10 @@ function listExchanges(countryCode) {
 	            		var sponsoredId = '#listing-' + response.sponsoredListing;
 	            		var listCont = $('#exchange-listing-container').width();
 	            		var marginLeft = (listCont - 408)/2;
+	            		if (marginLeft < 0)
+	            		{
+	            			marginLeft = 0;
+	            		}
 	            		$(sponsoredId).show();
 	            		if ($('#exchange-listing-container').width() <= 626) {
 	            			$(sponsoredId).css('width', '91%');
