@@ -742,6 +742,8 @@ en:
     gaining-visibility: gaining-visibility
     spend-bitcoins: spend-bitcoins
     advertise: advertise
+    posting-guide: posting-guide
+    bitcoin-news-search: bitcoin-news-search
   anchor:
     community:
       non-profit: non-profit
@@ -859,3 +861,8 @@ en:
   advertise:
     title: "Advertise on bitcoin.com"
     pagetitle: "Advertise on bitcoin.com"
+  posting-guide:
+    title: "Posting guide"
+    pagetitle: "Posting guide"
+  bitcoin-news-search:
+    title: "Search for new articles"

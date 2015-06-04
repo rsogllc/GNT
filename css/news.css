@@ -440,3 +440,19 @@ opacity: 0;
 	font-weight: bold;
 	margin-top: 32px;
 }
+
+#searchbox {
+	position: absolute;
+	right: 80px;
+	top: 12px;
+	border-left: 2px solid transparent;
+	border-right: 2px solid transparent;
+	border-top: 2px solid transparent;
+	border-bottom: 2px solid transparent;
+	width: 128px;
+	background-image: url('/img/icons/ico_search.png');
+	background-repeat: no-repeat;
+	background-size: 20px;
+	padding-left: 22px;
+	color: #b8b8b8;
+}

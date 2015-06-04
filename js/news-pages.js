@@ -40,6 +40,12 @@ $(document).ready(function(){
 	
 	$('.subheader').html(monthString + ' ' + date + ', ' + year);
 	
+	var searchForm = $('<form method="GET" action="/en/bitcoin-news-search">')
+		.append('<input type="text" placeholder="Search" id="searchbox" name="q">')
+		.append('<input type="submit" style="display: none;">');
+	
+	$('.head ul.lang').before(searchForm);
+	
 	$.ajax({
 	    url: "/api/frontend/buyBitcoins",
 	    type: "GET",
