@@ -2,8 +2,6 @@ $(document).ready(function(){
 	
 	$('.checkcontrol .checkfail').addClass('danger');
 	
-	console.log($('#content').width());
-	
 	if ($('#content').width() > 650)
 	{
 		$('.wallets-container').width(605);
@@ -16,8 +14,6 @@ $("#wallets").on('click', 'a', function(event){
 });
 
 $("#walletmenu").on('click', 'a', function(event){
-	console.log("Clicked category");
-	console.log($(this).data('walletcompat'));
 	walletShowPlatform($(this).data('walletcompat'));
 	var category = $(this).data('walletcompat');
 	$('.walletsdisclaimer').hide();
@@ -36,8 +32,6 @@ $("#walletmenu").on('click', 'a', function(event){
         statusCode: {
                 200: function (response) {
 
-              	  	console.log(response);
-              	  
                 },
                 500: function (response) {
 

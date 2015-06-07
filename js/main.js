@@ -414,7 +414,6 @@ function walletShowPlatform(platform) {
 		$.ajax('/api/frontend/chooseYourWallet').success(function(sw)
 		{
 			sponsoredWallet = sw;
-			console.log(sponsoredWallet);
 			___walletShowPlatform(platform);
 		});
 	}
@@ -469,8 +468,6 @@ if (p.getAttribute('timeout') === null || p.getAttribute('timeout') === '' || !s
 	$(a).off('click').on('click', function(){
 		var jp = $(p), childs = jp.children();
 		
-		console.log("More clicked");
-		
 		$.ajax({
             url: "/api/frontend/chooseYourWalletViewAll",
             type: "GET",
@@ -479,8 +476,6 @@ if (p.getAttribute('timeout') === null || p.getAttribute('timeout') === '' || !s
             statusCode: {
                     200: function (response) {
 
-                  	  	console.log(response);
-                  	  
                     },
                     500: function (response) {
 
@@ -609,7 +604,6 @@ if (isMobile()) {
 	removeClass(t, 'display');
 	addClass(t, 'modalopen');
 	addEvent(t, 'mouseclick', walletHide);
-	console.log($(t).css('top'));
 	// addEvent(t, 'mouseout', walletHide);
 }
 }
