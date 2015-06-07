@@ -742,6 +742,46 @@ wallets:
           privacyaddressreuse: "checkpassprivacyaddressrotation"
           privacydisclosure: "checkfailprivacydisclosureaccount"
           privacynetwork: "checkfailprivacynetworknosupporttor"
+- coinomi:
+    title: "Coinomi Universal Wallet"
+    titleshort: "Coinomi"
+    compat: "mobile android"
+    level: 3
+    platform:
+      mobile:
+        text: "walletcoinomi"
+        link: "https://play.google.com/store/apps/details?id=com.coinomi.wallet"
+        source: "https://github.com/Coinomi"
+        screenshot: "coinomiwalletandroid.png"
+        os:
+        - android
+        check:
+          control: "checkgoodcontrolfull"
+          validation: "checkfailvalidationcentralized"
+          transparency: "checkpasstransparencyopensource"
+          environment: "checkpassenvironmentmobile"
+          privacy: "checkpassprivacybasic"
+        privacycheck:
+          privacyaddressreuse: "checkpassprivacyaddressrotation"
+          privacydisclosure: "checkfailprivacydisclosurecentralized"
+          privacynetwork: "checkfailprivacynetworknosupporttor"
+      android:
+        text: "walletcoinomi"
+        link: "https://play.google.com/store/apps/details?id=com.coinomi.wallet"
+        source: "https://github.com/Coinomi/coinomi-android"
+        screenshot: "coinomiwalletandroid.png"
+        os:
+        - android
+        check:
+          control: "checkgoodcontrolfull"
+          validation: "checkfailvalidationcentralized"
+          transparency: "checkpasstransparencyopensource"
+          environment: "checkpassenvironmentmobile"
+          privacy: "checkpassprivacybasic"
+        privacycheck:
+          privacyaddressreuse: "checkpassprivacyaddressrotation"
+          privacydisclosure: "checkfailprivacydisclosurecentralized"
+          privacynetwork: "checkfailprivacynetworknosupporttor"
 - coinbase:
     title: "Coinbase"
     titleshort: "Coinbase"
@@ -872,7 +912,7 @@ wallets:
 - ninki:
     title: "Ninki Wallet"
     titleshort: "Ninki"
-    compat: "desktop windows mac linux"
+    compat: "mobile desktop windows mac linux android ios"
     level: 3
     platform:
       desktop:
@@ -894,6 +934,53 @@ wallets:
           privacyaddressreuse: "checkpassprivacyaddressrotation"
           privacydisclosure: "checkfailprivacydisclosureaccount"
           privacynetwork: "checkfailprivacynetworknosupporttor"
+      mobile:
+        text: "walletninki"
+        link: "https://play.google.com/store/apps/details?id=com.ninki.wallet&amp;hl=en"
+        source: "https://github.com/Ninkip2p/NinkiCordova"
+        screenshot: "ninki.png"
+        os:
+        - android
+        - ios
+        check:
+          control: "checkpasscontrolmulti"
+          validation: "checkfailvalidationcentralized"
+          transparency: "checkfailtransparencynew"
+          environment: "checkpassenvironmenttwofactor"
+          privacy: "checkpassprivacybasic"
+        privacycheck:
+          privacyaddressreuse: "checkpassprivacyaddressrotation"
+          privacydisclosure: "checkfailprivacydisclosureaccount"
+          privacynetwork: "checkfailprivacynetworknosupporttor"
+      ios:
+        text: "walletninki"
+        link: "https://itunes.apple.com/us/app/ninki-wallet/id965528267?mt=8"
+        source: "https://github.com/Ninkip2p/NinkiCordova"
+        screenshot: "ninki.png"
+        os:
+        - ios
+        check:
+          control: "checkpasscontrolmulti"
+          validation: "checkfailvalidationcentralized"
+          transparency: "checkfailtransparencynew"
+          environment: "checkpassenvironmenttwofactor"
+          privacy: "checkpassprivacybasic"
+        privacycheck:
+          privacyaddressreuse: "checkpassprivacyaddressrotation"
+          privacydisclosure: "checkfailprivacydisclosureaccount"
+          privacynetwork: "checkfailprivacynetworknosupporttor"
+      android:
+        text: "walletninki"
+        link: "https://play.google.com/store/apps/details?id=com.ninki.wallet&amp;hl=en"
+        source: "https://github.com/Ninkip2p/NinkiCordova"
+        screenshot: "ninki.png"
+        os:
+        - android
+        check:
+          control: "checkpasscontrolmulti"
+          validation: "checkfailvalidationcentralized"
+          transparency: "checkfailtransparencynew"
+          environment: "checkpassenvironmenttwofactor"
 - luxstack:
     title: "LUXSTACK"
     titleshort: "LUXSTACK"
