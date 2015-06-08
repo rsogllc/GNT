@@ -468,6 +468,9 @@ if (p.getAttribute('timeout') === null || p.getAttribute('timeout') === '' || !s
 	$(a).off('click').on('click', function(){
 		var jp = $(p), childs = jp.children();
 		
+		$('.wallets div span').css('top', '');
+		$('.wallets div div').css('top', '');
+		
 		$.ajax({
             url: "/api/frontend/chooseYourWalletViewAll",
             type: "GET",
@@ -476,6 +479,7 @@ if (p.getAttribute('timeout') === null || p.getAttribute('timeout') === '' || !s
             statusCode: {
                     200: function (response) {
 
+                  	  
                     },
                     500: function (response) {
 
@@ -583,7 +587,6 @@ if ($(t).children('div').offset())
 {
 	checkOffset = $(t).children('div').offset().top + 390 + 2;
 }
-
 if (checkOffset != $(t).find('a span').offset().top)
 {
 	var topPos = 77 - $(t).find('a span').offset().top;
