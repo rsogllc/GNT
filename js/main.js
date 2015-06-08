@@ -500,6 +500,8 @@ if (p.getAttribute('timeout') === null || p.getAttribute('timeout') === '' || !s
 			}, 500);
 			$('#wallets').css('width', '');
 		});
+		
+		fixWalletLinks();
 
 		$(a).hide();
 	});
@@ -666,3 +668,38 @@ if (!document.body) return;
 // addEvent(document.body, 'mousedown', makeEditable);
 clearInterval(xint);
 }, 200);
+
+
+function fixWalletLinks() {
+	$.ajax({
+        url: "/api/frontend/chooseYourWalletDonation",
+        type: "GET",
+        cache: false,
+        data: { },
+        statusCode: {
+                200: function (response) {
+
+              	  	console.log(response);
+              	  
+              	  	keys = Object.keys(response);
+		  				
+		  			for (var i=0; i<keys.length; i++)
+		  			{
+		  					var item = response[keys[i]];
+		  					console.log(item);
+		  					var walletLink = '#wallet-' + item.id + ' div div a'
+		  					var oldLink = $(walletLink).first().attr('href');
+		  					var newLink = '/url?promo=' + item.promoCode + '&url=' + oldLink;
+		  					$(walletLink).first().attr('href', newLink);
+		  			}
+              	  
+                },
+                500: function (response) {
+
+                }
+              },
+              complete: function(e, xhr, settings){
+              	
+              }
+	});
+}
