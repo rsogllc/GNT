@@ -82,7 +82,6 @@
     </div>
     <div class="footer">
     <div class="footermenu">
-    <a href="/en/alerts" class="statusmenu{% if site.STATUS == 1 %} alert{% endif %}">Network Status</a>
     <a href="/{{ page.lang }}/{% translate legal url %}">{% translate menu-legal layout %}</a>
     {% case page.lang %}
     {% when 'ar' or 'es' or 'sl' %}
@@ -92,7 +91,6 @@
     <a href="/{{ page.lang }}/{% translate privacy url %}">{% translate menu-privacy layout %}</a>
     {% endcase %}
     <a href="/{{ page.lang }}/{% translate press url %}">{% translate menu-press layout %}</a>
-    <a href="/{{ page.lang }}/{% translate events url %}">{% translate menu-events layout %}</a>    
 	<a href="/en/full-node">Running a full node</a>
 	<a href="/en/developer-documentation">Documentation</a>
     <a href="/{{ page.lang }}/{% translate about-us url %}">{% translate menu-about-us layout %}</a>
