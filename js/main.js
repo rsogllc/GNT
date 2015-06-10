@@ -413,6 +413,7 @@ function walletShowPlatform(platform) {
 	{
 		$.ajax('/api/frontend/chooseYourWallet').success(function(sw)
 		{
+			// console.log(sw);
 			sponsoredWallet = sw;
 			___walletShowPlatform(platform);
 		});
@@ -526,10 +527,10 @@ if (p.getAttribute('timeout') === null || p.getAttribute('timeout') === '' || !s
 
 		nd.id = 'wallet-' + id;
 		addClass(nd, 'nohover');
-		if (sponsoredShowed == false && sponsoredWallet[platform].tagname == id){
+		if (sponsoredShowed == false && sponsoredWallet[platform][0].tagname == id){
 			// rewrite url of sponsored listing to pass thru redirect engine
 			origurl = nd.getElementsByTagName('div')[2].getElementsByTagName('a')[0].href
-			url = "/url?promo=" + sponsoredWallet[platform].promoCode + "&url=" + encodeURI(origurl);
+			url = "/url?promo=" + sponsoredWallet[platform][0].promoCode + "&url=" + encodeURI(origurl);
 			nd.getElementsByTagName('div')[2].getElementsByTagName('a')[0].href = url
 
 			$(nd).find('.wallet-item-sponsored').text('Sponsored');
@@ -679,18 +680,18 @@ function fixWalletLinks() {
         statusCode: {
                 200: function (response) {
 
-              	  	console.log(response);
+              	  	// console.log(response);
               	  
               	  	keys = Object.keys(response);
 		  				
 		  			for (var i=0; i<keys.length; i++)
 		  			{
 		  					var item = response[keys[i]];
-		  					console.log(item);
 		  					var walletLink = '#wallet-' + item.id + ' div div a'
 		  					var oldLink = $(walletLink).first().attr('href');
 		  					var newLink = '/url?promo=' + item.promoCode + '&url=' + oldLink;
 		  					$(walletLink).first().attr('href', newLink);
+		  					
 		  			}
               	  
                 },
