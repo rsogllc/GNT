@@ -42,7 +42,6 @@ $(document).ready(function(){
 	            		{
 	            			marginLeft = 0;
 	            		}
-	            		console.log('ML: ' + marginLeft);
 	            		$(sponsoredId).show();
 	            		if ($('#exchange-listing-container').width() <= 626) {
 	            			$(sponsoredId).css('width', '91%');
@@ -188,7 +187,7 @@ app.controller('exchangeStatsCtrl', function($scope, LocalData, $http) {
 	
 	$http.get("/api/frontend/buyBitcoins")
 	.success(function(response) {
-	//console.log(response);
+	console.log(response);
 	$scope.exchange = response;
 	LocalData.getValue(response);
 	//console.log(LocalData);
@@ -284,7 +283,6 @@ app.controller('exchangeTreeviewCtrl',function($scope, LocalData, $http) {
 	$('.exchange-listing').hide();
 	$('#featuredH1').hide();
 	
-	console.log('Country click');
 	$.ajax({
         url: "/api/frontend/buyBitcoinsViewAll?country=" + countryCode,
         type: "GET",
