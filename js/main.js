@@ -407,14 +407,31 @@ if (select === null || active === null) return;
 walletShowPlatform(select.getAttribute('data-walletcompat'));
 }
 
-var sponsoredWallet = null;
+function convertListToMap(list, key) {
+	var result = {};
+	if (key && list && list.length)
+		for (var i = 0; i < list.length; i++)
+			if (key in list[i])
+				result[list[i][key]] = list[i];
+	return result;
+}
+
+var sponsoredWallets = null;
+var walletPromoCodes = null;
 function walletShowPlatform(platform) {
-	if (sponsoredWallet == null)
+	if (sponsoredWallets == null)
 	{
 		$.ajax('/api/frontend/chooseYourWallet').success(function(sw)
 		{
 			// console.log(sw);
-			sponsoredWallet = sw;
+			var fixup = function (map) {
+				var result = {};
+				for (var p in map)
+					result[p] = convertListToMap(map[p], "tagname");
+				return result;
+			};
+			sponsoredWallets = fixup(sw.promotedCampaigns);
+			walletPromoCodes = fixup(sw.campaigns);
 			___walletShowPlatform(platform);
 		});
 	}
@@ -501,8 +518,6 @@ if (p.getAttribute('timeout') === null || p.getAttribute('timeout') === '' || !s
 			}, 500);
 			$('#wallets').css('width', '');
 		});
-		
-		fixWalletLinks();
 
 		$(a).hide();
 	});
@@ -527,12 +542,20 @@ if (p.getAttribute('timeout') === null || p.getAttribute('timeout') === '' || !s
 
 		nd.id = 'wallet-' + id;
 		addClass(nd, 'nohover');
-		if (sponsoredShowed == false && sponsoredWallet[platform][0].tagname == id){
-			// rewrite url of sponsored listing to pass thru redirect engine
-			origurl = nd.getElementsByTagName('div')[2].getElementsByTagName('a')[0].href
-			url = "/url?promo=" + sponsoredWallet[platform][0].promoCode + "&url=" + encodeURI(origurl);
-			nd.getElementsByTagName('div')[2].getElementsByTagName('a')[0].href = url
 
+		if (id in walletPromoCodes[platform]) {
+			// fixup url to pass through redirect engine
+			origurl = nd.getElementsByTagName('div')[2].getElementsByTagName('a')[0].href;
+			var url;
+			if (origurl.indexOf("/url?promo=") !== 0) {
+				url = "/url?promo=" + walletPromoCodes[platform][id].promoCode + "&url=" + encodeURI(origurl);
+			} else {
+				url = "/url?promo=" + walletPromoCodes[platform][id].promoCode + origurl.substring(origurl.indexOf("&url="));
+			}
+			nd.getElementsByTagName('div')[2].getElementsByTagName('a')[0].href = url;
+		}
+
+		if (sponsoredShowed == false && id in sponsoredWallets[platform]){
 			$(nd).find('.wallet-item-sponsored').text('Sponsored');
 
 			if (platform == 'default')
@@ -670,37 +693,3 @@ if (!document.body) return;
 clearInterval(xint);
 }, 200);
 
-
-function fixWalletLinks() {
-	$.ajax({
-        url: "/api/frontend/chooseYourWalletDonation",
-        type: "GET",
-        cache: false,
-        data: { },
-        statusCode: {
-                200: function (response) {
-
-              	  	// console.log(response);
-              	  
-              	  	keys = Object.keys(response);
-		  				
-		  			for (var i=0; i<keys.length; i++)
-		  			{
-		  					var item = response[keys[i]];
-		  					var walletLink = '#wallet-' + item.id + ' div div a'
-		  					var oldLink = $(walletLink).first().attr('href');
-		  					var newLink = '/url?promo=' + item.promoCode + '&url=' + oldLink;
-		  					$(walletLink).first().attr('href', newLink);
-		  					
-		  			}
-              	  
-                },
-                500: function (response) {
-
-                }
-              },
-              complete: function(e, xhr, settings){
-              	
-              }
-	});
-}

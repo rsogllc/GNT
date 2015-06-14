@@ -32,10 +32,10 @@ $(document).ready(function(){
 	            		);
 	            	}
 	            	
-	            	if (response.sponsoredListing != null)
+					if (response.promotedCampaigns && response.promotedCampaigns.length > 0)
 	            	{
 	            		$('.exchange-listing').hide();
-	            		var sponsoredId = '#listing-' + response.sponsoredListing.tagname;
+						var sponsoredId = '#listing-' + response.promotedCampaigns[0].tagname;
 	            		var listCont = $('#exchange-listing-container').width();
 	            		var marginLeft = (listCont - 408)/2;
 	            		if (marginLeft < 0)
@@ -333,10 +333,10 @@ app.controller('exchangeTreeviewCtrl',function($scope, LocalData, $http) {
 	            			)
 	            		);
 	            	}
-	            	if (response.sponsoredListing != null)
+					if (response.promotedCampaigns && response.promotedCampaigns.length > 0)
 	            	{
 	            		$('.exchange-listing').hide();
-	            		var sponsoredId = '#listing-' + response.sponsoredListing.tagname;
+						var sponsoredId = '#listing-' + response.promotedCampaigns[0].tagname;
 	            		var listCont = $('#exchange-listing-container').width();
 	            		var marginLeft = (listCont - 408)/2;
 	            		if (marginLeft < 0)
@@ -425,10 +425,10 @@ function listExchanges(countryCode) {
 	            			)
 	            		);
 	            	}
-	            	if (response.sponsoredListing != null)
+					if (response.promotedCampaigns && response.promotedCampaigns.length > 0)
 	            	{
 	            		$('.exchange-listing').hide();
-	            		var sponsoredId = '#listing-' + response.sponsoredListing.tagname;
+						var sponsoredId = '#listing-' + response.promotedCampaigns[0].tagname;
 	            		var listCont = $('#exchange-listing-container').width();
 	            		var marginLeft = (listCont - 408)/2;
 	            		if (marginLeft < 0)
