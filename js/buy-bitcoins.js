@@ -350,6 +350,7 @@ app.controller('exchangeTreeviewCtrl',function($scope, LocalData, $http) {
 	            		}
 	            		$(sponsoredId).css('margin-left', marginLeft + 'px');
 	            		$('#show-more').show(200);
+	            		$(sponsoredId).show();
 	            	} else {
 	            			var realHeight = divBodyHeight;
 	            			$('#show-more').hide(200);
