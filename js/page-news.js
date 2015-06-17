@@ -167,7 +167,7 @@ function listNewsItems(pageToken) {
         					
 	            			$('.news-featured .latest-stories').append($('<div class="latest-story">').
 	            					append(
-	            							'<img src="'+ imgUrl +'"><a href="bitcoin-news/'+ urlSlug +'">' + response.items[i].title +
+	            							'<a href="bitcoin-news/'+ urlSlug +'"><img src="'+ imgUrl +'" />' + response.items[i].title +
 	            							'</a><div class="date" title="'+ response.items[i].published +'">' + prettyDate(response.items[i].published) + '</div>'
 	            					)
 	            			);
