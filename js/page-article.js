@@ -151,7 +151,25 @@ function getArticle(articleId) {
 	            	$('#article-timestamp span').eq(0).html(prettyDate(response.published));
 	            	$('#article-timestamp span').eq(1).html(prettyDate(response.updated));
 	            	
-	            	$('#byline').html('Writen by ' + response.author.displayName);
+	            	if ($(content).find('#author').length != 0)
+	            	{
+	            		$('#byline').html('Writen by ' + $(content).find('#author').first().html());
+	            	} else {
+	            		$('#byline').html('Writen by ' + response.author.displayName);
+	            	}
+	            	
+	            	if ($(content).find('#btcaddr').length != 0)
+	            	{
+	            		var qrcode = new QRCode("qrcodeimg", {
+	            		    text: "bitcoin:" + $(content).find('#btcaddr').first().html(),
+	            		    width: 128,
+	            		    height: 128,
+	            		    colorDark : "#000000",
+	            		    colorLight : "#ffffff",
+	            		    correctLevel : QRCode.CorrectLevel.H
+	            		});
+	            		$('#qrcodelink').attr('href', 'https://blockchain.info/address/' + $(content).find('#btcaddr').first().html());
+	            	}
 	            	
 	            	var urlSlug = response.id;
     				urlSlug += '-' + convertToSlug(response.title);

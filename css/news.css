@@ -456,3 +456,16 @@ opacity: 0;
 	padding-left: 22px;
 	color: #b8b8b8;
 }
+
+#author {
+	display: none;
+}
+
+#btcaddr {
+	display: none;
+}
+
+#qrcode {
+	margin-left: 420px;
+  	margin-top: 10px;
+}
