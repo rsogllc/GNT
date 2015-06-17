@@ -190,20 +190,16 @@ app.controller('exchangeStatsCtrl', function($scope, LocalData, $http) {
 	console.log(response);
 	$scope.exchange = response;
 	LocalData.getValue(response);
-	//console.log(LocalData);
 	});
 });
 
 
 app.controller('exchangeLocationCtrl', function($scope, LocalData, $http) {
-    //$http.get("./buy.json")
-    $http.get("/api/frontend/countryList")
+    $http.get("/api/frontend/countryList", {sort: false})
     .success(function(response) {
-      //console.log(response);
       $scope.countries = response;
       LocalData.getCountries(response);
       $scope.localData = LocalData.getValue();
-      //console.log($scope.localData);
       console.log(response);
     });
 
@@ -213,6 +209,7 @@ app.controller('exchangeLocationCtrl', function($scope, LocalData, $http) {
                if( $scope.countries[ prop ] === value )
                {
             	   listExchanges(prop);
+            	   angular.element(document.getElementById('exchangeTreeviewCtrlId')).scope().hideCountries(null);
                }
           }
       }

@@ -356,7 +356,7 @@ input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
     </div>
   </div>
 
-  <div class="exchange-location-treeview" ng-controller="exchangeTreeviewCtrl" style="opacity:0;">
+  <div id="exchangeTreeviewCtrlId" class="exchange-location-treeview" ng-controller="exchangeTreeviewCtrl" style="opacity:0;">
     <div class="exchange-location-treeleft">
       <div class="exchange-location-treenode"><a ng-click="showNA = !showNA; hideCountries('showNA'); $event.preventDefault();" href="#">{% translate regionNA %}</a>
         <div ng-show="showNA" id="nodeNA" class="top-treenode">
