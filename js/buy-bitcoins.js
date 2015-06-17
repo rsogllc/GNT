@@ -280,6 +280,8 @@ app.controller('exchangeTreeviewCtrl',function($scope, LocalData, $http) {
 	$('.exchange-listing').hide();
 	$('#featuredH1').hide();
 	
+	$("#countrySelect option[value='" + countryCode + "']").attr('selected', 'selected');
+	
 	$.ajax({
         url: "/api/frontend/buyBitcoinsViewAll?country=" + countryCode,
         type: "GET",
