@@ -840,6 +840,8 @@ en:
     regionAS: "Asia"
   bitcoin-news:
     news-title: "News"
+    pagetitle: "Daily Bitcoin News"
+    title: "Daily Bitcoin News"
   bitcoin-news-article:
     news-title: "News"
   mine-bitcoins:
@@ -868,5 +870,7 @@ en:
     pagetitle: "Posting guide"
   bitcoin-news-search:
     title: "Search for new articles"
+    pagetitle: "Search for new articles"
   bump-exchange:
     title: "Bump your favourite exchange"
+    pagetitle: "Bump your favourite exchange"
