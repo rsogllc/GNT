@@ -57,7 +57,7 @@ function listNewsItems() {
 	            			$(storyItem).data('articleid', articleItem.id);
 	            			$(storyItem).find('.date').html(prettyDate(articleItem.published));
 	            			$(storyItem).find('img').attr('src', imgUrl);
-	            			$(storyItem).find('a').attr('href', urlSlug);
+	            			$(storyItem).find('a').attr('href', 'bitcoin-news/' + urlSlug);
 	            			$(storyItem).find('a').html(articleItem.title);
 	            			
 	            			$('#right-story-container').append($(storyItem));
