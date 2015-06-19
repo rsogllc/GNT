@@ -4,6 +4,7 @@ $(document).ready(function(){
 	
 	$('#show-more').hide();
 	divBodyHeight = $('div.body').height();
+	$('div.body').css('overflow-y', 'auto');
 		
 	$.ajax({
 	    url: "/api/frontend/buyBitcoins",
@@ -64,7 +65,7 @@ $(document).ready(function(){
 	            	        	    });
 	            	        		$('.exchange-listing').height(maxHeight);
 	            	        		realHeight += $('#exchange-listing-container').height() + 150;
-	            	        		$('div.body').height(realHeight);
+	            	        		// $('div.body').height(realHeight);
 	            	        } else if ($('#exchange-listing-container').width() <= 626)
 	            	        {
 	            	        		$('#exchange-listing-container').children('.exchange-listing').each(function () {
@@ -74,7 +75,7 @@ $(document).ready(function(){
 	            	        	    });
 	            	        		
 	            	        		realHeight += $('#exchange-listing-container').height() + 150;
-	            	        		$('div.body').height(realHeight);
+	            	        		// $('div.body').height(realHeight);
 	            	        }
 	            	}
 	            },
@@ -107,7 +108,7 @@ $(document).on("click", "#show-more", function(event) {
         		$('.exchange-listing').height(maxHeight);
         		$('.exchange-listing').show(300);
         		realHeight += $('#exchange-listing-container').height() + 150;
-        		$('div.body').height(realHeight);
+        		// $('div.body').height(realHeight);
         	});
         } else if ($('#exchange-listing-container').width() <= 626)
         {
@@ -119,7 +120,7 @@ $(document).on("click", "#show-more", function(event) {
         	    });
         		
         		realHeight += $('#exchange-listing-container').height() + 150;
-        		$('div.body').height(realHeight);
+        		// $('div.body').height(realHeight);
         	});
         }
     });
@@ -364,7 +365,7 @@ app.controller('exchangeTreeviewCtrl',function($scope, LocalData, $http) {
 	            	        	    });
 	            	        		$('.exchange-listing').height(maxHeight);
 	            	        		realHeight += $('#exchange-listing-container').height() + 150;
-	            	        		$('div.body').height(realHeight);
+	            	        		// $('div.body').height(realHeight);
 	            	        } else if ($('#exchange-listing-container').width() <= 626)
 	            	        {
 	            	        		$('#exchange-listing-container').children('.exchange-listing').each(function () {
@@ -374,7 +375,7 @@ app.controller('exchangeTreeviewCtrl',function($scope, LocalData, $http) {
 	            	        	    });
 	            	        		
 	            	        		realHeight += $('#exchange-listing-container').height() + 150;
-	            	        		$('div.body').height(realHeight);
+	            	        		// $('div.body').height(realHeight);
 	            	        }
 	            	}
 	            },
@@ -457,7 +458,7 @@ function listExchanges(countryCode) {
 	            	        	    });
 	            	        		$('.exchange-listing').height(maxHeight);
 	            	        		realHeight += $('#exchange-listing-container').height() + 150;
-	            	        		$('div.body').height(realHeight);
+	            	        		// $('div.body').height(realHeight);
 	            	        } else if ($('#exchange-listing-container').width() <= 626)
 	            	        {
 	            	        		$('#exchange-listing-container').children('.exchange-listing').each(function () {
@@ -467,7 +468,7 @@ function listExchanges(countryCode) {
 	            	        	    });
 	            	        		
 	            	        		realHeight += $('#exchange-listing-container').height() + 150;
-	            	        		$('div.body').height(realHeight);
+	            	        		// $('div.body').height(realHeight);
 	            	        }
 	            	    });
 	            	}
