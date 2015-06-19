@@ -123,7 +123,7 @@ $('div').on('click', '.qrcodeshow', function(event){
 		$(this).hide();
 		
 		var qrcode = new QRCode(qrId, {
-			    text: $(this).data('address'),
+			    text: 'bitcoin:' + $(this).data('address'),
 			    width: 144,
 			    height: 144,
 			    colorDark : "#000000",

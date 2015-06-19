@@ -745,6 +745,7 @@ en:
     advertise: advertise
     posting-guide: posting-guide
     bitcoin-news-search: bitcoin-news-search
+    bump-exchange: bump-exchange
   anchor:
     community:
       non-profit: non-profit
@@ -867,3 +868,5 @@ en:
     pagetitle: "Posting guide"
   bitcoin-news-search:
     title: "Search for new articles"
+  bump-exchange:
+    title: "Bump your favourite exchange"
