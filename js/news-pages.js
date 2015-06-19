@@ -46,7 +46,18 @@ $(document).ready(function(){
 	
 	$('.head ul.lang').before(searchForm);
 	
-	getCountryInfo();
+	var checkTickerAd = setInterval(function(){
+		var exchange = $('.news-header-ad-unit-300x100').find('img').first().attr('title');
+		
+		if (exchange != null) {
+			
+      		featuredExchange = exchange;
+      	    getTicker();
+      	    setInterval(function(){ getTicker(); }, 60000);
+			
+			clearInterval(checkTickerAd);
+		}
+	}, 100);
 	
 	$.ajax({
 	    url: "/api/ticker/30dayUSD",
@@ -70,7 +81,6 @@ $(document).ready(function(){
 	            }
 	          },
 	          complete: function(e, xhr, settings){
-
 	          }
 	});
 	
@@ -127,7 +137,7 @@ function getTicker() {
 	            	{
 	            		$('.news-header-bitcoin-price div.quote').css('font-size', '2.5em');
 	            	} // http://bitcoin.com/url?promo=bitflyer-JP&url=https://www.bitflyer.jp/
-            		$('div.news-header-ad-unit-300x100 img').attr('src', '/img/news/exchange/' + response.exchange + '.png')
+            		// $('div.news-header-ad-unit-300x100 img').attr('src', '/img/news/exchange/' + response.exchange + '.png')
             		if (featuredExchange == 'bitstamp')
             		{
             			exchangeUrl = "https://bitstamp.net";
@@ -135,7 +145,7 @@ function getTicker() {
             		{
             			exchangeUrl = "https://kraken.com";
             		}
-            		$('div.news-header-ad-unit-300x100 a').attr('href', '/url?promo=' + featuredExchange +'&url=' + exchangeUrl)
+            		// $('div.news-header-ad-unit-300x100 a').attr('href', '/url?promo=' + featuredExchange +'&url=' + exchangeUrl)
 	            },
 	            500: function (response) {
 	            	console.log(response);
@@ -223,67 +233,4 @@ function convertToSlug(Text)
         .replace(/[^\w ]+/g,'')
         .replace(/ +/g,'-')
         ;
-}
-
-function getCountryInfo() {
-	$.ajax({
-	    url: "/api/frontend/buyBitcoins",
-	    type: "GET",
-	    cache: false,
-	    data: { },
-	    statusCode: {
-	            200: function (response) {
-	            	country = response.countryCode;
-	            	getRegionInfo(country)
-	            	
-	            },
-	            500: function (response) {
-	            	console.log(response);
-	            }
-	          },
-	          complete: function(e, xhr, settings){
-	        	  
-	          }
-	});
-}
-
-function getRegionInfo(country) {
-	var region;
-	
-	$.ajax({
-	    url: "/api/frontend/regionMap",
-	    type: "GET",
-	    cache: false,
-	    data: { },
-	    statusCode: {
-	            200: function (response) {
-	            	
-	            	keys = Object.keys(response.data);
-	            	for (var i=0; i<keys.length; i++)
-	  				{
-	            		for (var j=0; j<response.data[keys[i]].length; j++)
-	            		{
-	            			if (response.data[keys[i]][j] == country)
-	            			{
-	            				region = keys[i];	            				
-	            			}
-	            		}
-	  				}
-	            	
-	            },
-	            500: function (response) {
-	            	console.log(response);
-	            }
-	          },
-	          complete: function(e, xhr, settings){
-	        	  if (region == 'EU')
-	        	  {
-	        		  featuredExchange = 'kraken';
-	        	  } else {
-	        		  featuredExchange = 'bitstamp';
-	        	  }
-	        	  getTicker();
-	        	  setInterval(function(){ getTicker(); }, 60000);
-	          }
-	});
 }
