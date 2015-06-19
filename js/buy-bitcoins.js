@@ -84,7 +84,7 @@ $(document).ready(function(){
 	            }
 	          },
 	          complete: function(e, xhr, settings){
-	        	  
+
 	          }
 	});
 
@@ -124,6 +124,8 @@ $(document).on("click", "#show-more", function(event) {
         	});
         }
     });
+    
+    $('#bump').show(200);
     
     $.ajax({
         url: "/api/frontend/buyBitcoinsViewAll",
@@ -196,6 +198,7 @@ app.controller('exchangeStatsCtrl', function($scope, LocalData, $http) {
 
 
 app.controller('exchangeLocationCtrl', function($scope, LocalData, $http) {
+	$('#bump').hide();
     $http.get("/api/frontend/countryList", {sort: false})
     .success(function(response) {
       $scope.countries = response;
@@ -222,7 +225,7 @@ app.controller('exchangeListingCtrl',function($scope, LocalData, $http) {
 });
 
 app.controller('exchangeTreeviewCtrl',function($scope, LocalData, $http) {
-	
+	$('#bump').hide();
 	if ($('#content').width() <= 530)
 	{
 		console.log("Small page");
@@ -276,6 +279,7 @@ app.controller('exchangeTreeviewCtrl',function($scope, LocalData, $http) {
   $scope.showListings = function(countryCode, event) {
 	$scope.hideCountries(null);
 	event.preventDefault();
+	$('#bump').hide();
 	
 	$('#listingsloader').show();
 	$('.exchange-listing').hide();
@@ -397,6 +401,7 @@ function listExchanges(countryCode) {
 	$('#listingsloader').show();
 	$('.exchange-listing').hide();
 	$('#featuredH1').hide();
+	$('#bump').hide();
 	
 	$.ajax({
 	    url: url,
