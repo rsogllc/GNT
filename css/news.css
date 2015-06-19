@@ -469,3 +469,14 @@ opacity: 0;
 	margin-left: 420px;
   	margin-top: 10px;
 }
+
+table {
+	border-top-style: hidden;
+  	border-right-style: hidden;
+  	border-bottom-style: hidden;
+  	border-left-style: hidden;
+}
+
+table tr {
+	  border-style: hidden;
+}
