@@ -46,8 +46,11 @@ $(document).ready(function(){
 	
 	$('.head ul.lang').before(searchForm);
 	
+	var attempts = 0;
+	
 	var checkTickerAd = setInterval(function(){
 		var exchange = $('.news-header-ad-unit-300x100').find('img').first().attr('title');
+		console.log('Image: ' + exchange);
 		
 		if (exchange != null) {
 			
@@ -56,8 +59,19 @@ $(document).ready(function(){
       	    setInterval(function(){ getTicker(); }, 60000);
 			
 			clearInterval(checkTickerAd);
+		} else {
+			attempts++;
 		}
-	}, 100);
+		
+		if (attempts > 20)
+		{
+			console.log('Suspecting adblocker. Defaulting to Kraken');
+			featuredExchange = 'kraken';
+			getTicker();
+      	    setInterval(function(){ getTicker(); }, 60000);
+      	    clearInterval(checkTickerAd);
+		}
+	}, 500);
 	
 	$.ajax({
 	    url: "/api/ticker/30dayUSD",
