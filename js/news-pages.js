@@ -2,6 +2,7 @@ var country;
 var featuredExchange = 'bitstamp';
 var availableExchanges = ['bitstamp', 'kraken'];
 var exchangeUrl;
+var adblock = false;
 
 Number.prototype.formatMoney = function(c, d, t){
 	var n = this, 
@@ -50,7 +51,6 @@ $(document).ready(function(){
 	
 	var checkTickerAd = setInterval(function(){
 		var exchange = $('.news-header-ad-unit-300x100').find('img').first().attr('title');
-		console.log('Image: ' + exchange);
 		
 		if (exchange != null) {
 			
@@ -63,9 +63,10 @@ $(document).ready(function(){
 			attempts++;
 		}
 		
-		if (attempts > 20)
+		if (attempts > 15)
 		{
 			console.log('Suspecting adblocker. Defaulting to Kraken');
+			adblock = true;
 			featuredExchange = 'kraken';
 			getTicker();
       	    setInterval(function(){ getTicker(); }, 60000);
@@ -158,6 +159,10 @@ function getTicker() {
             		} else if (featuredExchange == 'kraken') 
             		{
             			exchangeUrl = "https://kraken.com";
+            		}
+            		
+            		if (adblock) {
+            			$('div.news-header-ad-unit-300x100').html('Bitcoin price by: <br />' + featuredExchange + '<br />(This looks better without adblock)')
             		}
             		// $('div.news-header-ad-unit-300x100 a').attr('href', '/url?promo=' + featuredExchange +'&url=' + exchangeUrl)
 	            },
