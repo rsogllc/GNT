@@ -79,6 +79,7 @@ function loadExchanges(country) {
 		  						$(wallet).find('h2').html(item.name);
 		  						$(wallet).find('b.address').html(item.btcaddr);
 		  						$(wallet).find('#bitcoin-uri').attr('href', 'bitcoin:' + item.btcaddr);
+		  						$(wallet).find('#bitcoin-be-url').attr('href', 'https://blockchain.info/address/' + item.btcaddr);
 		  						$(wallet).find('.qrcodeshow').data('address', item.btcaddr);
 		  						$(wallet).find('.qrcodeshow').data('qrid', item.id);
 		  						$(wallet).find('.exchangebrief').html(item.description);
