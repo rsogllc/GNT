@@ -471,6 +471,7 @@ if (p.getAttribute('timeout') === null || p.getAttribute('timeout') === '' || !s
 	a = $('.show-more.sponsored');
 
 	a.show();
+	$('#bump').hide();
 
 	p.innerHTML = '';
 	addClass(p, 'sponsored');
@@ -488,6 +489,7 @@ if (p.getAttribute('timeout') === null || p.getAttribute('timeout') === '' || !s
 		
 		$('.wallets div span').css('top', '');
 		$('.wallets div div').css('top', '');
+		$('#bump').show();
 		
 		$.ajax({
             url: "/api/frontend/chooseYourWalletViewAll",
