@@ -547,12 +547,16 @@ if (p.getAttribute('timeout') === null || p.getAttribute('timeout') === '' || !s
 
 		if (id in walletPromoCodes[platform]) {
 			// fixup url to pass through redirect engine
+			var promoCode = walletPromoCodes[platform][id].promoCode;
+			if (id in sponsoredWallets[platform]) {
+				promoCode = sponsoredWallets[platform][id].promoCode;
+			}
 			origurl = nd.getElementsByTagName('div')[2].getElementsByTagName('a')[0].href;
 			var url;
 			if (origurl.indexOf("/url?promo=") !== 0) {
-				url = "/url?promo=" + walletPromoCodes[platform][id].promoCode + "&url=" + encodeURI(origurl);
+				url = "/url?promo=" + promoCode + "&url=" + encodeURI(origurl);
 			} else {
-				url = "/url?promo=" + walletPromoCodes[platform][id].promoCode + origurl.substring(origurl.indexOf("&url="));
+				url = "/url?promo=" + promoCode + origurl.substring(origurl.indexOf("&url="));
 			}
 			nd.getElementsByTagName('div')[2].getElementsByTagName('a')[0].href = url;
 		}
