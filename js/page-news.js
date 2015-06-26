@@ -57,7 +57,8 @@ function listMoreArticles(pageToken) {
 	            			$('div.news-tertiary').append($(newTertiaryStory));
 	            			
 	            		}
-	            		$('div.news-tertiary div').show(300);
+	            		$('div.news-tertiary div').show();
+	            		$('.tertiary-story').first().hide();
 	            		if (!response.nextPageToken)
 	            		{
 	            			$('#seemore').hide();
@@ -174,6 +175,9 @@ function listNewsItems(pageToken) {
 	            			if (usedArticles.indexOf(response.items[i].id) == -1 && tertiaryStory <= 5) {
 	            				usedArticles[usedArticles.length] = response.items[i].id;
 	            				
+	            				var newTertiaryStory = $('.tertiary-story').first().clone();
+		            			$(newTertiaryStory).find('img').attr('src','data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=');
+	            				
 	            				var html = $.parseHTML( response.items[i].content );
 	            				var element = document.createElement('div');
 	            				$(element).html(response.items[i].content);
@@ -187,12 +191,16 @@ function listNewsItems(pageToken) {
 	            				var imgUrl = response.items[i].images[0].url;
             					imgUrl = imgUrl.replace(/^http:\/\//i, 'https://');
 	            				
-            					$('.tertiary-story').eq(tertiaryStory).find('.headline').html('');
-	            				$('.tertiary-story').eq(tertiaryStory).find('.headline').append($(link));
-	            				$('.tertiary-story').eq(tertiaryStory).find('.date').html(prettyDate(response.items[i].published));
-	            				$('.tertiary-story').eq(tertiaryStory).find('img').attr('src',imgUrl);
-	            				$('.tertiary-story').eq(tertiaryStory).find('a').attr('href','bitcoin-news/' + urlSlug);
-	            				$('.tertiary-story').eq(tertiaryStory).find('.description').html($(element).find('div#brief').first().html());
+	            				$(newTertiaryStory).find('.headline').html('');
+		            			$(newTertiaryStory).find('.headline').append($(link));
+		            			$(newTertiaryStory).find('.date').html(prettyDate(response.items[i].published));
+		            			$(newTertiaryStory).find('img').attr('src',imgUrl);
+		            			$(newTertiaryStory).find('a').attr('href','bitcoin-news/' + urlSlug);
+		            			$(newTertiaryStory).find('.description').html($(element).find('div#brief').first().html());
+		            			$(newTertiaryStory).css('display', '');
+		            			
+		            			$('div.news-tertiary').append($(newTertiaryStory));
+	            				
 	            				tertiaryStory++;
 	            			}
 	            		}
