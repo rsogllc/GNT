@@ -448,9 +448,9 @@ en:
   index:
     title: "Bitcoin - Open source P2P money"
     metadescription: "Bitcoin is the most important invention in the history of the world, since the internet itself."
-    listintro: "Bitcoin is the most important invention in the history of the world, since the internet itself."
+    listintro: "Bitcoin is the most important invention in the history of the world,<br>since the internet itself."
     list1: "Instant peer-to-peer<br>transactions"
-    list2: "Worldwide<br>payments"
+    list2: "Global unstoppable<br>payments"
     list3: "Zero or low<br>processing fees"
     desc: "Bitcoin uses peer-to-peer technology to operate without a central authority or or controlling entity. This means that no one, including banks or governments, can block bitcoin transactions, or freeze your account in any way. Bitcoin works world wide, for anyone, anywhere, anytime, regardless of where they were born, or what color their skin is.  The only way to stop the Bitcoin network  would be to turn off the entire world's internet, and keep it turned off. Just like email, Bitcoin isn’t a company. It is an open-source protocol that anybody can use. It is a platform that allows permissionless innovation worldwide, and will change the lives of everyone on the planet for the better."
     overview: "Or get a quick overview for"
