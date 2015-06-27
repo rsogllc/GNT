@@ -67,10 +67,15 @@ $(document).ready(function(){
 		{
 			console.log('Suspecting adblocker. Defaulting to Kraken');
 			adblock = true;
+			// /api/tickercontent
+			getTickerFromBackend()
+			/*
 			featuredExchange = 'kraken';
 			getTicker();
       	    setInterval(function(){ getTicker(); }, 60000);
       	    clearInterval(checkTickerAd);
+      	    */
+			clearInterval(checkTickerAd);
 		}
 	}, 500);
 	
@@ -162,7 +167,7 @@ function getTicker() {
             		}
             		
             		if (adblock) {
-            			$('div.news-header-ad-unit-300x100').html('Bitcoin price by: <br />' + featuredExchange + '<br />(This looks better without adblock)')
+            			// $('div.news-header-ad-unit-300x100').html('Bitcoin price by: <br />' + featuredExchange + '<br />(This looks better without adblock)')
             		}
             		// $('div.news-header-ad-unit-300x100 a').attr('href', '/url?promo=' + featuredExchange +'&url=' + exchangeUrl)
 	            },
@@ -177,6 +182,42 @@ function getTicker() {
 	        	  $('.news-header-ad-unit-300x100').fadeTo( 200 , 1, function() {
 	        		    
 	        	  });
+	          }
+	});
+}
+
+function getTickerFromBackend() {
+	$.ajax({
+	    url: "/api/tickercontent",
+	    type: "GET",
+	    cache: false,
+	    data: { },
+	    statusCode: {
+	            200: function (response) {
+	            	console.log(response);
+	            	
+	            	var element = document.createElement('div');
+	            	$(element).html('Bitcoin price by:')
+	            	var link = document.createElement('a');
+	            	$(link).attr('href', response.url);
+	            	var image = document.createElement('img');
+	            	$(image).attr('src', response.image);
+	            	$(link).append($(image));
+	            	$(element).append($(link));
+	            	
+	            	$('div.news-header-ad-unit-300x100').html($(element));
+	            	
+	            	featuredExchange = response.exchangeId;
+	    			getTicker();
+	    			
+	          	    setInterval(function(){ getTicker(); }, 60000);
+	            },
+	            500: function (response) {
+	            	console.log(response);
+	            }
+	          },
+	          complete: function(e, xhr, settings){
+	        	  
 	          }
 	});
 }
