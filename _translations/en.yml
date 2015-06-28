@@ -444,7 +444,7 @@ en:
     processing: "Bitcoin mining"
     processingtxt: "You may have already heard of Bitcoin mining. Mining is the process in which people running specialized hardware and software all over the world constantly audit the bitcoin network to prevent people from spending the same bitcoins twice, or manipulating the system in any other way.  On average,  once every ten minutes, all the miners come together and agree on a new block of transactions to be added to the Bitcoin blockchain.  Like gold,  there is money to be made in bitcoin mining,  but often times it is better left to the professionals.  If you decide you want to try your hand at bitcoin mining,  you can find a wide variety of specialized equipment here in our <a href=\"mine-bitcoins\">bitcoin mining section</a>."
     readmore: "Learning more"
-    readmoretxt: "This was only the briefest of introductions to how Bitcoin works. You can <a href=\"#bitcoin-paper#\">read the original paper</a> that describes the system's design, read the <a href=\"/en/developer-documentation\">developer documentation</a>, and explore the <a href=\"https://en.bitcoin.it/wiki/Main_Page\">Bitcoin wiki</a>."
+    readmoretxt: "This was only the briefest of introductions to how Bitcoin works. You can <a href=\"#bitcoin-paper#\">read the original paper</a> that describes the system's design, read the <a href=\"/en/developer-documentation\">developer documentation</a>, participate in the <a href=\"https://bitcointalk.org/\">forums</a>, or on <a href=\"https://reddit.com/r/bitcoin\">Reddit</a>."
   index:
     title: "Bitcoin - Open source P2P money"
     metadescription: "Bitcoin is the most important invention in the history of the world, since the internet itself."
