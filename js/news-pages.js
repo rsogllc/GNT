@@ -1,6 +1,6 @@
 var country;
 var featuredExchange = 'bitstamp';
-var availableExchanges = ['bitstamp', 'kraken'];
+var availableExchanges = ['bitstamp', 'kraken', 'anxbtc'];
 var exchangeUrl;
 var adblock = false;
 
@@ -164,6 +164,9 @@ function getTicker() {
             		} else if (featuredExchange == 'kraken') 
             		{
             			exchangeUrl = "https://kraken.com";
+            		} else if (featuredExchange == 'anxbtc') 
+            		{
+            			exchangeUrl = "https://anxbtc.com";
             		}
             		
             		if (adblock) {
