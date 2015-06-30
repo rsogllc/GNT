@@ -486,6 +486,7 @@ if (p.getAttribute('timeout') === null || p.getAttribute('timeout') === '' || !s
 
 	$(a).off('click').on('click', function(){
 		var jp = $(p), childs = jp.children();
+		$('#walletContainerHeader').html("Choose from these bitcoin wallets:");
 		
 		$('.wallets div span').css('top', '');
 		$('.wallets div div').css('top', '');
