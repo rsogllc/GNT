@@ -55,7 +55,7 @@ langs:
   'zh_TW': '繁體中文'
 
 redirects:
-  /news: /en/version-history
+  /news: /en/bitcoin-news
   /clients: /en/choose-your-wallet
   /about: /en/faq
   /ar/بت-كوين-للهواة: /ar/innovation
