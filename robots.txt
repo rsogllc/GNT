@@ -1,1 +1,1 @@
-Sitemap: https://bitcoin.org/sitemap.xml
+Sitemap: https://bitcoin.com/sitemap.xml
