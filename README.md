@@ -2,46 +2,26 @@
 
 ## How To Participate
 
-*Bitcoin.org needs volunteers like you!*  Here are some ways you can help:
+*Bitcoin.com needs volunteers like you!*  Here are some ways you can help:
 
 * "Watch" this repository to be notified of issues and Pull Requests
   (PRs) that could use your attention. Scroll to the top of this page
   and click the *Watch* button to get notifications by email and on your
   GitHub home page.
 
-    Alternatively, email volunteer coordinator Dave Harding
-    <dave@dtrt.org> with a short list of your interests and skills, and
-    he'll email you when there's an issue or PR that could use your
-    attention.
-
-* Help [write new documentation][] for the [developer
-  documentation pages][] or [upcoming full node page][], or **review [PRs
-  adding new documentation][].** You don't need to be a Bitcoin expert
-  to review a PR---these docs are written for non-experts, so we need to
-  know if non-experts find them confusing or incomplete. If you review a
-  PR and don't find any problems worth commenting about, leave a "Looks
-  Good To Me (LGTM)" comment.
-
-* [Submit new wallets][] for the [Choose Your Wallet page][], or
-  help us [review wallet submissions][]. **Reviewers with Apple iOS
-  hardware especially needed**---email <dave@dtrt.org> to
-  be notified about iOS wallets needing review.
+* [Submit new wallets][] for the [Choose Your Wallet page][]
 
 * [Translate Bitcoin.org into another language][] using [Transifex][] or
-  help review new and updated translations. **Translation coordinator
-  needed** to answer translator questions and help process
-  reviews---email <dave@dtrt.org> for details.
+  help review new and updated translations.
 
 * Add Bitcoin events to the [events page][] either by [editing `_events.yml`][edit events]
   according to the [event instructions][] or by filling in a [pre-made
   events issue][].
 
-* Help improve Bitcoin.org using your unique skills. We can always use
+* Help improve Bitcoin.com using your unique skills. We can always use
   the help of writers, editors, graphic artists, web designers, and anyone
   else to enhance Bitcoin.org's [current content][] or to add new
-  content. See the **list of [recommended starter projects][]** or email
-  volunteer coordinator Dave Harding <dave@dtrt.org> to start a
-  conversation about how you can help Bitcoin.org.
+  content.
 
 You can always report problems or help improve bitcoin.org by opening a [new issue][] or [pull request][] on [GitHub][].
 
@@ -112,7 +92,7 @@ builds before opening a pull request, it's really simple:
    done in our master branch.)
 
 3. After you push a branch to your repository, go to your branches page
-   (e.g. for user harding, github.com/harding/bitcoin.org/branches). A
+   (e.g. for user jmaurice, github.com/jmaurice/bitcoin.org/branches). A
    yellow circle, green checkmark, or red X will appear near the branch
    name when the build finishes, and clicking on the icon will take you
    to the corresponding build report.
@@ -623,8 +603,7 @@ Optional criterias (some could become requirements):
 
 *Before adding a wallet,* please make sure your wallet meets all of the
 Basic Requirements listed above, or open a [new issue][] to request an
-exemption or policy change. Feel free to email Dave Harding
-<dave@dtrt.org> if you have any questions.
+exemption or policy change.
 
 Wallets can be added in `_templates/choose-your-wallet.html`. Entries are ordered by levels and new wallets must be added after the last wallet on the same level.
 
@@ -712,9 +691,9 @@ two-digit numbers).  The YAML front matter should be similar to this:
     permalink: /en/posts/quarterly-report-march-2015.html
     date: 2015-03-05
     author: >
-      David A. Harding (<a href="mailto:dave@dtrt.org">email</a>, <a
-      href="https://github.com/harding">GitHub</a>,
-      <a href="http://www.reddit.com/user/harda/">Reddit</a>)
+      Ed Example (<a href="mailto:ed@example.com">email</a>, <a
+      href="https://github.com/example">GitHub</a>,
+      <a href="http://www.reddit.com/user/example/">Reddit</a>)
     ---
 
 The type, layout, and category should always be as specified above. The
