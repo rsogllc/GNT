@@ -1,10 +1,10 @@
 sv:
   about-us:
-    title: "Om bitcoin.org"
-    pagetitle: "Om bitcoin.org"
-    pagedesc: "Bitcoin.org är dedikerat till att hjälpa Bitcoin på ett hållbart sätt."
-    own: "Vem äger bitcoin.org?"
-    owntxt: "Bitcoin.org är originaldomännamnet som användes till den första Bitcoin-webbsidan. Det registrerades av och hanteras fortfarande av <a href=\"#development#\">Bitcoins huvudutvecklare</a> och ytterligare medlemmar med feedback från <a href=\"#community#\">Bitcoin-communities</a>. Bitcoin.org är inte en officiell hemsida. Precis som att ingen äger email-tekniken så äger ingen Bitcoin-nätverket. Därmed kan ingen tala med auktoritet i Bitcoins namn."
+    title: "Om bitcoin.com"
+    pagetitle: "Om bitcoin.com"
+    pagedesc: "Bitcoin.com är dedikerat till att hjälpa Bitcoin på ett hållbart sätt."
+    own: "Vem äger bitcoin.com?"
+    owntxt: "Bitcoin.com är originaldomännamnet som användes till den första Bitcoin-webbsidan. Det registrerades av och hanteras fortfarande av <a href=\"#development#\">Bitcoins huvudutvecklare</a> och ytterligare medlemmar med feedback från <a href=\"#community#\">Bitcoin-communities</a>. Bitcoin.com är inte en officiell hemsida. Precis som att ingen äger email-tekniken så äger ingen Bitcoin-nätverket. Därmed kan ingen tala med auktoritet i Bitcoins namn."
     control: "Så... vem kontrollerar Bitcoin?"
     controltxt: "Bitcoin kontrolleras av alla Bitcoin-användare världen över. Utvecklare är fria att förbättra programvaran men kan inte tvinga igenom en förändring av reglerna i Bitcoin-protokollet eftersom alla användare är fria att välja vilken programvara de använder. För att förbli kompatibla med varandra måste användarna ha program som följer samma regler. Bitcoin kan bara fungera bra med total konsensus mellan alla användare. Därmed har alla användare och utvecklare starka incitament att adoptera och skydda denna konsensus."
     mission: "Uppdrag"
@@ -16,7 +16,7 @@ sv:
     missiontxt6: "Förbättra Bitcoins tillgänglighet globalt med internationalisering."
     missiontxt7: "Förbli en neutral informativ resurs kring Bitcoin."
     help: "Hjälp oss"
-    helptxt: "Du kan rapportera alla problem eller hjälpa till med att förbättra bitcoin.org på <a href=\"https://github.com/bitcoin/bitcoin.org#how-to-participate\">GitHub</a> genom att öppna en \"issue\" eller \"pull request\", på engelska. När du vill skapa en \"pull request\", tag dig tid att diskutera dina ändringar och anpassa ditt arbete. Du kan hjälpa till med översättningar genom att gå med i ett team på <a href=\"https://github.com/bitcoin/bitcoin.org#translation\">Transifex</a>. Fråga inte efter marknadsföring för din personliga hemsida eller företag, förrutom i special fall, t.ex en konferens. Tack så mycket till alla som har bidragit och spenderar tid med att förbättra bitcoin.org!"
+    helptxt: "Du kan rapportera alla problem eller hjälpa till med att förbättra bitcoin.com på <a href=\"https://github.com/bitcoin-portal/bitcoin-portal-content#how-to-participate\">GitHub</a> genom att öppna en \"issue\" eller \"pull request\", på engelska. När du vill skapa en \"pull request\", tag dig tid att diskutera dina ändringar och anpassa ditt arbete. Du kan hjälpa till med översättningar genom att gå med i ett team på <a href=\"https://github.com/bitcoin-portal/bitcoin-portal-content#translation\">Transifex</a>. Fråga inte efter marknadsföring för din personliga hemsida eller företag, förrutom i special fall, t.ex en konferens. Tack så mycket till alla som har bidragit och spenderar tid med att förbättra bitcoin.com!"
     maintenance: "Underhåll"
     documentation: "Dokumentation"
     translation: "Översättning"
@@ -442,7 +442,7 @@ sv:
     readmoretxt: "Det här är bara en kort och enkel sammanfattning av systemet. Om du vill lära dig detaljerna så kan du <a href=\"#bitcoin-paper#\">läsa original rapporten</a> som beskriver systemets design, och utforska <a href=\"https://en.bitcoin.it/wiki/Main_Page\">Bitcoin-wikin</a>."
   index:
     title: "Bitcoin - En öppen källkod P2P valuta"
-    metadescription: "Bitcoin är ett innovativt betalningsnätverk och en ny typ av valuta. Hitta all information du behöver och kom igång med Bitcoin på bitcoin.org."
+    metadescription: "Bitcoin är ett innovativt betalningsnätverk och en ny typ av valuta. Hitta all information du behöver och kom igång med Bitcoin på bitcoin.com."
     listintro: "Bitcoin är ett innovativt betalningsnätverk och en ny typ av valuta."
     list1: "Direkta peer-to-peer<br>transaktioner"
     list2: "Globala<br>betalningar"
@@ -480,10 +480,10 @@ sv:
   legal:
     title: "Friskrivningsklausul - Bitcoin"
     pagetitle: "Friskrivningsklausul"
-    information: "Information publicerad på bitcoin.org"
-    informationtxt1: "Webbsidan http://bitcoin.org/ (härefter kallad \"Webbplatsen\") tillhandahåller information och material av en generell natur. Du är inte tillåten och inte heller bör du lita på Webbplatsen för juridisk rådgivning, affärsrådgivning, eller råd av något slag. Du agerar på egen risk i förlitan på innehållet i Webbplatsen. Ska du göra ett beslut att agera eller inte agera bör du kontakta en licensierad advokat i relevant jurisdiktion där du vill eller behöver hjälp. Inte på något sätt är ägare till eller bidragare till Webbplatsen ansvariga för handlingar, beslut eller annat beteende som tas eller inte tas av dig i förlitan på webbplatsen."
+    information: "Information publicerad på bitcoin.com"
+    informationtxt1: "Webbsidan http://bitcoin.com/ (härefter kallad \"Webbplatsen\") tillhandahåller information och material av en generell natur. Du är inte tillåten och inte heller bör du lita på Webbplatsen för juridisk rådgivning, affärsrådgivning, eller råd av något slag. Du agerar på egen risk i förlitan på innehållet i Webbplatsen. Ska du göra ett beslut att agera eller inte agera bör du kontakta en licensierad advokat i relevant jurisdiktion där du vill eller behöver hjälp. Inte på något sätt är ägare till eller bidragare till Webbplatsen ansvariga för handlingar, beslut eller annat beteende som tas eller inte tas av dig i förlitan på webbplatsen."
     translations: "Översättningar"
-    translationstxt1: "Webbplatsen har översättningar från den engelska versionen av innehållet tillgängligt på Webbplatsen. Dessa översättningar tillhandahålls endast som en bekvämlighet. I fall det finns några skillnader mellan den engelska versionen och den översätta så är det den engelska som gäller. Om du hittar någon inkonsekvens, vänligen rapportera det på <a href=\"https://github.com/bitcoin/bitcoin.org\">GitHub</a>."
+    translationstxt1: "Webbplatsen har översättningar från den engelska versionen av innehållet tillgängligt på Webbplatsen. Dessa översättningar tillhandahålls endast som en bekvämlighet. I fall det finns några skillnader mellan den engelska versionen och den översätta så är det den engelska som gäller. Om du hittar någon inkonsekvens, vänligen rapportera det på <a href=\"https://github.com/bitcoin-portal/bitcoin-portal-content\">GitHub</a>."
     userisks: "Risker förknippade med att använda Bitcoin"
     useriskstxt1: "Webbplatsen kommer inte att ansvara för eventuella förluster, skador eller anspråk som härrör från händelser som omfattas av följande fem kategorier:"
     useriskstxt2: "Misstag gjorde utav användaren på någon Bitcoin-relaterad mjukvara eller tjänst, t.ex glömda lösenord, betalningar gjorda till fel Bitcoin-adress och oavsiktlig radering av plånböcker."
@@ -519,7 +519,7 @@ sv:
     title: "Integritet - Bitcoin"
     pagetitle: "Integritet"
     datacollect: "Insamlad data"
-    datacollecttxt: "Bitcoin.org samlar in anonymiserade server loggar. Dessa loggar inkluderar IP-adresser med en ersatt sista byte, tidspunk vid besök, den efterfrågade sidan, user agent och referer url. Bitcoin.org samlar inte in data med hjälp av cookies."
+    datacollecttxt: "Bitcoin.com samlar in anonymiserade server loggar. Dessa loggar inkluderar IP-adresser med en ersatt sista byte, tidspunk vid besök, den efterfrågade sidan, user agent och referer url. Bitcoin.com samlar inte in data med hjälp av cookies."
     datause: "Användning av data"
     datausetxt: "Insamlad data används för att tillhandahålla <a href=\"/stats/\">transparent publik statistik</a>."
   protect-your-privacy:
@@ -616,7 +616,7 @@ sv:
     spread: "Sprid det vidate"
     spreadtxt: "Prata om Bitcoin med intresserade personer. Skriv om det på din blogg. Uppmana dina favoritaffärer att ta emot bitcoins. Hjälp till att hålla <a href=\"http://usebitcoins.info/\">handlarkatalogen</a> uppdaterad. Eller var kreativ och skapa din egen Bitcoin T-shirt."
     wiki: "Dokumentation"
-    wikitxt: "<a href=\"https://github.com/bitcoin/bitcoin.org#how-to-participate\">Bitcoin.org</a> och <a href=\"https://en.bitcoin.it/\">Bitcoin wiki</a> ger användbar dokumentation och vi uppdaterar konstant informationen som finns tillgänglig där. Du kan hjälpa till att förbättra dessa och hålla dem uppdaterade."
+    wikitxt: "<a href=\"https://github.com/bitcoin-portal/bitcoin-portal-content#how-to-participate\">Bitcoin.com</a> och <a href=\"https://en.bitcoin.it/\">Bitcoin wiki</a> ger användbar dokumentation och vi uppdaterar konstant informationen som finns tillgänglig där. Du kan hjälpa till att förbättra dessa och hålla dem uppdaterade."
     translate: "Översätt"
     translatetxt: "Du kan hjälpa till att utöka Bitcoins tillgänglighet genom att översätta eller förbättra översättningar i viktiga delar av Bitcoins ekosystem. Välj ett projekt som du vill hjälpa."
     help: "Träffa Bitcoins community"
@@ -675,7 +675,7 @@ sv:
     tax: "Statliga skatter och förordningar"
     taxtxt: "Bitcoin är inte en officiell valuta. Med det sagt så kräver fortfarande de flesta jurisdiktioner att du betalar inkomstskall, försäljningsskatt, skatt på lön och kapitalvinstskatt på allt som har värde, inklusive bitcoins. Det är ditt ansvar att försäkra dig om att du följer de  <a href=\"https://en.wikipedia.org/wiki/Legality_of_bitcoin_by_country\">lagar och regler</a> som din regering och/eller kommun har utfärdat."
   layout:
-    menu-about-us: "Om bitcoin.org"
+    menu-about-us: "Om bitcoin.com"
     menu-bitcoin-for-businesses: Företag
     menu-bitcoin-for-developers: Utvecklare
     menu-bitcoin-for-individuals: Privatpersoner
@@ -696,7 +696,7 @@ sv:
     menu-support-bitcoin: "Stöd Bitcoin"
     menu-vocabulary: Ordlista
     menu-you-need-to-know: "Du måste veta"
-    banner-translate: "Översättningar för det här språket är utdaterade. <a href=\"https://github.com/bitcoin/bitcoin.org#translation\">Klicka här för att hjälpa till att översätta bitcoin.org till ditt språk</a>."
+    banner-translate: "Översättningar för det här språket är utdaterade. <a href=\"https://github.com/bitcoin-portal/bitcoin-portal-content#translation\">Klicka här för att hjälpa till att översätta bitcoin.com till ditt språk</a>."
     footer: "Publicerad under  <a href=\"http://opensource.org/licenses/mit-license.php\" target=\"_blank\">MIT licensen</a>"
     sponsor: "En community hemsida sponsrat av"
     getstarted: "Kom igång med Bitcoin"

@@ -1,10 +1,10 @@
 id:
   about-us:
-    title: "Mengenai bitcoin.org"
-    pagetitle: "Mengenai bitcoin.org"
-    pagedesc: "Bitcoin.org didedikasikan untuk membantu Bitcoin terus berkembang secara berkelanjutan."
-    own: "Siapa pemilik bitcoin.org?"
-    owntxt: "Bitcoin.org adalah nama domain asli yang digunakan dengan situs web pertama Bitcoin. Bitcoin.org terdaftar dan masih dikelola oleh <a href=\"#development#\">para pengembang inti Bitcoin</a> dan oleh beberapa anggota komunitas tambahan, dengan masukan dari <a href=\"#community#\">komunitas Bitcoin</a>. Bitcoin.org bukanlah situs web resmi. Sama halnya dengan tidak seorangpun yang menjadi pemilik teknologi email, ataupun menjadi pemilik jaringan Bitcoin. Dengan demikian, tidak seorangpun dapat berbicara atas nama Bitcoin."
+    title: "Mengenai bitcoin.com"
+    pagetitle: "Mengenai bitcoin.com"
+    pagedesc: "Bitcoin.com didedikasikan untuk membantu Bitcoin terus berkembang secara berkelanjutan."
+    own: "Siapa pemilik bitcoin.com?"
+    owntxt: "Bitcoin.com adalah nama domain asli yang digunakan dengan situs web pertama Bitcoin. Bitcoin.com terdaftar dan masih dikelola oleh <a href=\"#development#\">para pengembang inti Bitcoin</a> dan oleh beberapa anggota komunitas tambahan, dengan masukan dari <a href=\"#community#\">komunitas Bitcoin</a>. Bitcoin.com bukanlah situs web resmi. Sama halnya dengan tidak seorangpun yang menjadi pemilik teknologi email, ataupun menjadi pemilik jaringan Bitcoin. Dengan demikian, tidak seorangpun dapat berbicara atas nama Bitcoin."
     control: "Lalu... siapa yang mengendalikan Bitcoin?"
     controltxt: "Bitcoin dikendalikan oleh semua pengguna Bitcoin di seluruh dunia. Para pengembang meningkatkan perangkat lunak mereka namun tidak dapat memaksakan perubahan aturan pada protokol Bitcoin karena semua pengguna dibebaskan untuk memilih perangkat lunak apa yang akan mereka pakai. Untuk menjaga kompatibilitas dengan pengguna lain, semua pengguna harus menggunakan perangkat lunak yang mematuhi aturan yang sama. Bitcoin hanya bisa berfungsi dengan baik jika ada kesepakatan yang lengkap di antara semua pengguna. Oleh karena itu, semua pengguna dan para pengembang memiliki insentif yang kuat untuk mengadopsi dan melindungi kesepakatan ini."
     mission: "Misi"
@@ -16,7 +16,7 @@ id:
     missiontxt6: "Meningkatkan aksesibilitas Bitcoin di seluruh dunia dengan internasionalisasi."
     missiontxt7: "Terus menjadi sumber informatif netral mengenai Bitcoin."
     help: "Bantu kami"
-    helptxt: "Anda bisa melaporkan masalah atau bantuan apapun untuk meningkatkan bitcoin.org di <a href=\"https://github.com/bitcoin/bitcoin.org#how-to-participate\">GitHub</a> dengan membuka sebuah masalah atau menarik permintaan dalam Bahasa Inggris. Ketika memasukkan sebuah tarikan permintaan, mohon ambil waktu yang diperlukan untuk mendiskusikan perubahan dan mengadaptasi kerja Anda. Anda bisa bantu menerjemahkan dengan bergabung dengan tim di <a href=\"https://github.com/bitcoin/bitcoin.org#translation\">Transifex</a>. Mohon jangan berpromosi untuk bisnis atau situs web pribadi Anda, kecuali untuk kasus khusus seperti konferensi. Terima kasih banyak untuk semua kontributor yang meluangkan waktu untuk meningkatkan bitcoin.org!"
+    helptxt: "Anda bisa melaporkan masalah atau bantuan apapun untuk meningkatkan bitcoin.com di <a href=\"https://github.com/bitcoin-portal/bitcoin-portal-content#how-to-participate\">GitHub</a> dengan membuka sebuah masalah atau menarik permintaan dalam Bahasa Inggris. Ketika memasukkan sebuah tarikan permintaan, mohon ambil waktu yang diperlukan untuk mendiskusikan perubahan dan mengadaptasi kerja Anda. Anda bisa bantu menerjemahkan dengan bergabung dengan tim di <a href=\"https://github.com/bitcoin-portal/bitcoin-portal-content#translation\">Transifex</a>. Mohon jangan berpromosi untuk bisnis atau situs web pribadi Anda, kecuali untuk kasus khusus seperti konferensi. Terima kasih banyak untuk semua kontributor yang meluangkan waktu untuk meningkatkan bitcoin.com!"
     maintenance: "Pemeliharaan"
     documentation: "Dokumentasi"
     translation: "Terjemahan"
@@ -429,7 +429,7 @@ id:
     readmoretxt: "Ini adalah rangkuman yang sangat pendek dan singkat mengenai sistem Bitcoin. Jika Anda ingin rincian yang lebih jelas, Anda bisa <a href=\"#bitcoin-paper#\">membaca makalah aslinya</a> yang menjelaskan rancangan sistem tersebut, membaca <a href=\"/en/developer-documentation\">dokumentasi developer</a> serta menjelajahi <a href=\"https://en.bitcoin.it/wiki/Main_Page\">Bitcoin wiki</a>."
   index:
     title: "Bitcoin - Uang P2P sumber terbuka"
-    metadescription: "Bitcoin adalah jaringan pembayaran inovatif dan jenis uang baru. Temukan semua yang ingin Anda ketahui dan mulai dengan Bitcoin di bitcoin.org"
+    metadescription: "Bitcoin adalah jaringan pembayaran inovatif dan jenis uang baru. Temukan semua yang ingin Anda ketahui dan mulai dengan Bitcoin di bitcoin.com"
     listintro: "Bitcoin merupakan sebuah jaringan pembayaran inovatif dan uang jenis baru."
     list1: "Transaksi instan<br>peer-to-peer"
     list2: "Pembayaran<br>seluruh dunia"
@@ -467,10 +467,10 @@ id:
   legal:
     title: "Sanggahan hukum - Bitcoin"
     pagetitle: "Sanggahan hukum"
-    information: "Informasi yang dipublikasikan di bitcoin.org"
-    informationtxt1: "Situs http://bitcoin.org/ (selanjutnya, disebut sebagai \"Situs\") menyediakan informasi dan materi yang bersifat umum. Anda tidak memiliki izin dan tidak seharusnya Anda bergantung pada Situs ini untuk nasihat hukum, saran bisnis, atau saran apapun. Anda bertindak dengan risiko Anda sendiri dalam ketergantungan pada isi Situs ini. Jika Anda membuat keputusan untuk bertindak atau tidak bertindak, Anda harus menghubungi pengacara berlisensi di yurisdiksi yang relevan di mana Anda ingin atau butuh bantuan. Tidak sedikit pun pemilik atau para kontributor Situs ini bertanggung jawab atas tindakan, keputusan, atau perilaku lain yang diambil atau tidak diambil oleh Anda dalam ketergantungan pada Situs ini."
+    information: "Informasi yang dipublikasikan di bitcoin.com"
+    informationtxt1: "Situs http://bitcoin.com/ (selanjutnya, disebut sebagai \"Situs\") menyediakan informasi dan materi yang bersifat umum. Anda tidak memiliki izin dan tidak seharusnya Anda bergantung pada Situs ini untuk nasihat hukum, saran bisnis, atau saran apapun. Anda bertindak dengan risiko Anda sendiri dalam ketergantungan pada isi Situs ini. Jika Anda membuat keputusan untuk bertindak atau tidak bertindak, Anda harus menghubungi pengacara berlisensi di yurisdiksi yang relevan di mana Anda ingin atau butuh bantuan. Tidak sedikit pun pemilik atau para kontributor Situs ini bertanggung jawab atas tindakan, keputusan, atau perilaku lain yang diambil atau tidak diambil oleh Anda dalam ketergantungan pada Situs ini."
     translations: "Terjemahan"
-    translationstxt1: "Situs ini mungkin berisi terjemahan dari versi bahasa Inggris dari konten yang tersedia di Situs. Terjemahan ini disediakan hanya untuk kemudahan. Dalam hal terjadi konflik antara versi bahasa Inggris dan versi terjemahan, maka versi bahasa Inggris yang akan diutamakan. Jika Anda melihat inkonsistensi apapun, silakan melaporkannya pada <a href=\"https://github.com/bitcoin/bitcoin.org\"> GitHub </a>."
+    translationstxt1: "Situs ini mungkin berisi terjemahan dari versi bahasa Inggris dari konten yang tersedia di Situs. Terjemahan ini disediakan hanya untuk kemudahan. Dalam hal terjadi konflik antara versi bahasa Inggris dan versi terjemahan, maka versi bahasa Inggris yang akan diutamakan. Jika Anda melihat inkonsistensi apapun, silakan melaporkannya pada <a href=\"https://github.com/bitcoin-portal/bitcoin-portal-content\"> GitHub </a>."
     userisks: "Risiko yang berkaitan dengan penggunaan Bitcoin"
     useriskstxt1: "Situs ini tidak akan bertanggung jawab atas kerugian, kerusakan atau klaim yang timbul dari peristiwa yang termasuk dalam lingkup dari lima kategori berikut:"
     useriskstxt2: "Kesalahan yang dibuat oleh pengguna perangkat lunak atau layanan apapun terkait Bitcoin, seperti: lupa kata sandi, pembayaran dikirim ke alamat Bitcoin yang salah, dan penghapusan dompet tanpa disengaja."
@@ -506,7 +506,7 @@ id:
     title: "Privasi - Bitcoin"
     pagetitle: "Privasi"
     datacollect: "Data yang dikumpulkan"
-    datacollecttxt: "Bitcoin.org mengumpulkan catatan server yang telah dibuat anonim. Catatan ini termasuk alamat IP dengan byte terakhir yang diganti, waktu kunjungan, laman yang diminta, agen dan url referal pengguna. Bitcoin.org tidak mengumpulkan data menggunakan cookies."
+    datacollecttxt: "Bitcoin.com mengumpulkan catatan server yang telah dibuat anonim. Catatan ini termasuk alamat IP dengan byte terakhir yang diganti, waktu kunjungan, laman yang diminta, agen dan url referal pengguna. Bitcoin.com tidak mengumpulkan data menggunakan cookies."
     datause: "Penggunaan data"
     datausetxt: "Data yang dikumpulkan digunakan untuk menyediakan <a href=\"/stats/\">statistik publik yang transparan</a>."
   protect-your-privacy:
@@ -602,7 +602,7 @@ id:
     spread: "Sebarkan"
     spreadtxt: "Bicaralah mengenai Bitcoin kepada orang-orang yang tertarik. Tulislah mengenai Bitcoin di blog Anda. Beritahu toko-toko favorit Anda bahwa Anda ingin membayar menggunakan Bitcoin. Bantu menjaga <a href=\"http://usebitcoins.info/\">daftar penjual</a> tetap akurat dan aktual. Atau menjadi kreatif dan membuat kaos Bitcoin yang bagus untuk Anda sendiri."
     wiki: "Dokumentasi"
-    wikitxt: "<a href=\"https://github.com/bitcoin/bitcoin.org#how-to-participate\">Bitcoin.org</a> dan <a href=\"https://en.bitcoin.it/\">Bitcoin wiki</a> menyediakan berbagai informasi yang berguna dan kami secara terus-menerus meningkatkan informasi di dalamnya. Anda bisa membantu meningkatkan sumber-sumber informasi tersebut tetap akurat dan aktual."
+    wikitxt: "<a href=\"https://github.com/bitcoin-portal/bitcoin-portal-content#how-to-participate\">Bitcoin.com</a> dan <a href=\"https://en.bitcoin.it/\">Bitcoin wiki</a> menyediakan berbagai informasi yang berguna dan kami secara terus-menerus meningkatkan informasi di dalamnya. Anda bisa membantu meningkatkan sumber-sumber informasi tersebut tetap akurat dan aktual."
     translate: "Terjemahkan"
     translatetxt: "Anda dapat membantu meningkatkan ketersediaan Bitcoin dengan menerjemahkan atau meningkatkan terjemahan di dalam bagian penting dari ekosistem Bitcoin. Cukup pilih proyek mana yang Anda ingin bantu."
     help: "Bertemu dengan komunitas"
@@ -662,7 +662,7 @@ id:
     taxtxt: "Bitcoin bukanlah mata uang resmi. Artinya, sebagian besar negara masih meminta Anda untuk membayar pajak pendapatan, penjualan, penggajian, dan pajak keuntungan modal atas apapun yang memiliki nilai termasuk bitcoin. Merupakan tanggung jawab Anda untuk memastikan bahwa Anda mematuhi <a href=\"https://en.wikipedia.org/wiki/Legality_of_bitcoin_by_country\">pajak dan aturan hukum lainnya ataupun kebijakan</a> yang dikeluarkan oleh pemerintah Anda dan/atau pengambil kebijakan di daerah Anda.  "
   layout:
     menu-support-bitcoin: "Dukung Bitcoin"
-    menu-about-us: "Mengenai bitcoin.org"
+    menu-about-us: "Mengenai bitcoin.com"
     menu-bitcoin-for-businesses: Bisnis
     menu-bitcoin-for-developers: Para Pengembang
     menu-bitcoin-for-individuals: Perorangan
@@ -682,7 +682,7 @@ id:
     menu-participate: Partisipasi
     menu-vocabulary: Kosa kata
     menu-you-need-to-know: "Yang perlu Anda ketahui"
-    banner-translate: "Terjemahan bahasa ini sudah ketinggalan jaman. <a href=\"https://github.com/bitcoin/bitcoin.org#translation\">Klik di sini untuk membantu menerjemahkan bitcoin.org dalam</a> bahasa Anda."
+    banner-translate: "Terjemahan bahasa ini sudah ketinggalan jaman. <a href=\"https://github.com/bitcoin-portal/bitcoin-portal-content#translation\">Klik di sini untuk membantu menerjemahkan bitcoin.com dalam</a> bahasa Anda."
     footer: "Dirilis di bawah <a href=\"http://opensource.org/licenses/mit-license.php\" target=\"_blank\">lisensi MIT</a>"
     sponsor: "Sebuah situs web komunitas yang didukung oleh"
     getstarted: "Memulai dengan Bitcoin"

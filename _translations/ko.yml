@@ -1,10 +1,10 @@
 ko:
   about-us:
-    title: "bitcoin.org 소개"
-    pagetitle: "bitcoin.org 소개"
-    pagedesc: "Bitcoin.org는 비트코인의 지속가능한 발전을 돕기 위해 노력합니다."
-    own: "bitcoin.org의 소유자는 누구인가요?"
-    owntxt: "Bitcoin.org는 첫 비트코인 웹사이트에 사용된 최초의 도메인입니다. 이 도메인은 <a href=\"#development#\">비트코인 코어 개발자들</a>과 추가적인 커뮤니티 멤버들에 의해 등록되었고 아직도 이들에 의해 <a href=\"#community#\">비트코인 커뮤니티들</a>의 인풋을 고려해가며 관리되고 있습니다. Bitcoin.org는 공식 웹사이트는 아닙니다. 그 누구도 이메일 기술을 소유하지 않는 것처럼, 어느 누구도 비트코인 기술을 소유하지 않습니다. 따라서, 그 누구도 비트코인의 이름으로 권위를 가지고 발언할 수 없습니다."
+    title: "bitcoin.com 소개"
+    pagetitle: "bitcoin.com 소개"
+    pagedesc: "Bitcoin.com는 비트코인의 지속가능한 발전을 돕기 위해 노력합니다."
+    own: "bitcoin.com의 소유자는 누구인가요?"
+    owntxt: "Bitcoin.com는 첫 비트코인 웹사이트에 사용된 최초의 도메인입니다. 이 도메인은 <a href=\"#development#\">비트코인 코어 개발자들</a>과 추가적인 커뮤니티 멤버들에 의해 등록되었고 아직도 이들에 의해 <a href=\"#community#\">비트코인 커뮤니티들</a>의 인풋을 고려해가며 관리되고 있습니다. Bitcoin.com는 공식 웹사이트는 아닙니다. 그 누구도 이메일 기술을 소유하지 않는 것처럼, 어느 누구도 비트코인 기술을 소유하지 않습니다. 따라서, 그 누구도 비트코인의 이름으로 권위를 가지고 발언할 수 없습니다."
     control: "그럼... 누가 비트코인을 통제하나요?"
     controltxt: "비트코인은 전 세계 모든 비트코인 사용자들에 의해 통제됩니다. 개발자들은 소프트웨어를 개선하지만 그들은 비트코인 프로토콜의 규칙의 변화를 강제할 수 없는데 이는 모든 사용자가 사용할 소프트웨어를 자유롭게 선택할 수 있기 때문입니다. 서로가 상호 호환되도록 하기 위해, 모든 사용자들은 같은 규칙을 준수하는 소프트웨어를 사용해야만 합니다. 비트코인은 모든 사용자간의 완전한 합의가 있어야만 제대로 작동할 수 있습니다. 그러므로 모든 사용자들과 개발자들은 이 합의를 채택하고 보호할 강한 동기를 가지고 있습니다."
     mission: "미션"
@@ -16,7 +16,7 @@ ko:
     missiontxt6: "국제화에 따른 비트코인의 전 세계적 접근성 개선"
     missiontxt7: "비트코인에 대한 중립적인 정보 제공과 리소스로서의 위치 고수"
     help: "저희를 도와주세요"
-    helptxt: "<a href=\"https://github.com/bitcoin/bitcoin.org#how-to-participate\">GitHub</a>에서 문제사항이나 풀 영어 요청을 열어서 모든 문제를 보고하거나 bitcoin.org을 향상시키는데 도움을 줄 수 있습니다.  풀 요청을 제출할 때, 변경사항에 대해 논의하고 일에 적용할 시간을 충분히 가지시기 바랍니다. <a href=\"https://github.com/bitcoin/bitcoin.org#translation\">Transifex</a>팀에 참여함으로써 번역에 도움을 주실 수도 있습니다. 회의처럼 특별한 경우를 제외하고 당신의 개인 비즈니스 또는 웹사이트를위한 프로모션을 요청하지마세요. bitcoin.org를 향상시키기위해 시간을 보내시는 모든 기여자분들께 감사드립니다."
+    helptxt: "<a href=\"https://github.com/bitcoin-portal/bitcoin-portal-content#how-to-participate\">GitHub</a>에서 문제사항이나 풀 영어 요청을 열어서 모든 문제를 보고하거나 bitcoin.com을 향상시키는데 도움을 줄 수 있습니다.  풀 요청을 제출할 때, 변경사항에 대해 논의하고 일에 적용할 시간을 충분히 가지시기 바랍니다. <a href=\"https://github.com/bitcoin-portal/bitcoin-portal-content#translation\">Transifex</a>팀에 참여함으로써 번역에 도움을 주실 수도 있습니다. 회의처럼 특별한 경우를 제외하고 당신의 개인 비즈니스 또는 웹사이트를위한 프로모션을 요청하지마세요. bitcoin.com를 향상시키기위해 시간을 보내시는 모든 기여자분들께 감사드립니다."
     maintenance: "유지 관리"
     documentation: "문서"
     translation: "번역"
@@ -429,7 +429,7 @@ ko:
     readmoretxt: "위 사항들은 매우 짧고 간결한 개요입니다. 더 많은 자세한 사항을 알고 싶다면 시스템의 주요 설계 내용에 대해 설명하고 있는 <a href=\"#bitcoin-paper#\">비트코인 창시자의 초록 원문</a>을 읽어보세요. 아니면  <a href=\"/en/developer-documentation\">개발자용 문서 페이지</a> 또는 <a href=\"https://en.bitcoin.it/wiki/Main_Page\">비트코인 위키</a>를 탐색해보세요. "
   index:
     title: "비트코인 - 오픈소스 P2P 화폐"
-    metadescription: "비트코인은 혁신적인 지불 네트워크이며 돈의 새로운 종류입니다. bitcoin.org에서 비트코인을 알고 시작할 필요가 있으므로 모든 것을 찾아보세요."
+    metadescription: "비트코인은 혁신적인 지불 네트워크이며 돈의 새로운 종류입니다. bitcoin.com에서 비트코인을 알고 시작할 필요가 있으므로 모든 것을 찾아보세요."
     listintro: "비트코인은 혁신적인 결제 네트워크이자 신종 화폐입니다."
     list1: "즉각적인 피어투피어<br>거래"
     list2: "세계 어디서나<br>결제가능"
@@ -467,10 +467,10 @@ ko:
   legal:
     title: "법적 책임의 한계 - Bitcoin"
     pagetitle: "법적 책임의 한계"
-    information: "bitcoin.org에서의 정보 제공"
-    informationtxt1: "웹사이트 http://bitcoin.org/ (\"Website\"라고 언급됩니다)는 정보와 일반적인 특성의 자료를 제공합니다. 당신은 권한이 없으며 또한 법적 조언, 비즈니스 조언 또는 모든 종류의 조언에 관한 웹사이트에 의존해서는 안됩니다. 웹사이트 콘텐츠에 대한 의존의 위험성을 스스로 감수해야 합니다.  당신이 도움을 원하던 필요로 하지 않던 간에 관련된 관할권에 대해서 정식 변호사에게 연락하는 것을 감행할지 감행하지 않을 지를 결정해야 합니다. 웹사이트의 소유자 또는 기여자는 웹 사이트 의존으로 인해 취해지는 혹은 취해지지 않은 조치, 결정 혹은 기타 반응에 관해 절대 책임지지 않습니다. "
+    information: "bitcoin.com에서의 정보 제공"
+    informationtxt1: "웹사이트 http://bitcoin.com/ (\"Website\"라고 언급됩니다)는 정보와 일반적인 특성의 자료를 제공합니다. 당신은 권한이 없으며 또한 법적 조언, 비즈니스 조언 또는 모든 종류의 조언에 관한 웹사이트에 의존해서는 안됩니다. 웹사이트 콘텐츠에 대한 의존의 위험성을 스스로 감수해야 합니다.  당신이 도움을 원하던 필요로 하지 않던 간에 관련된 관할권에 대해서 정식 변호사에게 연락하는 것을 감행할지 감행하지 않을 지를 결정해야 합니다. 웹사이트의 소유자 또는 기여자는 웹 사이트 의존으로 인해 취해지는 혹은 취해지지 않은 조치, 결정 혹은 기타 반응에 관해 절대 책임지지 않습니다. "
     translations: "번역"
-    translationstxt1: "웹사이트는 이용가능한 콘텐츠의 영어 버전 번역이 포함될 수 있습니다. 이러한 번역들은 편의로서 제공됩니다. 영어 버전과 번역 버전의 상이한 부분이 있는 경우, 영어 버전이 우선시 됩니다. 일관성이 없는걸 발견하신다면, <a href=\"https://github.com/bitcoin/bitcoin.org\">GitHub</a>에 문의하시기 바랍니다."
+    translationstxt1: "웹사이트는 이용가능한 콘텐츠의 영어 버전 번역이 포함될 수 있습니다. 이러한 번역들은 편의로서 제공됩니다. 영어 버전과 번역 버전의 상이한 부분이 있는 경우, 영어 버전이 우선시 됩니다. 일관성이 없는걸 발견하신다면, <a href=\"https://github.com/bitcoin-portal/bitcoin-portal-content\">GitHub</a>에 문의하시기 바랍니다."
     userisks: "Bitcoin 사용 관련 위험성"
     useriskstxt1: "웹사이트는 다음의 다섯가지 카테고리 범위 내의 실패 문제를 야기한 어떠한 손실, 문제 또는 요구사항에 대해서 책임을 지지 않습니다."
     useriskstxt2: "Bitcoin관련 소프트웨어 또는 서비스의 사용자가 만든 실수, 예: 비밀번호 분실, 잘못된 Bitcoin 주소로 지불금 전송, 실수로 지갑 삭제."
@@ -506,7 +506,7 @@ ko:
     title: "개인 정보 보호 - 비트코인"
     pagetitle: "개인 정보 보호"
     datacollect: "수집된 데이터"
-    datacollecttxt: "Bitcoin.org 는 익명 처리된 서버 로그를 수집합니다. 이 로그들은 마지막 바이트로 대체된 IP 주소, 방문 시간, 요청된 페이지, 사용자 에이전트 및 리퍼러 url를 포함합니다. Bitcoin.org 은 쿠키를 사용한 데이터를 수집하지 않습니다."
+    datacollecttxt: "Bitcoin.com 는 익명 처리된 서버 로그를 수집합니다. 이 로그들은 마지막 바이트로 대체된 IP 주소, 방문 시간, 요청된 페이지, 사용자 에이전트 및 리퍼러 url를 포함합니다. Bitcoin.com 은 쿠키를 사용한 데이터를 수집하지 않습니다."
     datause: "데이터 사용"
     datausetxt: "수집된 데이터는 <a href=\"/stats/\">투명 공공 통계</a>를 제공하는데 사용됩니다."
   protect-your-privacy:
@@ -602,7 +602,7 @@ ko:
     spread: "퍼뜨리세요"
     spreadtxt: "관심이 있는 이들에게 비트코인에 대해 이야기하거나 블로그에 글을 쓰면 됩니다. 당신이 제일 좋아하는 가게에 비트코인을 이용해 돈을 지불하고 싶다고 말할 수도 있습니다. 비트코인을 취급하는 <a href=\"http://usebitcoins.info/\">상점 주소록</a>을 업데이트하거나 자신만의 비트코인 티셔츠를 만드는 창의적인 방법도 있습니다."
     wiki: "다큐멘테이션"
-    wikitxt: "<a href=\"https://github.com/bitcoin/bitcoin.org#how-to-participate\">Bitcoin.org</a>와 <a href=\"https://en.bitcoin.it/\">비트코인 위키</a>는 유용한 다큐멘테이션을 제공하며 끊임없이 가지고 있는 정보를 개선하고 있습니다. 당신도 이러한 자료들을 업데이트하고 개선하는데 도움을 줄 수 있습니다."
+    wikitxt: "<a href=\"https://github.com/bitcoin-portal/bitcoin-portal-content#how-to-participate\">Bitcoin.com</a>와 <a href=\"https://en.bitcoin.it/\">비트코인 위키</a>는 유용한 다큐멘테이션을 제공하며 끊임없이 가지고 있는 정보를 개선하고 있습니다. 당신도 이러한 자료들을 업데이트하고 개선하는데 도움을 줄 수 있습니다."
     translate: "번역"
     translatetxt: "번역을 하거나 비트코인 생태계에 중요한 부분의 번역을 개선함으로써 비트코인 이용도 증가에 도움이 될 수 있습니다. 여러분이 돕고 싶은 프로젝트를 골라 도와주세요. "
     help: "커뮤니티를 만나세요"
@@ -662,7 +662,7 @@ ko:
     taxtxt: "비트코인은 공식적인 화폐가 아닙니다. 그런데다 대부분의 국가 및 지역에서는 소득, 판매, 급여, 자본 이득 등 가치를 가지고 있는 모든 것에 대해 세금을 납부하도록 요구하고 있습니다. 비트코인도 예외는 아닙니다. 당사자의 정부나 자치 당국에서 규정한 <a href=\"https://en.wikipedia.org/wiki/Legality_of_bitcoin_by_country\">납세 및 기타 법률과 규제 사항</a>을 준수하는 것은 이 글을 읽는 당사자의 책임임을 명확히 합니다."
   layout:
     menu-support-bitcoin: "비트코인을 지지해주세요"
-    menu-about-us: "bitcoin.org 소개"
+    menu-about-us: "bitcoin.com 소개"
     menu-bitcoin-for-businesses: 사업자
     menu-bitcoin-for-developers: '개발자 '
     menu-bitcoin-for-individuals: '개인 '
@@ -682,7 +682,7 @@ ko:
     menu-participate: 참여
     menu-vocabulary: 용어
     menu-you-need-to-know: "여러분이 알아두어야 할 것"
-    banner-translate: "이 언어에 해당하는 번역이 오래되었습니다.<a href=\"https://github.com/bitcoin/bitcoin.org#translation\">당신의 언어에 해당하는 bitcoin.org를 번역하시려면 이곳을 눌러주세요."
+    banner-translate: "이 언어에 해당하는 번역이 오래되었습니다.<a href=\"https://github.com/bitcoin-portal/bitcoin-portal-content#translation\">당신의 언어에 해당하는 bitcoin.com를 번역하시려면 이곳을 눌러주세요."
     footer: "<a href=\"http://opensource.org/licenses/mit-license.php\" target=\"_blank\">MIT 라이센스</a>에 따라 배포되었습니다."
     sponsor: "이 커뮤니티 웹사이트의 후원자"
     getstarted: "비트코인 시작하기"

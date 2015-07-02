@@ -1,10 +1,10 @@
 ja:
   about-us:
-    title: "bitcoin.org について"
-    pagetitle: "bitcoin.org について"
-    pagedesc: "Bitcoin.org は、ビットコインの開発が持続的に行われることを支援します。"
-    own: "bitcoin.org の所有者は？"
-    owntxt: "Bitcoin.orgは、最初のビットコイン・ウエブサイトのオリジナル・ドメイン・ネームで、<a href=\"#community#\">ビットコイン・コミュニティー</a>のアドバイスを受け<a href=\"#development#\">ビットコイン・コア・デベロッパー</a>や他のコミュニティー・メンバーによって、登録され、現在も運営されています。Bitcoin.orgは公式サイトではありません。電子メールテクノロジーを所有する者が存在しないのと同様に、ビットコイン・ネットワークを所有する人は存在しません。よって、ビットコインの名の下で、権力者として話せる者は存在しないのです。"
+    title: "bitcoin.com について"
+    pagetitle: "bitcoin.com について"
+    pagedesc: "Bitcoin.com は、ビットコインの開発が持続的に行われることを支援します。"
+    own: "bitcoin.com の所有者は？"
+    owntxt: "Bitcoin.comは、最初のビットコイン・ウエブサイトのオリジナル・ドメイン・ネームで、<a href=\"#community#\">ビットコイン・コミュニティー</a>のアドバイスを受け<a href=\"#development#\">ビットコイン・コア・デベロッパー</a>や他のコミュニティー・メンバーによって、登録され、現在も運営されています。Bitcoin.comは公式サイトではありません。電子メールテクノロジーを所有する者が存在しないのと同様に、ビットコイン・ネットワークを所有する人は存在しません。よって、ビットコインの名の下で、権力者として話せる者は存在しないのです。"
     control: "では、誰がビットコインをコントロールしているのか？"
     controltxt: "ビットコインは、世界中の全ビットコイン・ユーザに管理されています。開発者は、ソフトウェアの改善を進めていますが、全ユーザがどのソフトウェアを選ぶかを自由に決められるため、開発者がビットコイン・プロトコルのルールを強制的に変更することはできません。お互いの互換性を保つため、全ユーザは同じルールに従うソフトウェアを使う必要があります。ビットコインは、全ユーザの完全な合意の元でしか作動しません。したがって、全ユーザと開発者には、この合意を採用し、守るための強い動機があるのです。"
     mission: "使命"
@@ -16,7 +16,7 @@ ja:
     missiontxt6: "ビットコインの国際化に伴う世界的なアクセス可能性を改善"
     missiontxt7: "ビットコインに関するニュートラルな情報源であり続ける"
     help: "支援のお願い"
-    helptxt: "<a href=\"https://github.com/bitcoin/bitcoin.org#how-to-participate\">GitHub</a>上で問題やプルリクエストを英語で作成することでbitcoin.orgの問題点を報告したり、改善の手助けをすることができます。プルリクエストを送信する場合には、変更点を議論し、あなたの行なった仕事を適応するのに十分な時間を設けてください。<a href=\"https://github.com/bitcoin/bitcoin.org#translation\">Transifex</a>上のチームに参加することで翻訳作業を手伝うこともできます。カンファレンスのような特別な事情を除き、個人的なビジネスやウェブサイトの宣伝はご遠慮ください。bitcoin.orgの改善にお時間を割いていただいたすべての貢献者の方に感謝しています！"
+    helptxt: "<a href=\"https://github.com/bitcoin-portal/bitcoin-portal-content#how-to-participate\">GitHub</a>上で問題やプルリクエストを英語で作成することでbitcoin.comの問題点を報告したり、改善の手助けをすることができます。プルリクエストを送信する場合には、変更点を議論し、あなたの行なった仕事を適応するのに十分な時間を設けてください。<a href=\"https://github.com/bitcoin-portal/bitcoin-portal-content#translation\">Transifex</a>上のチームに参加することで翻訳作業を手伝うこともできます。カンファレンスのような特別な事情を除き、個人的なビジネスやウェブサイトの宣伝はご遠慮ください。bitcoin.comの改善にお時間を割いていただいたすべての貢献者の方に感謝しています！"
     maintenance: "メンテナンス"
     documentation: "ドキュメンテーション"
     translation: "翻訳"
@@ -429,7 +429,7 @@ ja:
     readmoretxt: "これは、システムの簡潔な概要にすぎません。詳細をお知りになりたい方は、システムの設計が書かれた<a href=\"#bitcoin-paper#\">原論を読む</a>あるいは、<a href=\"/en/developer-documentation\">デベッロッパー・ドキュメント</a>を読むか<a href=\"https://en.bitcoin.it/wiki/Main_Page\">Bitcoin wiki</a>をご覧ください。"
   index:
     title: "ビットコイン-オープンソースのピアツーピア通貨"
-    metadescription: "ビットコインは革新的な支払いネットワークで、新しい種類のお金です。知っておくべきことを検索しbitcoin.orgでビットコインを始めましょう。"
+    metadescription: "ビットコインは革新的な支払いネットワークで、新しい種類のお金です。知っておくべきことを検索しbitcoin.comでビットコインを始めましょう。"
     listintro: "ビットコインは、革新的な決済ネットワークであり、新しい種類の通貨です。"
     list1: "即時のピアツーピア<br>取引"
     list2: "ワールドワイドでの<br>支払い"
@@ -467,10 +467,10 @@ ja:
   legal:
     title: "利用規約 - ビットコイン"
     pagetitle: "利用規約"
-    information: "bitcoin.org で公開された情報"
-    informationtxt1: "ウェブサイト http://bitcoin.org/ （以下、「ウェブサイト」と称す）は一般的な情報や資料を提供します。あなたは、法律アドバイス、ビジネスアドバイスや、あらゆるアドバイスとして、このウエブサイトを使うことを許可されておらず、これに頼るべきではありません。あなたは、ウェブサイトの内容に依拠して、ご自身の責任で行動します。何かしらの行動を行うか、行わないかの決定をする際には、あなたが助けを欲し、必要とすることに関連する法域でライセンスを所有する弁護士に連絡してください。このウェブサイトの所有者および貢献者は、本ウェブサイトを使用した結果行われた行為や決定、およびいかなる行動に対しても一切責任を負いません。"
+    information: "bitcoin.com で公開された情報"
+    informationtxt1: "ウェブサイト http://bitcoin.com/ （以下、「ウェブサイト」と称す）は一般的な情報や資料を提供します。あなたは、法律アドバイス、ビジネスアドバイスや、あらゆるアドバイスとして、このウエブサイトを使うことを許可されておらず、これに頼るべきではありません。あなたは、ウェブサイトの内容に依拠して、ご自身の責任で行動します。何かしらの行動を行うか、行わないかの決定をする際には、あなたが助けを欲し、必要とすることに関連する法域でライセンスを所有する弁護士に連絡してください。このウェブサイトの所有者および貢献者は、本ウェブサイトを使用した結果行われた行為や決定、およびいかなる行動に対しても一切責任を負いません。"
     translations: "翻訳"
-    translationstxt1: "このウエブサイトには、このウエブサイトの英語版のコンテンツの翻訳が含まれている場合があります。これらの翻訳は便宜上提供されています。英語版と翻訳版に違いがある場合は、英語版が優先されます。矛盾に気づかれた際には、<a href=\"https://github.com/bitcoin/bitcoin.org\">GitHub</a>にご報告ください。"
+    translationstxt1: "このウエブサイトには、このウエブサイトの英語版のコンテンツの翻訳が含まれている場合があります。これらの翻訳は便宜上提供されています。英語版と翻訳版に違いがある場合は、英語版が優先されます。矛盾に気づかれた際には、<a href=\"https://github.com/bitcoin-portal/bitcoin-portal-content\">GitHub</a>にご報告ください。"
     userisks: "Bitcoin の利用に係るリスク"
     useriskstxt1: "ウェブサイトは、いかなる損失、損害または以下の5つのカテゴリーの範囲に入るイベントから生じたクレームの責任を負いかねます。"
     useriskstxt2: "ビットコイン関連のソフトウエアやサービスのユーザーによる間違い、例えば、パスワードを忘れる、間違ったビットコイン・アドレスに支払いを送る、ウォレットを誤って削除するなど。"
@@ -506,7 +506,7 @@ ja:
     title: "プライバシー - Bitcoin"
     pagetitle: "プライバシー"
     datacollect: "収集されたデータ"
-    datacollecttxt: "Bitcoin.org は、匿名サーバー記録を収集します。これらの記録には、置換された最終バイトを含むIPアドレス、訪れた時間、要求したページ、ユーザーエージェントとリファラのURLがあります。Bitcoin.orgはクッキーを使ってのデータ収集はしません。"
+    datacollecttxt: "Bitcoin.com は、匿名サーバー記録を収集します。これらの記録には、置換された最終バイトを含むIPアドレス、訪れた時間、要求したページ、ユーザーエージェントとリファラのURLがあります。Bitcoin.comはクッキーを使ってのデータ収集はしません。"
     datause: "データの使用"
     datausetxt: "収集されたデータは<a href=\"/stats/\">透過的公表統計</a>の提供に使用されます。"
   protect-your-privacy:
@@ -602,7 +602,7 @@ ja:
     spread: "広める"
     spreadtxt: "興味をお持ちの方にビットコインについて話したり、あなたのブログにお書きください。あなたの好きな店に、ビットコインを使って支払いたいことを伝えてください。また<a href=\"http://usebitcoins.info/\">業者ディレクトリを</a> 常に最新に保てるようにお手伝いください。あるいは、クリエーティブに、ビットコインＴシャツを作ってください。"
     wiki: "文献"
-    wikitxt: "<a href=\"https://github.com/bitcoin/bitcoin.org#how-to-participate\">Bitcoin.org</a> と <a href=\"https://en.bitcoin.it/\">Bitcoin wiki</a> では、役立つ文献を提供しており、その情報内容は常に改善されています。あなたもこれらの情報源を改善し、常に最新情報を提供する手助けをすることができます。"
+    wikitxt: "<a href=\"https://github.com/bitcoin-portal/bitcoin-portal-content#how-to-participate\">Bitcoin.com</a> と <a href=\"https://en.bitcoin.it/\">Bitcoin wiki</a> では、役立つ文献を提供しており、その情報内容は常に改善されています。あなたもこれらの情報源を改善し、常に最新情報を提供する手助けをすることができます。"
     translate: "翻訳"
     translatetxt: "あたなもビットコイン・エコシステムの大切な部分を翻訳したり、翻訳の質を向上させることに貢献して、ビットコインの可用性を高める手助けができます。あなたの興味あるプロジェクトをお選びください。"
     help: "コミュニティと会おう"
@@ -662,7 +662,7 @@ ja:
     taxtxt: "ビットコインは公式通貨ではありません。ですが、ほとんどの管轄では、ビットコインを含め、価値あるものに対する所得、売り上げ、給与、キャピタルゲインに対し税金を課します。あなたの政府と/や自治体が定める<a href=\"https://en.wikipedia.org/wiki/Legality_of_bitcoin_by_country\">税金やその他の法的あるいは規制義務</a>に従うことは、あなたの責任です。"
   layout:
     menu-support-bitcoin: "ビットコインを支援する"
-    menu-about-us: "bitcoin.org について"
+    menu-about-us: "bitcoin.com について"
     menu-bitcoin-for-businesses: ビジネス
     menu-bitcoin-for-developers: 開発者
     menu-bitcoin-for-individuals: 個人
@@ -682,7 +682,7 @@ ja:
     menu-participate: 参加する
     menu-vocabulary: 用語
     menu-you-need-to-know: "知っておくべきこと"
-    banner-translate: "この言語の翻訳は古くなっています。<a href=\"https://github.com/bitcoin/bitcoin.org#translation\">ここをクリックして、あなたの言語で bitcoin.org を翻訳する援助をしましょう</a>。"
+    banner-translate: "この言語の翻訳は古くなっています。<a href=\"https://github.com/bitcoin-portal/bitcoin-portal-content#translation\">ここをクリックして、あなたの言語で bitcoin.com を翻訳する援助をしましょう</a>。"
     footer: "<a href=\"http://opensource.org/licenses/mit-license.php\" target=\"_blank\">MITライセンス</a>のもとでのリリース"
     sponsor: "コミュニティ・ウエブサイト　主催："
     getstarted: "ビットコインを始めよう"

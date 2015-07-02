@@ -1,10 +1,10 @@
 fr:
   about-us:
-    title: "À propos de bitcoin.org"
-    pagetitle: "À propos de bitcoin.org"
-    pagedesc: "Bitcoin.org œuvre au développement durable de Bitcoin."
-    own: "Qui possède bitcoin.org ?"
-    owntxt: "Bitcoin.org est le nom de domaine du premier site Web portant sur Bitcoin. Il a été enregistré et est encore géré par les <a href=\"#development#\">développeurs principaux</a> et d'autres membres de la communauté, avec l'aide des <a href=\"#community#\">communautés Bitcoin</a>. Bitcoin.org n'est pas un site web officiel. De la même façon que personne ne possède la technologie derrière les courriels, personne ne possède le réseau Bitcoin. En conséquence, personne ne peut parler avec autorité au nom de Bitcoin."
+    title: "À propos de bitcoin.com"
+    pagetitle: "À propos de bitcoin.com"
+    pagedesc: "Bitcoin.com œuvre au développement durable de Bitcoin."
+    own: "Qui possède bitcoin.com ?"
+    owntxt: "Bitcoin.com est le nom de domaine du premier site Web portant sur Bitcoin. Il a été enregistré et est encore géré par les <a href=\"#development#\">développeurs principaux</a> et d'autres membres de la communauté, avec l'aide des <a href=\"#community#\">communautés Bitcoin</a>. Bitcoin.com n'est pas un site web officiel. De la même façon que personne ne possède la technologie derrière les courriels, personne ne possède le réseau Bitcoin. En conséquence, personne ne peut parler avec autorité au nom de Bitcoin."
     control: "Alors... qui contrôle Bitcoin ?"
     controltxt: "Bitcoin est contrôlé par tous ses utilisateurs à travers le monde. Les développeurs améliorent les logiciels mais il ne peuvent pas imposer un changement dans les règles du protocole Bitcoin car chaque utilisateur est libre de choisir quel logiciel il utilise. Afin de rester compatibles entre eux, les utilisateurs ont besoin d'utiliser des logiciels qui se conforment aux mêmes règles. Bitcoin ne peut bien fonctionner qu'avec un consensus complet entre tous ses utilisateurs. Par conséquent, tous les utilisateurs et développeurs ont un intérêt prédominant à adopter et à protéger ce consensus."
     mission: "Mission"
@@ -16,7 +16,7 @@ fr:
     missiontxt6: "Améliorer l'accessibilité mondiale à Bitcoin par l'internationalisation."
     missiontxt7: "Demeurer une ressource d'information neutre à propos de Bitcoin."
     help: "Aidez-nous"
-    helptxt: "Vous pouvez rapporter tout problème ou aider à améliorer bitcoin.org sur <a href=\"https://github.com/bitcoin/bitcoin.org#how-to-participate\">GitHub</a> en ouvrant (en anglais) un problème (« issue ») ou une demande d'extraction (« pull request »). Lorsque vous soumettez une demande d'extraction, veuillez prendre le temps nécessaire pour discuter de vos changements et adapter votre travail. Vous pouvez aider à la traduction en rejoignant une équipe sur <a href=\"https://github.com/bitcoin/bitcoin.org#translation\">Transifex</a>. Veuillez ne pas demander de publicité pour votre entreprise ou pour votre site Web, sauf pour des cas spéciaux comme les conférences. Merci à tous les contributeurs qui prennent le temps d'améliorer bitcoin.org !"
+    helptxt: "Vous pouvez rapporter tout problème ou aider à améliorer bitcoin.com sur <a href=\"https://github.com/bitcoin-portal/bitcoin-portal-content#how-to-participate\">GitHub</a> en ouvrant (en anglais) un problème (« issue ») ou une demande d'extraction (« pull request »). Lorsque vous soumettez une demande d'extraction, veuillez prendre le temps nécessaire pour discuter de vos changements et adapter votre travail. Vous pouvez aider à la traduction en rejoignant une équipe sur <a href=\"https://github.com/bitcoin-portal/bitcoin-portal-content#translation\">Transifex</a>. Veuillez ne pas demander de publicité pour votre entreprise ou pour votre site Web, sauf pour des cas spéciaux comme les conférences. Merci à tous les contributeurs qui prennent le temps d'améliorer bitcoin.com !"
     maintenance: "Maintenance"
     documentation: "Documentation"
     translation: "Traduction"
@@ -434,7 +434,7 @@ fr:
     readmoretxt: "Ceci est un cours résumé du système. Si vous voulez rentrer dans les détails, vous pouvez lire <a href=\"#bitcoin-paper#\">le document original</a> (en anglais) qui décrit le fonctionnement du système, lire la <a href=\"/en/developer-documentation\">documentation pour les développeurs</a> (en anglais également), et explorer le <a href=\"https://en.bitcoin.it/wiki/Main_Page\">wiki Bitcoin</a>."
   index:
     title: "Bitcoin - Argent P2P libre et ouvert"
-    metadescription: "Bitcoin est un réseau de paiement novateur et une nouvelle forme d'argent. Trouvez tout ce que vous devez savoir et débutez avec Bitcoin sur bitcoin.org."
+    metadescription: "Bitcoin est un réseau de paiement novateur et une nouvelle forme d'argent. Trouvez tout ce que vous devez savoir et débutez avec Bitcoin sur bitcoin.com."
     listintro: "Bitcoin est un réseau de paiement novateur et une nouvelle forme d'argent."
     list1: "Transactions rapides<br>de pair à pair"
     list2: "Paiements dans<br>le monde entier"
@@ -472,10 +472,10 @@ fr:
   legal:
     title: "Mentions légales - Bitcoin"
     pagetitle: "Mentions légales"
-    information: "L'information publiée sur bitcoin.org"
-    informationtxt1: "Le site Web http://bitcoin.org/ (désigné ci-après comme \"site Web\") fournit des informations et du matériel de nature générale. Vous n'êtes pas autorisés ni ne devez compter sur ce site Web comme une source de conseils juridiques, de conseils d'entreprise, ou de conseils de toute autre nature. Vous agissez à vos propres risques en vous appuyant sur le contenu de ce site Web. Si vous devez choisir d'agir ou non, vous devez contacter un avocat agréé dans la juridiction concernée pour laquelle vous souhaitez obtenir de l'aide. En aucun cas les propriétaires ou les contributeurs de ce site Web ne peuvent être tenus responsables des actions, décisions ou tout autre comportement auxquels vous vous prêtez ou non se fondant sur le contenu de ce site Web."
+    information: "L'information publiée sur bitcoin.com"
+    informationtxt1: "Le site Web http://bitcoin.com/ (désigné ci-après comme \"site Web\") fournit des informations et du matériel de nature générale. Vous n'êtes pas autorisés ni ne devez compter sur ce site Web comme une source de conseils juridiques, de conseils d'entreprise, ou de conseils de toute autre nature. Vous agissez à vos propres risques en vous appuyant sur le contenu de ce site Web. Si vous devez choisir d'agir ou non, vous devez contacter un avocat agréé dans la juridiction concernée pour laquelle vous souhaitez obtenir de l'aide. En aucun cas les propriétaires ou les contributeurs de ce site Web ne peuvent être tenus responsables des actions, décisions ou tout autre comportement auxquels vous vous prêtez ou non se fondant sur le contenu de ce site Web."
     translations: "Traductions"
-    translationstxt1: "Ce site Web peut contenir des traductions de la version anglaise de son contenu. Ces traductions sont offertes uniquement à titre de commodité. Dans l'éventualité d'une divergence entre la version anglaise et la version traduite du contenu, la version anglaise prévaut sur toute autre version. Si vous constatez des incohérences, veuillez s'il vous plaît les signaler sur <a href=\"https://github.com/bitcoin/bitcoin.org\">GitHub</a>."
+    translationstxt1: "Ce site Web peut contenir des traductions de la version anglaise de son contenu. Ces traductions sont offertes uniquement à titre de commodité. Dans l'éventualité d'une divergence entre la version anglaise et la version traduite du contenu, la version anglaise prévaut sur toute autre version. Si vous constatez des incohérences, veuillez s'il vous plaît les signaler sur <a href=\"https://github.com/bitcoin-portal/bitcoin-portal-content\">GitHub</a>."
     userisks: "Risques reliés à l'utilisation de Bitcoin"
     useriskstxt1: "Ce site Web ne sera pas tenu responsable pour toute pertes, dommages ou réclamations résultants d'événements relevant des cinq catégories suivantes :"
     useriskstxt2: "Les erreurs commises par l'utilisateur de tout logiciel ou service en lien avec Bitcoin, e.g., les mots de passe oubliés, les paiements envoyés aux mauvaises adresses Bitcoin et les suppressions accidentelles de portefeuilles."
@@ -511,7 +511,7 @@ fr:
     title: "Confidentialité - Bitcoin"
     pagetitle: "Confidentialité"
     datacollect: "Données recueillies"
-    datacollecttxt: "Bitcoin.org recueille des journaux de serveur anonymisés. Ces journaux comprennent les adresses IP avec le dernier octet remplacé, le temps de la visite, la page demandée, l'agent utilisateur et l'URL du site référent. Bitcoin.org ne recueille aucunes données par le biais de cookies."
+    datacollecttxt: "Bitcoin.com recueille des journaux de serveur anonymisés. Ces journaux comprennent les adresses IP avec le dernier octet remplacé, le temps de la visite, la page demandée, l'agent utilisateur et l'URL du site référent. Bitcoin.com ne recueille aucunes données par le biais de cookies."
     datause: "Utilisation des données"
     datausetxt: "Les données recueillies sont utilisées afin de fournir des <a href=\"/stats/\">statistiques publiques et transparentes</a>."
   protect-your-privacy:
@@ -608,7 +608,7 @@ fr:
     spread: "Passer le mot"
     spreadtxt: "Parlez de Bitcoin à des personnes intéressées. Écrivez à propos de Bitcoin dans votre blogue. Dîtes à votre boutique favorite que vous aimeriez pouvoir payer avec Bitcoin. Ou soyez créatifs et faîtes-vous imprimer un beau t-shirt."
     wiki: "Documentation"
-    wikitxt: "<a href=\"https://github.com/bitcoin/bitcoin.org#how-to-participate\">Bitcoin.org</a> et le <a href=\"https://en.bitcoin.it/\">Wiki Bitcoin</a> contiennent de la documentation utile et nous améliorons constamment les informations qu'il contiennent. Vous pouvez aider à améliorer ces ressources et à les tenir à jour."
+    wikitxt: "<a href=\"https://github.com/bitcoin-portal/bitcoin-portal-content#how-to-participate\">Bitcoin.com</a> et le <a href=\"https://en.bitcoin.it/\">Wiki Bitcoin</a> contiennent de la documentation utile et nous améliorons constamment les informations qu'il contiennent. Vous pouvez aider à améliorer ces ressources et à les tenir à jour."
     translate: "Traduction"
     translatetxt: "Vous pouvez aider à augmenter l'accessibilité à Bitcoin en traduisant ou en améliorant les traductions de plusieurs parties importantes de l'univers de Bitcoin. Choisissez simplement un projet que vous voudriez aider."
     help: "Rencontrer les communautés"
@@ -667,7 +667,7 @@ fr:
     tax: "Impôts et réglementations gouvernementales"
     taxtxt: "Bitcoin n'est pas une devise officielle. Ceci étant dit, la plupart des juridictions exigent que vous payiez des impôts sur le revenu, les ventes, les salaires et les gains en capital sur tout ce qui a de la valeur, incluant les bitcoins. Il est de votre responsabilité de vous assurer de respecter <a href=\"https://en.wikipedia.org/wiki/Legality_of_bitcoin_by_country\">les impôts, les mandats légaux et les réglementations</a> émises par votre gouvernement et / ou vos municipalités locales."
   layout:
-    menu-about-us: "À propos de bitcoin.org"
+    menu-about-us: "À propos de bitcoin.com"
     menu-bitcoin-for-businesses: Entreprises
     menu-bitcoin-for-developers: Développeurs
     menu-bitcoin-for-individuals: Particuliers
@@ -688,7 +688,7 @@ fr:
     menu-support-bitcoin: "Soutenir Bitcoin"
     menu-vocabulary: Vocabulaire
     menu-you-need-to-know: "Vous devez savoir"
-    banner-translate: "Les traductions pour cette langue ne sont plus à jour.  <a href=\"https://github.com/bitcoin/bitcoin.org#translation\">Cliquez ici pour aider à traduire bitcoin.org dans votre langue</a>."
+    banner-translate: "Les traductions pour cette langue ne sont plus à jour.  <a href=\"https://github.com/bitcoin-portal/bitcoin-portal-content#translation\">Cliquez ici pour aider à traduire bitcoin.com dans votre langue</a>."
     footer: "Publié sous la <a href=\"http://opensource.org/licenses/mit-license.php\" target=\"_blank\">licence MIT</a>"
     sponsor: "Un site web communautaire commandité par"
     getstarted: "Débuter avec Bitcoin"

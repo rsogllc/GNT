@@ -1,10 +1,10 @@
 nl:
   about-us:
-    title: "Over bitcoin.org"
-    pagetitle: "Over bitcoin.org"
-    pagedesc: "Bitcoin.org is toegewijd om Bitcoin op een duurzame manier te helpen ontwikkelen."
-    own: "Wie is de eigenaar van bitcoin.org?"
-    owntxt: "Bitcoin.org is de originele domeinnaam die voor de eerste Bitcoin-website is gebruikt. Het werd geregistreerd en wordt nog steeds gebruikt door <a href=\"#development#\">core-ontwikkelaars van Bitcoin</a> en een aantal communityleden, met input van de <a href=\"#community#\">Bitcoin-community's</a>. Bitcoin.org is geen officiële website. Net zoals niemand eigenaar is van de e-mailtechnologie, is niemand eigenaar van het Bitcoin-netwerk. Op die manier kan niemand namens Bitcoin spreken."
+    title: "Over bitcoin.com"
+    pagetitle: "Over bitcoin.com"
+    pagedesc: "Bitcoin.com is toegewijd om Bitcoin op een duurzame manier te helpen ontwikkelen."
+    own: "Wie is de eigenaar van bitcoin.com?"
+    owntxt: "Bitcoin.com is de originele domeinnaam die voor de eerste Bitcoin-website is gebruikt. Het werd geregistreerd en wordt nog steeds gebruikt door <a href=\"#development#\">core-ontwikkelaars van Bitcoin</a> en een aantal communityleden, met input van de <a href=\"#community#\">Bitcoin-community's</a>. Bitcoin.com is geen officiële website. Net zoals niemand eigenaar is van de e-mailtechnologie, is niemand eigenaar van het Bitcoin-netwerk. Op die manier kan niemand namens Bitcoin spreken."
     control: "Maar wie heeft bij Bitcoin dan de touwtjes in handen?"
     controltxt: "Bitcoin wordt beheerd door alle Bitcoin-gebruikers ter wereld. Ontwikkelaars zijn continu bezig de software te verbeteren, maar kunnen geen wijzigingen in de regels van het Bitcoin-protocol doorvoeren omdat alle gebruikers vrij zijn om te kiezen welke software ze gebruiken. Om met elkaar compatibel te blijven, dienen alle gebruikers software te gebruiken die aan dezelfde regels voldoet. Bitcoin werkt alleen naar behoren met een complete overeenstemming tussen alle gebruikers. Daarom hebben alle gebruikers en ontwikkelaars een sterke drijfveer om deze overeenstemming over te nemen en te beschermen."
     mission: "Missie"
@@ -16,7 +16,7 @@ nl:
     missiontxt6: "Verbeter de wereldwijde toegankelijkheid van Bitcoin via internationalisatie."
     missiontxt7: "Blijf een neutrale informatiebron over Bitcoin."
     help: "Help ons"
-    helptxt: "U kunt op <a href=\"https://github.com/bitcoin/bitcoin.org#how-to-participate\">GitHub</a> ieder probleem melden of helpen bitcoin.org te verbeteren door in het Engels een \"issue\" te openen of \"pull request\" in te dienen. Als u een \"pull request\" indient, neem dan de benodigde tijd om uw wijzigingen te bespreken en uw werk aan te passen. U kunt met de vertalingen helpen door u bij een team te voegen op <a href=\"https://github.com/bitcoin/bitcoin.org#translation\">Transifex</a>. Vraag a.u.b. geen reclame voor uw eigen bedrijf of website aan, behalve voor speciale gevallen zoals conferenties. Veel dank aan alle bijdragers die tijd spenderen aan het verbeteren van bitcoin.org! "
+    helptxt: "U kunt op <a href=\"https://github.com/bitcoin-portal/bitcoin-portal-content#how-to-participate\">GitHub</a> ieder probleem melden of helpen bitcoin.com te verbeteren door in het Engels een \"issue\" te openen of \"pull request\" in te dienen. Als u een \"pull request\" indient, neem dan de benodigde tijd om uw wijzigingen te bespreken en uw werk aan te passen. U kunt met de vertalingen helpen door u bij een team te voegen op <a href=\"https://github.com/bitcoin-portal/bitcoin-portal-content#translation\">Transifex</a>. Vraag a.u.b. geen reclame voor uw eigen bedrijf of website aan, behalve voor speciale gevallen zoals conferenties. Veel dank aan alle bijdragers die tijd spenderen aan het verbeteren van bitcoin.com! "
     maintenance: "Onderhoud"
     documentation: "Documentatie"
     translation: "Vertaling"
@@ -429,7 +429,7 @@ nl:
     readmoretxt: "Dit is maar een korte, bondige samenvatting van het systeem. Wilt u helemaal weten hoe het werkt, lees dan <a href=\"#bitcoin-paper#\">de originele paper</a>, waar het ontwerp van het systeem in wordt beschreven, raadpleeg de <a href=\"/en/developer-documentation\">documentatie voor ontwikkelaars</a> of kijk rond in de <a href=\"https://en.bitcoin.it/wiki/Main_Page\">Bitcoin wiki</a>."
   index:
     title: "Bitcoin - Opensource-P2P-geld"
-    metadescription: "Bitcoin is een innovatief betalingsnetwerk en een nieuw soort geld. Vind alle informatie die u nodig heeft en ga aan de slag met Bitcoin op bitcoin.org."
+    metadescription: "Bitcoin is een innovatief betalingsnetwerk en een nieuw soort geld. Vind alle informatie die u nodig heeft en ga aan de slag met Bitcoin op bitcoin.com."
     listintro: "Bitcoin is een innovatief betalingsnetwerk en een nieuw soort geld."
     list1: "Supersnelle p2p-<br>transacties"
     list2: "Wereldwijde<br>betalingen"
@@ -467,10 +467,10 @@ nl:
   legal:
     title: "Juridische disclaimer - Bitcoin"
     pagetitle: "Juridische disclaimer"
-    information: "Informatie die op bitcoin.org gepubliceerd is"
-    informationtxt1: "De website http://bitcoin.org/ (waar hierna naar verwezen wordt als de \"Website\") verschaft informatie en materiaal van algemene aard. U bent niet bevoegd om de Website te gebruiken of erop te vertrouwen voor juridisch advies, zakelijk advies, of enig ander soort advies. Wanneer u handelt in vertrouwen op de inhoud van de Website, doet u dat op eigen risico. Als u een beslissing maakt om te handelen of niet te handelen dient u contact op te nemen met een bevoegde advocaat in de relevante jurisdictie waarin u hulp nodig heeft of wilt. De eigenaren van of bijdragers aan de Website zijn op geen enkele manier verantwoordelijk voor de acties, beslissingen of ander gedrag dat wel of niet door u wordt uitgevoerd waarbij u vertrouwt op de Website."
+    information: "Informatie die op bitcoin.com gepubliceerd is"
+    informationtxt1: "De website http://bitcoin.com/ (waar hierna naar verwezen wordt als de \"Website\") verschaft informatie en materiaal van algemene aard. U bent niet bevoegd om de Website te gebruiken of erop te vertrouwen voor juridisch advies, zakelijk advies, of enig ander soort advies. Wanneer u handelt in vertrouwen op de inhoud van de Website, doet u dat op eigen risico. Als u een beslissing maakt om te handelen of niet te handelen dient u contact op te nemen met een bevoegde advocaat in de relevante jurisdictie waarin u hulp nodig heeft of wilt. De eigenaren van of bijdragers aan de Website zijn op geen enkele manier verantwoordelijk voor de acties, beslissingen of ander gedrag dat wel of niet door u wordt uitgevoerd waarbij u vertrouwt op de Website."
     translations: "Vertalingen"
-    translationstxt1: "Deze website kan vertalingen van de Engelse versie van de inhoud die beschikbaar is op de Website bevatten. Deze vertalingen worden uitsluitend voor uw gemak aangeboden. In geval van een conflict tussen de Engelstalige versie en de vertaalde versie, heeft de Engelstalige versie voorrang. Als u enige inconsistentie opmerkt, meld deze dan op <a href=\"https://github.com/bitcoin/bitcoin.org\">GitHub</a>."
+    translationstxt1: "Deze website kan vertalingen van de Engelse versie van de inhoud die beschikbaar is op de Website bevatten. Deze vertalingen worden uitsluitend voor uw gemak aangeboden. In geval van een conflict tussen de Engelstalige versie en de vertaalde versie, heeft de Engelstalige versie voorrang. Als u enige inconsistentie opmerkt, meld deze dan op <a href=\"https://github.com/bitcoin-portal/bitcoin-portal-content\">GitHub</a>."
     userisks: "Risico's verbonden aan het gebruik van Bitcoin"
     useriskstxt1: "De Website zal niet verantwoordelijk zijn voor verliezen, schade of claims die voortvloeien uit gebeurtenissen die binnen het bereik van de volgende vijf categorieën vallen:"
     useriskstxt2: "Fouten gemaakt door de gebruiker van Bitcoin-gerelateerde software of diensten, bijv. vergeten wachtwoorden, betalingen verstuurd naar verkeerde Bitcoin-adressen, en het per ongeluk verwijderen van portemonnees."
@@ -506,7 +506,7 @@ nl:
     title: "Privacy - Bitcoin"
     pagetitle: "Privacy"
     datacollect: "Verzamelde gegevens"
-    datacollecttxt: "Bitcoin.org verzamelt anoniem gemaakte serverlogboeken. Deze logboeken bevatten IP-adressen waarvan de laatste byte vervangen is, de bezoektijd, opgevraagde pagina, gebruiker-agent en doorverwijzende URL. Bitcoin.org verzamelt geen gegevens met cookies."
+    datacollecttxt: "Bitcoin.com verzamelt anoniem gemaakte serverlogboeken. Deze logboeken bevatten IP-adressen waarvan de laatste byte vervangen is, de bezoektijd, opgevraagde pagina, gebruiker-agent en doorverwijzende URL. Bitcoin.com verzamelt geen gegevens met cookies."
     datause: "Gebruik van gegevens"
     datausetxt: "Verzamelde gegevens worden gebruikt om <a href=\"/stats/\">transparante publieke statistieken</a> te leveren."
   protect-your-privacy:
@@ -602,7 +602,7 @@ nl:
     spread: "Verspreiden"
     spreadtxt: "Vertel geïnteresseerden over Bitcoin. Schrijf erover op uw blog. Vraag uw favoriete winkels of u ook met Bitcoin kunt betalen. Help de <a href=\"http://usebitcoins.info/\">winkeliersdirectory</a> up-to-date te houden. Of wees creatief en maak een mooi Bitcoin-shirt voor uzelf."
     wiki: "Documentatie"
-    wikitxt: "<a href=\"https://github.com/bitcoin/bitcoin.org#how-to-participate\">Bitcoin.org</a> en de <a href=\"https://en.bitcoin.it/\">Bitcoin-wiki</a> staan vol met nuttige en gedetailleerde informatie die doorlopend worden verbeterd. U kunt helpen deze informatie kloppend en actueel te houden."
+    wikitxt: "<a href=\"https://github.com/bitcoin-portal/bitcoin-portal-content#how-to-participate\">Bitcoin.com</a> en de <a href=\"https://en.bitcoin.it/\">Bitcoin-wiki</a> staan vol met nuttige en gedetailleerde informatie die doorlopend worden verbeterd. U kunt helpen deze informatie kloppend en actueel te houden."
     translate: "Vertalen"
     translatetxt: "Help Bitcoin nog beschikbaarder te maken door belangrijke delen van het Bitcoin-ecosysteem te vertalen of te verbeteren. Kies gewoon een project waarbij u wilt helpen."
     help: "Maak kennis met de community's"
@@ -662,7 +662,7 @@ nl:
     taxtxt: "Bitcoin is geen officiële munteenheid. Dat gezegd hebbende, in de meeste landen moeten toch inkomsten-, vennootschaps-, vermogens- en omzetbelastingen worden betaald over alles wat waarde vertegenwoordigt, inclusief bitcoins. Het is uw verantwoordelijkheid om ervoor te zorgen dat u zich houdt aan de <a href=\"https://en.wikipedia.org/wiki/Legality_of_bitcoin_by_country\">belastingwetgeving en enige andere wettelijke of reglementaire mandaten</a> afgegeven door uw overheid en/of plaatselijke gemeenten."
   layout:
     menu-support-bitcoin: "Help Bitcoin"
-    menu-about-us: "Over bitcoin.org"
+    menu-about-us: "Over bitcoin.com"
     menu-bitcoin-for-businesses: Bedrijven
     menu-bitcoin-for-developers: Ontwikkelaars
     menu-bitcoin-for-individuals: Particulieren
@@ -682,7 +682,7 @@ nl:
     menu-participate: Meedoen
     menu-vocabulary: Woordenlijst
     menu-you-need-to-know: "Wat u moet weten"
-    banner-translate: "Vertalingen voor deze taal zijn verouderd. <a href=\"https://github.com/bitcoin/bitcoin.org#translation\">Klik hier om bitcoin.org naar uw taal te vertalen</a>."
+    banner-translate: "Vertalingen voor deze taal zijn verouderd. <a href=\"https://github.com/bitcoin-portal/bitcoin-portal-content#translation\">Klik hier om bitcoin.com naar uw taal te vertalen</a>."
     footer: "Beschikbaar onder de <a href=\"http://opensource.org/licenses/mit-license.php\" target=\"_blank\">MIT-licentie</a>"
     sponsor: "Een communitywebsite gesponsord door"
     getstarted: "Ga aan de slag met Bitcoin"

@@ -1,10 +1,10 @@
 zh_TW:
   about-us:
-    title: "關於 bitcoin.org"
-    pagetitle: "關於 bitcoin.org"
-    pagedesc: "Bitcoin.org 致力於協助 Bitcoin 以永續方式發展。"
-    own: "誰擁有 bitcoin.org？"
-    owntxt: "Bitcoin.org 是第一個 Bitcoin 所使用的原始網域名稱，它由 <a href=\"#development#\">Bitcoin core 開發人員</a>與其他的社群成員所註冊，現在仍由他們管理，<a href=\"#community#\">Bitcoin 社群</a>對它亦有投入。 Bitcoin.org  並非一個官方網站。就像沒人擁有 Email 技術一樣，也沒有人擁有 Bitcoin 網路。因此，沒有人可以用 Bitcoin 官方代表的身份來發言。"
+    title: "關於 bitcoin.com"
+    pagetitle: "關於 bitcoin.com"
+    pagedesc: "Bitcoin.com 致力於協助 Bitcoin 以永續方式發展。"
+    own: "誰擁有 bitcoin.com？"
+    owntxt: "Bitcoin.com 是第一個 Bitcoin 所使用的原始網域名稱，它由 <a href=\"#development#\">Bitcoin core 開發人員</a>與其他的社群成員所註冊，現在仍由他們管理，<a href=\"#community#\">Bitcoin 社群</a>對它亦有投入。 Bitcoin.com  並非一個官方網站。就像沒人擁有 Email 技術一樣，也沒有人擁有 Bitcoin 網路。因此，沒有人可以用 Bitcoin 官方代表的身份來發言。"
     control: "那麼……誰掌控 Bitcoin？"
     controltxt: "Bitcoin 由全球所有 Bitcoin 使用者所掌控。開發人員會讓軟體功能更完善，但無法強迫 Bitcoin 協議接受一個改動，因為所有使用者都可以自由選擇他們想使用的軟體。使用者必須使用具備同樣的規則的軟體，才能彼此相容。Bitcoin 只能在所有使用者具備共識的基礎之上才能適當運作。因此，所有使用者與開發人員便有強烈的動機來維護這樣的共識。"
     mission: "使命"
@@ -16,7 +16,7 @@ zh_TW:
     missiontxt6: "以國際化方式改善 Bitcoin 的全球接入度。"
     missiontxt7: "保持 Bitcoin 各方面資訊資源的中立性。"
     help: "協助我們"
-    helptxt: "你可以用英文在 <a href=\"https://github.com/bitcoin/bitcoin.org#how-to-participate\">GitHub</a> 匯報問題，或透過新增議題及請求協助來改善 bitcoin.org。當你請求協助時，請花點時間解釋你所作的改變並調整你的工作內容。你也可以加入 <a href=\"https://github.com/bitcoin/bitcoin.org#translation\">Transifex</a> 的專案小組來協助翻譯。除了像會議這種特殊情況之外，請不要推廣你個人或企業的網站。非常感謝所有花時間改善 bitcoin.org 的貢獻者！"
+    helptxt: "你可以用英文在 <a href=\"https://github.com/bitcoin-portal/bitcoin-portal-content#how-to-participate\">GitHub</a> 匯報問題，或透過新增議題及請求協助來改善 bitcoin.com。當你請求協助時，請花點時間解釋你所作的改變並調整你的工作內容。你也可以加入 <a href=\"https://github.com/bitcoin-portal/bitcoin-portal-content#translation\">Transifex</a> 的專案小組來協助翻譯。除了像會議這種特殊情況之外，請不要推廣你個人或企業的網站。非常感謝所有花時間改善 bitcoin.com 的貢獻者！"
     maintenance: "維護"
     documentation: "文檔"
     translation: "翻譯"
@@ -429,7 +429,7 @@ zh_TW:
     readmoretxt: "這僅僅是 Bitcoin 系統的簡要說明，如果想瞭解更多細節，您可以<a href=\"#bitcoin-paper#\">閱讀原始論文</a>，其中描述了系統的設計，您也可以閱讀<a href=\"/en/developer-documentation\">開發人員文檔</a>，您還可以探索一下<a href=\"https://en.bitcoin.it/wiki/Main_Page\">Bitcoin wiki</a>。"
   index:
     title: "Bitcoin - 開放原始碼點對點數位貨幣"
-    metadescription: "Bitcoin 是一種創新的支付網路，也是一種新型貨幣。找到您所需要瞭解的資訊然後就可以在bitcoin.org 開始接觸 Bitcoin。"
+    metadescription: "Bitcoin 是一種創新的支付網路，也是一種新型貨幣。找到您所需要瞭解的資訊然後就可以在bitcoin.com 開始接觸 Bitcoin。"
     listintro: "Bitcoin 是一個創新的支付網路以及一種新的貨幣。"
     list1: "即時點對點<br>交易"
     list2: "環球<br>支付"
@@ -467,10 +467,10 @@ zh_TW:
   legal:
     title: "法律聲明 - Bitcoin"
     pagetitle: "法律聲明"
-    information: "發佈在 bitcoin.org 上的資訊"
-    informationtxt1: "網站http://bitcoin.org/（以下均稱“本網站”）提供一般屬性的資訊和資料。您沒有被授權且您不應當依賴本網站來尋求法律建議、商務建議或其他任何建議。使用本網站的內容的時候，您自己承擔風險。如果您要作一個決定來行動或不行動，您都應當諮詢您想要或需要幫助的相關行政區內的律師。在任何情況下，本網站的所有者或貢獻者都不對您利用本網站而做出的行動、決定或其他實施或未實施的行為負責。"
+    information: "發佈在 bitcoin.com 上的資訊"
+    informationtxt1: "網站http://bitcoin.com/（以下均稱“本網站”）提供一般屬性的資訊和資料。您沒有被授權且您不應當依賴本網站來尋求法律建議、商務建議或其他任何建議。使用本網站的內容的時候，您自己承擔風險。如果您要作一個決定來行動或不行動，您都應當諮詢您想要或需要幫助的相關行政區內的律師。在任何情況下，本網站的所有者或貢獻者都不對您利用本網站而做出的行動、決定或其他實施或未實施的行為負責。"
     translations: "翻譯"
-    translationstxt1: "本網站可能包含有本網站上可用內容的英文版本的翻譯。這些翻譯只是提供方便。如果英文版本和翻譯版本有不一致之處，應當以英文版本爲準。如果您發現了任何不一致，請在<a href=\"https://github.com/bitcoin/bitcoin.org\">GitHub</a>上報告。"
+    translationstxt1: "本網站可能包含有本網站上可用內容的英文版本的翻譯。這些翻譯只是提供方便。如果英文版本和翻譯版本有不一致之處，應當以英文版本爲準。如果您發現了任何不一致，請在<a href=\"https://github.com/bitcoin-portal/bitcoin-portal-content\">GitHub</a>上報告。"
     userisks: "使用 Bitcoin 的風險"
     useriskstxt1: "本網站不會對以下五類事故產生的任何損失、損害或索賠負責："
     useriskstxt2: "任何與 Bitcoin 相關的軟體和服務的用戶造成的失誤，例如：忘記密碼，付款給錯誤的 Bitcoin 地址，以及意外刪除錢包。"
@@ -506,7 +506,7 @@ zh_TW:
     title: "隱私 - Bitcoin"
     pagetitle: "隱私"
     datacollect: "收集到的數據"
-    datacollecttxt: "Bitcoin.org 收集匿名的伺服器記錄。這些記錄包括替換了最末位字元的IP地址、訪問時間、訪問頁面、用戶代理以及referer url。Bitcoin.org 不用 cookies 收集數據。"
+    datacollecttxt: "Bitcoin.com 收集匿名的伺服器記錄。這些記錄包括替換了最末位字元的IP地址、訪問時間、訪問頁面、用戶代理以及referer url。Bitcoin.com 不用 cookies 收集數據。"
     datause: "數據的應用"
     datausetxt: "收集到的數據會應用於提供<a href=\"/stats/\">透明的公共統計</a>。"
   protect-your-privacy:
@@ -602,7 +602,7 @@ zh_TW:
     spread: "傳播"
     spreadtxt: "與感興趣的人談論 Bitcoin，在你的部落格上寫關於 Bitcoin 的文章，告訴您最喜歡的商店您想用 Bitcoin 付款，幫助更新<a href=\"http://usebitcoins.info/\">商家名錄</a> ，或者發揮創意為自己做一件好看的 Bitcoin T-shirt。"
     wiki: "文檔"
-    wikitxt: "<a href=\"https://github.com/bitcoin/bitcoin.org#how-to-participate\">Bitcoin.org</a> 和<a href=\"https://en.bitcoin.it/\">Bitcoin wiki</a> 提供有用的文檔，而且我們還在持續改進它們所包含的資訊。您可以幫助改進和更新這些資源。"
+    wikitxt: "<a href=\"https://github.com/bitcoin-portal/bitcoin-portal-content#how-to-participate\">Bitcoin.com</a> 和<a href=\"https://en.bitcoin.it/\">Bitcoin wiki</a> 提供有用的文檔，而且我們還在持續改進它們所包含的資訊。您可以幫助改進和更新這些資源。"
     translate: "翻譯"
     translatetxt: "你可以透過翻譯 Bitcoin 生態系中重要的部分來增進 Bitcoin 的可用性。挑一個你想要幫忙的計劃吧。"
     help: "與社群會面"
@@ -662,7 +662,7 @@ zh_TW:
     taxtxt: "Bitcoin 並非官方貨幣。也即是說，大部分的稽稅機關仍會要求您針對任何有價值的收入、營業所得、薪水、資產利得來納稅，包括 Bitcoin。確保遵守您的政府和/或當地市政當局頒發的<a href=\"https://en.wikipedia.org/wiki/Legality_of_bitcoin_by_country\">納稅和其他強制法律法規</a>是您的責任。"
   layout:
     menu-support-bitcoin: "支持 Bitcoin"
-    menu-about-us: "關於 bitcoin.org"
+    menu-about-us: "關於 bitcoin.com"
     menu-bitcoin-for-businesses: 商務
     menu-bitcoin-for-developers: 開發人員
     menu-bitcoin-for-individuals: 個人
@@ -682,7 +682,7 @@ zh_TW:
     menu-participate: 參與
     menu-vocabulary: 詞彙
     menu-you-need-to-know: "使用須知"
-    banner-translate: "這種語言的翻譯已經過時。<a href=\"https://github.com/bitcoin/bitcoin.org#translation\">點擊這裡來幫助把bitcoin.org 翻譯成您的語言</a>。"
+    banner-translate: "這種語言的翻譯已經過時。<a href=\"https://github.com/bitcoin-portal/bitcoin-portal-content#translation\">點擊這裡來幫助把bitcoin.com 翻譯成您的語言</a>。"
     footer: "以 <a href=\"http://opensource.org/licenses/mit-license.php\" target=\"_blank\">MIT 授權</a>發佈"
     sponsor: "一個由其贊助的社群網站"
     getstarted: "開始使用 Bitcoin"
