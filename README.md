@@ -1,4 +1,4 @@
-![Build Status](https://travis-ci.org/bitcoin/bitcoin.org.svg?branch=master)
+![Build Status](https://travis-ci.org/bitcoin-portal/bitcoin-portal-content.svg?branch=master)
 
 ## How To Participate
 
@@ -11,7 +11,7 @@
 
 * [Submit new wallets][] for the [Choose Your Wallet page][]
 
-* [Translate Bitcoin.org into another language][] using [Transifex][] or
+* [Translate Bitcoin.com into another language][] using [Transifex][] or
   help review new and updated translations.
 
 * Add Bitcoin events to the [events page][] either by [editing `_events.yml`][edit events]
@@ -20,17 +20,17 @@
 
 * Help improve Bitcoin.com using your unique skills. We can always use
   the help of writers, editors, graphic artists, web designers, and anyone
-  else to enhance Bitcoin.org's [current content][] or to add new
+  else to enhance Bitcoin.com's [current content][] or to add new
   content.
 
-You can always report problems or help improve bitcoin.org by opening a [new issue][] or [pull request][] on [GitHub][].
+You can always report problems or help improve bitcoin.com by opening a [new issue][] or [pull request][] on [GitHub][].
 
-[choose your wallet page]: https://bitcoin.org/en/choose-your-wallet
-[current content]: https://bitcoin.org/
-[developer documentation pages]: https://bitcoin.org/en/developer-documentation
+[choose your wallet page]: https://bitcoin.com/en/choose-your-wallet
+[current content]: https://bitcoin.com/
+[developer documentation pages]: https://bitcoin.com/en/developer-documentation
 [edit events]: https://github.com/bitcoin-portal/bitcoin-portal-content/edit/master/_events.yml
 [event instructions]: #events
-[events page]: https://bitcoin.org/en/events
+[events page]: https://bitcoin.com/en/events
 [GitHub]: https://github.com/bitcoin-portal/bitcoin-portal-content
 [new issue]: https://github.com/bitcoin-portal/bitcoin-portal-content/issues/new
 [pre-made events issue]: https://github.com/bitcoin-portal/bitcoin-portal-content/issues/new?title=New%20event&body=%20%20%20%20-%20date%3A%20YYYY-MM-DD%0A%20%20%20%20%20%20title%3A%20%22%22%0A%20%20%20%20%20%20venue%3A%20%22%22%0A%20%20%20%20%20%20address%3A%20%22%22%0A%20%20%20%20%20%20city%3A%20%22%22%0A%20%20%20%20%20%20country%3A%20%22%22%0A%20%20%20%20%20%20link%3A%20%22%22
@@ -40,7 +40,7 @@ You can always report problems or help improve bitcoin.org by opening a [new iss
 [review wallet submissions]: https://github.com/bitcoin-portal/bitcoin-portal-content/pulls?q=is%3Aopen+label%3Awallet+is%3Apr
 [submit new wallets]: #adding-a-wallet
 [transifex]: https://www.transifex.com/projects/p/bitcoinorg/
-[translate Bitcoin.org into another language]: #how-to-translate
+[translate Bitcoin.com into another language]: #how-to-translate
 [upcoming full node page]: https://github.com/bitcoin-portal/bitcoin-portal-content/pull/711
 [write new documentation]: #developer-documentation
 
@@ -48,11 +48,11 @@ You can always report problems or help improve bitcoin.org by opening a [new iss
 
 GitHub allows you to make changes to a project using git, and later submit them in a "pull request" so they can be reviewed and discussed. Many online how-tos exist so you can learn git, [here's a good one](https://www.atlassian.com/git/tutorial/git-basics).
 
-In order to use GitHub, you need to [sign up](http://github.com/signup) and [set up git](https://help.github.com/articles/set-up-git). You will also need to click the **Fork** button on the bitcoin.org [GitHub page](https://github.com/bitcoin-portal/bitcoin-portal-content) and clone your GitHub repository into a local directory with the following command lines:
+In order to use GitHub, you need to [sign up](http://github.com/signup) and [set up git](https://help.github.com/articles/set-up-git). You will also need to click the **Fork** button on the bitcoin.com [GitHub page](https://github.com/bitcoin-portal/bitcoin-portal-content) and clone your GitHub repository into a local directory with the following command lines:
 
 ```
-git clone (url provided by GitHub on your fork's page) bitcoin.org
-cd bitcoin.org
+git clone (url provided by GitHub on your fork's page) bitcoin.com
+cd bitcoin.com
 git remote add upstream https://github.com/bitcoin-portal/bitcoin-portal-content.git
 ```
 
@@ -71,7 +71,7 @@ When submitting a pull request, please take required time to discuss your change
 **Travis Continuous Integration (CI)**
 
 Shortly after your Pull Request (PR) is submitted, a Travis CI job will
-be added to [our queue](https://travis-ci.org/bitcoin/bitcoin.org). This
+be added to [our queue](https://travis-ci.org/bitcoin-portal/bitcoin-portal-content). This
 will build the site and run some basic checks. If the job fails, you
 will be emailed a link to the build log and the PR will indicate a
 failed job. Read the build report and try to correct the problem---but
@@ -85,14 +85,14 @@ If you'd like to setup Travis on your own repository so you can test
 builds before opening a pull request, it's really simple:
 
 1. Make sure the master branch of your repository is up to date with the
-   bitcoin/bitcoin.org master branch.
+   bitcoin/bitcoin.com master branch.
 
 2. Open [this guide](http://docs.travis-ci.com/user/getting-started/)
    and perform steps one, two, and four. (The other steps are already
    done in our master branch.)
 
 3. After you push a branch to your repository, go to your branches page
-   (e.g. for user jmaurice, github.com/jmaurice/bitcoin.org/branches). A
+   (e.g. for user jmaurice, github.com/jmaurice/bitcoin.com/branches). A
    yellow circle, green checkmark, or red X will appear near the branch
    name when the build finishes, and clicking on the icon will take you
    to the corresponding build report.
@@ -112,7 +112,7 @@ You simply need to push additional commits on the appropriate branch of your Git
 
 #### Preview Small Text Changes
 
-Simple text changes can be previewed live on bitcoin.org. You only need to click anywhere on the page and hold your mouse button for one second. You'll then be able to edit the page just like a document. Changes will be lost as soon as the page is refreshed.
+Simple text changes can be previewed live on bitcoin.com. You only need to click anywhere on the page and hold your mouse button for one second. You'll then be able to edit the page just like a document. Changes will be lost as soon as the page is refreshed.
 
 #### Build The Site Locally
 
@@ -183,10 +183,10 @@ Use that program to install bundle:
 
 Ensure you checked out the site repository as described in [Working with
 GitHub](#working-with-github). Then change directory to the top-level of
-your local repository (replace `bitcoin.org` with the full path to your local
+your local repository (replace `bitcoin.com` with the full path to your local
 repository clone):
 
-    cd bitcoin.org
+    cd bitcoin.com
 
 And install the necessary dependencies using Bundle:
 
@@ -200,7 +200,7 @@ Once Bundle completes successfully, you can preview or build the site.
 ##### Preview The Site
 
 To preview the website in your local browser, make sure you're in the
-`bitcoin.org` directory and run the following command:
+`bitcoin.com` directory and run the following command:
 
     make preview
 
@@ -215,7 +215,7 @@ Visit the indicated URL in your browser to view the site.
 ##### Build The Site
 
 To build the site exactly like we do for the deployment server, make
-sure you're in the `bitcoin.org` directory and run:
+sure you're in the `bitcoin.com` directory and run:
 
     make
 
@@ -354,7 +354,7 @@ Any change in the English text can be done through a pull request on GitHub. If 
 
 If you're not comfortable with GitHub pull requests, please submit an
 event using the button near the bottom of the [Events
-page](https://bitcoin.org/en/events).
+page](https://bitcoin.com/en/events).
 
 To create an event pull request, place the event in `_events.yml` and adhere to this format:
 
@@ -402,7 +402,7 @@ optional_magnetlink:
 ## 1. Make sure both ordered and unordered lists are preceeded by an empty
 ## (whitespace only) line, like the empty line before this list item.
 ##
-## 2. Place URLs inside angle brackets, like <http://bitcoin.org/bin>
+## 2. Place URLs inside angle brackets, like <http://bitcoin.com/bin>
 
 ---
 ```
@@ -676,7 +676,7 @@ aliases:
 
 ### Blog Posts
 
-Posts for the [Bitcoin.org Site Blog][] should be added to the `_posts`
+Posts for the [Bitcoin.com Site Blog][] should be added to the `_posts`
 directory with the naming convention:
 `YEAR-MONTH-DAY-ARBITRARY_FILE_NAME` (with year, month, and day as
 two-digit numbers).  The YAML front matter should be similar to this:

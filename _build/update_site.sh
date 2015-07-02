@@ -8,7 +8,7 @@ PATH=/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/bin
 source /etc/profile.d/rvm.sh
 
 REPO='https://github.com/bitcoin-portal/bitcoin-portal-content.git'
-SITEDIR='/bitcoin.org/site'
+SITEDIR='/bitcoin.com/site'
 DESTDIR='build@bitcoinorgsite:/var/www/site'
 WORKDIR=`mktemp -d`
 
