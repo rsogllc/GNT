@@ -240,6 +240,8 @@ pl:
     notesync: "Pierwsza synchronizacja Bitcoin Core może zająć dużo czasu. Powinieneś upewnić się, że dysponujesz odpowiednią przepustowością i pamięcią na pełny rozmiar łańcucha bloków (ponad 20GB). Jeśli masz dobre połączenie do internetu, możesz wspomóc sieć bitcoin miejąc właczony komputer z Bitcoin Core i otwartym portem sieci 8333."
     full_node_guide: "Przeczytaj <a href=\"/en/full-node\">przewodnik pełnego węzła</a> by dowiedzieć się więcej."
     patient: "Sprawdź swoją przepustowość i pojemność"
+    download_from_bitcoinorg: "Download from bitcoin.org"
+    try_lightweight_wallet: "If you'd like to try a more lightweight bitcoin client, please check our <a href=\"#choose-your-wallet#\">Choose Your Wallet</a> section"
   events:
     title: "Konferencje i wydarzenia - Bitcoin"
     pagetitle: "Konferencje i wydarzenia"

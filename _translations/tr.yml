@@ -236,6 +236,8 @@ tr:
     notelicense: "Bitcoin Core kişiler tarafından geliştirilen <a href=\"https://www.fsf.org/about/what-is-free-software\">ücretsiz yazılım</a> projesidir, <a href=\"http://opensource.org/licenses/mit-license.php\">MIT lisansı</a> altında yayınlanır."
     notesync: "Bitcoin Core'un ilk senkronizasyonu biraz zaman alabilir. Blok zincir boyutu'nun (20 GB'nin üzerinde) tamamı için güçlü bir bağlantınızın ve yeterli depolama alanınızın olduğundan emin olmalısınız. Eğer torrent dosyalarının nasıl indirildiğini biliyorsanız, uygulamanızı başlatmadan önce <a href=\"/bin/blockchain/bootstrap.dat.torrent\">bootstrap.dat</a>(blok zincirinin önceki kopyası) dosyasını Bitcoin Core veri dizinine yerleştirerek süreci hızlandırabilirsiniz."
     patient: "Sabırlı olmalısınız"
+    download_from_bitcoinorg: "Download from bitcoin.org"
+    try_lightweight_wallet: "If you'd like to try a more lightweight bitcoin client, please check our <a href=\"#choose-your-wallet#\">Choose Your Wallet</a> section"
   events:
     title: "Konferanslar ve etkinlikler - Bitcoin"
     pagetitle: "Konferanslar ve etkinlikler"

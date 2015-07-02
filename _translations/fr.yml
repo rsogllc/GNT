@@ -240,6 +240,8 @@ fr:
     notesync: "La synchronisation initiale de Bitcoin Core peut prendre du temps et télécharger beaucoup de données. Assurez-vous de disposer de suffisamment de bande-passante et d'espace disque pour la taille de la chaine de blocs (plus de 20GB). Si vous avez une bonne connexion Internet, vous pouvez aider à renforcer le réseau en laissant votre ordinateur ouvert avec Bitcoin Core et le port 8333 ouvert."
     full_node_guide: "Lisez le <a href=\"/en/full-node\">guide sur les nœuds réseau</a> pour plus de détails."
     patient: "Vérifiez votre bande-passante et votre espace"
+    download_from_bitcoinorg: "Download from bitcoin.org"
+    try_lightweight_wallet: "If you'd like to try a more lightweight bitcoin client, please check our <a href=\"#choose-your-wallet#\">Choose Your Wallet</a> section"
   events:
     title: "Conférences et événements - Bitcoin"
     pagetitle: "Conférences et événements"

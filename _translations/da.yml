@@ -241,6 +241,8 @@ da:
     notesync: "Den indledningsvise synkronering af Bitcoin Core vil tage tid og hente en masse data. Du bør være sikker på, at du har nok båndbredde og plads til hele blokkædens størrelse (mere end 20 GB). Hvis du har en god internetforbindelse, kan du hjælpe med at styrke netværket ved at holde din PC kørende med Bitcoin Core og port 8333 åben."
     full_node_guide: "Læs <a href=\"/en/full-node\">guiden for en fuld knude</a> for detaljer."
     patient: "Tjek din båndbredde og plads"
+    download_from_bitcoinorg: "Download from bitcoin.org"
+    try_lightweight_wallet: "If you'd like to try a more lightweight bitcoin client, please check our <a href=\"#choose-your-wallet#\">Choose Your Wallet</a> section"
   events:
     title: "Konferencer og begivenheder – Bitcoin"
     pagetitle: "Konferencer og begivenheder"

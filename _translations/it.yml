@@ -241,6 +241,8 @@ it:
     notesync: "La sincronizzazione iniziale di Bitcoin Core richiede tempo e il download di molti dati. Dovresti essere sicuro di avere una linea abbastanza veloce e spazio sufficiente per scaricare la block chain completa (oltre 20GB). Se hai un buona linea internet, puoi aiutare a rafforzare la rete tenendo avviato il programma Bitcoin Core sul tuo PC e aprendo la porta 8333 del tuo modem."
     full_node_guide: "Leggere la <a href=\"/en/full-node\">guida full node</a> per i dettagli."
     patient: "Controlla il tuo spazio e la banda"
+    download_from_bitcoinorg: "Download from bitcoin.org"
+    try_lightweight_wallet: "If you'd like to try a more lightweight bitcoin client, please check our <a href=\"#choose-your-wallet#\">Choose Your Wallet</a> section"
   events:
     title: "Conferenze ed eventi - Bitcoin"
     pagetitle: "Conferenze ed eventi"

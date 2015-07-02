@@ -229,6 +229,8 @@ ar:
     notelicense: "Bitcoin Core أو برنامج البت كوين الرسمي هو مشروع <a href=\"https://www.fsf.org/about/what-is-free-software\">برنامج مجاني</a> مُطور ومدار بواسطة مجتمع البت كوين، البرنامج متاح للنشر والإستخدام تحت <a href=\"http://opensource.org/licenses/mit-license.php\">رخصة MIT</a>."
     notesync: "المزامنة الأوّلية لبرنامج البت كوين الرسمي \"Bitcoin Core\" يمكنها أن تأخذ وقت طويل جداً لكي تكتمل. يجب عليك التأكد من امتلاكك لحجم نقل بيانات و مساحة تخزين كافية لحجم سلسلة الكتل (أكثر من 20 جيجا بايت). إذا كنت تعرف كيفية تحميل ملف تورنت, يمكنك تسريع هذه العملية بإضافة <a href=\"/bin/blockchain/bootstrap.dat.torrent\">bootstrap.dat</a> (نسخة سابقة من سلسلة الكتل) في مجلد بيانات برنامج البت كوين الأساسي قبل بدء تشغيل البرنامج."
     patient: "سيتوجب عليك الصبر"
+    download_from_bitcoinorg: "Download from bitcoin.org"
+    try_lightweight_wallet: "If you'd like to try a more lightweight bitcoin client, please check our <a href=\"#choose-your-wallet#\">Choose Your Wallet</a> section"
   events:
     title: "المؤتمرات والأحداث - البت كوين"
     pagetitle: "الأحداث والمؤتمرات"

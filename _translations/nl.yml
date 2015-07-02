@@ -235,6 +235,8 @@ nl:
     notelicense: "Bitcoin Core is een <a href=\"https://www.fsf.org/about/what-is-free-software\">vrije-software</a> project dat wordt ontwikkeld door de community en verspreid onder de <a href=\"http://opensource.org/licenses/mit-license.php\">MIT-licentie</a>."
     notesync: "De initiële synchronisatie van Bitcoin Core kan lang duren. Zorg ervoor dat u genoeg bandbreedte en opslagruimte heeft voor de volledige grootte van de blokketen (meer dan 20GB). Als u weet hoe u een torrentbestand downloadt, kunt u dit proces versnellen door <a href=\"/bin/blockchain/bootstrap.dat.torrent\">bootstrap.dat</a> (een vorige kopie van de blokketen) in de Bitcoin Core gegevensmap te zetten alvorens het starten van de software."
     patient: "Wees geduldig"
+    download_from_bitcoinorg: "Download from bitcoin.org"
+    try_lightweight_wallet: "If you'd like to try a more lightweight bitcoin client, please check our <a href=\"#choose-your-wallet#\">Choose Your Wallet</a> section"
   events:
     title: "Conferenties en evenementen - Bitcoin"
     pagetitle: "Conferenties en evenementen"

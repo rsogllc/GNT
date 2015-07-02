@@ -235,6 +235,8 @@ id:
     notelicense: "Bitcoin Core adalah proyek yang digerakkan oleh komunitas <a href=\"https://www.fsf.org/about/what-is-free-software\">perangkat lunak gratis</a>, dirilis di bawah <a href=\"http://opensource.org/licenses/mit-license.php\">lisensi MIT</a>."
     notesync: "Sinkronisasi awal Bitcoin Core dapat memakan waktu yang sangat lama. Sebaiknya Anda memastikan bahwa Anda memiliki bandwidth dan penyimpanan yang cukup untuk ukuran rantai-blok (lebih dari 20GB). Jika Anda mengetahui cara mengunduh file torrent, Anda dapat mempercepat proses sinkronisasi ini dengan menambahkan <a href=\"/bin/blockchain/bootstrap.dat.torrent\">bootstrap.dat</a> (salinan rantai-blok sebelumnya) pada direktori data Bitcoin Core sebelum memulai perangkat lunak tersebut."
     patient: "Mohon bersabar"
+    download_from_bitcoinorg: "Download from bitcoin.org"
+    try_lightweight_wallet: "If you'd like to try a more lightweight bitcoin client, please check our <a href=\"#choose-your-wallet#\">Choose Your Wallet</a> section"
   events:
     title: "Konferensi dan acara - Bitcoin"
     pagetitle: "Konferensi dan acara"

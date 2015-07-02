@@ -229,6 +229,8 @@ sl:
     notelicense: "Bitcoin Core je <a href=\"https://www.fsf.org/about/what-is-free-software\">prostoprogramski</a> projekt, ki ga poganja skupnost, izdaja pa se pod <a href=\"http://opensource.org/licenses/mit-license.php\">licenco MIT</a>."
     notesync: "Začetna uskladitev z omrežjem aplikacije Bitcoin Core lahko traja dolgo. Potrebovali boste dovolj pasovne širine in prostora za hrambo celotne verige blokov (prek 20 GB). Če znate prenesti datoteko prek omrežja torrent, lahko ta postopek pospešite tako, da skopirate datoteko <a href=\"/bin/blockchain/bootstrap.dat.torrent\">bootstrap.dat</a> (nedavno kopijo verige blokov) v direktorij data aplikacije Bitcoin Core, preden aplikacijo zaženete."
     patient: "Potrebnega bo nekaj potrpljenja."
+    download_from_bitcoinorg: "Download from bitcoin.org"
+    try_lightweight_wallet: "If you'd like to try a more lightweight bitcoin client, please check our <a href=\"#choose-your-wallet#\">Choose Your Wallet</a> section"
   events:
     title: "Konference in dogodki - bitcoin"
     pagetitle: "Konference in dogodki"

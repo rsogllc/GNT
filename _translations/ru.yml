@@ -240,6 +240,8 @@ ru:
     notesync: "Первоначальная синхронизация Bitcoin Core займет время и приведет к загрузке большого объема данных. Вам следует убедиться, что у вас есть достаточно широкий канал и место на диске для хранения всего блокчейна (более 20GB данных). Если у вас хорошее интернет-соединение, вы можете поддержать сеть, оставляя ваш ПК включенным с запущенным Bitcoin Core и открытым поротом 8333."
     full_node_guide: "Больше деталей в <a href=\"/en/full-node\">гайде по полным узлам</a>."
     patient: "Проверьте ширину канала и место на диске"
+    download_from_bitcoinorg: "Download from bitcoin.org"
+    try_lightweight_wallet: "If you'd like to try a more lightweight bitcoin client, please check our <a href=\"#choose-your-wallet#\">Choose Your Wallet</a> section"
   events:
     title: "Биткойн-конференции и мероприятия"
     pagetitle: "Конференции и события"

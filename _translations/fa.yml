@@ -233,6 +233,8 @@ fa:
     notelicense: "هسته بیت کوین یک پروژه ی <a href=\"https://www.fsf.org/about/what-is-free-software\">نرم افزار رایگان</a> جامعه-محور است که تحت <a href=\"http://opensource.org/licenses/mit-license.php\"> گواهینامه ی  MIT</a> منتشر شده است."
     notesync: "همگام سازی اولیه هسته بیت کوین ممکن است خیلی بطول بینجامد. باید از داشتن پهنای باند و محل ذخیره سازی کافی برای اندازه زنجیره بلاک  (بیش از 20GB) اطمینان حاصل کنید. اگر روش دانلود کردن فایل تورنت را بلد هستید، می توانید سرعت فرایند را با گذاردن <a href=\"/bin/blockchain/bootstrap.dat.torrent\">bootstrap.dat</a> (نسخه قبلی یک زنجیره بلاک) در دایرکتوری داده های هسته بیت کوین، پیش از شروع نرم افزار، افزایش دهید."
     patient: "باید شکیبا باشید"
+    download_from_bitcoinorg: "Download from bitcoin.org"
+    try_lightweight_wallet: "If you'd like to try a more lightweight bitcoin client, please check our <a href=\"#choose-your-wallet#\">Choose Your Wallet</a> section"
   events:
     title: "کنفرانسها و رویداد ها - بیت کوین"
     pagetitle: "کنفرانس ها و رویداد ها"

@@ -235,6 +235,8 @@ ro:
     notelicense: "Bitcoin Core este proiect comunitar <a href=\"https://www.fsf.org/about/what-is-free-software\">software gratis</a> creat de comunitate, eliberat sub <a href=\"http://opensource.org/licenses/mit-license.php\">licenţă MIT</a>."
     notesync: "Sincronizarea iniţială a Bitcoin Core poate dura mult timp. Ar trebui să te asiguri de la început că dispui de destulă lăţime de bandă şi spaţiu de stocare suficient pentru mărimea lanţului de blocuri(peste 20GB). Dacă ştii cum să descarci un fişier torrent, poţi grăbi acest proces prin adăugarea <a href=\"/bin/blockchain/bootstrap.dat.torrent\">bootstrap.dat</a> (o copie anterioară a lanţului de blocuri) în directorul data al Bitcoin Core înainte de a porni programul."
     patient: "Va trebui să ai răbdare"
+    download_from_bitcoinorg: "Download from bitcoin.org"
+    try_lightweight_wallet: "If you'd like to try a more lightweight bitcoin client, please check our <a href=\"#choose-your-wallet#\">Choose Your Wallet</a> section"
   events:
     title: "Conferințe și evenimente - Bitcoin"
     pagetitle: "Conferințe și evenimente"

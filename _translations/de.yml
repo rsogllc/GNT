@@ -241,6 +241,8 @@ de:
     notesync: "Die anfängliche Synchronisierung von Bitcoin Core kann sehr lange dauern und benötigt eine große Menge an Daten. Sie sollten sicherstellen, dass Sie ausreichend Bandbreite und Speicher für die volle Größe der Blockkette (über 20GB) zur Verfügung haben. Falls Sie eine gute Internetverbindung haben, können Sie dabei helfen das Netzwerk zu stärken, indem auf ihrem PC Bitcoin Core - mit geöffneten Port 8333 - laufen lassen."
     full_node_guide: "Lesen Sie die <a href=\"/en/full-node\">Full Node-Guide</a> für Details."
     patient: "Überprüfen Sie ihre Bandbreite und freien Speicherplatz"
+    download_from_bitcoinorg: "Download from bitcoin.org"
+    try_lightweight_wallet: "If you'd like to try a more lightweight bitcoin client, please check our <a href=\"#choose-your-wallet#\">Choose Your Wallet</a> section"
   events:
     title: "Konferenzen und Events - Bitcoin"
     pagetitle: "Konferenzen und Events"
