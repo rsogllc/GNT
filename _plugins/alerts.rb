@@ -64,7 +64,7 @@ module Jekyll
         next if file == '.' or file == '..'
         lang = 'en'
         src = file
-        dst = file
+        dst = file.gsub('.md', '.html')
         srcdir = '_alerts'
         dstdir = lang + '/alert'
         date = dst.split('-')
