@@ -185,8 +185,6 @@ exclude:
 
 future:      true
 lsi:         false
-highlighter: rouge
-pygments:    true
 markdown:    kramdown
 permalink:   date
 
@@ -198,7 +196,7 @@ kramdown:
   footnote_nr: 1
   entity_output: as_char
   toc_levels: 2..6
-  use_coderay: false
+  enable_coderay: false
 
   coderay:
     coderay_wrap: div
@@ -505,3 +503,25 @@ devsearches:
     - "tx": "/en/developer-reference#tx"
     - "verack": "/en/developer-reference#verack"
     - "version": "/en/developer-reference#version"
+
+collections:
+  alerts:
+    output: true
+    permalink: /en/alert/:path
+  releases:
+    output: true
+    permalink: /en/release/:path
+
+defaults:
+  - scope:
+      path: ""
+      type: alerts
+    values:
+      layout: alert
+      lang: en
+  - scope:
+      path: ""
+      type: releases
+    values:
+      layout: release
+      lang: en
