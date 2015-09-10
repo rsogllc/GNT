@@ -33,6 +33,7 @@ module Jekyll
       self.data['date'] = date
       self.data['path'] = srcdir+'/'+src
       self.data['layout'] = 'alert'
+      self.data['id'] = src
       if dstdir == ''
         self.data['canonical'] = '/en/alert/' + src.split('.')[0]
       else

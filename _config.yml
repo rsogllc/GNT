@@ -173,6 +173,7 @@ port: 4000
 base-url:    /
 ## Used in newer versions of Jekyll
 baseurl:    /
+url: https://bitcoin.org
 
 source:      .
 destination: ./_site

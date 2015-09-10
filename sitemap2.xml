@@ -1,0 +1,28 @@
+---
+layout: null
+sitemap:
+  exclude: 'yes'
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  {% for post in site.posts %}
+    {% unless post.published == false %}
+    <url>
+      <loc>{{ site.url }}{{ post.url }}</loc>
+    </url>
+    {% endunless %}
+  {% endfor %}
+  {% for page in site.pages %}
+    {% unless page.sitemap.exclude == "yes" or page.layout == null or page.layout == 'redirect' %}
+    <url>
+      <loc>{{ site.url }}{{ page.url | remove: "index.html" | remove: ".html" }}</loc>
+      {% if page.lang and page.id %}{% for related in site.pages %}{% if related.id == page.id and related.url != page.url and related.sitemap.exclude != "yes" and related.layout != 'redirect' %}
+      <xhtml:link
+        rel="alternate"
+        hreflang="{{related.lang}}"
+        href="{{site.url}}{{related.url | remove: "index.html" | remove: ".html" }}" />
+      {% endif %}{% endfor %}{% endif %}
+    </url>
+    {% endunless %}
+  {% endfor %}
+</urlset>
