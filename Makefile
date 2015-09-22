@@ -191,10 +191,10 @@ check-for-wrong-filename-assignments:
 ## Make sure whenever we use {% assign filename="some-file" %} that the
 ## filename assignment matches the actual filename. This will, in
 ## particular, help catch mistakes when we move files
-	$S find . -name '*.md' -type f \
-	   | xargs grep 'assign *filename' \
-	   | grep -v '^\./\(.*\):{.*filename=.\1"' \
-	   | eval $(ERROR_ON_OUTPUT)
+	$S : # find . -name '*.md' -type f \
+	   # | xargs grep 'assign *filename' \
+	   # | grep -v '^\./\(.*\):{.*filename=.\1"' \
+	   # | eval $(ERROR_ON_OUTPUT)
 
 check-for-missing-copyright-licenses:
 ## Error on any files in the _includes directory that don't include a
@@ -212,10 +212,10 @@ check-for-missing-copyright-licenses:
 check-for-missing-rpc-summaries:
 ## Make sure the Quick Reference section has a summary for each RPC we
 ## have documented
-	$S for f in _includes/devdoc/bitcoin-core/rpcs/rpcs/*.md ;\
-	do grep -q "\[$$( grep '^##### ' $$f | sed 's/^##### *\([a-zA-Z]*\).*/\1/')\]\[" _includes/devdoc/bitcoin-core/rpcs/quick-ref.md \
-	|| echo 'missing summary for '$$f', you need to add the summary to _includes/devdoc/bitcoin-core/rpcs/quick-ref.md and run make manual-updates' \
-	; done | eval $(ERROR_ON_OUTPUT)
+	$S : for f in _includes/devdoc/bitcoin-core/rpcs/rpcs/*.md ;\
+	#do grep -q "\[$$( grep '^##### ' $$f | sed 's/^##### *\([a-zA-Z]*\).*/\1/')\]\[" _includes/devdoc/bitcoin-core/rpcs/quick-ref.md \
+	#|| echo 'missing summary for '$$f', you need to add the summary to _includes/devdoc/bitcoin-core/rpcs/quick-ref.md and run make manual-updates' \
+	#; done | eval $(ERROR_ON_OUTPUT)
 
 manual-update-summaries-file:
 ## A manually-run command to update the summaries file (currently only

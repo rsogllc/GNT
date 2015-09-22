@@ -145,6 +145,11 @@ redirects:
   /releases/2013/05/29/v0.8.2: /en/release/v0.8.2
   /bitcoin_es_latam.pdf: /files/bitcoin-paper/bitcoin_es_latam.pdf
   /bitcoin_ru.pdf: /files/bitcoin-paper/bitcoin_ru.pdf
+  /en/developer-documentation: /devdocs/documentation
+  /en/developer-guide: /devdocs/guide
+  /en/developer-reference: /devdocs/reference
+  /en/developer-examples: /devdocs/examples
+  /en/developer-glossary: /devdocs/glossary
 
 aliases:
   --author=Satoshi Nakamoto: Satoshi Nakamoto

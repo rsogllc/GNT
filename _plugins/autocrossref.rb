@@ -2,7 +2,7 @@
 # http://opensource.org/licenses/MIT.
 
 ## autocrossref.rb automatically adds cross reference links in documentation
-## texts using the list of words defined in _autocrossref.yaml.
+## texts using the list of words defined in devdocs/_autocrossref.yaml.
 
 ## Example:
 ## {% autocrossref %}
@@ -39,7 +39,7 @@ require 'yaml'
 
         ## Load refs from file and then downcase them all so we can
         ## easily detect when we define xrefs more than once
-        mixed_case_refs = YAML.load_file("_autocrossref.yaml")
+        mixed_case_refs = YAML.load_file("devdocs/_autocrossref.yaml")
         unvalidated_refs = Hash.new
         mixed_case_refs.each { |key, value|
           unvalidated_refs[key.to_s.downcase] = value.to_s.downcase
