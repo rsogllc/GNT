@@ -160,6 +160,7 @@ http://opensource.org/licenses/MIT.
 [addr message]: /en/developer-reference#addr "The P2P network message which relays IP addresses and port numbers of active nodes to other nodes and clients, allowing decentralized peer discovery."
 [alert message]: /en/developer-reference#alert "The P2P network message which sends alerts in case of major software problems."
 [block message]: /en/developer-reference#block "The P2P network message which sends a serialized block"
+[feefilter message]: /en/developer-reference#feefilter "The P2P network message which requests the receiving peer not relay any transactions below the specified fee rate"
 [filteradd message]: /en/developer-reference#filteradd "A P2P protocol message used to add a data element to an existing bloom filter."
 [filterclear message]: /en/developer-reference#filterclear "A P2P protocol message used to remove an existing bloom filter."
 [filterload message]: /en/developer-reference#filterclear "A P2P protocol message used to send a filter to a remote peer, requesting that they only send transactions which match the filter."
@@ -216,8 +217,9 @@ http://opensource.org/licenses/MIT.
 [Bitcoin Core 0.9.1]: /en/release/v0.9.1
 [Bitcoin Core 0.9.2]: /en/release/v0.9.2
 [Bitcoin Core 0.9.3]: /en/release/v0.9.3
-{% comment %}<!-- TODOv0.10 update this to point to 0.10 release notes when released -->{% endcomment %}
-[Bitcoin Core 0.10.0]: https://github.com/bitcoin/bitcoin/tree/0.10
+[Bitcoin Core 0.10.0]: /en/release/v0.10.0
+[Bitcoin Core 0.12.0]: /en/release/v0.12.0
+[Bitcoin Core 0.13.0]: /en/release/v0.13.0
 [bitcoin URI subsection]: /en/developer-guide#bitcoin-uri
 [bitcoind initial setup]: /en/developer-examples
 [bitcoinpdf]: https://bitcoin.org/en/bitcoin-paper
@@ -289,6 +291,7 @@ http://opensource.org/licenses/MIT.
 [BIP71]: https://github.com/bitcoin/bips/blob/master/bip-0071.mediawiki
 [BIP72]: https://github.com/bitcoin/bips/blob/master/bip-0072.mediawiki
 [BIP130]: https://github.com/bitcoin/bips/blob/master/bip-0130.mediawiki
+[BIP133]: https://github.com/bitcoin/bips/blob/master/bip-0133.mediawiki
 [CVE-2012-2459]: https://en.bitcoin.it/wiki/CVEs#CVE-2012-2459
 [RFC5737]: http://tools.ietf.org/html/rfc5737
 [secp256k1]: http://www.secg.org/sec2-v2.pdf

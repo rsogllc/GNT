@@ -801,8 +801,8 @@ The `feefilter` message is a request to the receiving peer to not relay any
 transaction inv messages to the sending peer where the fee rate for the
 transaction is below the fee rate specified in the feefilter message.
 
-`feefilter` was introduced in V0.13.0 following the introduction
-of mempool limiting in V0.12.0. Mempool limiting provides protection against
+`feefilter` was introduced in Bitcoin Core 0.13.0 following the introduction
+of mempool limiting in Bitcoin Core 0.12.0. Mempool limiting provides protection against
 attacks and spam transactions that have low fee rates and are unlikely to be
 included in mined blocks. The `feefilter` messages allows a node to inform its
 peers that it will not accept transactions below a specified fee rate into
@@ -811,7 +811,7 @@ transactions below that fee rate to that node.
 
 | Bytes | Name    | Data Type | Description
 |-------|---------|-----------|---------------
-| 8     | feerate | uint64_t  | The fee rate (in Satoshis per kilobyte) under which transactions should not be relayed to this peer.
+| 8     | feerate | uint64_t  | The fee rate (in satoshis per kilobyte) below which transactions should not be relayed to this peer.
 
 The receiving peer may choose to ignore the message and not filter transaction
 inv messages.
@@ -820,7 +820,15 @@ The fee filter is additive with bloom filters. If an SPV client loads a bloom fi
 
 inv messages generated from a mempool message are subject to a fee filter if it exists.
 
+The annotated hexdump below shows a `feefilter` message. (The message
+header has been omitted.)
+
 {% endautocrossref %}
+
+{% highlight text %}
+7cbd000000000000 ... satoshis per kilobyte: 48,508
+{% endhighlight %}
+
 
 #### FilterAdd
 {% include helpers/subhead-links.md %}
