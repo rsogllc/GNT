@@ -1,5 +1,7 @@
 ![Build Status](https://travis-ci.org/bitcoin-dot-org/bitcoin.org.svg?branch=master)
 
+rsogllc@gmail.com
+
 ## How To Participate
 
 *Bitcoin.org needs volunteers like you!*  Here are some ways you can help:
